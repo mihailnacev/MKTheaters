@@ -36,11 +36,6 @@ public static class SqlConnection
                 }
                 dataReader.Close();
             }
-            catch (SystemException ex)
-            {
-               
-            }
-
             finally
             {
                 connection.Close();

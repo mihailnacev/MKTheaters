@@ -18,11 +18,10 @@ public partial class _Default : System.Web.UI.Page
         List<User> users = SqlConnection.getUsers();
         foreach(User u in users)
         {
-
-            ListBox1.Items.Add(u.Username);
+            ListBox1.Items.Add(u.ToString());
         }
     }
-
+    
     protected void ListBox1_SelectedIndexChanged(object sender, EventArgs e)
     {
 

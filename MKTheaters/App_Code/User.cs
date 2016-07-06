@@ -22,8 +22,7 @@ public class User
 
     }
 
-    override
-    public String ToString()
+    public override string ToString()
     {
         return Ime + " " + Prezime;
     }
