@@ -1,4 +1,42 @@
 ﻿body 
 {
-    background-color:aqua
+    background-color:lightgrey;
+}
+
+#logo 
+{
+    width:200px;
+    height:50px;
+    float:left;
+}
+
+#container 
+{
+    width:1170px;
+    height:145px;
+    padding-top:15px;
+    padding-bottom:15px;
+    padding-left:30px;
+}
+
+#header 
+{
+    width:1349px;
+    height:175px;
+    background-color:white;
+   
+}
+
+#menu 
+{
+    float:right;
+    position:relative;
+    top:50px
+}
+
+.menuItem 
+{
+    text-decoration:none;
+    color:black;
+    padding-right:50px;
 }
