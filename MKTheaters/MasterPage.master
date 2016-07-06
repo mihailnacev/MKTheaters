@@ -11,6 +11,17 @@
 <body>
     <form id="form1" runat="server">
     <div>
+        <asp:Panel ID="logo" runat="server">
+            <asp:Image ID="logoImage" runat="server" ImageUrl="Images/logo1.png" />
+        </asp:Panel>
+
+        <asp:Panel ID="menu" runat="server">
+            <asp:LinkButton ID="LinkButton1" runat="server">Почетна</asp:LinkButton>
+            <asp:LinkButton ID="LinkButton2" runat="server">Најава</asp:LinkButton>
+            <asp:LinkButton ID="LinkButton3" runat="server">Резервација</asp:LinkButton>
+            <asp:LinkButton ID="LinkButton4" runat="server">Контакт</asp:LinkButton>
+        </asp:Panel>
+
         <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
         
         </asp:ContentPlaceHolder>
