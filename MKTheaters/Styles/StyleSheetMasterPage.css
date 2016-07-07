@@ -1,6 +1,6 @@
 ﻿body 
 {
-    background-color:lightgrey;
+    background-color:#BA252A
 }
 
 #logo 
@@ -37,7 +37,7 @@
 .menuItem 
 {
     text-decoration:none;
-    color:black;
+    color:#BA252A;
     padding-right:25px;
     padding-left:25px;
     padding-top:10px;
