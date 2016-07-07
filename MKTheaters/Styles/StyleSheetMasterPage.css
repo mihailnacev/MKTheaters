@@ -1,15 +1,15 @@
 ﻿body 
 {
-  /*  background-color:#BA252A;*/
- 
-  
+
+    background-color:#BA252A;
+
 }
 
 #logo 
 {
-    width:30%;
     height:137px;
     float:left;
+    padding-left:30px;
 }
 
 .logoPosition1
@@ -30,7 +30,6 @@
     height:145px;
     padding-top:15px;
     padding-bottom:15px;
-    padding-left:30px;
     margin:auto;
 }
 
@@ -46,12 +45,20 @@
     float:right;
     position:relative;
     top:50px;
+    text-align:center;
+}
+
+.menuPosition
+{
+    width:100%;
+    margin:auto;
 }
 
 .menuItem1
 {
     text-decoration:none;
     color:#BA252A;
+    background-color:white;
     padding-right:25px;
     padding-left:25px;
     padding-top:10px;
@@ -66,12 +73,33 @@
 {
     text-decoration:none;
     color:#BA252A;
+    background-color:white;
     padding-top:10px;
     padding-bottom:10px;
+    margin-bottom:5px;
     border-radius:15px;
     font-weight:bold;
     font-size:20px;
     font-family:'Malgun Gothic';
     display:block;
     text-align:center;
+    position:relative;
+}
+
+.menuItem3
+{
+    text-decoration:none;
+    color:#BA252A;
+    background-color:white;
+    padding-right:25px;
+    padding-left:25px;
+    padding-top:10px;
+    padding-bottom:10px;
+    margin-right:5px;
+    border-radius:15px;
+    font-weight:bold;
+    font-size:20px;
+    font-family:'Malgun Gothic';
+    text-align:center;
+    position:relative;
 }
