@@ -1,13 +1,25 @@
 ﻿body 
 {
-    background-color:#BA252A
+    /*background-color:#BA252A*/
 }
 
 #logo 
 {
     width:30%;
-    height:50px;
+    height:137px;
     float:left;
+}
+
+.logoPosition1
+{
+    width:100%;
+    text-align:center;
+}
+
+.logoPosition2
+{
+    width:30%;
+    text-align:center;
 }
 
 #container 
@@ -34,7 +46,7 @@
     top:50px;
 }
 
-.menuItem 
+.menuItem1
 {
     text-decoration:none;
     color:#BA252A;
@@ -46,4 +58,18 @@
     font-weight:bold;
     font-size:20px;
     font-family:'Malgun Gothic'
+}
+
+.menuItem2 
+{
+    text-decoration:none;
+    color:#BA252A;
+    padding-top:10px;
+    padding-bottom:10px;
+    border-radius:15px;
+    font-weight:bold;
+    font-size:20px;
+    font-family:'Malgun Gothic';
+    display:block;
+    text-align:center;
 }
