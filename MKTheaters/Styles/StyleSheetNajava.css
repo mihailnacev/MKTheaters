@@ -1,0 +1,76 @@
+﻿body {
+
+   /* background-color:blue;*/
+   font-family:'Malgun Gothic';
+}
+
+#tabela {
+
+    background-color:white;
+    padding:30px;
+    margin:auto;
+    margin-top:10px;
+    width:40%;
+    border-radius:20px;
+    border:20px solid darkred;
+  
+}
+
+.najava {
+
+    border-bottom:2px solid #BA252A;
+    margin-left:50px;
+    font-weight:bolder;
+    font-size:25px;
+    color:#BA252A;
+
+}
+
+.or {
+
+    color:#BA252A;
+    font-style:italic;
+    font-weight:bold;
+
+}
+
+.labeli {
+
+    color:#BA252A;
+    font-weight:bold;
+
+
+}
+
+.buttons {
+
+    color:rgb(245,222,95);
+    background-color:#BA252A;
+    width:150px;
+    font-weight:bold;
+    height:30px;
+    margin-left:20px;
+    font-size:15px;
+
+
+}
+
+.textFields {
+
+    width:188px;
+     height:20px;
+
+}
+
+.validationText {
+
+font-style:italic;
+color:#BA252A;
+border-radius:5px;
+border-bottom:1px solid rgb(245,222,95);
+
+
+}
+
+
+
