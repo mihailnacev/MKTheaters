@@ -71,7 +71,7 @@
     </tr>
     <tr>
         <td class="auto-style2">
-            <asp:Button ID="btnLogin" runat="server" Text="Најави се" CssClass="buttons" ValidationGroup="najava" />
+            <asp:Button ID="btnLogin" runat="server" Text="Најави се" CssClass="buttons" ValidationGroup="najava" OnClick="btnLogin_Click" />
         </td>
         <td>&nbsp;</td>
     </tr>

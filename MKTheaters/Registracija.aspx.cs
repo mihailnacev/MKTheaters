@@ -26,5 +26,11 @@ public partial class Registracija : System.Web.UI.Page
             lblMsg.Text = "Сите полиња се задолжителни";
            
         }
+        else
+        {
+            User user = new User(username, password, ime, prezime, email);
+            SqlConnection.SignUp(user);
+            Response.Redirect("~/login.aspx?status=Успешно се регистриравте!");
+        }
     }
 }
