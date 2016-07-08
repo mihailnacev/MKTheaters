@@ -31,13 +31,27 @@
     padding-top:15px;
     padding-bottom:15px;
     margin:auto;
+    background-color:white;
 }
 
 #header 
 {
     width:100%;
-    height:175px;
-    background-color:white;
+}
+
+.headerHeight1
+{
+    height:190px;
+}
+
+.headerHeight2
+{
+    height:250px;
+}
+
+.headerHeight3 
+{
+    height:420px;
 }
 
 #menu 
