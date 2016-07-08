@@ -1,34 +1,32 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Configuration;
 using System.Data.SqlClient;
-using MySql.Data.MySqlClient;
 
 /// <summary>
 /// Summary description for SqlConnection
 /// </summary>
-public static class SqlConnection
+public static class Connectivity
 {
     /// <summary>
     /// connectionString saved in App.config, which is used for establishing a connection with Database
     /// </summary>
-    private static readonly string connectionString = ConfigurationManager.ConnectionStrings["DBConnection"].ConnectionString;
+    private static readonly string connectionString = ConfigurationManager.ConnectionStrings["Test"].ConnectionString;
 
     static public List<User> getUsers()
     {
         List<User> lista = new List<User>();
-        MySqlConnection connection = new MySqlConnection(connectionString);
-        MySqlCommand command = new MySqlCommand("SELECT * FROM USERS", connection);
+        SqlConnection connection = new SqlConnection(connectionString);
+        SqlCommand command = new SqlCommand("SELECT * FROM Users", connection);
         {
             try
             {
                 User user = null;
                 connection.Open();
-                MySqlDataReader dataReader = command.ExecuteReader();
+                SqlDataReader dataReader = command.ExecuteReader();
                 while (dataReader.Read())
                 {
                     user = new User(dataReader[0].ToString(), dataReader[1].ToString(), dataReader[2].ToString(), dataReader[3].ToString(), dataReader[4].ToString());
@@ -59,7 +57,7 @@ public static class SqlConnection
     /// </summary>
     static public void SignUp(User user)
     {
-        using (MySqlConnection connection = new MySqlConnection(connectionString))
+        using (SqlConnection connection = new SqlConnection(connectionString))
         {
             try
             {
@@ -67,7 +65,7 @@ public static class SqlConnection
                 /// <summary>
                 /// SqlCommand object contains SqlConnection object and queryString (INSERT command with parameters) 
                 /// </summary>
-                MySqlCommand commandInsert = new MySqlCommand("INSERT INTO USERS(Username,Password,Ime,Prezime,Email) VALUES(@username,@password,@ime,@prezime,@email)", connection);
+                SqlCommand commandInsert = new SqlCommand("INSERT INTO USERS(Username,Password,Ime,Prezime,Email) VALUES(@username,@password,@ime,@prezime,@email)", connection);
                 commandInsert.Parameters.AddWithValue("@username", user.Username);
                 commandInsert.Parameters.AddWithValue("@password", user.Password);
                 commandInsert.Parameters.AddWithValue("@ime", user.Ime);
@@ -92,7 +90,7 @@ public static class SqlConnection
     /// </summary>
     static public User SignIn(string username)
     {
-        using (MySqlConnection connection = new MySqlConnection(connectionString))
+        using (SqlConnection connection = new SqlConnection(connectionString))
         {
             try
             {
@@ -101,8 +99,8 @@ public static class SqlConnection
                 /// <summary>
                 /// queryString = Search in table Users for all records whose username is equal with the username given as a parameter
                 /// </summary>
-                MySqlCommand command = new MySqlCommand("SELECT * FROM USERS WHERE Username='" + username + "'", connection);
-                MySqlDataReader dataReader = command.ExecuteReader();
+                SqlCommand command = new SqlCommand("SELECT * FROM USERS WHERE Username='" + username + "'", connection);
+                SqlDataReader dataReader = command.ExecuteReader();
                 if (dataReader.Read() == false) user = null;
                 else
                 {

@@ -20,7 +20,7 @@ public partial class Najava : System.Web.UI.Page
     protected void btnLogin_Click(object sender, EventArgs e)
     {
         string username = txtUsername.Text;
-        User tekoven = SqlConnection.SignIn(username);
+        User tekoven = Connectivity.SignIn(username);
         if (tekoven == null) Response.Redirect("~/login.aspx?status=Не постои тaкoв Username!");
         else
         {

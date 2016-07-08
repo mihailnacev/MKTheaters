@@ -17,7 +17,7 @@ public partial class _Default : System.Web.UI.Page
 
     public void readUsers()
     {
-        List<User> users = SqlConnection.getUsers();
+        List<User> users =Connectivity.getUsers();
         foreach (User u in users)
         {
             ListBox1.Items.Add(u.ToString());

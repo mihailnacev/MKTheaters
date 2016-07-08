@@ -29,7 +29,7 @@ public partial class Registracija : System.Web.UI.Page
         else
         {
             User user = new User(username, password, ime, prezime, email);
-            SqlConnection.SignUp(user);
+           Connectivity.SignUp(user);
             Response.Redirect("~/login.aspx?status=Успешно се регистриравте!");
         }
     }
