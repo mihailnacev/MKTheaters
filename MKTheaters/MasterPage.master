@@ -15,6 +15,19 @@
     <form id="form1" runat="server">
     <div>
         <asp:Panel ID="header" runat="server">
+            <asp:Panel ID="status" runat="server">
+                <asp:Panel ID="loggedUser" runat="server">
+                    <asp:Label ID="Label1" runat="server" Text="Најавени сте како "></asp:Label>
+                    <asp:Label ID="user" runat="server"></asp:Label>
+                    <asp:Label ID="Label2" runat="server" Text="|"></asp:Label>
+                    <asp:LinkButton ID="logOut" runat="server" OnClick="logOut_Click">Одјави се</asp:LinkButton>
+                </asp:Panel>
+                <asp:Panel ID="noLoggedUser" runat="server">
+                    <asp:LinkButton ID="logIn" runat="server" OnClick="logIn_Click">Најави се</asp:LinkButton>
+                    <asp:Label ID="Label3" runat="server" Text="|"></asp:Label>
+                    <asp:LinkButton ID="register" runat="server" OnClick="register_Click">Регистрирај се</asp:LinkButton>
+                </asp:Panel>
+            </asp:Panel>
             <asp:Panel ID="container" runat="server">
                 <asp:Panel ID="logo" runat="server">
                     <asp:ImageButton ID="logoImage" runat="server" ImageUrl="Images/logo.png" Width="247px" Height="137px" PostBackUrl="~/Default.aspx" />

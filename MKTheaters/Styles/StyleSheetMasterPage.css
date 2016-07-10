@@ -1,8 +1,6 @@
 ﻿body 
 {
-
     background-color:#BA252A;
-
 }
 
 #logo 
@@ -41,17 +39,17 @@
 
 .headerHeight1
 {
-    height:190px;
+    height:225px;
 }
 
 .headerHeight2
 {
-    height:250px;
+    height:285px;
 }
 
 .headerHeight3 
 {
-    height:420px;
+    height:455px;
 }
 
 #menu 
@@ -116,4 +114,31 @@
     font-family:'Malgun Gothic';
     text-align:center;
     position:relative;
+}
+
+#status
+{
+     width:90%;
+     margin:auto;
+     font-size:18px;
+}
+
+#loggedUser, #noLoggedUser 
+{
+    text-align:right;
+    display:block;
+    color:yellow;
+    padding:5px;
+}
+
+#logIn, #logOut, #register 
+{
+    text-decoration: none;
+    color:yellow;
+}
+
+#user 
+{
+    font-style:italic;
+    text-decoration:underline;
 }
