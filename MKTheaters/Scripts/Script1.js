@@ -7,7 +7,7 @@
         $("#menu").addClass("menuPosition");
         $("#header").addClass("headerHeight3");
     }
-    else if ($(window).width() < 1100)
+    else if ($(window).width() < 1130)
     {
         $("#menu a").addClass("menuItem3");
         $("#logo").addClass("logoPosition1");
@@ -49,7 +49,7 @@
             $("#header").addClass("headerHeight3");
             $("#menu").removeClass("menuPadding");
         }
-        else if (w < 1100)
+        else if (w < 1130)
         {
             $("#menu a").removeClass("menuItem1");
             $("#menu a").removeClass("menuItem2");
