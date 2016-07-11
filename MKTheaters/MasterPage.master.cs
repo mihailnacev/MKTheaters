@@ -39,4 +39,10 @@ public partial class MasterPage : System.Web.UI.MasterPage
         loggedUser.Visible = false;
         noLoggedUser.Visible = true;
     }
+
+
+    protected void Najava_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("~/Najava.aspx");
+    }
 }

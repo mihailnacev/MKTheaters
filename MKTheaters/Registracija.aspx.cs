@@ -28,9 +28,9 @@ public partial class Registracija : System.Web.UI.Page
         }
         else
         {
-            User user = new User(username, password, ime, prezime, email);
+           User user = new User(username, password, ime, prezime, email);
            Connectivity.SignUp(user);
-            Response.Redirect("~/login.aspx?status=Успешно се регистриравте!");
+           Response.Redirect("~/UspesnaRegistracija.aspx");
         }
     }
 }

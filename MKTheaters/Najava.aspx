@@ -48,10 +48,10 @@
     </tr>
     <tr>
         <td class="auto-style3">
-            <asp:TextBox ID="txtUsername" runat="server" CssClass="textFields"   ValidationGroup="najava"></asp:TextBox>
+            <asp:TextBox ID="txtUsername" runat="server" CssClass="textFields"   ValidationGroup="najava" TabIndex="1"></asp:TextBox>
         </td>
         <td class="auto-style4">
-            <asp:RequiredFieldValidator ID="rfvUsername" runat="server" CssClass="validationText" ControlToValidate="txtUsername" ErrorMessage="Полето е задолжително " ValidationGroup="najava"></asp:RequiredFieldValidator>
+            <asp:RequiredFieldValidator ID="rfvUsername" runat="server" CssClass="validationText" ControlToValidate="txtUsername" ErrorMessage="Полето е задолжително " ValidationGroup="najava" TabIndex="1"></asp:RequiredFieldValidator>
         </td>
     </tr>
     <tr>
@@ -63,15 +63,15 @@
     </tr>
     <tr>
         <td class="auto-style2">
-            <asp:TextBox ID="txtLozinka" runat="server" CssClass="textFields"  ValidationGroup="najava" TextMode="Password"></asp:TextBox>
+            <asp:TextBox ID="txtLozinka" runat="server" CssClass="textFields"  ValidationGroup="najava" TextMode="Password" TabIndex="2"></asp:TextBox>
         </td>
         <td>
-            <asp:RequiredFieldValidator ID="rfvPassword" CssClass="validationText" runat="server" ControlToValidate="txtLozinka" ErrorMessage="Полето е задолжително " ValidationGroup="najava"></asp:RequiredFieldValidator>
+            <asp:RequiredFieldValidator ID="rfvPassword" CssClass="validationText" runat="server" ControlToValidate="txtLozinka" ErrorMessage="Полето е задолжително " ValidationGroup="najava" TabIndex="2"></asp:RequiredFieldValidator>
         </td>
     </tr>
     <tr>
         <td class="auto-style2">
-            <asp:Button ID="btnLogin" runat="server" Text="Најави се" CssClass="buttons" ValidationGroup="najava" OnClick="btnLogin_Click" />
+            <asp:Button ID="btnLogin" runat="server" Text="Најави се" CssClass="buttons" ValidationGroup="najava" OnClick="btnLogin_Click" TabIndex="3" />
         </td>
         <td>&nbsp;</td>
     </tr>
@@ -82,13 +82,13 @@
     </tr>
     <tr>
         <td class="auto-style2">
-            <asp:Label ID="lblOr" CssClass="or"  runat="server" Text="Немате отворено сметка?"></asp:Label>
+            <asp:Label ID="lblOr" CssClass="or"  runat="server" Text="Немате отворено сметка?" TabIndex="4"></asp:Label>
         </td>
         <td>&nbsp;</td>
     </tr>
     <tr>
         <td class="auto-style2">
-            <asp:Button ID="btnRegister" runat="server" CssClass="buttons" Text="Регистрирај се" OnClick="btnRegister_Click" />
+            <asp:Button ID="btnRegister" runat="server" CssClass="buttons" Text="Регистрирај се" OnClick="btnRegister_Click" TabIndex="5" />
         </td>
         <td>&nbsp;</td>
     </tr>
