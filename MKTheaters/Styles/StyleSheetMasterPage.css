@@ -4,14 +4,18 @@
     background-image:url("../Images/Background.jpg");
     background-repeat:no-repeat;
     background-position:center top;
-    background-size: cover; 
+}
+
+#logoImage 
+{
+    height: auto;
+    max-width: 200px;
 }
 
 #logo 
 {
     height:137px;
     float:left;
-    padding-left:30px;
 }
 
 .logoPosition1
