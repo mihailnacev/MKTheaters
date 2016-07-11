@@ -28,7 +28,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
    
-
+<asp:Panel ID="Panel1" runat="server" DefaultButton="btnLogin">
     <table class="auto-style1" id="tabela"  >
     <tr>
         <td class="auto-style5">
@@ -92,8 +92,8 @@
         </td>
         <td>&nbsp;</td>
     </tr>
-</table>
-   
+    </table>
+</asp:Panel>
 
 </asp:Content>
 
