@@ -30,10 +30,10 @@
             </asp:Panel>
             <asp:Panel ID="container" runat="server">
                 <asp:Panel ID="logo" runat="server">
-                    <asp:ImageButton ID="logoImage" runat="server" ImageUrl="Images/logo_4.png" Width="247px" Height="137px" PostBackUrl="~/UspesnaRegistracija.aspx" />
+                    <asp:ImageButton ID="logoImage" runat="server" ImageUrl="Images/logo_4.png" Width="247px" Height="137px" PostBackUrl="~/Pocetna.aspx" />
                 </asp:Panel>
                 <asp:Panel ID="menu" runat="server">
-                    <asp:LinkButton ID="LinkButton1" runat="server">ПОЧЕТНА</asp:LinkButton>
+                    <asp:LinkButton ID="Pocetna" runat="server" OnClick="Pocetna_Click">ПОЧЕТНА</asp:LinkButton>
                     <asp:LinkButton ID="Najava" runat="server" OnClick="Najava_Click">НАЈАВА</asp:LinkButton>
                     <asp:LinkButton ID="LinkButton3" runat="server">РЕЗЕРВАЦИЈА</asp:LinkButton>
                     <asp:LinkButton ID="LinkButton4" runat="server">КОНТАКТ</asp:LinkButton>

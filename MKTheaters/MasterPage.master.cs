@@ -44,4 +44,10 @@ public partial class MasterPage : System.Web.UI.MasterPage
     {
         Response.Redirect("~/Najava.aspx");
     }
+
+
+    protected void Pocetna_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("~/Pocetna.aspx");
+    }
 }
