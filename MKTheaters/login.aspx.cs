@@ -14,7 +14,7 @@ public partial class login : System.Web.UI.Page
             string summary = (string)Request.QueryString["status"];
             lblSummary.Text = summary;
             User prenesen = (User)Session["Najaven"];
-            if (prenesen != null) lblSummary.Text += " " + prenesen.Ime;
+          //  if (prenesen != null) lblSummary.Text += " " + prenesen.Ime;
         }
     }
 }

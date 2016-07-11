@@ -1,7 +1,11 @@
 ﻿body 
 {
 
-    background-color:#BA252A;
+   /* background-color:#BA252A; */
+    background-image:url("../Images/background (2).jpg");
+    background-repeat:no-repeat;
+   background-position:center top;
+    
 
 }
 
@@ -32,6 +36,8 @@
     padding-bottom:15px;
     margin:auto;
     background-color:white;
+    border-top-left-radius:150px;
+    border-top-right-radius:150px;
 }
 
 #header 
@@ -60,6 +66,7 @@
     position:relative;
     top:50px;
     text-align:center;
+    padding-right:30px;
 }
 
 .menuPosition
@@ -104,7 +111,7 @@
 {
     text-decoration:none;
     color:#BA252A;
-    background-color:white;
+    background-color:transparent;
     padding-right:25px;
     padding-left:25px;
     padding-top:10px;

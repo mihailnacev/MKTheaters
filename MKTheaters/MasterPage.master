@@ -17,7 +17,7 @@
         <asp:Panel ID="header" runat="server">
             <asp:Panel ID="container" runat="server">
                 <asp:Panel ID="logo" runat="server">
-                    <asp:ImageButton ID="logoImage" runat="server" ImageUrl="Images/logo.png" Width="247px" Height="137px" PostBackUrl="~/Default.aspx" />
+                    <asp:ImageButton ID="logoImage" runat="server" ImageUrl="Images/logo_4.png" Width="247px" Height="137px" PostBackUrl="~/Default.aspx" />
                 </asp:Panel>
                 <asp:Panel ID="menu" runat="server">
                     <asp:LinkButton ID="LinkButton1" runat="server">ПОЧЕТНА</asp:LinkButton>
