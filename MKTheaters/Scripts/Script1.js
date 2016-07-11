@@ -20,10 +20,16 @@
         $("#logo").addClass("logoPosition2");
         $("#header").addClass("headerHeight1");
     }
-    $("a").hover(function () {
-        $(this).css({ "background-color": "#F0CB01", "border": "3px solid #BA252A" });
+    $("#menu a").hover(function () {
+        $(this).css({ "background-color": "#F0CB01", "border": "3px solid darkred" });
     }, function () {
         $(this).css({ "background-color": "#FFFFFF", "border": "none" });
+    });
+
+    $("#status a").hover(function () {
+        $(this).css({ "font-size": "19px" });
+    }, function () {
+        $(this).css({ "font-size": "18px" });
     });
 
     $(window).resize(function ()
