@@ -11,4 +11,29 @@ public partial class MyProfile : System.Web.UI.Page
     {
 
     }
+
+    protected void btnHome_Click(object sender, EventArgs e)
+    {
+        pnlMyProfile.Visible = false;
+        pnlReservations.Visible = false;
+        pnlSuggest.Visible = false;
+        pnlMyProfile.Visible = true;
+
+    }
+
+    protected void btnReservations_Click(object sender, EventArgs e)
+    {
+        pnlMyProfile.Visible = false;
+        pnlReservations.Visible = false;
+        pnlSuggest.Visible = false;
+        pnlReservations.Visible = true;
+    }
+
+    protected void btnSuggestions_Click(object sender, EventArgs e)
+    {
+        pnlMyProfile.Visible = false;
+        pnlReservations.Visible = false;
+        pnlSuggest.Visible = false;
+        pnlSuggest.Visible = true;
+    }
 }

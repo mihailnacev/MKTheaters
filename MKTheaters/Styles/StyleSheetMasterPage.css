@@ -3,6 +3,7 @@
 
    /* background-color:#BA252A; */
     background-image:url("../Images/background (2).jpg");
+    background-size:cover;
     background-repeat:no-repeat;
    background-position:center top;
     
@@ -111,7 +112,7 @@
 {
     text-decoration:none;
     color:#BA252A;
-    background-color:transparent;
+    background-color:white;
     padding-right:25px;
     padding-left:25px;
     padding-top:10px;
@@ -130,6 +131,8 @@
      width:90%;
      margin:auto;
      font-size:18px;
+     
+     padding-right:300px;
 }
 
 #loggedUser, #noLoggedUser 

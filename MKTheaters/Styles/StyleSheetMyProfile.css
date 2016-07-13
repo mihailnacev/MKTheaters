@@ -1,0 +1,137 @@
+﻿body {
+}
+
+.options {
+
+    background-color:white;
+    width:320px;
+    
+    padding-top:8px;
+    padding-bottom:8px;
+
+    border-bottom-right-radius:10px;
+    border-top-right-radius:10px;
+
+    margin-left:80px;
+
+    color:darkred;
+    font-weight:bold;
+    font-size:18px;
+    font-family:'Malgun Gothic'
+}
+
+
+
+
+.myProfilePanel {
+
+width:800px;
+height:450px;
+background-color:white;
+margin-top:-200px;
+margin-left:500px;
+border-top-left-radius:30px;
+border-top-right-radius:30px;
+
+}
+
+.pnlSuggest {
+
+    width:800px;
+    height:450px;
+    background-color:red;
+    margin-top:-200px;
+    margin-left:500px;
+    border-radius:30px;
+
+
+}
+
+
+.pnlReservations {
+
+    width:800px;
+    height:450px;
+    background-color:blue;
+    margin-top:-200px;
+    margin-left:500px;
+    border-radius:30px;
+
+}
+
+.images {
+
+    width:250px;
+    height:130px;
+     margin-top:12px;
+   
+    background-color:blue;
+    margin-left:10px;
+    
+
+}
+
+.labeli {
+
+    color:#BA252A;
+    font-weight:bold;
+    text-align:end;
+
+}
+
+.info {
+
+    border-bottom:2px solid #BA252A;
+  
+    font-weight:bolder;
+    font-size:25px;
+    color:#BA252A;
+
+}
+
+.buttons {
+
+    color:rgb(245,222,95);
+    background-color:#BA252A;
+    width:150px;
+    font-weight:bold;
+    height:30px;
+    margin-left:20px;
+    font-size:15px;
+
+
+}
+
+.textFields {
+
+    width:188px;
+     height:20px;
+
+}
+
+#tabela {
+
+    background-color:white;
+    padding:30px;
+    padding-right:25px;
+    margin-top:10px;
+    border:10px solid #F0CB01;
+    width:410px;
+    border-top-left-radius:30px;
+  
+}
+
+#tabela2 {
+
+
+    background-color:white;
+    padding:20px;
+    padding-right:5px;
+    padding-top:10px;
+    margin-top:-298px;
+    margin-left:49%;
+    border:10px solid #F0CB01;
+    width:410px;
+    border-top-right-radius:30px;
+  
+}
