@@ -20,14 +20,20 @@ public partial class Najava : System.Web.UI.Page
     {
         string username = txtUsername.Text;
         User tekoven = Connectivity.SignIn(username);
-        if (tekoven == null) Response.Redirect("~/login.aspx?status=Не постои корисник со тоа корисничко име!");
+        if (tekoven == null)
+        {
+            Response.Redirect("~/login.aspx?status=Не постои корисник со тоа корисничко име!");
+        }
         else
         {
-            if (tekoven.Password != txtLozinka.Text) Response.Redirect("~/login.aspx?status=Погрешна лозинка!");
+            if (tekoven.Password != txtLozinka.Text.GetHashCode().ToString())
+            {
+                Response.Redirect("~/login.aspx?status=Погрешна лозинка!");
+            }
             else
             {
-                  Session["Najaven"] = tekoven;
-                  Response.Redirect("~/login.aspx?status=Успешна најава,"+tekoven.Ime);
+                Session["Najaven"] = tekoven;
+                Response.Redirect("~/login.aspx?status=Успешна најава," + tekoven.Ime);
             }
         }
     }

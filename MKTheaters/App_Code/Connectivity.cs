@@ -28,7 +28,7 @@ public static class Connectivity
                 SqlDataReader dataReader = command.ExecuteReader();
                 while (dataReader.Read())
                 {
-                    user = new User(dataReader[0].ToString(), dataReader[1].ToString(), dataReader[2].ToString(), dataReader[3].ToString(), dataReader[4].ToString());
+                    user = new User(dataReader[0].ToString(), dataReader[1].ToString(), dataReader[2].ToString(), dataReader[3].ToString(), dataReader[4].ToString(), false);
                     lista.Add(user);
                 }
                 dataReader.Close();
@@ -51,6 +51,7 @@ public static class Connectivity
         }
         return final;
     }
+
     /// <summary>
     /// SignUp method inserts a new record for each registered user in table Users
     /// </summary>
@@ -103,7 +104,7 @@ public static class Connectivity
                 if (dataReader.Read() == false) user = null;
                 else
                 {
-                    user = new User(dataReader[0].ToString(), dataReader[1].ToString(), dataReader[2].ToString(), dataReader[3].ToString(), dataReader[4].ToString());
+                    user = new User(dataReader[0].ToString(), dataReader[1].ToString(), dataReader[2].ToString(), dataReader[3].ToString(), dataReader[4].ToString(), false);
                 }
                 return user;
 
