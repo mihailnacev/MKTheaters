@@ -26,7 +26,7 @@ public partial class Najava : System.Web.UI.Page
         }
         else
         {
-            if (tekoven.Password != txtLozinka.Text)
+            if (tekoven.Password != txtLozinka.Text.GetHashCode().ToString())
             {
                 Response.Redirect("~/login.aspx?status=Погрешна лозинка!");
             }
