@@ -7,7 +7,7 @@
         $("#menu").addClass("menuPosition");
         $("#header").addClass("headerHeight3");
     }
-    else if ($(window).width() < 1100)
+    else if ($(window).width() < 1130)
     {
         $("#menu a").addClass("menuItem3");
         $("#logo").addClass("logoPosition1");
@@ -19,6 +19,7 @@
         $("#menu a").addClass("menuItem1");
         $("#logo").addClass("logoPosition2");
         $("#header").addClass("headerHeight1");
+        $("#menu").addClass("menuPadding");
     }
     $("#menu a").hover(function () {
         $(this).css({ "background-color": "#F0CB01", "border": "3px solid darkred" });
@@ -46,8 +47,9 @@
             $("#header").removeClass("headerHeight1");
             $("#header").removeClass("headerHeight2");
             $("#header").addClass("headerHeight3");
+            $("#menu").removeClass("menuPadding");
         }
-        else if (w < 1100)
+        else if (w < 1130)
         {
             $("#menu a").removeClass("menuItem1");
             $("#menu a").removeClass("menuItem2");
@@ -58,6 +60,7 @@
             $("#header").removeClass("headerHeight1");
             $("#header").addClass("headerHeight2");
             $("#header").removeClass("headerHeight3");
+            $("#menu").removeClass("menuPadding");
         }
         else
         {
@@ -70,6 +73,7 @@
             $("#header").addClass("headerHeight1");
             $("#header").removeClass("headerHeight2");
             $("#header").removeClass("headerHeight3");
+            $("#menu").addClass("menuPadding");
         }
     });
 })

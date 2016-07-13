@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Web;
 
 /// <summary>
@@ -14,18 +13,30 @@ public class User
     public string Ime;
     public string Prezime;
     public string Email;
+    public bool Admin;
 
-    public User(string username,string password,string ime,string prezime,string email)
+    public User()
     {
-       Username=username;
-       Password=password;
-       Ime=ime;
-       Prezime=prezime;
-       Email = email;
+        Username = null;
+        Password = null;
+        Ime = null;
+        Prezime = null;
+        Email = null;
+        Admin = false;
+    }
+
+    public User(string username, string password, string ime, string prezime, string email, bool admin)
+    {
+        Username = username;
+        Password = password;
+        Ime = ime;
+        Prezime = prezime;
+        Email = email;
+        Admin = admin;
     }
 
     public override string ToString()
     {
-        return string.Format("{0} {1}, {2} {3},{4}", Ime, Prezime, Username, Password,Email);
+        return string.Format("{0} {1}, {2} {3},{4}", Ime, Prezime, Username, Password, Email);
     }
 }

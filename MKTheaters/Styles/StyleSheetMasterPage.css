@@ -1,20 +1,23 @@
 ﻿body 
 {
 
-   /* background-color:#BA252A; */
-    background-image:url("../Images/background (2).jpg");
-    background-size:cover;
-    background-repeat:no-repeat;
-   background-position:center top;
-    
+    /*background-color:#BA252A;*/ 
+    background-image:url("../Images/Background.jpg");
 
+    background-repeat:no-repeat;
+    background-position:center top;
+}
+
+#logoImage 
+{
+    height: auto;
+    max-width: 200px;
 }
 
 #logo 
 {
     height:137px;
     float:left;
-    padding-left:30px;
 }
 
 .logoPosition1
@@ -67,13 +70,17 @@
     position:relative;
     top:50px;
     text-align:center;
-    padding-right:30px;
 }
 
 .menuPosition
 {
     width:100%;
     margin:auto;
+}
+
+.menuPadding 
+{
+    padding-right:30px;
 }
 
 .menuItem1
@@ -109,7 +116,7 @@
 }
 
 .menuItem3
-{
+{ 
     text-decoration:none;
     color:#BA252A;
     background-color:white;

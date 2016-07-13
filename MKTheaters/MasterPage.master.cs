@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -38,5 +37,17 @@ public partial class MasterPage : System.Web.UI.MasterPage
         Session["Najaven"] = null;
         loggedUser.Visible = false;
         noLoggedUser.Visible = true;
+    }
+
+
+    protected void Najava_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("~/Najava.aspx");
+    }
+
+
+    protected void Pocetna_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("~/Pocetna.aspx");
     }
 }
