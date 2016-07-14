@@ -25,12 +25,12 @@ public class User
         Admin = false;
     }
 
-    public User(string ime, string prezime, string username, string password, string email, bool admin)
+    public User(string ime, string prezime, string username,string password, string email, bool admin)
     {
-        Username = username;
-        Password = password;
         Ime = ime;
         Prezime = prezime;
+        Username = username;
+        Password = password;
         Email = email;
         Admin = admin;
     }

@@ -65,12 +65,12 @@ public static class Connectivity
                 /// <summary>
                 /// SqlCommand object contains SqlConnection object and queryString (INSERT command with parameters) 
                 /// </summary>
-                SqlCommand commandInsert = new SqlCommand("INSERT INTO USERS(Username,Password,Ime,Prezime,Email) VALUES(@username,@password,@ime,@prezime,@email)", connection);
-                commandInsert.Parameters.AddWithValue("@username", user.Username);
-                commandInsert.Parameters.AddWithValue("@password", user.Password);
+                SqlCommand commandInsert = new SqlCommand("INSERT INTO Users(Ime,Prezime,Username,Password,Email) VALUES(@ime,@prezime,@username,@password,@email)", connection);
                 commandInsert.Parameters.AddWithValue("@ime", user.Ime);
                 commandInsert.Parameters.AddWithValue("@prezime", user.Prezime);
                 commandInsert.Parameters.AddWithValue("@email", user.Email);
+                commandInsert.Parameters.AddWithValue("@username", user.Username);
+                commandInsert.Parameters.AddWithValue("@password", user.Password.GetHashCode().ToString());
                 commandInsert.ExecuteNonQuery();
                 commandInsert.Parameters.Clear();
             }
@@ -99,7 +99,7 @@ public static class Connectivity
                 /// <summary>
                 /// queryString = Search in table Users for all records whose username is equal with the username given as a parameter
                 /// </summary>
-                SqlCommand command = new SqlCommand("SELECT * FROM USERS WHERE Username='" + username + "'", connection);
+                SqlCommand command = new SqlCommand("SELECT * FROM Users WHERE Username='" + username + "'", connection);
                 SqlDataReader dataReader = command.ExecuteReader();
                 if (dataReader.Read() == false) user = null;
                 else
