@@ -50,4 +50,9 @@ public partial class MasterPage : System.Web.UI.MasterPage
     {
         Response.Redirect("~/Pocetna.aspx");
     }
+
+    protected void LinkButton3_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("~/Repertoar.aspx");
+    }
 }
