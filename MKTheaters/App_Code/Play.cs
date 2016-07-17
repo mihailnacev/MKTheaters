@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text;
 using System.Web;
 
 /// <summary>
@@ -9,40 +10,78 @@ using System.Web;
 public class Play
 {
     public string Ime;
-    public string Avtor;
+    public List<string> Avtori;
     public string Reziser;
     public string Teatar;
     public string Grad;
-    public DateTime Date;
-    public int Duration;
+    public DateTime Datum;
+    public int Vremetraenje;
     public List<string> Akteri;
 
 	public Play()
 	{
         Ime = null;
-        Avtor = null;
+        Avtori = null;
         Reziser = null;
         Teatar = null;
         Grad = null;
-        Date = DateTime.MinValue;
-        Duration = 0;
+        Datum = DateTime.MinValue;
+        Vremetraenje = 0;
         Akteri = null;
 	}
 
-    public Play(string ime, string avtor, string reziser, string teatar, string grad, string date, string duration, string akteri)
+    public Play(string ime, string avtori, string reziser, string teatar, string grad, string datum, string vremetraenje, string akteri)
     {
         Ime = ime;
-        Avtor = avtor;
+        Avtori = new List<string>();
+        string[] parts = avtori.Split(';');
+        foreach (string s in parts)
+        {
+            Avtori.Add(s);
+        }
         Reziser = reziser;
         Teatar = teatar;
         Grad = grad;
-        Date = DateTime.Parse(date);
-        Duration = Convert.ToInt32(duration);
+        Datum = DateTime.Parse(datum);
+        Vremetraenje = Convert.ToInt32(vremetraenje);
         Akteri = new List<string>();
-        string []parts=akteri.Split(';');
+        parts=akteri.Split(';');
         foreach (string s in parts)
         {
             Akteri.Add(s);
         }
+    }
+
+    public override string ToString()
+    {
+        StringBuilder sb = new StringBuilder();
+        sb.Append(String.Format("<i><b>{0}</b></i><br/>Автор: ", Ime));
+        for (int i = 0; i < Avtori.Count; i++)
+        {
+            sb.Append(Avtori[i]);
+            if (i != Avtori.Count - 1)
+            {
+                sb.Append(", ");
+            }
+            else
+            {
+                sb.Append("<br/>Актери: ");
+            }
+        }
+        for (int i = 0; i < Akteri.Count; i++)
+        {
+            sb.Append(Akteri[i]);
+            if (i != Akteri.Count - 1)
+            {
+                sb.Append(", ");
+            }
+            else
+            {
+                sb.Append("<br/>");
+            }
+        }
+        sb.Append(String.Format("Режисер: {0}&nbsp;&nbsp;&nbsp;&nbsp;Театар: {1}&nbsp;&nbsp;&nbsp;&nbsp;Град: {2}<br/>", Reziser, Teatar, Grad));
+        sb.Append(String.Format("Датум: {0}&nbsp;&nbsp;&nbsp;&nbsp;Час: {1}", Datum.ToShortDateString(), Datum.ToShortTimeString()));
+        return sb.ToString();
     }
 }

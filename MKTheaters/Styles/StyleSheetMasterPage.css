@@ -1,9 +1,10 @@
 ﻿body 
 {
-
     /*background-color:#BA252A;*/ 
     background-image:url("../Images/Background.jpg");
-
+    height:100%;
+    width:auto;
+    background-size:cover;
     background-repeat:no-repeat;
     background-position:center top;
 }
@@ -138,8 +139,7 @@
      width:90%;
      margin:auto;
      font-size:18px;
-     
-     padding-right:300px;
+     padding-right:10%;
 }
 
 #loggedUser, #noLoggedUser 
