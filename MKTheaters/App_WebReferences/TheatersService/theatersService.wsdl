@@ -12,6 +12,112 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="findByCity">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="City" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="findByCityResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="findByCityResult" type="tns:ArrayOfPlay" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfPlay">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Play" nillable="true" type="tns:Play" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Play">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Ime" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Avtori" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="Reziser" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Teatar" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Grad" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Datum" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="Vremetraenje" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Akteri" type="tns:ArrayOfString" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="findByDirector">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Director" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="findByDirectorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="findByDirectorResult" type="tns:ArrayOfPlay" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="findByAuthor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Author" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="findByAuthorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="findByAuthorResult" type="tns:ArrayOfPlay" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="findByActor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Actor" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="findByActorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="findByActorResult" type="tns:ArrayOfPlay" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="findByDate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Date" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="findByDateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="findByDateResult" type="tns:ArrayOfPlay" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="findByTheater">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Theater" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="findByTheaterResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="findByTheaterResult" type="tns:ArrayOfPlay" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="HelloWorldSoapIn">
@@ -20,10 +126,76 @@
   <wsdl:message name="HelloWorldSoapOut">
     <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
   </wsdl:message>
+  <wsdl:message name="findByCitySoapIn">
+    <wsdl:part name="parameters" element="tns:findByCity" />
+  </wsdl:message>
+  <wsdl:message name="findByCitySoapOut">
+    <wsdl:part name="parameters" element="tns:findByCityResponse" />
+  </wsdl:message>
+  <wsdl:message name="findByDirectorSoapIn">
+    <wsdl:part name="parameters" element="tns:findByDirector" />
+  </wsdl:message>
+  <wsdl:message name="findByDirectorSoapOut">
+    <wsdl:part name="parameters" element="tns:findByDirectorResponse" />
+  </wsdl:message>
+  <wsdl:message name="findByAuthorSoapIn">
+    <wsdl:part name="parameters" element="tns:findByAuthor" />
+  </wsdl:message>
+  <wsdl:message name="findByAuthorSoapOut">
+    <wsdl:part name="parameters" element="tns:findByAuthorResponse" />
+  </wsdl:message>
+  <wsdl:message name="findByActorSoapIn">
+    <wsdl:part name="parameters" element="tns:findByActor" />
+  </wsdl:message>
+  <wsdl:message name="findByActorSoapOut">
+    <wsdl:part name="parameters" element="tns:findByActorResponse" />
+  </wsdl:message>
+  <wsdl:message name="findByDateSoapIn">
+    <wsdl:part name="parameters" element="tns:findByDate" />
+  </wsdl:message>
+  <wsdl:message name="findByDateSoapOut">
+    <wsdl:part name="parameters" element="tns:findByDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="findByTheaterSoapIn">
+    <wsdl:part name="parameters" element="tns:findByTheater" />
+  </wsdl:message>
+  <wsdl:message name="findByTheaterSoapOut">
+    <wsdl:part name="parameters" element="tns:findByTheaterResponse" />
+  </wsdl:message>
   <wsdl:portType name="theatersServiceSoap">
     <wsdl:operation name="HelloWorld">
       <wsdl:input message="tns:HelloWorldSoapIn" />
       <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="findByCity">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Kreira lista od pretstavi koi se na repertoar vo gradot koj e vlezen argument</wsdl:documentation>
+      <wsdl:input message="tns:findByCitySoapIn" />
+      <wsdl:output message="tns:findByCitySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="findByDirector">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Kreira lista od pretstavi chij reziser e reziserot koj e daden kako vlezen argument</wsdl:documentation>
+      <wsdl:input message="tns:findByDirectorSoapIn" />
+      <wsdl:output message="tns:findByDirectorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="findByAuthor">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Kreira lista od pretstavi chij avtor e avtorot koj e daden kako vlezen argument</wsdl:documentation>
+      <wsdl:input message="tns:findByAuthorSoapIn" />
+      <wsdl:output message="tns:findByAuthorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="findByActor">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Kreira lista od pretstavi vo koi igra akterot koj e daden kako vlezen argument</wsdl:documentation>
+      <wsdl:input message="tns:findByActorSoapIn" />
+      <wsdl:output message="tns:findByActorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="findByDate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Kreira lista od pretstavi koi se na repertoar na datumot koj e daden kako vlezen argument</wsdl:documentation>
+      <wsdl:input message="tns:findByDateSoapIn" />
+      <wsdl:output message="tns:findByDateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="findByTheater">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Kreira lista od pretstavi koi se na repertoar vo teatarot koj e daden kako vlezen argument</wsdl:documentation>
+      <wsdl:input message="tns:findByTheaterSoapIn" />
+      <wsdl:output message="tns:findByTheaterSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="theatersServiceSoap" type="tns:theatersServiceSoap">
@@ -37,11 +209,119 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="findByCity">
+      <soap:operation soapAction="http://tempuri.org/findByCity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="findByDirector">
+      <soap:operation soapAction="http://tempuri.org/findByDirector" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="findByAuthor">
+      <soap:operation soapAction="http://tempuri.org/findByAuthor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="findByActor">
+      <soap:operation soapAction="http://tempuri.org/findByActor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="findByDate">
+      <soap:operation soapAction="http://tempuri.org/findByDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="findByTheater">
+      <soap:operation soapAction="http://tempuri.org/findByTheater" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="theatersServiceSoap12" type="tns:theatersServiceSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="HelloWorld">
       <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="findByCity">
+      <soap12:operation soapAction="http://tempuri.org/findByCity" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="findByDirector">
+      <soap12:operation soapAction="http://tempuri.org/findByDirector" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="findByAuthor">
+      <soap12:operation soapAction="http://tempuri.org/findByAuthor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="findByActor">
+      <soap12:operation soapAction="http://tempuri.org/findByActor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="findByDate">
+      <soap12:operation soapAction="http://tempuri.org/findByDate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="findByTheater">
+      <soap12:operation soapAction="http://tempuri.org/findByTheater" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
