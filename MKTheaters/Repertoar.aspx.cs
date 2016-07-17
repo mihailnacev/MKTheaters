@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AjaxControlToolkit;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -47,8 +48,26 @@ public partial class Repertoar : System.Web.UI.Page
         gvPretstavi.DataBind();
     }
 
-    protected void gvPretstavi_SelectedIndexChanged(object sender, EventArgs e)
-    {
 
+    protected void gvPretstavi_RowDataBound(object sender, GridViewRowEventArgs e)
+    {
+        if (e.Row.RowType == DataControlRowType.DataRow)
+        {
+            LinkButton LinkButton1 = (LinkButton)e.Row.FindControl("LinkButton1");
+            LinkButton1.CommandArgument = e.Row.RowIndex.ToString();
+        }
+    }
+
+    protected void gvPretstavi_RowCommand(object sender, GridViewCommandEventArgs e)
+    {
+        if (e.CommandName == "Popup" && e.CommandArgument != null)
+        {
+            int rowIndex = Convert.ToInt32(e.CommandArgument);
+            ModalPopupExtender modalPopupExtender1 = (ModalPopupExtender)gvPretstavi.Rows[rowIndex].FindControl("ModalPopupExtender1");
+            modalPopupExtender1.Show();
+
+            //Perform any specific processing.
+            //Label1.Text = string.Format("Row # {0}", rowIndex);
+        }
     }
 }
