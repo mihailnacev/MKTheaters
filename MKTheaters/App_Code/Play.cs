@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Text;
 using System.Web;
 
@@ -42,7 +43,7 @@ public class Play
         Reziser = reziser;
         Teatar = teatar;
         Grad = grad;
-        Datum = DateTime.Parse(datum);
+        Datum = DateTime.ParseExact(datum, "dd.MM.yyyy HH:mm", CultureInfo.InvariantCulture);
         Vremetraenje = Convert.ToInt32(vremetraenje);
         Akteri = new List<string>();
         parts=akteri.Split(';');
