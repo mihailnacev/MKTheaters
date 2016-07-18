@@ -36,6 +36,12 @@
              width: 134px;
              height: 26px;
          }
+         .auto-style13 {
+             background-color: blue;
+             margin-top: -200px;
+             margin-left: 500px;
+             border-radius: 30px;
+         }
      </style>
      </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
@@ -190,7 +196,8 @@
       
     </asp:Panel>
 
-    <asp:Panel ID="pnlReservations" CssClass="pnlReservations" runat="server" Visible="False">
+    <asp:Panel ID="pnlReservations" CssClass="auto-style13" runat="server" Visible="False" Width="767px">
+        <asp:ListBox ID="lbRezervacii" runat="server" Height="450px" Width="800px"></asp:ListBox>
         
     </asp:Panel>
 
