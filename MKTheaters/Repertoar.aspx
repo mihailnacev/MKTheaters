@@ -6,7 +6,7 @@
 .modalBackground{
     background-color:black;
     filter:alpha(opacity=90);
-    opacity:0.8;
+    opacity:0.6;
 }
 .modalPopUp{
     background-color:#FFFFFF;
@@ -16,8 +16,23 @@
     padding-top:10px;
     padding-left:10px;
     width:300px;
-    height:140px;
+    height:120px;
 }
+        .auto-style1 {
+            margin-left: 0px;
+        }
+        .auto-style2 {
+            border-bottom: 3px solid black;
+            background-color: #FFFFFF;
+            padding-top: 10px;
+            padding-left: 10px;
+            border-left-style: solid;
+            border-left-width: 3px;
+            border-right-style: solid;
+            border-right-width: 3px;
+            border-top-style: solid;
+            border-top-width: 3px;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
@@ -56,11 +71,18 @@
     </asp:GridView>
     </ContentTemplate> 
     </asp:UpdatePanel>  
-     <asp:Panel ID="Panel1" runat="server" CssClass="modalPopUp">
-        Welcome!!!
-        <br />
-        <br />
-     <asp:Button ID="OK" runat="server" Text="Button" />
+     <asp:Panel ID="Panel1" runat="server" CssClass="auto-style2" Height="148px" Width="305px">
+       
+         <asp:Label ID="Label4" runat="server" Text="Дали сакате да ја резервирате избраната претстава?"></asp:Label>
+         <br />
+         <br />
+         <br />
+         <br />
+         <br />
+         &nbsp;&nbsp;&nbsp;
+         <asp:Button ID="OK" runat="server" OnClick="OK_Click" Text="Да" Width="98px" />
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         <asp:Button ID="Cancel" runat="server" CssClass="auto-style1" OnClick="Cancel_Click" Text="Не" Width="98px" />
     </asp:Panel>
 
 </asp:Content>
