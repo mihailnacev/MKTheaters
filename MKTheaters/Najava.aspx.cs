@@ -22,18 +22,20 @@ public partial class Najava : System.Web.UI.Page
         User tekoven = Connectivity.SignIn(username);
         if (tekoven == null)
         {
-            Response.Redirect("~/login.aspx?status=Не постои корисник со тоа корисничко име!");
+            LogInStatus.Text = "Не постои корисник со тоа корисничко име!";
+            LogInStatus.Visible = true;
         }
         else
         {
             if (tekoven.Password != txtLozinka.Text.GetHashCode().ToString())
             {
-                Response.Redirect("~/login.aspx?status=Погрешна лозинка!");
+                LogInStatus.Text = "Погрешна лозинка!";
+                LogInStatus.Visible = true;
             }
             else
             {
                 Session["Najaven"] = tekoven;
-                Response.Redirect("~/login.aspx?status=Успешна најава," + tekoven.Ime);
+                Response.Redirect("~/UspesnaNajava.aspx");
             }
         }
     }

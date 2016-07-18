@@ -15,7 +15,7 @@
      <br />
       <asp:Label ID="Label1" runat="server" CssClass="label" Text="Успешно се регистриравте!"></asp:Label>
      <br />
-    <asp:Button ID="btnGoToMyProfile" runat="server" CssClass="button" Text="Мој профил" />
+    <asp:Button ID="btnGoToNajava" runat="server" CssClass="button" Text="Најавете се >>" OnClick="btnGoToNajava_Click" />
    
 </asp:Content>
 

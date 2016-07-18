@@ -18,7 +18,7 @@
             <asp:Panel ID="status" runat="server">
                 <asp:Panel ID="loggedUser" runat="server">
                     <asp:Label ID="Label1" runat="server" Text="Најавени сте како "></asp:Label>
-                    <asp:Label ID="user" runat="server"></asp:Label>
+                    <asp:HyperLink ID="user" runat="server" NavigateUrl="~/MyProfile.aspx" ForeColor="#FF9933">[user]</asp:HyperLink>
                     <asp:Label ID="Label2" runat="server" Text="|"></asp:Label>
                     <asp:LinkButton ID="logOut" runat="server" OnClick="logOut_Click">Одјави се</asp:LinkButton>
                 </asp:Panel>

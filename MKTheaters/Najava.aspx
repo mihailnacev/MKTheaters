@@ -73,7 +73,9 @@
         <td class="auto-style2">
             <asp:Button ID="btnLogin" runat="server" Text="Најави се" CssClass="buttons" ValidationGroup="najava" OnClick="btnLogin_Click" TabIndex="3" />
         </td>
-        <td>&nbsp;</td>
+        <td>
+            <asp:Label ID="LogInStatus" runat="server" ForeColor="#BA252A" Text="Label" Visible="False"></asp:Label>
+        </td>
     </tr>
     <tr>
         <td class="auto-style3">

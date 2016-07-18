@@ -8,7 +8,11 @@ public partial class MyProfile : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        User tekoven = (User)Session["Najaven"];
+        lblFirstNameText.Text = tekoven.Ime;
+        lblLastNameText.Text = tekoven.Prezime;
+        lblEmailText.Text = tekoven.Email;
+        lblUsernameText.Text = tekoven.Username;
     }
 
     protected void btnHome_Click(object sender, EventArgs e)

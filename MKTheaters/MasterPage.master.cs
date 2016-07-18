@@ -37,6 +37,7 @@ public partial class MasterPage : System.Web.UI.MasterPage
         Session["Najaven"] = null;
         loggedUser.Visible = false;
         noLoggedUser.Visible = true;
+        Response.Redirect("~/Najava.aspx");
     }
 
 
