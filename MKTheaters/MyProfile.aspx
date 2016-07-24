@@ -196,18 +196,12 @@
       
     </asp:Panel>
 
-    <asp:Panel ID="pnlReservations" CssClass="auto-style13" runat="server" Visible="False" Width="767px">
-        <asp:ListBox ID="lbRezervacii" runat="server" Height="450px" Width="800px"></asp:ListBox>
-        
+    <asp:Panel ID="pnlReservations" CssClass="auto-style13" runat="server" Visible="False" Width="800px">
+        <asp:ListBox ID="lbRezervacii" runat="server" Height="302px" Width="800px" BackColor="#F0CB01" Font-Bold="True" Font-Italic="False" Font-Names="'Malgun Gothic'" Font-Overline="False" Font-Size="50px" Font-Strikeout="False" Font-Underline="True" ForeColor="#BA252A" Rows="3"></asp:ListBox>
     </asp:Panel>
 
-    <asp:Panel ID="pnlSuggest" CssClass="pnlSuggest" runat="server" Visible="False"></asp:Panel>
-
-
-
-    <br /> 
-    
-    
+    <asp:Panel ID="pnlSuggest" CssClass="pnlSuggest" runat="server" Visible="False">
+    </asp:Panel>
 
 
     </asp:Content>
