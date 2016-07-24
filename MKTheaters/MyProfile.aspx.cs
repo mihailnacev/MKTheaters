@@ -109,4 +109,18 @@ public partial class MyProfile : System.Web.UI.Page
         lbRezervacii.Items.Insert(newIndex, selected);
         // Restore selection
     }
+
+    protected void btnUp_Click(object sender, EventArgs e)
+    {
+        MoveUp();
+    }
+
+
+
+    protected void btnDown_Click(object sender, EventArgs e)
+    {
+        MoveDown();
+    }
+
+    
 }

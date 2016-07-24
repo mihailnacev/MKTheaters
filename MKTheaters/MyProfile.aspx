@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="MyProfile.aspx.cs" Inherits="MyProfile" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
-     <link href="Styles/StyleSheetMyProfile.css" rel="stylesheet" />
+     <link href="Styles/StyleSheetMyProfile.css" type="text/css" rel="stylesheet" />
     <script src="Scripts/jquery.js"></script>
     <script src="Scripts/ScriptMyProfile.js" type="text/javascript"></script>
      <style type="text/css">
@@ -36,11 +36,14 @@
              width: 134px;
              height: 26px;
          }
-         .auto-style13 {
+     /*    .auto-style13 {
              background-color: blue;
              margin-top: -200px;
              margin-left: 500px;
              border-radius: 30px;
+         } */
+         .auto-style13 {
+             width: 19px;
          }
      </style>
      </asp:Content>
@@ -196,13 +199,38 @@
       
     </asp:Panel>
 
-    <asp:Panel ID="pnlReservations" CssClass="auto-style13" runat="server" Visible="False" Width="800px">
-        <asp:ListBox ID="lbRezervacii" runat="server" Height="302px" Width="800px" BackColor="#F0CB01" Font-Bold="True" Font-Italic="False" Font-Names="'Malgun Gothic'" Font-Overline="False" Font-Size="50px" Font-Strikeout="False" Font-Underline="True" ForeColor="#BA252A" Rows="3"></asp:ListBox>
+    <asp:Panel ID="pnlReservations" runat="server" CssClass="pnlReservations" Visible="False">
+
+        <asp:Label ID="lblList" runat="server" Text="Листа на остварени резервации" CssClass="infoList" ></asp:Label>
+        <br />
+        <br />
+        <table class="auto-style1">
+        <tr>
+            <td rowspan="3" class="auto-style13"> <asp:ListBox ID="lbRezervacii" runat="server" CssClass="listbox" Rows="3"></asp:ListBox></td>
+            <td>  <asp:Button ID="Button2" runat="server" Text="" CssClass="btnUp" OnClick="btnUp_Click" /></td>
+            
+        </tr>
+        <tr>
+            <td> <asp:Button ID="btnDown" runat="server" Text="" CssClass="btnDown" OnClick="btnDown_Click" /></td>
+        </tr>
+        <tr>
+            <td>  <asp:Button ID="Button3" runat="server" CssClass="btnRemove" Text="" /></td>
+        </tr>
+    </table>
+    
+        <br />
+        <br />
+        
+        <asp:Image ID="img4" runat="server" ImageUrl="~/Images/TeatarDecaMladinciSkopje.png" CssClass="images4" ToolTip="Театар за деца и млади Скопје" />
+        <asp:Image ID="img5" runat="server" ImageUrl="~/Images/mntSkopje.png" CssClass="images5" ToolTip="Македонски народен театар - Скопје" />
+        <asp:Image ID="img6" runat="server" ImageUrl="~/Images/DramskiSkopje.png" CssClass="images6"  ToolTip="Драмски театар - Скопје" />
+    
     </asp:Panel>
 
-    <asp:Panel ID="pnlSuggest" CssClass="pnlSuggest" runat="server" Visible="False">
+    <asp:Panel ID="pnlSuggest" runat="server" CssClass="pnlSuggest" Visible="false"  >
     </asp:Panel>
 
+    
 
     </asp:Content>
 

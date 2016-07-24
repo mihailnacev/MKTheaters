@@ -26,7 +26,7 @@
 .myProfilePanel {
 
 width:800px;
-height:600px;
+height:450px;
 background-color:white;
 margin-top:-200px;
 margin-left:500px;
@@ -38,8 +38,8 @@ border-top-right-radius:30px;
 .pnlSuggest {
 
     width:800px;
-    height:600px;
-    background-color:red;
+    height:450px;
+    background-color:white;
     margin-top:-200px;
     margin-left:500px;
     border-radius:30px;
@@ -51,8 +51,8 @@ border-top-right-radius:30px;
 .pnlReservations {
 
     width:800px;
-    height:600px;
-    background-color:#F0CB01;
+    height:450px;
+    background-color:white;
     margin-top:-200px;
     margin-left:500px;
     border-radius:30px;
@@ -60,15 +60,11 @@ border-top-right-radius:30px;
 }
 
 .images {
-
-    width:250px;
-    height:130px;
-     margin-top:12px;
-   
-    background-color:blue;
-    margin-left:10px;
-    
-
+    width: 250px;
+    height: 130px;
+    margin-top: 12px;
+    background-color: blue;
+    margin-left: 10px;
 }
 
 .labeli {
@@ -134,4 +130,90 @@ border-top-right-radius:30px;
     width:410px;
     border-top-right-radius:30px;
   
+}
+
+.listbox {
+
+    color:#F0CB01;
+    height:200px;
+    width:450px;
+    background-color:#BA252A;
+    font-size:18px;
+    border:10px solid #F0CB01;
+    font-family:'Malgun Gothic';
+    margin-left:150px;
+    border-top-left-radius:20px;
+    border-top-right-radius:20px;
+
+}
+
+.btnUp {
+    
+    background-image:url("../Images/upArrow.png");
+    width:45px;
+    height:55px;
+    background-position:top;
+    background-color:white;
+    
+}
+
+.btnDown {
+
+    background-image:url("../Images/downArrow.png");
+     width:45px;
+    height:55px;
+    background-position:top;
+    background-color:white;
+
+}
+
+.btnRemove {
+
+    background-image:url("../Images/delete.png");
+    width:48px;
+    height:55px;
+    background-position:center;
+    background-color:white;
+
+}
+
+.infoList {
+
+    border-bottom:2px solid #BA252A;
+    margin-left:200px;
+    font-weight:bolder;
+    font-size:25px;
+    color:#BA252A;
+
+}
+
+.images4 {
+
+    width: 250px;
+    height: 130px;
+    margin-top: 12px;
+    background-color: blue;
+    margin-left: 10px;
+
+}
+
+.images5 {
+
+    width: 250px;
+    height: 130px;
+    margin-top: 12px;
+    background-color: blue;
+    margin-left: 10px;
+    margin-top:-150px;
+
+}
+
+.images6 {
+
+    width: 250px;
+    height: 130px;
+    margin-top: 12px;
+    background-color: blue;
+    margin-left: 10px;
+
 }
