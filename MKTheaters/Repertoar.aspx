@@ -40,15 +40,23 @@
  
     <asp:UpdatePanel ID="main" runat="server"> 
         <ContentTemplate>
-            <asp:GridView ID="gvPretstavi" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#F0CB01" BorderStyle="Solid" BorderWidth="5px" CellPadding="4"  Font-Bold="False" Width="95%" AllowPaging="True" OnPageIndexChanging="gvPretstavi_PageIndexChanging" OnRowDataBound="gvPretstavi_RowDataBound" OnRowCommand="gvPretstavi_RowCommand" DataKeyNames="Ime" OnSelectedIndexChanged="gvPretstavi_SelectedIndexChanged" ForeColor="Red">
+            <asp:GridView ID="gvPretstavi" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#F0CB01" BorderStyle="Solid" BorderWidth="5px" CellPadding="4"  Font-Bold="False" Width="95%" AllowPaging="True" OnPageIndexChanging="gvPretstavi_PageIndexChanging" OnRowDataBound="gvPretstavi_RowDataBound" OnRowCommand="gvPretstavi_RowCommand" DataKeyNames="Ime" OnSelectedIndexChanged="gvPretstavi_SelectedIndexChanged" ForeColor="Red" OnRowCreated="gvPretstavi_RowCreated">
             <Columns>
-                <asp:ButtonField CommandName="select" DataTextField="Ime" Text="Button" />
+                <asp:ButtonField CommandName="select" DataTextField="Ime" Text="Button" HeaderText="Претстава" />
             <asp:BoundField DataField="Avtor" HeaderText="Автор" />
             <asp:BoundField DataField="Reziser" HeaderText="Режисер" />
             <asp:BoundField DataField="Akteri" HeaderText="Актери" />
             <asp:BoundField DataField="Teatar" HeaderText="Театар" />
             <asp:BoundField DataField="Grad" HeaderText="Град" />
             <asp:BoundField DataField="Vremetraenje" HeaderText="Времетраење" />
+            
+            <asp:TemplateField HeaderText="Датум">
+                 <ItemTemplate>
+                <asp:DropDownList ID="ddlDatumi" runat="server">
+                </asp:DropDownList>
+            </ItemTemplate>
+            </asp:TemplateField>
+            
             <asp:TemplateField>
             <ItemTemplate>
             <asp:Button ID="Button1" runat="server" style="Display:none;" Text="Button" />
@@ -57,7 +65,7 @@
             </ItemTemplate>
                 <ControlStyle ForeColor="White" />
             </asp:TemplateField>
-            
+                
         </Columns>
         <EditRowStyle Font-Bold="False" Font-Names="Agency FB" Font-Size="X-Large" BorderStyle="None" CssClass="Redica" ForeColor="#FF5050" />
         <FooterStyle BackColor="#BA252A" ForeColor="#BA252A" />

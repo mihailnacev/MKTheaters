@@ -49,18 +49,19 @@ public partial class MyProfile : System.Web.UI.Page
         User tekoven = (User)Session["Najaven"];
         SqlConnection konekcija = new SqlConnection();
         konekcija.ConnectionString = ConfigurationManager.ConnectionStrings["Test"].ConnectionString;
-        string sqlString = "SELECT Pretstava FROM Rezervacii WHERE Username='" + tekoven.Username + "'";
+        string sqlString = "SELECT * FROM Rezervacii WHERE Username='" + tekoven.Username + "'";
         SqlCommand komanda = new SqlCommand(sqlString, konekcija);
-        SqlDataAdapter adapter = new SqlDataAdapter();
-        adapter.SelectCommand = komanda;
-        DataSet ds = new DataSet();
         try
         {
             konekcija.Open();
-            adapter.Fill(ds, "Rezervacii");
-            lbRezervacii.DataTextField = "Pretstava";
-            lbRezervacii.DataSource=ds.Tables["Rezervacii"];
-            lbRezervacii.DataBind();
+            SqlDataReader citac = komanda.ExecuteReader();
+            while (citac.Read())
+            {
+                ListItem li = new ListItem(citac[0].ToString() +" " +citac[2].ToString());
+                lbRezervacii.Items.Add(li);
+            }
+            citac.Close();
+
         }
         catch (Exception) { }
         finally
