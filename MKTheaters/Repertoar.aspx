@@ -36,7 +36,7 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-
+    <!-- 
     <asp:Label ID="Label5" runat="server" Text="Изберете критериум за пребарување"></asp:Label>
     <br />
     <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="True" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
@@ -47,7 +47,7 @@
         <asp:ListItem Value="4">Актер</asp:ListItem>
         <asp:ListItem Value="5">Датум</asp:ListItem>
         <asp:ListItem Value="6">Театар</asp:ListItem>
-    </asp:DropDownList>
+   </asp:DropDownList>
     <br />
     <asp:Label ID="lbl1" runat="server" Text="Изберете град" Visible="false"></asp:Label>
     <asp:Label ID="lbl2" runat="server" Text="Изберете режисер" Visible="false"></asp:Label>
@@ -57,7 +57,7 @@
     <asp:Label ID="lbl6" runat="server" Text="Изберете театар" Visible="false"></asp:Label>
     <br />
     <asp:Button runat="server" ID="btnPrebaraj" OnClick="btnPrebaraj_Click" Text="Пребарај" />
-
+    -->
     <asp:ScriptManager ID="ScriptManager1" runat="server"> </asp:ScriptManager>
  
     
