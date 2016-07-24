@@ -63,7 +63,8 @@ public partial class Repertoar : System.Web.UI.Page
         {
             int rowIndex = Convert.ToInt32(e.CommandArgument);
             ModalPopupExtender modalPopupExtender1 = (ModalPopupExtender)gvPretstavi.Rows[rowIndex].FindControl("ModalPopupExtender1");
-            Session["Ime"] = gvPretstavi.Rows[rowIndex].Cells[0].Text;
+           LinkButton lb=(LinkButton)gvPretstavi.Rows[rowIndex].Cells[0].Controls[0];
+            Session["Ime"] = lb.Text;
             modalPopupExtender1.Show();
 
             //Perform any specific processing.
