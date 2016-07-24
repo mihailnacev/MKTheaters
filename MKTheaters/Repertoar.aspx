@@ -64,11 +64,8 @@
  
     <asp:UpdatePanel ID="main" runat="server"> 
         <ContentTemplate>
-<<<<<<< HEAD
-        <asp:GridView ID="gvPretstavi" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#F0CB01" BorderStyle="Solid" BorderWidth="5px" CellPadding="4"  Font-Bold="False" Width="95%" AllowPaging="True" OnPageIndexChanging="gvPretstavi_PageIndexChanging" OnRowDataBound="gvPretstavi_RowDataBound" OnRowCommand="gvPretstavi_RowCommand">
-=======
             <asp:GridView ID="gvPretstavi" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#F0CB01" BorderStyle="Solid" BorderWidth="5px" CellPadding="4"  Font-Bold="False" Width="95%" AllowPaging="True" OnPageIndexChanging="gvPretstavi_PageIndexChanging" OnRowDataBound="gvPretstavi_RowDataBound" OnRowCommand="gvPretstavi_RowCommand" DataKeyNames="Ime" OnSelectedIndexChanged="gvPretstavi_SelectedIndexChanged" ForeColor="Red">
->>>>>>> 6c0e90242567412f6f3a1d4a848aa3e7da15ff40
+
             <Columns>
                 <asp:ButtonField CommandName="select" DataTextField="Ime" Text="Button" />
             <asp:BoundField DataField="Avtor" HeaderText="Автор" />
