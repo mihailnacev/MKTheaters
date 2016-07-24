@@ -13,7 +13,7 @@ public partial class PretstavaDetails : System.Web.UI.Page
         string ime = (string)Session["imenaP"];
         lblIme.Text = ime;
         selektirajPretstava(ime);
-        SqlConnection konekcija = new SqlConnection();
+        /*SqlConnection konekcija = new SqlConnection();
         konekcija.ConnectionString = ConfigurationManager.ConnectionStrings["Test"].ConnectionString;
         string sqlString = "SELECT * FROM Repertoar WHERE Ime=@ime";
         SqlCommand komanda = new SqlCommand(sqlString, konekcija);
@@ -34,7 +34,7 @@ public partial class PretstavaDetails : System.Web.UI.Page
             }
         }
         catch (Exception) { }
-        finally { konekcija.Close(); }
+        finally { konekcija.Close(); }*/
     }
 
     protected void selektirajPretstava(string ime)
@@ -55,6 +55,12 @@ public partial class PretstavaDetails : System.Web.UI.Page
                 lblReziser.Text = citac[2].ToString();
                 lblAkteri.Text = citac[3].ToString().Replace(';', ',');
                 lblTeatarGrad.Text = citac[4].ToString() + " " + citac[5].ToString();
+                string datumi = citac[6].ToString();
+                string[] parts = datumi.Split(';');
+                foreach(string part in parts)
+                {
+                    ddlDatumi.Items.Add(new ListItem(part));
+                }
                 lblVremetraenje.Text = citac[7].ToString() + " минути";
                 citac.Close();
             }
@@ -69,7 +75,7 @@ public partial class PretstavaDetails : System.Web.UI.Page
         string ime = (string)Session["imenaP"];
         if (najaven != null)
         {
-            funkcija(najaven, ime);
+            funkcija(najaven, ime,ddlDatumi.SelectedItem.Text);
             string message = "Успешна резервација!";
             System.Text.StringBuilder sb = new System.Text.StringBuilder();
             sb.Append("<script type = 'text/javascript'>");
@@ -94,7 +100,7 @@ public partial class PretstavaDetails : System.Web.UI.Page
         }
     }
 
-    protected void funkcija(User user, string ime)
+    protected void funkcija(User user, string ime,string datum)
     {
         string connectionString = ConfigurationManager.ConnectionStrings["Test"].ConnectionString;
         using (SqlConnection connection = new SqlConnection(connectionString))
@@ -105,9 +111,10 @@ public partial class PretstavaDetails : System.Web.UI.Page
                 /// <summary>
                 /// SqlCommand object contains SqlConnection object and queryString (INSERT command with parameters) 
                 /// </summary>
-                SqlCommand commandInsert = new SqlCommand("INSERT INTO Rezervacii(Username,Pretstava) VALUES(@username,@pretstava)", connection);
+                SqlCommand commandInsert = new SqlCommand("INSERT INTO Rezervacii(Username,Pretstava,Datum) VALUES(@username,@pretstava,@datum)", connection);
                 commandInsert.Parameters.AddWithValue("@username", user.Username);
                 commandInsert.Parameters.AddWithValue("@pretstava", ime);
+                commandInsert.Parameters.AddWithValue("@datum", datum);
 
                 commandInsert.ExecuteNonQuery();
                 commandInsert.Parameters.Clear();

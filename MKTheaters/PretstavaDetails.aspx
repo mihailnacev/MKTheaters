@@ -75,9 +75,18 @@
             </td>
         </tr>
         <tr>
-            <td class="auto-style13"></td>
+            <td class="auto-style13">
+                <asp:Label ID="Label10" runat="server" CssClass="labeli" Text="Датум и време на претставата:"></asp:Label>
+            </td>
             <td class="auto-style12">
-                <asp:Button ID="btnRezerviraj" runat="server" Text="Резервирај билет" Width="247px" Height="45px" CssClass="auto-style14" OnClick="btnRezerviraj_Click" />
+                <asp:DropDownList ID="ddlDatumi" runat="server">
+                </asp:DropDownList>
+            </td>
+        </tr>
+        <tr>
+            <td class="auto-style13">&nbsp;</td>
+            <td class="auto-style12">
+                <asp:Button ID="btnRezerviraj" runat="server" CssClass="auto-style14" Height="45px" OnClick="btnRezerviraj_Click" Text="Резервирај билет" Width="247px" />
             </td>
         </tr>
     </table>
