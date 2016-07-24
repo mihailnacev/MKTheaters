@@ -1,6 +1,6 @@
 ﻿$(document).ready(function ()
 {
-    if ($(window).width() < 750)
+    if ($(window).width() < 800)
     {
         $("#menu a").addClass("menuItem2");
         $("#logo").addClass("logoPosition1");
@@ -36,7 +36,7 @@
     $(window).resize(function ()
     {
         var w = $(window).width();
-        if (w < 750)
+        if (w < 800)
         {
             $("#menu a").removeClass("menuItem1");
             $("#menu a").addClass("menuItem2");

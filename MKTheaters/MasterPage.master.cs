@@ -40,20 +40,23 @@ public partial class MasterPage : System.Web.UI.MasterPage
         Response.Redirect("~/Najava.aspx");
     }
 
-
-    protected void Najava_Click(object sender, EventArgs e)
-    {
-        Response.Redirect("~/Najava.aspx");
-    }
-
-
     protected void Pocetna_Click(object sender, EventArgs e)
     {
         Response.Redirect("~/Pocetna.aspx");
     }
 
-    protected void LinkButton3_Click(object sender, EventArgs e)
+    protected void Repertoar_Click(object sender, EventArgs e)
     {
         Response.Redirect("~/Repertoar.aspx");
+    }
+
+    protected void ZaNas_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("~/About.aspx");
+    }
+
+    protected void MojProfil_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("~/MyProfile.aspx");
     }
 }

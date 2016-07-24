@@ -34,9 +34,9 @@
                 </asp:Panel>
                 <asp:Panel ID="menu" runat="server">
                     <asp:LinkButton ID="Pocetna" runat="server" OnClick="Pocetna_Click">ПОЧЕТНА</asp:LinkButton>
-                    <asp:LinkButton ID="Najava" runat="server" OnClick="Najava_Click">НАЈАВА</asp:LinkButton>
-                    <asp:LinkButton ID="LinkButton3" runat="server" OnClick="LinkButton3_Click">РЕЗЕРВАЦИЈА</asp:LinkButton>
-                    <asp:LinkButton ID="LinkButton4" runat="server">КОНТАКТ</asp:LinkButton>
+                    <asp:LinkButton ID="Repertoar" runat="server" OnClick="Repertoar_Click">РЕПЕРТОАР</asp:LinkButton>
+                    <asp:LinkButton ID="MojProfil" runat="server" OnClick="MojProfil_Click">МОЈ ПРОФИЛ</asp:LinkButton>
+                    <asp:LinkButton ID="ZaNas" runat="server" OnClick="ZaNas_Click">ЗА НАС</asp:LinkButton>
                 </asp:Panel>
             </asp:Panel>
         </asp:Panel>
