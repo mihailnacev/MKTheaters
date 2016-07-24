@@ -137,4 +137,28 @@ public partial class Repertoar : System.Web.UI.Page
 
     }
 
+    protected void btnPrebaraj_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        int value = Convert.ToInt32(DropDownList1.SelectedValue);
+        switch (value)
+        {
+            case 1: lbl1.Visible = true;
+                break;
+            case 2: lbl2.Visible = true;
+                break;
+            case 3: lbl3.Visible = true;
+                break;
+            case 4: lbl4.Visible = true;
+                break;
+            case 5: lbl5.Visible = true;
+                break;
+            case 6: lbl6.Visible = true;
+                break;
+        }
+    }
 }

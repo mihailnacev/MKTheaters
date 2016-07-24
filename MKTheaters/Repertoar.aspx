@@ -36,11 +36,35 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+
+    <asp:Label ID="Label5" runat="server" Text="Изберете критериум за пребарување"></asp:Label>
+    <br />
+    <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="True" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
+        <asp:ListItem Selected="True" Value="0">Изберете критериум</asp:ListItem>
+        <asp:ListItem Value="1">Град</asp:ListItem>
+        <asp:ListItem Value="2">Режисер</asp:ListItem>
+        <asp:ListItem Value="3">Автор</asp:ListItem>
+        <asp:ListItem Value="4">Актер</asp:ListItem>
+        <asp:ListItem Value="5">Датум</asp:ListItem>
+        <asp:ListItem Value="6">Театар</asp:ListItem>
+    </asp:DropDownList>
+    <br />
+    <asp:Label ID="lbl1" runat="server" Text="Изберете град" Visible="false"></asp:Label>
+    <asp:Label ID="lbl2" runat="server" Text="Изберете режисер" Visible="false"></asp:Label>
+    <asp:Label ID="lbl3" runat="server" Text="Изберете автор" Visible="false"></asp:Label>
+    <asp:Label ID="lbl4" runat="server" Text="Изберете актер" Visible="false"></asp:Label>
+    <asp:Label ID="lbl5" runat="server" Text="Изберете датум" Visible="false"></asp:Label>
+    <asp:Label ID="lbl6" runat="server" Text="Изберете театар" Visible="false"></asp:Label>
+    <br />
+    <asp:Button runat="server" ID="btnPrebaraj" OnClick="btnPrebaraj_Click" Text="Пребарај" />
+
     <asp:ScriptManager ID="ScriptManager1" runat="server"> </asp:ScriptManager>
+ 
+    
  
     <asp:UpdatePanel ID="main" runat="server"> 
         <ContentTemplate>
-            <asp:GridView ID="gvPretstavi" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#F0CB01" BorderStyle="Solid" BorderWidth="5px" CellPadding="4"  Font-Bold="False" Width="95%" AllowPaging="True" OnPageIndexChanging="gvPretstavi_PageIndexChanging" OnRowDataBound="gvPretstavi_RowDataBound" OnRowCommand="gvPretstavi_RowCommand">
+        <asp:GridView ID="gvPretstavi" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#F0CB01" BorderStyle="Solid" BorderWidth="5px" CellPadding="4"  Font-Bold="False" Width="95%" AllowPaging="True" OnPageIndexChanging="gvPretstavi_PageIndexChanging" OnRowDataBound="gvPretstavi_RowDataBound" OnRowCommand="gvPretstavi_RowCommand">
             <Columns>
             <asp:BoundField DataField="Ime" HeaderText="Претстава" />
             <asp:BoundField DataField="Avtor" HeaderText="Автор" />

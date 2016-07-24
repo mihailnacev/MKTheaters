@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Data;
 using System.Data.SqlClient;
 using System.Web;
 using System.Web.Services;
@@ -25,7 +26,7 @@ public class theatersService : System.Web.Services.WebService
     {
         return "Hello World";
     }
-
+    
     [WebMethod(Description = "Kreira lista od pretstavi koi se na repertoar vo gradot koj e vlezen argument")]
     public List<Play> findByCity(string City)
     {
