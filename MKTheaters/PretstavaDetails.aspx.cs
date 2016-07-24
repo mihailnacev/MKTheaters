@@ -1,83 +1,76 @@
-﻿using AjaxControlToolkit;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
-using System.Data;
 using System.Data.SqlClient;
+using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-public partial class Repertoar : System.Web.UI.Page
+public partial class PretstavaDetails : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (!IsPostBack) IspolniMaster();
-    }
-
-    public void IspolniMaster()
-    {
+        string ime = (string)Session["imenaP"];
+        lblIme.Text = ime;
+        selektirajPretstava(ime);
         SqlConnection konekcija = new SqlConnection();
         konekcija.ConnectionString = ConfigurationManager.ConnectionStrings["Test"].ConnectionString;
-        string sqlString = "SELECT * FROM Repertoar";
+        string sqlString = "SELECT * FROM Repertoar WHERE Ime=@ime";
         SqlCommand komanda = new SqlCommand(sqlString, konekcija);
-        SqlDataAdapter adapter = new SqlDataAdapter(komanda);
-        DataSet ds = new DataSet();
+        komanda.Parameters.AddWithValue("@ime", ime);
         try
         {
             konekcija.Open();
-            adapter.Fill(ds, "Repertoar");
-            gvPretstavi.DataSource = ds;
-            gvPretstavi.DataBind();
-            ViewState["dataset"] = ds;
+            SqlDataReader citac = komanda.ExecuteReader();
+            if (citac.Read() != false)
+            {
+                lblIme.Text= citac[0].ToString();
+                lblAvtor.Text= citac[1].ToString().Replace(';', ',');
+                lblReziser.Text= citac[2].ToString();
+                lblAkteri.Text= citac[3].ToString().Replace(';',',');
+                lblTeatarGrad.Text= citac[4].ToString() + " " + citac[5].ToString();
+                lblVremetraenje.Text= citac[7].ToString()+" минути";
+                citac.Close();
+            }
         }
-        catch(Exception err){ }
-        finally
-        {
-            konekcija.Close();
-        }
+        catch (Exception) { }
+        finally { konekcija.Close(); }
     }
 
-    protected void gvPretstavi_PageIndexChanging(object sender, GridViewPageEventArgs e)
+    protected void selektirajPretstava(string ime)
     {
-        gvPretstavi.PageIndex = e.NewPageIndex;
-        gvPretstavi.SelectedIndex = -1;
-        DataSet ds = (DataSet)ViewState["dataset"];
-        gvPretstavi.DataSource = ds;
-        gvPretstavi.DataBind();
-    }
-
-
-    protected void gvPretstavi_RowDataBound(object sender, GridViewRowEventArgs e)
-    {
-        if (e.Row.RowType == DataControlRowType.DataRow)
+        SqlConnection konekcija = new SqlConnection();
+        konekcija.ConnectionString = ConfigurationManager.ConnectionStrings["Test"].ConnectionString;
+        string sqlString = "SELECT * FROM Repertoar WHERE Ime=@ime";
+        SqlCommand komanda = new SqlCommand(sqlString, konekcija);
+        komanda.Parameters.AddWithValue("@ime", ime);
+        try
         {
-            LinkButton LinkButton1 = (LinkButton)e.Row.FindControl("LinkButton1");
-            LinkButton1.CommandArgument = e.Row.RowIndex.ToString();
+            konekcija.Open();
+            SqlDataReader citac = komanda.ExecuteReader();
+            if (citac.Read() != false)
+            {
+                lblIme.Text = citac[0].ToString();
+                lblAvtor.Text = citac[1].ToString().Replace(';', ',');
+                lblReziser.Text = citac[2].ToString();
+                lblAkteri.Text = citac[3].ToString().Replace(';', ',');
+                lblTeatarGrad.Text = citac[4].ToString() + " " + citac[5].ToString();
+                lblVremetraenje.Text = citac[7].ToString() + " минути";
+                citac.Close();
+            }
         }
+        catch (Exception) { }
+        finally { konekcija.Close(); }
     }
 
-    protected void gvPretstavi_RowCommand(object sender, GridViewCommandEventArgs e)
-    {
-        if (e.CommandName == "Popup" && e.CommandArgument != null)
-        {
-            int rowIndex = Convert.ToInt32(e.CommandArgument);
-            ModalPopupExtender modalPopupExtender1 = (ModalPopupExtender)gvPretstavi.Rows[rowIndex].FindControl("ModalPopupExtender1");
-            Session["Ime"] = gvPretstavi.Rows[rowIndex].Cells[0].Text;
-            modalPopupExtender1.Show();
-
-            //Perform any specific processing.
-            //Label1.Text = string.Format("Row # {0}", rowIndex);
-        }
-    }
-
-    protected void OK_Click(object sender, EventArgs e)
+    protected void btnRezerviraj_Click(object sender, EventArgs e)
     {
         User najaven = (User)Session["Najaven"];
-        string selektirano = (string)Session["Ime"];
+        string ime = (string)Session["imenaP"];
         if (najaven != null)
         {
-            funkcija(najaven, selektirano);
+            funkcija(najaven, ime);
             string message = "Успешна резервација!";
             System.Text.StringBuilder sb = new System.Text.StringBuilder();
             sb.Append("<script type = 'text/javascript'>");
@@ -100,10 +93,9 @@ public partial class Repertoar : System.Web.UI.Page
             sb.Append("</script>");
             ClientScript.RegisterClientScriptBlock(this.GetType(), "alert", sb.ToString());
         }
-        
     }
 
-    public void funkcija(User user,string ime)
+    protected void funkcija(User user, string ime)
     {
         string connectionString = ConfigurationManager.ConnectionStrings["Test"].ConnectionString;
         using (SqlConnection connection = new SqlConnection(connectionString))
@@ -117,7 +109,7 @@ public partial class Repertoar : System.Web.UI.Page
                 SqlCommand commandInsert = new SqlCommand("INSERT INTO Rezervacii(Username,Pretstava) VALUES(@username,@pretstava)", connection);
                 commandInsert.Parameters.AddWithValue("@username", user.Username);
                 commandInsert.Parameters.AddWithValue("@pretstava", ime);
-                
+
                 commandInsert.ExecuteNonQuery();
                 commandInsert.Parameters.Clear();
             }
@@ -130,17 +122,5 @@ public partial class Repertoar : System.Web.UI.Page
                 connection.Close();
             }
         }
-    }
-
-    protected void Cancel_Click(object sender, EventArgs e)
-    {
-
-    }
-
-
-    protected void gvPretstavi_SelectedIndexChanged(object sender, EventArgs e)
-    {
-        Session["imenaP"] = gvPretstavi.DataKeys[gvPretstavi.SelectedIndex].Value.ToString();
-        Response.Redirect("~/PretstavaDetails.aspx");
     }
 }
