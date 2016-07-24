@@ -35,7 +35,7 @@ public partial class Najava : System.Web.UI.Page
             else
             {
                 Session["Najaven"] = tekoven;
-                Response.Redirect("~/UspesnaNajava.aspx");
+                Response.Redirect("~/MyProfile.aspx");
             }
         }
     }

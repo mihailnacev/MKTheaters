@@ -68,4 +68,37 @@ public partial class MyProfile : System.Web.UI.Page
             konekcija.Close();
         }
     }
+
+
+    public void MoveUp()
+    {
+        MoveItem(-1);
+    }
+
+    public void MoveDown()
+    {
+        MoveItem(1);
+    }
+
+    public void MoveItem(int direction)
+    {
+        // Checking selected item
+        if (lbRezervacii.SelectedItem == null || lbRezervacii.SelectedIndex < 0)
+            return; // No selected item - nothing to do
+
+        // Calculate new index using move direction
+        int newIndex = lbRezervacii.SelectedIndex + direction;
+
+        // Checking bounds of the range
+        if (newIndex < 0 || newIndex >= lbRezervacii.Items.Count)
+            return; // Index out of range - nothing to do
+
+        ListItem selected = lbRezervacii.SelectedItem;
+
+        // Removing removable element
+        lbRezervacii.Items.Remove(selected);
+        // Insert it in new position
+        lbRezervacii.Items.Insert(newIndex, selected);
+        // Restore selection
+    }
 }

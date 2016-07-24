@@ -1,0 +1,48 @@
+﻿body{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+#tabela {
+
+    background-color:white;
+    padding:30px;
+    margin:auto;
+    margin-top:10px;
+    width:90%;
+    border-radius:20px;
+    border:20px solid #F0CB01;
+  
+}
+
+.labeli {
+
+    padding-left:5%;
+    color:#BA252A;
+    font-weight:bold;
+    text-align:center;
+    font-size:x-large;
+
+}
+
+.buttons {
+
+    color:rgb(245,222,95);
+    background-color:#BA252A;
+    width:150px;
+    font-weight:bold;
+    height:30px;
+    margin-left:20px;
+    font-size:x-large;
+
+
+}
+
+.results {
+
+    color:#FF4500;
+    font-weight:bold;
+    text-align:center;
+    font-size:x-large;
+
+}
+
+

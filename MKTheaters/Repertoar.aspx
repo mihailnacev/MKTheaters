@@ -6,7 +6,7 @@
 .modalBackground{
     background-color:black;
     filter:alpha(opacity=90);
-    opacity:0.6;
+    opacity:0.5;
 }
 .modalPopUp{
     background-color:#FFFFFF;
@@ -64,9 +64,13 @@
  
     <asp:UpdatePanel ID="main" runat="server"> 
         <ContentTemplate>
+<<<<<<< HEAD
         <asp:GridView ID="gvPretstavi" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#F0CB01" BorderStyle="Solid" BorderWidth="5px" CellPadding="4"  Font-Bold="False" Width="95%" AllowPaging="True" OnPageIndexChanging="gvPretstavi_PageIndexChanging" OnRowDataBound="gvPretstavi_RowDataBound" OnRowCommand="gvPretstavi_RowCommand">
+=======
+            <asp:GridView ID="gvPretstavi" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#F0CB01" BorderStyle="Solid" BorderWidth="5px" CellPadding="4"  Font-Bold="False" Width="95%" AllowPaging="True" OnPageIndexChanging="gvPretstavi_PageIndexChanging" OnRowDataBound="gvPretstavi_RowDataBound" OnRowCommand="gvPretstavi_RowCommand" DataKeyNames="Ime" OnSelectedIndexChanged="gvPretstavi_SelectedIndexChanged" ForeColor="Red">
+>>>>>>> 6c0e90242567412f6f3a1d4a848aa3e7da15ff40
             <Columns>
-            <asp:BoundField DataField="Ime" HeaderText="Претстава" />
+                <asp:ButtonField CommandName="select" DataTextField="Ime" Text="Button" />
             <asp:BoundField DataField="Avtor" HeaderText="Автор" />
             <asp:BoundField DataField="Reziser" HeaderText="Режисер" />
             <asp:BoundField DataField="Akteri" HeaderText="Актери" />
@@ -79,14 +83,15 @@
             <ajaxToolkit:ModalPopupExtender ID="ModalPopupExtender1" PopupControlID="Panel1" TargetControlID="Button1" BackgroundCssClass="modalBackground" runat="server" />
             <asp:LinkButton ID="LinkButton1" CommandName="Popup" runat="server">Резервирај</asp:LinkButton>
             </ItemTemplate>
+                <ControlStyle ForeColor="White" />
             </asp:TemplateField>
             
         </Columns>
-        <EditRowStyle Font-Bold="False" Font-Names="Agency FB" Font-Size="Large" />
-        <FooterStyle BackColor="#FFFFCC" ForeColor="#330099" />
+        <EditRowStyle Font-Bold="False" Font-Names="Agency FB" Font-Size="X-Large" BorderStyle="None" CssClass="Redica" ForeColor="#FF5050" />
+        <FooterStyle BackColor="#BA252A" ForeColor="#BA252A" />
         <HeaderStyle BackColor="#BA252A" Font-Bold="True" ForeColor="#FFFFCC" HorizontalAlign="Center" VerticalAlign="Middle" />
-        <PagerStyle BackColor="#FFFFCC" Font-Bold="True" ForeColor="#330099" HorizontalAlign="Center" VerticalAlign="Middle" Wrap="True" />
-        <RowStyle BackColor="White" ForeColor="Black" HorizontalAlign="Center" VerticalAlign="Middle" />
+        <PagerStyle BackColor="Orange" Font-Bold="True" ForeColor="Maroon" HorizontalAlign="Center" VerticalAlign="Middle" Wrap="True" />
+        <RowStyle BackColor="#BA252A" ForeColor="#F0CB01" HorizontalAlign="Center" VerticalAlign="Middle" Font-Names="'Franklin Gothic Medium','Arial Narrow',Arial,sans-serif" />
         <SelectedRowStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="#663399" />
         <SortedAscendingCellStyle BackColor="#FEFCEB" />
         <SortedAscendingHeaderStyle BackColor="#AF0101" />
@@ -95,7 +100,24 @@
     </asp:GridView>
     </ContentTemplate> 
     </asp:UpdatePanel>  
-     <asp:Panel ID="Panel1" runat="server" CssClass="auto-style2" Height="148px" Width="305px">
+    <br />
+    <br /> 
+    <br /> 
+    <br /> 
+    <br /> 
+    <br /> 
+    <br /> 
+    <br /> 
+    <br /> 
+    <br /> 
+    <br /> 
+    <br /> 
+    <br /> 
+    <br /> 
+    <br /> 
+    <br /> 
+    <br /> 
+    <asp:Panel ID="Panel1" runat="server" CssClass="auto-style2" Height="148px" Width="305px">
        
          <asp:Label ID="Label4" runat="server" Text="Дали сакате да ја резервирате избраната претстава?"></asp:Label>
          <br />
