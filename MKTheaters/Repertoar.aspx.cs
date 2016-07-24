@@ -54,7 +54,38 @@ public partial class Repertoar : System.Web.UI.Page
         {
             LinkButton LinkButton1 = (LinkButton)e.Row.FindControl("LinkButton1");
             LinkButton1.CommandArgument = e.Row.RowIndex.ToString();
+            DropDownList ddlDatumi = (DropDownList)e.Row.FindControl("ddlDatumi");
+            SqlConnection konekcija = new SqlConnection();
+            konekcija.ConnectionString = ConfigurationManager.ConnectionStrings["Test"].ConnectionString;
+            LinkButton lb = (LinkButton)e.Row.Cells[0].Controls[0];
+            string ime = lb.Text;
+            string sqlString = "SELECT Datum FROM Repertoar WHERE Ime=@ime";
+            SqlCommand komanda = new SqlCommand(sqlString, konekcija);
+            komanda.Parameters.AddWithValue("@ime", ime);
+            try
+            {
+                konekcija.Open();
+                SqlDataReader citac = komanda.ExecuteReader();
+                while (citac.Read())
+                {
+                    string datumi = citac["Datum"].ToString();
+                    string[] parts = datumi.Split(';');
+                    foreach (string part in parts)
+                    {
+                        ListItem li = new ListItem(part);
+                        ddlDatumi.Items.Add(li);
+                    }
+                    citac.Close();
+                }
+            }
+            catch (Exception) { }
+            finally
+            {
+                konekcija.Close();
+            }
         }
+
+
     }
 
     protected void gvPretstavi_RowCommand(object sender, GridViewCommandEventArgs e)
@@ -63,8 +94,10 @@ public partial class Repertoar : System.Web.UI.Page
         {
             int rowIndex = Convert.ToInt32(e.CommandArgument);
             ModalPopupExtender modalPopupExtender1 = (ModalPopupExtender)gvPretstavi.Rows[rowIndex].FindControl("ModalPopupExtender1");
-           LinkButton lb=(LinkButton)gvPretstavi.Rows[rowIndex].Cells[0].Controls[0];
+            LinkButton lb=(LinkButton)gvPretstavi.Rows[rowIndex].Cells[0].Controls[0];
+            DropDownList datumi = (DropDownList)gvPretstavi.Rows[rowIndex].Cells[7].Controls[1];
             Session["Ime"] = lb.Text;
+            Session["Datum"] = datumi.SelectedItem.Text;
             modalPopupExtender1.Show();
 
             //Perform any specific processing.
@@ -76,9 +109,10 @@ public partial class Repertoar : System.Web.UI.Page
     {
         User najaven = (User)Session["Najaven"];
         string selektirano = (string)Session["Ime"];
+        string datum = (string)Session["Datum"];
         if (najaven != null)
         {
-            funkcija(najaven, selektirano);
+            funkcija(najaven, selektirano,datum);
             string message = "Успешна резервација!";
             System.Text.StringBuilder sb = new System.Text.StringBuilder();
             sb.Append("<script type = 'text/javascript'>");
@@ -104,7 +138,7 @@ public partial class Repertoar : System.Web.UI.Page
         
     }
 
-    public void funkcija(User user,string ime)
+    public void funkcija(User user,string ime,string datum)
     {
         string connectionString = ConfigurationManager.ConnectionStrings["Test"].ConnectionString;
         using (SqlConnection connection = new SqlConnection(connectionString))
@@ -115,9 +149,10 @@ public partial class Repertoar : System.Web.UI.Page
                 /// <summary>
                 /// SqlCommand object contains SqlConnection object and queryString (INSERT command with parameters) 
                 /// </summary>
-                SqlCommand commandInsert = new SqlCommand("INSERT INTO Rezervacii(Username,Pretstava) VALUES(@username,@pretstava)", connection);
+                SqlCommand commandInsert = new SqlCommand("INSERT INTO Rezervacii(Username,Pretstava,Datum) VALUES(@username,@pretstava,@datum)", connection);
                 commandInsert.Parameters.AddWithValue("@username", user.Username);
                 commandInsert.Parameters.AddWithValue("@pretstava", ime);
+                commandInsert.Parameters.AddWithValue("@datum", datum);
                 
                 commandInsert.ExecuteNonQuery();
                 commandInsert.Parameters.Clear();
@@ -167,5 +202,10 @@ public partial class Repertoar : System.Web.UI.Page
     {
         Session["imenaP"] = gvPretstavi.DataKeys[gvPretstavi.SelectedIndex].Value.ToString();
         Response.Redirect("~/PretstavaDetails.aspx");
+    }
+
+    protected void gvPretstavi_RowCreated(object sender, GridViewRowEventArgs e)
+    {
+        
     }
 }
