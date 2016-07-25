@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="PretstavaDetails.aspx.cs" Inherits="PretstavaDetails" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="PretstavaDetails.aspx.cs" ClientIDMode="Static" Inherits="PretstavaDetails" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
     <link href="Styles/StyleSheetPretstavaDetails.css" rel="stylesheet"/>

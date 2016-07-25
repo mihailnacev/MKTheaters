@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="Registracija.aspx.cs" Inherits="Registracija" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="Registracija.aspx.cs" ClientIDMode="Static" Inherits="Registracija" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
       <link href="Styles/StyleSheetRegistracija.css" rel="stylesheet" />

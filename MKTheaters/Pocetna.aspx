@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="Pocetna.aspx.cs" Inherits="Pocetna" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="Pocetna.aspx.cs" ClientIDMode="Static" Inherits="Pocetna" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
    

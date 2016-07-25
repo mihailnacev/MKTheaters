@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="Najava.aspx.cs" Inherits="Najava" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="Najava.aspx.cs" ClientIDMode="Static" Inherits="Najava" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
      <link href="Styles/StyleSheetNajava.css" rel="stylesheet" />

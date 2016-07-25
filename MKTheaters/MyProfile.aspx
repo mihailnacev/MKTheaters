@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="MyProfile.aspx.cs" Inherits="MyProfile" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="MyProfile.aspx.cs" ClientIDMode="Static" Inherits="MyProfile" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
      <link href="Styles/StyleSheetMyProfile.css" type="text/css" rel="stylesheet" />
@@ -44,6 +44,9 @@
          } */
          .auto-style13 {
              width: 19px;
+         }
+         .auto-style14 {
+             height: 30px;
          }
      </style>
      </asp:Content>
@@ -228,6 +231,42 @@
     </asp:Panel>
 
     <asp:Panel ID="pnlSuggest" runat="server" CssClass="pnlSuggest" Visible="false"  >
+
+<asp:Label ID="lblSuggest" runat="server" CssClass="lblSuggest" Text="Сакате да уживате во театарска претстава што ја нема на репертоарот во посакуваниот град? Предложете ни,а ние ќе се потрудиме да ја задоволиме Вашата желба!" ClientIDMode="Static"></asp:Label>
+
+
+
+          <table id="tabela3">
+        <tr>
+            <td><asp:Label runat="server" CssClass="labeli" ID="lblTitle" Text="Театарска претстава"></asp:Label></td>
+            <td><asp:TextBox runat="server" ID="txtTitle"></asp:TextBox></td>
+        </tr>
+        <tr>
+            <td><asp:Label runat="server" CssClass="labeli" ID="lblAuthorr" Text="Автор"></asp:Label></td>
+            <td><asp:TextBox runat="server" ID="txtAuthorr"></asp:TextBox></td>
+        </tr>
+        <tr>
+            <td><asp:Label runat="server" CssClass="labeli" ID="lblCity" Text="Град"></asp:Label></td>
+            <td><asp:TextBox runat="server" ID="txtCity"></asp:TextBox></td>
+        </tr>
+        <tr>
+            <td class="auto-style14"></td>
+            <td class="auto-style14"><asp:Button runat="server" CssClass="buttons" ID="btnSubmit" Text="Поднеси"></asp:Button></td>
+        </tr>
+    </table>
+
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+
+<asp:Image runat="server" ID="img7" ImageUrl="~/Images/AntonPanovStrumica.png" CssClass="images" ToolTip="Театар: Антон Панов - Струмица"></asp:Image>
+<asp:Image runat="server" ID="img8" ImageUrl="~/Images/NarodenTeatarShtip.png" CssClass="images" ToolTip="Народен театар - Штип"></asp:Image>
+<asp:Image runat="server" ID="img9" ImageUrl="~/Images/NarodenTeatarBitola.png" CssClass="images" ToolTip="Народен театар - Битола"></asp:Image>
+
+
     </asp:Panel>
 
     

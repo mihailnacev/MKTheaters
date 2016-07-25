@@ -134,10 +134,10 @@ border-top-right-radius:30px;
 
 .listbox {
 
-    color:#F0CB01;
+    color:#BA252A;
     height:200px;
     width:450px;
-    background-color:#BA252A;
+    background-color:white;
     font-size:18px;
     border:10px solid #F0CB01;
     font-family:'Malgun Gothic';
@@ -215,5 +215,31 @@ border-top-right-radius:30px;
     margin-top: 12px;
     background-color: blue;
     margin-left: 10px;
+
+}
+
+.lblSuggest {
+
+   border-bottom:2px solid #BA252A;
+   margin-left:20px;
+    font-weight:bolder;
+    font-size:25px;
+    color:#BA252A;
+    text-align:center;
+    width:400px;
+    display:inline-block;
+    
+
+}
+
+#tabela3 {
+
+    margin-top:10px;
+    border:10px solid #F0CB01;
+    border-top-left-radius:20px;
+    border-top-right-radius:20px;
+    display:inline-block;
+    height:120px;
+    padding-top:40px;
 
 }
