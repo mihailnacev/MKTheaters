@@ -8,7 +8,10 @@ public partial class Najava : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        if (Session["Najaven"] != null)
+        {
+            Response.Redirect("~/MyProfile.aspx");
+        }
     }
 
     protected void btnRegister_Click(object sender, EventArgs e)
