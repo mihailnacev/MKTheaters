@@ -47,35 +47,7 @@
         .auto-style6 {
             width: 80%;
         }
-        #tabela {
-
-         background-color:white;
-         padding:30px;
-         margin:auto;
-         margin-top:10px;
-         width:40%;
-         border-radius:20px;
-         border:20px solid #F0CB01;
-        }
-        .labeli {
-
-         color:#BA252A;
-         font-weight:bold;
         
-         }
-        .buttons {
-
-         color:rgb(245,222,95);
-         background-color:#BA252A;
-         width:150px;
-         font-weight:bold;
-         height:30px;
-         margin-left:20px;
-         font-size:15px;
-
-
-}
-
         .auto-style7 {
             width: 276px;
         }
