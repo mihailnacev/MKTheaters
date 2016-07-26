@@ -41,7 +41,7 @@
             color: rgb(245,222,95);
             font-weight: bold;
             font-size: 15px;
-            margin-left: 62px;
+            /*margin-left: 62px;*/
             background-color: #BA252A;
         }
         .auto-style6 {
@@ -69,16 +69,9 @@
     <asp:Panel ID="pnlSearch" runat="server">
    <asp:MultiView ID="mvSearch" runat="server">
        <asp:View ID="View1" runat="server">
-
-           <table class="auto-style3">
-               <tr>
-                   <td class="auto-style6">&nbsp;</td>
-                   <td>
-                       <asp:Button ID="btnPrebarajPretstava" runat="server" CssClass="auto-style5" OnClick="btnPrebarajPretstava_Click" Text="Пребарај претстава ..." Width="223px" Height="38px" />
-                   </td>
-               </tr>
-           </table>
-
+            <asp:Panel runat="server" ID="Panel2">
+                <asp:Button ID="btnPrebarajPretstava" runat="server" CssClass="auto-style5" OnClick="btnPrebarajPretstava_Click" Text="Пребарај претстава ..." Width="223px" Height="38px" />
+            </asp:Panel>
        </asp:View>
        <asp:View ID="View2" runat="server">
            <asp:Panel ID="pnlView2" runat="server">

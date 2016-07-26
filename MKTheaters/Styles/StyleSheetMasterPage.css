@@ -168,3 +168,12 @@
     margin:auto;
     font-size: 18px;
 }
+
+.CurrentNode 
+{
+    color: #BA252A;
+    background-color: #F0CB01;
+    border-radius: 10px;
+    padding: 5px;
+    font-weight: bold;
+}
