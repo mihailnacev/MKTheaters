@@ -196,6 +196,12 @@ public partial class Repertoar : System.Web.UI.Page
         Panel1.Visible = true;
         pnlSearch.Visible = true;
         mvSearch.ActiveViewIndex = 0;
+        ViewState["set"] = null;
+        ViewState["set1"] = null;
+        ViewState["set2"] = null;
+        ViewState["set3"] = null;
+        ViewState["set4"] = null;
+        ViewState["set5"] = null;
     }
 
     protected void btnPreb_Click(object sender, EventArgs e)
@@ -212,7 +218,7 @@ public partial class Repertoar : System.Web.UI.Page
             Panel1.Visible = false;
         }
 
-        if (ddlKriterium.SelectedItem.Text == "Режисер")
+        else if (ddlKriterium.SelectedItem.Text == "Режисер")
         {
             theatersService servis = new theatersService();
             DataSet result = servis.findByDirector(tbKluc.Text);
@@ -224,7 +230,7 @@ public partial class Repertoar : System.Web.UI.Page
             Panel1.Visible = false;
         }
 
-        if (ddlKriterium.SelectedItem.Text == "Автор")
+        else if (ddlKriterium.SelectedItem.Text == "Автор")
         {
             theatersService servis = new theatersService();
             DataSet result = servis.findByAuthor(tbKluc.Text);
@@ -236,7 +242,7 @@ public partial class Repertoar : System.Web.UI.Page
             Panel1.Visible = false;
         }
 
-        if (ddlKriterium.SelectedItem.Text == "Актер")
+        else if (ddlKriterium.SelectedItem.Text == "Актер")
         {
             theatersService servis = new theatersService();
             DataSet result = servis.findByActor(tbKluc.Text);
@@ -248,7 +254,7 @@ public partial class Repertoar : System.Web.UI.Page
             Panel1.Visible = false;
         }
 
-        if (ddlKriterium.SelectedItem.Text == "Датум")
+        else if (ddlKriterium.SelectedItem.Text == "Датум")
         {
             theatersService servis = new theatersService();
             DataSet result = servis.findByDate(tbKluc.Text);
@@ -260,7 +266,7 @@ public partial class Repertoar : System.Web.UI.Page
             Panel1.Visible = false;
         }
 
-        if (ddlKriterium.SelectedItem.Text == "Театар")
+        else if (ddlKriterium.SelectedItem.Text == "Театар")
         {
             theatersService servis = new theatersService();
             DataSet result = servis.findByTheater(tbKluc.Text);
@@ -270,6 +276,12 @@ public partial class Repertoar : System.Web.UI.Page
             mvSearch.ActiveViewIndex = 2;
             main.Visible = false;
             Panel1.Visible = false;
+        }
+        else
+        {
+            mvSearch.ActiveViewIndex = 0;
+            main.Visible = true;
+            Panel1.Visible = true;
         }
     }
 
@@ -334,6 +346,28 @@ public partial class Repertoar : System.Web.UI.Page
             mvSearch.ActiveViewIndex = 2;
             main.Visible = false;
             Panel1.Visible = false;
+        }
+    }
+
+
+
+    protected void dvPretstavi_ItemCommand(object sender, DetailsViewCommandEventArgs e)
+    {
+        if (e.CommandName.ToString() == "select")
+        {
+            Session["imenaP"] = dvPretstavi.DataKey[0].ToString();
+            Response.Redirect("~/PretstavaDetails.aspx");
+        }
+
+    }
+
+
+
+    protected void ddlKriterium_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        if(ddlKriterium.SelectedItem.Text!=" -Default -")
+        {
+            tbKluc.Enabled = true;
         }
     }
 }

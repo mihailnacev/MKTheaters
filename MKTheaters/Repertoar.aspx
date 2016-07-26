@@ -33,10 +33,7 @@
             border-top-style: solid;
             border-top-width: 3px;
         }
-        .auto-style3 {
-            width: 100%;
-        }
-        
+                
         .auto-style5 {
             color: rgb(245,222,95);
             font-weight: bold;
@@ -44,22 +41,93 @@
             /*margin-left: 62px;*/
             background-color: #BA252A;
         }
-        .auto-style6 {
-            width: 80%;
-        }
-        
+                
         .auto-style7 {
             width: 276px;
+            height: 46px;
         }
 
-        .auto-style8 {
+        #tabela 
+{
+    background-color:white;
+    padding:30px;
+    margin:auto;
+    margin-top:10px;
+    width:40%;
+    border-radius:20px;
+    border:20px solid #F0CB01;
+}
+
+.labeli 
+{
+    color:#BA252A;
+    font-weight:bold;
+    font-size:larger;
+}
+
+.buttons 
+{
+    color:rgb(245,222,95);
+    background-color:#BA252A;
+    width:150px;
+    font-weight:bold;
+    height:30px;
+    margin-left:20px;
+    font-size:15px;
+}
+
+#Panel2 
+{
+    margin-right: 5%;
+    margin-bottom: 10px;
+    float: right;
+    width: 90%;
+    text-align: right;
+}
+
+#dvPretstavi{
+     background-color:white;
+    padding:30px;
+    margin:auto;
+    margin-top:10px;
+    width:40%;
+    border-radius:20px;
+    border:20px solid #F0CB01;S
+}
+        .auto-style9 {
             color: rgb(245,222,95);
             font-weight: bold;
             font-size: 15px;
-            margin-left: 20px;
+            margin-left: 0px;
             background-color: #BA252A;
         }
-
+        .auto-style10 {
+            width: 276px;
+            height: 59px;
+        }
+        .auto-style11 {
+            height: 59px;
+        }
+        .auto-style12 {
+            width: 276px;
+            height: 55px;
+        }
+        .auto-style13 {
+            height: 55px;
+        }
+        .auto-style14 {
+            height: 46px;
+        }
+        .auto-style15 {
+            height: 54px;
+        }
+        .auto-style16 {
+            color: rgb(245,222,95);
+            font-weight: bold;
+            font-size: 15px;
+            margin-left: 44px;
+            background-color: #BA252A;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
@@ -77,13 +145,13 @@
            <asp:Panel ID="pnlView2" runat="server">
            <table id="tabela">
                <tr>
-                   <td colspan="2">
+                   <td colspan="2" class="auto-style15">
                        <asp:Label ID="Label8" runat="server" CssClass="labeli">Изберете критериум за пребарување</asp:Label>
                    </td>
                </tr>
                <tr>
                    <td class="auto-style7">
-                       <asp:DropDownList ID="ddlKriterium" runat="server" Height="22px" Width="274px">
+                       <asp:DropDownList ID="ddlKriterium" runat="server" Height="35px" Width="278px" OnSelectedIndexChanged="ddlKriterium_SelectedIndexChanged">
                            <asp:ListItem>- Default -</asp:ListItem>
                            <asp:ListItem>Град</asp:ListItem>
                            <asp:ListItem>Режисер</asp:ListItem>
@@ -93,27 +161,45 @@
                            <asp:ListItem>Датум</asp:ListItem>
                        </asp:DropDownList>
                    </td>
-                   <td>&nbsp;</td>
+                   <td class="auto-style14"></td>
                </tr>
                <tr>
-                   <td class="auto-style7">
-                       <asp:TextBox ID="tbKluc" runat="server" ToolTip="Внесете текст" Width="262px"></asp:TextBox>
+                   <td class="auto-style12">
+                       <asp:TextBox ID="tbKluc" runat="server" Width="272px" Height="35px"></asp:TextBox>
                    </td>
-                   <td>&nbsp;</td>
+                   <td class="auto-style13">
+                       <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="tbKluc" ErrorMessage="* Полето е задолжително!" Font-Bold="True" ForeColor="#BA252A"></asp:RequiredFieldValidator>
+                   </td>
                </tr>
                <tr>
-                   <td class="auto-style7">
-                       <asp:Button ID="btnNazad" runat="server" CssClass="auto-style8" OnClick="btnNazad_Click" Text="&lt;&lt;&lt;" Width="218px" />
+                   <td class="auto-style10">
+                       <asp:Button ID="btnNazad" runat="server" CssClass="auto-style9" OnClick="btnNazad_Click" Text="&lt;&lt;&lt;" Width="268px" Height="50px" CausesValidation="False" />
                    </td>
-                   <td>
-                       <asp:Button ID="btnPreb" runat="server" CssClass="auto-style8" Text="Пребарај" Width="195px" OnClick="btnPreb_Click" />
+                   <td class="auto-style11">
+                       <asp:Button ID="btnPreb" runat="server" CssClass="auto-style16" Text="Пребарај" Width="268px" OnClick="btnPreb_Click" Height="51px" />
                    </td>
                </tr>
            </table>
                </asp:Panel>
        </asp:View>
        <asp:View ID="View3" runat="server">
-           <asp:DetailsView ID="dvPretstavi" runat="server" Height="50px" Width="125px" AllowPaging="True" OnPageIndexChanging="dvPretstavi_PageIndexChanging"></asp:DetailsView>
+           <asp:DetailsView ID="dvPretstavi" runat="server" Height="50px" Width="40%" AllowPaging="True" OnPageIndexChanging="dvPretstavi_PageIndexChanging" BorderColor="#F0CB01" BorderStyle="Solid" BorderWidth="5px" CellPadding="6" AutoGenerateRows="False" CellSpacing="2" DataKeyNames="Ime" OnItemCommand="dvPretstavi_ItemCommand">
+               <EmptyDataRowStyle BackColor="Red" BorderColor="#FFCC00" BorderWidth="5px" />
+               <Fields>
+                   <asp:ButtonField CommandName="select" DataTextField="Ime" HeaderText="Претстава" Text="Button">
+                   <ControlStyle Font-Size="Large" />
+                   <ItemStyle Font-Size="Large" HorizontalAlign="Center" VerticalAlign="Middle" />
+                   </asp:ButtonField>
+                   <asp:BoundField DataField="Avtor" HeaderText="Автор" />
+                   <asp:BoundField DataField="Reziser" HeaderText="Режисер" />
+                   <asp:BoundField DataField="Akteri" HeaderText="Актери" />
+                   <asp:BoundField DataField="Teatar" HeaderText="Театар" />
+                   <asp:BoundField DataField="Grad" HeaderText="Град" />
+                   <asp:BoundField DataField="Vremetraenje" HeaderText="Времетраење" />
+               </Fields>
+               <PagerStyle BackColor="Orange" Font-Bold="True" ForeColor="Maroon" HorizontalAlign="Center" VerticalAlign="Middle" />
+               <RowStyle BackColor="#BA252A" Font-Bold="True" ForeColor="#F0CB01" HorizontalAlign="Left" VerticalAlign="Middle" />
+           </asp:DetailsView>
        </asp:View>
    </asp:MultiView>
     </asp:Panel> 
