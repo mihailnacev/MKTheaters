@@ -170,16 +170,6 @@ public partial class Repertoar : System.Web.UI.Page
         }
     }
 
-    protected void Cancel_Click(object sender, EventArgs e)
-    {
-
-    }
-
-    protected void btnPrebaraj_Click(object sender, EventArgs e)
-    {
-
-    }
-
 
     protected void gvPretstavi_SelectedIndexChanged(object sender, EventArgs e)
     {
@@ -233,6 +223,54 @@ public partial class Repertoar : System.Web.UI.Page
             main.Visible = false;
             Panel1.Visible = false;
         }
+
+        if (ddlKriterium.SelectedItem.Text == "Автор")
+        {
+            theatersService servis = new theatersService();
+            DataSet result = servis.findByAuthor(tbKluc.Text);
+            dvPretstavi.DataSource = result;
+            dvPretstavi.DataBind();
+            ViewState["set2"] = result;
+            mvSearch.ActiveViewIndex = 2;
+            main.Visible = false;
+            Panel1.Visible = false;
+        }
+
+        if (ddlKriterium.SelectedItem.Text == "Актер")
+        {
+            theatersService servis = new theatersService();
+            DataSet result = servis.findByActor(tbKluc.Text);
+            dvPretstavi.DataSource = result;
+            dvPretstavi.DataBind();
+            ViewState["set3"] = result;
+            mvSearch.ActiveViewIndex = 2;
+            main.Visible = false;
+            Panel1.Visible = false;
+        }
+
+        if (ddlKriterium.SelectedItem.Text == "Датум")
+        {
+            theatersService servis = new theatersService();
+            DataSet result = servis.findByDate(tbKluc.Text);
+            dvPretstavi.DataSource = result;
+            dvPretstavi.DataBind();
+            ViewState["set4"] = result;
+            mvSearch.ActiveViewIndex = 2;
+            main.Visible = false;
+            Panel1.Visible = false;
+        }
+
+        if (ddlKriterium.SelectedItem.Text == "Театар")
+        {
+            theatersService servis = new theatersService();
+            DataSet result = servis.findByTheater(tbKluc.Text);
+            dvPretstavi.DataSource = result;
+            dvPretstavi.DataBind();
+            ViewState["set5"] = result;
+            mvSearch.ActiveViewIndex = 2;
+            main.Visible = false;
+            Panel1.Visible = false;
+        }
     }
 
     protected void dvPretstavi_PageIndexChanging(object sender, DetailsViewPageEventArgs e)
@@ -251,6 +289,46 @@ public partial class Repertoar : System.Web.UI.Page
         if (ddlKriterium.SelectedItem.Text == "Режисер")
         {
             DataSet ds = (DataSet)ViewState["set1"];
+            dvPretstavi.DataSource = ds;
+            dvPretstavi.DataBind();
+            mvSearch.ActiveViewIndex = 2;
+            main.Visible = false;
+            Panel1.Visible = false;
+        }
+
+        if (ddlKriterium.SelectedItem.Text == "Автор")
+        {
+            DataSet ds = (DataSet)ViewState["set2"];
+            dvPretstavi.DataSource = ds;
+            dvPretstavi.DataBind();
+            mvSearch.ActiveViewIndex = 2;
+            main.Visible = false;
+            Panel1.Visible = false;
+        }
+
+        if (ddlKriterium.SelectedItem.Text == "Актер")
+        {
+            DataSet ds = (DataSet)ViewState["set3"];
+            dvPretstavi.DataSource = ds;
+            dvPretstavi.DataBind();
+            mvSearch.ActiveViewIndex = 2;
+            main.Visible = false;
+            Panel1.Visible = false;
+        }
+
+        if (ddlKriterium.SelectedItem.Text == "Датум")
+        {
+            DataSet ds = (DataSet)ViewState["set4"];
+            dvPretstavi.DataSource = ds;
+            dvPretstavi.DataBind();
+            mvSearch.ActiveViewIndex = 2;
+            main.Visible = false;
+            Panel1.Visible = false;
+        }
+
+        if (ddlKriterium.SelectedItem.Text == "Театар")
+        {
+            DataSet ds = (DataSet)ViewState["set5"];
             dvPretstavi.DataSource = ds;
             dvPretstavi.DataBind();
             mvSearch.ActiveViewIndex = 2;

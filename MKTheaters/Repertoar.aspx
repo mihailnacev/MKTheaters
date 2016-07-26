@@ -122,6 +122,10 @@
                            <asp:ListItem>- Default -</asp:ListItem>
                            <asp:ListItem>Град</asp:ListItem>
                            <asp:ListItem>Режисер</asp:ListItem>
+                           <asp:ListItem>Автор</asp:ListItem>
+                           <asp:ListItem>Актер</asp:ListItem>
+                           <asp:ListItem>Театар</asp:ListItem>
+                           <asp:ListItem>Датум</asp:ListItem>
                        </asp:DropDownList>
                    </td>
                    <td>&nbsp;</td>
@@ -202,7 +206,7 @@
          &nbsp;
          <asp:Button ID="OK" runat="server" OnClick="OK_Click" Text="Да" Width="98px" />
          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-         <asp:Button ID="Cancel" runat="server" CssClass="auto-style1" OnClick="Cancel_Click" Text="Не" Width="98px" />
+         <asp:Button ID="Cancel" runat="server" CssClass="auto-style1" Text="Не" Width="98px" />
          <br />
          &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     </asp:Panel>
