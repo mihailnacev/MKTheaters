@@ -13,6 +13,8 @@ public partial class Repertoar : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         if (!IsPostBack) IspolniMaster();
+        main.Visible = true;
+        mvSearch.ActiveViewIndex = 0;
     }
 
     public void IspolniMaster()
@@ -207,5 +209,21 @@ public partial class Repertoar : System.Web.UI.Page
     protected void gvPretstavi_RowCreated(object sender, GridViewRowEventArgs e)
     {
         
+    }
+
+
+    protected void btnPrebarajPretstava_Click(object sender, EventArgs e)
+    {
+        mvSearch.ActiveViewIndex = 1;
+        main.Visible = false;
+        Panel1.Visible = false;
+    }
+
+    protected void btnNazad_Click(object sender, EventArgs e)
+    {
+        main.Visible = true;
+        Panel1.Visible = true;
+        pnlSearch.Visible = true;
+        mvSearch.ActiveViewIndex = 0;
     }
 }

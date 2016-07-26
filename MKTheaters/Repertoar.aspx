@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="Repertoar.aspx.cs" ClientIDMode="Static" Inherits="Repertoar" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolKit" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
-     <link href="Styles/StyleSheetRepertoar.css" rel="stylesheet" />
+    <link href="Styles/StyleSheetRepertoar.css" rel="stylesheet"/>
     <style type="text/css">
 .modalBackground{
     background-color:black;
@@ -33,6 +33,53 @@
             border-top-style: solid;
             border-top-width: 3px;
         }
+        .auto-style3 {
+            width: 100%;
+        }
+        
+        .auto-style5 {
+            color: rgb(245,222,95);
+            font-weight: bold;
+            font-size: 15px;
+            margin-left: 62px;
+            background-color: #BA252A;
+        }
+        .auto-style6 {
+            width: 80%;
+        }
+        #tabela {
+
+         background-color:white;
+         padding:30px;
+         margin:auto;
+         margin-top:10px;
+         width:40%;
+         border-radius:20px;
+         border:20px solid #F0CB01;
+        }
+        .labeli {
+
+         color:#BA252A;
+         font-weight:bold;
+        
+         }
+        .buttons {
+
+         color:rgb(245,222,95);
+         background-color:#BA252A;
+         width:150px;
+         font-weight:bold;
+         height:30px;
+         margin-left:20px;
+         font-size:15px;
+
+
+}
+
+        .auto-style7 {
+            width: 276px;
+        }
+
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
@@ -61,7 +108,54 @@
     <asp:ScriptManager ID="ScriptManager1" runat="server"> </asp:ScriptManager>
  
     
- 
+    <asp:Panel ID="pnlSearch" runat="server">
+   <asp:MultiView ID="mvSearch" runat="server">
+       <asp:View ID="View1" runat="server">
+
+           <table class="auto-style3">
+               <tr>
+                   <td class="auto-style6">&nbsp;</td>
+                   <td>
+                       <asp:Button ID="btnPrebarajPretstava" runat="server" CssClass="auto-style5" OnClick="btnPrebarajPretstava_Click" Text="Пребарај претстава ..." Width="223px" Height="38px" />
+                   </td>
+               </tr>
+           </table>
+
+       </asp:View>
+       <asp:View ID="View2" runat="server">
+           <asp:Panel ID="pnlView2" runat="server">
+           <table id="tabela">
+               <tr>
+                   <td colspan="2">
+                       <asp:Label ID="Label8" runat="server" CssClass="labeli">Изберете критериум за пребарување</asp:Label>
+                   </td>
+               </tr>
+               <tr>
+                   <td class="auto-style7">
+                       <asp:DropDownList ID="DropDownList3" runat="server" Height="24px" Width="189px">
+                       </asp:DropDownList>
+                   </td>
+                   <td>&nbsp;</td>
+               </tr>
+               <tr>
+                   <td class="auto-style7">
+                       <asp:TextBox ID="TextBox1" runat="server" ToolTip="Внесете текст"></asp:TextBox>
+                   </td>
+                   <td>&nbsp;</td>
+               </tr>
+               <tr>
+                   <td class="auto-style7">
+                       <asp:Button ID="btnNazad" runat="server" CssClass="buttons" OnClick="btnNazad_Click" Text="&lt;&lt;&lt;" />
+                   </td>
+                   <td>
+                       <asp:Button ID="btnPreb" runat="server" CssClass="buttons" Text="Пребарај" />
+                   </td>
+               </tr>
+           </table>
+               </asp:Panel>
+       </asp:View>
+   </asp:MultiView>
+    </asp:Panel> 
     <asp:UpdatePanel ID="main" runat="server"> 
         <ContentTemplate>
             <asp:GridView ID="gvPretstavi" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#F0CB01" BorderStyle="Solid" BorderWidth="5px" CellPadding="4"  Font-Bold="False" Width="95%" AllowPaging="True" OnPageIndexChanging="gvPretstavi_PageIndexChanging" OnRowDataBound="gvPretstavi_RowDataBound" OnRowCommand="gvPretstavi_RowCommand" DataKeyNames="Ime" OnSelectedIndexChanged="gvPretstavi_SelectedIndexChanged" ForeColor="Red" OnRowCreated="gvPretstavi_RowCreated">
@@ -105,23 +199,7 @@
     </asp:GridView>
     </ContentTemplate> 
     </asp:UpdatePanel>  
-    <br />
-    <br /> 
-    <br /> 
-    <br /> 
-    <br /> 
-    <br /> 
-    <br /> 
-    <br /> 
-    <br /> 
-    <br /> 
-    <br /> 
-    <br /> 
-    <br /> 
-    <br /> 
-    <br /> 
-    <br /> 
-    <br /> 
+ 
     <asp:Panel ID="Panel1" runat="server" CssClass="auto-style2" Height="148px" Width="305px">
        
          <asp:Label ID="Label4" runat="server" Text="Дали сакате да ја резервирате избраната претстава?"></asp:Label>
