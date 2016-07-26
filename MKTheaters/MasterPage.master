@@ -49,6 +49,13 @@
         <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server" ClientIDMode="Static">
         
         </asp:ContentPlaceHolder>
+        <asp:Panel ID="footer" runat="server">
+            <asp:Panel ID="footerContainer" runat="server">
+                <asp:Panel ID="copyright" runat="server">
+                    <asp:Label id="Label4" runat="server">© 2016 Македонски Театри. Сите права се задржани.</asp:Label>
+                </asp:Panel>
+            </asp:Panel>
+        </asp:Panel>
     </div>
     </form>
 </body>

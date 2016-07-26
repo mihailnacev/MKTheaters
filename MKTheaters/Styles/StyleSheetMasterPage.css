@@ -45,9 +45,23 @@
     border-top-right-radius:150px;
 }
 
-#header 
+#header
 {
     width:100%;
+}
+
+#footer 
+{
+    width:100%;
+    margin-top: 50px;
+}
+
+#footerContainer 
+{
+    width: 90%;
+    margin: auto;
+    background-color: white;
+    height: 100px;
 }
 
 .headerHeight1
@@ -194,4 +208,15 @@
     padding-right: 5px;
     color: #F0CB01;
     font-weight: bold;
+}
+
+#copyright 
+{
+    margin: auto;
+    text-align: center;
+    font-size: 12px;
+    color: darkred;
+    position: relative;
+    font-weight: bold;
+    top: 40%;
 }
