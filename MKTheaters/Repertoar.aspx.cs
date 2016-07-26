@@ -180,25 +180,6 @@ public partial class Repertoar : System.Web.UI.Page
 
     }
 
-    protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
-    {
-        int value = Convert.ToInt32(DropDownList1.SelectedValue);
-        switch (value)
-        {
-            case 1: lbl1.Visible = true;
-                break;
-            case 2: lbl2.Visible = true;
-                break;
-            case 3: lbl3.Visible = true;
-                break;
-            case 4: lbl4.Visible = true;
-                break;
-            case 5: lbl5.Visible = true;
-                break;
-            case 6: lbl6.Visible = true;
-                break;
-        }
-    }
 
     protected void gvPretstavi_SelectedIndexChanged(object sender, EventArgs e)
     {
@@ -225,5 +206,56 @@ public partial class Repertoar : System.Web.UI.Page
         Panel1.Visible = true;
         pnlSearch.Visible = true;
         mvSearch.ActiveViewIndex = 0;
+    }
+
+    protected void btnPreb_Click(object sender, EventArgs e)
+    {
+        if (ddlKriterium.SelectedItem.Text == "Град")
+        {
+            theatersService servis = new theatersService();
+            DataSet result=servis.findByCity(tbKluc.Text);
+            dvPretstavi.DataSource = result;
+            dvPretstavi.DataBind();
+            ViewState["set"] = result;
+            mvSearch.ActiveViewIndex = 2;
+            main.Visible = false;
+            Panel1.Visible = false;
+        }
+
+        if (ddlKriterium.SelectedItem.Text == "Режисер")
+        {
+            theatersService servis = new theatersService();
+            DataSet result = servis.findByDirector(tbKluc.Text);
+            dvPretstavi.DataSource = result;
+            dvPretstavi.DataBind();
+            ViewState["set1"] = result;
+            mvSearch.ActiveViewIndex = 2;
+            main.Visible = false;
+            Panel1.Visible = false;
+        }
+    }
+
+    protected void dvPretstavi_PageIndexChanging(object sender, DetailsViewPageEventArgs e)
+    {
+        dvPretstavi.PageIndex = e.NewPageIndex;
+        if (ddlKriterium.SelectedItem.Text == "Град")
+        {
+            DataSet ds = (DataSet)ViewState["set"];
+            dvPretstavi.DataSource = ds;
+            dvPretstavi.DataBind();
+            mvSearch.ActiveViewIndex = 2;
+            main.Visible = false;
+            Panel1.Visible = false;
+        }
+
+        if (ddlKriterium.SelectedItem.Text == "Режисер")
+        {
+            DataSet ds = (DataSet)ViewState["set1"];
+            dvPretstavi.DataSource = ds;
+            dvPretstavi.DataBind();
+            mvSearch.ActiveViewIndex = 2;
+            main.Visible = false;
+            Panel1.Visible = false;
+        }
     }
 }

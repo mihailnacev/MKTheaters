@@ -28,18 +28,21 @@ public class theatersService : System.Web.Services.WebService
     }
     
     [WebMethod(Description = "Kreira lista od pretstavi koi se na repertoar vo gradot koj e vlezen argument")]
-    public List<Play> findByCity(string City)
+    public DataSet findByCity(string City)
     {
-        List<Play> pretstavi = new List<Play>();
+       // List<Play> pretstavi = new List<Play>();
         SqlConnection konekcija = new SqlConnection();
         konekcija.ConnectionString = ConfigurationManager.ConnectionStrings["Test"].ConnectionString;
         string sqlString = "SELECT * FROM Repertoar WHERE Grad=@city";
         SqlCommand komanda = new SqlCommand(sqlString, konekcija);
         komanda.Parameters.AddWithValue("@city", City);
+        SqlDataAdapter adapter = new SqlDataAdapter(komanda);
+        DataSet ds = new DataSet();
         try
         {
             konekcija.Open();
-            SqlDataReader citac = komanda.ExecuteReader();
+            adapter.Fill(ds, "Repertoar");
+            /*SqlDataReader citac = komanda.ExecuteReader();
             while (citac.Read())
             {
                 string listOfDates = citac[6].ToString();
@@ -50,29 +53,32 @@ public class theatersService : System.Web.Services.WebService
                         citac[5].ToString(), s, citac[7].ToString(), citac[3].ToString());
                     pretstavi.Add(tmp);
                 }
-            }
-            citac.Close();
+            }*/
+            //citac.Close();
         }
         finally
         {
             konekcija.Close();
         }
-        return pretstavi;
+        return ds;
     }
 
     [WebMethod(Description = "Kreira lista od pretstavi chij reziser e reziserot koj e daden kako vlezen argument")]
-    public List<Play> findByDirector(string Director)
+    public DataSet findByDirector(string Director)
     {
-        List<Play> pretstavi = new List<Play>();
+        //List<Play> pretstavi = new List<Play>();
         SqlConnection konekcija = new SqlConnection();
         konekcija.ConnectionString = ConfigurationManager.ConnectionStrings["Test"].ConnectionString;
         string sqlString = "SELECT * FROM Repertoar WHERE Reziser=@director";
         SqlCommand komanda = new SqlCommand(sqlString, konekcija);
         komanda.Parameters.AddWithValue("@director", Director);
+        SqlDataAdapter adapter = new SqlDataAdapter(komanda);
+        DataSet ds = new DataSet();
         try
         {
             konekcija.Open();
-            SqlDataReader citac = komanda.ExecuteReader();
+            adapter.Fill(ds, "Repertoar");
+            /*SqlDataReader citac = komanda.ExecuteReader();
             while (citac.Read())
             {
                 string listOfDates = citac[6].ToString();
@@ -84,13 +90,13 @@ public class theatersService : System.Web.Services.WebService
                     pretstavi.Add(tmp);
                 }
             }
-            citac.Close();
+            citac.Close();*/
         }
         finally
         {
             konekcija.Close();
         }
-        return pretstavi;
+        return ds;
     }
 
     [WebMethod(Description = "Kreira lista od pretstavi chij avtor e avtorot koj e daden kako vlezen argument")]

@@ -52,31 +52,17 @@
             width: 276px;
         }
 
+        .auto-style8 {
+            color: rgb(245,222,95);
+            font-weight: bold;
+            font-size: 15px;
+            margin-left: 20px;
+            background-color: #BA252A;
+        }
+
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    <!-- 
-    <asp:Label ID="Label5" runat="server" Text="Изберете критериум за пребарување"></asp:Label>
-    <br />
-    <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="True" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
-        <asp:ListItem Selected="True" Value="0">Изберете критериум</asp:ListItem>
-        <asp:ListItem Value="1">Град</asp:ListItem>
-        <asp:ListItem Value="2">Режисер</asp:ListItem>
-        <asp:ListItem Value="3">Автор</asp:ListItem>
-        <asp:ListItem Value="4">Актер</asp:ListItem>
-        <asp:ListItem Value="5">Датум</asp:ListItem>
-        <asp:ListItem Value="6">Театар</asp:ListItem>
-   </asp:DropDownList>
-    <br />
-    <asp:Label ID="lbl1" runat="server" Text="Изберете град" Visible="false"></asp:Label>
-    <asp:Label ID="lbl2" runat="server" Text="Изберете режисер" Visible="false"></asp:Label>
-    <asp:Label ID="lbl3" runat="server" Text="Изберете автор" Visible="false"></asp:Label>
-    <asp:Label ID="lbl4" runat="server" Text="Изберете актер" Visible="false"></asp:Label>
-    <asp:Label ID="lbl5" runat="server" Text="Изберете датум" Visible="false"></asp:Label>
-    <asp:Label ID="lbl6" runat="server" Text="Изберете театар" Visible="false"></asp:Label>
-    <br />
-    <asp:Button runat="server" ID="btnPrebaraj" OnClick="btnPrebaraj_Click" Text="Пребарај" />
-    -->
     <asp:ScriptManager ID="ScriptManager1" runat="server"> </asp:ScriptManager>
  
     
@@ -104,27 +90,33 @@
                </tr>
                <tr>
                    <td class="auto-style7">
-                       <asp:DropDownList ID="DropDownList3" runat="server" Height="24px" Width="189px">
+                       <asp:DropDownList ID="ddlKriterium" runat="server" Height="22px" Width="274px">
+                           <asp:ListItem>- Default -</asp:ListItem>
+                           <asp:ListItem>Град</asp:ListItem>
+                           <asp:ListItem>Режисер</asp:ListItem>
                        </asp:DropDownList>
                    </td>
                    <td>&nbsp;</td>
                </tr>
                <tr>
                    <td class="auto-style7">
-                       <asp:TextBox ID="TextBox1" runat="server" ToolTip="Внесете текст"></asp:TextBox>
+                       <asp:TextBox ID="tbKluc" runat="server" ToolTip="Внесете текст" Width="262px"></asp:TextBox>
                    </td>
                    <td>&nbsp;</td>
                </tr>
                <tr>
                    <td class="auto-style7">
-                       <asp:Button ID="btnNazad" runat="server" CssClass="buttons" OnClick="btnNazad_Click" Text="&lt;&lt;&lt;" />
+                       <asp:Button ID="btnNazad" runat="server" CssClass="auto-style8" OnClick="btnNazad_Click" Text="&lt;&lt;&lt;" Width="218px" />
                    </td>
                    <td>
-                       <asp:Button ID="btnPreb" runat="server" CssClass="buttons" Text="Пребарај" />
+                       <asp:Button ID="btnPreb" runat="server" CssClass="auto-style8" Text="Пребарај" Width="195px" OnClick="btnPreb_Click" />
                    </td>
                </tr>
            </table>
                </asp:Panel>
+       </asp:View>
+       <asp:View ID="View3" runat="server">
+           <asp:DetailsView ID="dvPretstavi" runat="server" Height="50px" Width="125px" AllowPaging="True" OnPageIndexChanging="dvPretstavi_PageIndexChanging"></asp:DetailsView>
        </asp:View>
    </asp:MultiView>
     </asp:Panel> 
@@ -179,11 +171,12 @@
          <br />
          <br />
          <br />
-         <br />
-         &nbsp;&nbsp;&nbsp;
+         &nbsp;
          <asp:Button ID="OK" runat="server" OnClick="OK_Click" Text="Да" Width="98px" />
-         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
          <asp:Button ID="Cancel" runat="server" CssClass="auto-style1" OnClick="Cancel_Click" Text="Не" Width="98px" />
+         <br />
+         &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     </asp:Panel>
 
 </asp:Content>
