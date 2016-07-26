@@ -21,6 +21,7 @@
         $("#header").addClass("headerHeight1");
         $("#menu").addClass("menuPadding");
     }
+
     $("#menu a").hover(function () {
         $(this).css({ "background-color": "#F0CB01", "border": "3px solid darkred" });
     }, function () {
@@ -31,6 +32,12 @@
         $(this).css({ "font-size": "19px" });
     }, function () {
         $(this).css({ "font-size": "18px" });
+    });
+
+    $(".Node").hover(function () {
+        $(this).css({ "color": "#BA252A" });
+    }, function () {
+        $(this).css({ "color": "#F0CB01" });
     });
 
     $(window).resize(function ()

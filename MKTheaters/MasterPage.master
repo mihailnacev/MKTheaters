@@ -41,7 +41,7 @@
             </asp:Panel>
         </asp:Panel>
         <asp:Panel ID="SiteMap" runat="server">
-            <asp:SiteMapPath ID="SiteMapPath" runat="server" PathSeparator=" &gt;">
+            <asp:SiteMapPath ID="SiteMapPath" runat="server" PathSeparator=">>" NodeStyle-CssClass="Node">
                 <CurrentNodeStyle CssClass="CurrentNode" />
                 <PathSeparatorStyle CssClass="PathSeparator" />
             </asp:SiteMapPath>

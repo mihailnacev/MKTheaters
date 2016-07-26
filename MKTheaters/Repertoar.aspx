@@ -92,7 +92,7 @@
     margin-top:10px;
     width:40%;
     border-radius:20px;
-    border:20px solid #F0CB01;S
+    border:20px solid #F0CB01;
 }
         .auto-style9 {
             color: rgb(245,222,95);

@@ -1,12 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
-    <siteMapNode url="~/Pocetna.aspx" title="Почетна"  description="">
-        <siteMapNode url="~/Repertoar.aspx" title="Репертоар"  description="" />
-        <siteMapNode url="~/MyProfile.aspx" title="Мој профил"  description="" />
-        <siteMapNode url="~/About.aspx" title="За нас"  description="" />
-        <siteMapNode url="~/Najava.aspx" title="Најава"  description="" />
-        <siteMapNode url="~/Registracija.aspx" title="Регистрација" description="">
-            <siteMapNode url="~/UspesnaRegistracija.aspx" title="Успешна регистрација"  description="" />
+    <siteMapNode url="~/Pocetna.aspx" title="Почетна"  description="Почетна">
+      <siteMapNode url="~/Repertoar.aspx" title="Репертоар"  description="Репертоар">
+        <siteMapNode url="~/PretstavaDetails.aspx" title="Детали за избраната претстава"  description="Детали за избраната претстава" />
+      </siteMapNode>
+        <siteMapNode url="~/MyProfile.aspx" title="Мој профил"  description="Мој профил" />
+        <siteMapNode url="~/About.aspx" title="За нас"  description="За нас" />
+        <siteMapNode url="~/Najava.aspx" title="Најава"  description="Најава" />
+        <siteMapNode url="~/Registracija.aspx" title="Регистрација" description="Регистрација">
+          <siteMapNode url="~/UspesnaRegistracija.aspx" title="Успешна регистрација"  description="Успешна регистрација" />
         </siteMapNode>
     </siteMapNode>
 </siteMap>
