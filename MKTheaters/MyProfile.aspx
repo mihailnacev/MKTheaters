@@ -51,23 +51,16 @@
      </style>
      </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    <br />
-  <br />
-    <br />
-    <asp:Button ID="btnHome" runat="server" CssClass="options" Text="Мој профил" OnClick="btnHome_Click" />
-  <br />
-     <br />
-     
-   
-
-    <asp:Button ID="btnReservations" runat="server" CssClass="options"  Text="Остварени резервации" OnClick="btnReservations_Click" />
-       <br />
-     <br />
-    
-     
+<asp:Panel ID="Panel1" runat="server">    
+    <asp:Panel ID="NavigationPanel" runat="server">
+        <asp:Button ID="btnHome" runat="server" CssClass="options" Text="Мој профил" OnClick="btnHome_Click" />
+        <br />
+        <br />  
+        <asp:Button ID="btnReservations" runat="server" CssClass="options"  Text="Остварени резервации" OnClick="btnReservations_Click" />
+        <br />
+        <br /> 
         <asp:Button ID="btnSuggestions" runat="server" CssClass="options"  Text="Предложи" OnClick="btnSuggestions_Click" />
-        
-    
+    </asp:Panel>
     <asp:Panel ID="pnlMyProfile" CssClass="myProfilePanel" runat="server">
         <table class="auto-style1" id="tabela">
             <tr>
@@ -128,8 +121,7 @@
                     &nbsp;</td>
             </tr>
         </table>
-
-         <table class="auto-style1" id="tabela2">
+        <table class="auto-style1" id="tabela2">
             <tr>
                 <td colspan="2">
                     <asp:Label ID="Label1" runat="server" CssClass="info" Text="Како ви се допадна изгледаната претстава?"></asp:Label>
@@ -192,18 +184,11 @@
                 </td>
             </tr>
         </table>
-
-       
         <asp:Image ID="img1" runat="server" ImageUrl="~/Images/VojdanChernodrinskiPrilep.png"  CssClass="images" ToolTip="Театар: Војдан Чернодрински - Прилеп"/>
-      
         <asp:Image ID="img2" runat="server" ImageUrl="~/Images/JordanHKXinotVeles.png" CssClass="images" ToolTip="Театар: Јордан Хаџи Константинов Џинот - Велес" />
-        
         <asp:Image ID="img3" runat="server" ImageUrl="~/Images/NarodenTeatarKumanovo.png" CssClass="images" ToolTip="Народен театар - Куманово" />
-      
     </asp:Panel>
-
     <asp:Panel ID="pnlReservations" runat="server" CssClass="pnlReservations" Visible="False">
-
         <asp:Label ID="lblList" runat="server" Text="Листа на остварени резервации" CssClass="infoList" ></asp:Label>
         <br />
         <br />
@@ -211,7 +196,6 @@
         <tr>
             <td rowspan="3" class="auto-style13"> <asp:ListBox ID="lbRezervacii" runat="server" CssClass="listbox" Rows="3"></asp:ListBox></td>
             <td>  <asp:Button ID="Button2" runat="server" Text="" CssClass="btnUp" OnClick="btnUp_Click" /></td>
-            
         </tr>
         <tr>
             <td> <asp:Button ID="btnDown" runat="server" Text="" CssClass="btnDown" OnClick="btnDown_Click" /></td>
@@ -220,23 +204,15 @@
             <td>  <asp:Button ID="Button3" runat="server" CssClass="btnRemove" Text="" /></td>
         </tr>
     </table>
-    
         <br />
         <br />
-        
         <asp:Image ID="img4" runat="server" ImageUrl="~/Images/TeatarDecaMladinciSkopje.png" CssClass="images4" ToolTip="Театар за деца и млади Скопје" />
         <asp:Image ID="img5" runat="server" ImageUrl="~/Images/mntSkopje.png" CssClass="images5" ToolTip="Македонски народен театар - Скопје" />
         <asp:Image ID="img6" runat="server" ImageUrl="~/Images/DramskiSkopje.png" CssClass="images6"  ToolTip="Драмски театар - Скопје" />
-    
     </asp:Panel>
-
     <asp:Panel ID="pnlSuggest" runat="server" CssClass="pnlSuggest" Visible="false"  >
-
-<asp:Label ID="lblSuggest" runat="server" CssClass="lblSuggest" Text="Сакате да уживате во театарска претстава што ја нема на репертоарот во посакуваниот град? Предложете ни,а ние ќе се потрудиме да ја задоволиме Вашата желба!" ClientIDMode="Static"></asp:Label>
-
-
-
-          <table id="tabela3">
+        <asp:Label ID="lblSuggest" runat="server" CssClass="lblSuggest" Text="Сакате да уживате во театарска претстава што ја нема на репертоарот во посакуваниот град? Предложете ни,а ние ќе се потрудиме да ја задоволиме Вашата желба!" ClientIDMode="Static"></asp:Label>
+        <table id="tabela3">
         <tr>
             <td><asp:Label runat="server" CssClass="labeli" ID="lblTitle" Text="Театарска претстава"></asp:Label></td>
             <td><asp:TextBox runat="server" ID="txtTitle"></asp:TextBox></td>
@@ -254,22 +230,16 @@
             <td class="auto-style14"><asp:Button runat="server" CssClass="buttons" ID="btnSubmit" Text="Поднеси"></asp:Button></td>
         </tr>
     </table>
-
         <br />
         <br />
         <br />
         <br />
         <br />
         <br />
-
-<asp:Image runat="server" ID="img7" ImageUrl="~/Images/AntonPanovStrumica.png" CssClass="images" ToolTip="Театар: Антон Панов - Струмица"></asp:Image>
-<asp:Image runat="server" ID="img8" ImageUrl="~/Images/NarodenTeatarShtip.png" CssClass="images" ToolTip="Народен театар - Штип"></asp:Image>
-<asp:Image runat="server" ID="img9" ImageUrl="~/Images/NarodenTeatarBitola.png" CssClass="images" ToolTip="Народен театар - Битола"></asp:Image>
-
-
+        <asp:Image runat="server" ID="img7" ImageUrl="~/Images/AntonPanovStrumica.png" CssClass="images" ToolTip="Театар: Антон Панов - Струмица"></asp:Image>
+        <asp:Image runat="server" ID="img8" ImageUrl="~/Images/NarodenTeatarShtip.png" CssClass="images" ToolTip="Народен театар - Штип"></asp:Image>
+        <asp:Image runat="server" ID="img9" ImageUrl="~/Images/NarodenTeatarBitola.png" CssClass="images" ToolTip="Народен театар - Битола"></asp:Image>
     </asp:Panel>
-
-    
-
-    </asp:Content>
+</asp:Panel>
+</asp:Content>
 

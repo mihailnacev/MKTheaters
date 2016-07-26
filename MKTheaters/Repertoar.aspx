@@ -41,41 +41,13 @@
             color: rgb(245,222,95);
             font-weight: bold;
             font-size: 15px;
-            margin-left: 62px;
+            /*margin-left: 62px;*/
             background-color: #BA252A;
         }
         .auto-style6 {
             width: 80%;
         }
-        #tabela {
-
-         background-color:white;
-         padding:30px;
-         margin:auto;
-         margin-top:10px;
-         width:40%;
-         border-radius:20px;
-         border:20px solid #F0CB01;
-        }
-        .labeli {
-
-         color:#BA252A;
-         font-weight:bold;
         
-         }
-        .buttons {
-
-         color:rgb(245,222,95);
-         background-color:#BA252A;
-         width:150px;
-         font-weight:bold;
-         height:30px;
-         margin-left:20px;
-         font-size:15px;
-
-
-}
-
         .auto-style7 {
             width: 276px;
         }
@@ -97,16 +69,9 @@
     <asp:Panel ID="pnlSearch" runat="server">
    <asp:MultiView ID="mvSearch" runat="server">
        <asp:View ID="View1" runat="server">
-
-           <table class="auto-style3">
-               <tr>
-                   <td class="auto-style6">&nbsp;</td>
-                   <td>
-                       <asp:Button ID="btnPrebarajPretstava" runat="server" CssClass="auto-style5" OnClick="btnPrebarajPretstava_Click" Text="Пребарај претстава ..." Width="223px" Height="38px" />
-                   </td>
-               </tr>
-           </table>
-
+            <asp:Panel runat="server" ID="Panel2">
+                <asp:Button ID="btnPrebarajPretstava" runat="server" CssClass="auto-style5" OnClick="btnPrebarajPretstava_Click" Text="Пребарај претстава ..." Width="223px" Height="38px" />
+            </asp:Panel>
        </asp:View>
        <asp:View ID="View2" runat="server">
            <asp:Panel ID="pnlView2" runat="server">

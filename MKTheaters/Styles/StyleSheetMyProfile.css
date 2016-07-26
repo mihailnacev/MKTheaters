@@ -4,7 +4,7 @@
 .options {
 
     background-color:white;
-    width:320px;
+    width:125%;
     
     padding-top:8px;
     padding-bottom:8px;
@@ -12,7 +12,7 @@
     border-bottom-right-radius:10px;
     border-top-right-radius:10px;
 
-    margin-left:80px;
+    /*margin-left:80px;*/
 
     color:darkred;
     font-weight:bold;
@@ -25,13 +25,15 @@
 
 .myProfilePanel {
 
-width:800px;
-height:450px;
-background-color:white;
-margin-top:-200px;
-margin-left:500px;
-border-top-left-radius:30px;
-border-top-right-radius:30px;
+    width:800px;
+    height:450px;
+    background-color:white;
+    /*margin-top:-200px;
+    margin-left:500px;*/
+    border-top-left-radius:30px;
+    border-top-right-radius:30px;
+    display: inline-block;
+    float: right;
 
 }
 
@@ -40,10 +42,11 @@ border-top-right-radius:30px;
     width:800px;
     height:450px;
     background-color:white;
-    margin-top:-200px;
-    margin-left:500px;
+    /*margin-top:-200px;
+    margin-left:500px;*/
     border-radius:30px;
-
+    display: inline-block;
+    float: right;
 
 }
 
@@ -53,10 +56,11 @@ border-top-right-radius:30px;
     width:800px;
     height:450px;
     background-color:white;
-    margin-top:-200px;
-    margin-left:500px;
+    /*margin-top:-200px;
+    margin-left:500px;*/
     border-radius:30px;
-
+    display: inline-block;
+    float: right;
 }
 
 .images {
@@ -110,7 +114,7 @@ border-top-right-radius:30px;
     background-color:white;
     padding:30px;
     padding-right:25px;
-    margin-top:10px;
+    /*margin-top:10px;*/
     border:10px solid #F0CB01;
     width:410px;
     border-top-left-radius:30px;
@@ -241,5 +245,22 @@ border-top-right-radius:30px;
     display:inline-block;
     height:120px;
     padding-top:40px;
+
+}
+
+#Panel1 {
+
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:10px;
+    width:90%;
+
+}
+
+#NavigationPanel {
+
+    display: inline-block;
+    float: left;
+    margin-top:30px;
 
 }

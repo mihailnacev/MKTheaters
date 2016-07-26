@@ -1,34 +1,26 @@
-﻿body {
-
+﻿body 
+{
    /* background-color:blue;*/
    font-family:'Malgun Gothic';
 }
 
-#main{
+#main
+{
     margin-left:5%;
 }
-#gvRepertoar{
+
+#gvRepertoar
+{
     margin-left:5%;
 }
-.Redica {
+
+.Redica 
+{
     font-size:20px;
 }
 
-.buttons {
-
-    color:rgb(245,222,95);
-    background-color:#BA252A;
-    width:150px;
-    font-weight:bold;
-    height:30px;
-    margin-left:20px;
-    font-size:15px;
-
-
-}
-
-#tabela {
-
+#tabela 
+{
     background-color:white;
     padding:30px;
     margin:auto;
@@ -36,13 +28,30 @@
     width:40%;
     border-radius:20px;
     border:20px solid #F0CB01;
-  
 }
 
-.labeli {
-
+.labeli 
+{
     color:#BA252A;
     font-weight:bold;
+}
 
+.buttons 
+{
+    color:rgb(245,222,95);
+    background-color:#BA252A;
+    width:150px;
+    font-weight:bold;
+    height:30px;
+    margin-left:20px;
+    font-size:15px;
+}
 
+#Panel2 
+{
+    margin-right: 5%;
+    margin-bottom: 10px;
+    float: right;
+    width: 90%;
+    text-align: right;
 }
