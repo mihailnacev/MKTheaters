@@ -12,8 +12,9 @@
 .options {
 
      background-color:white;
-    width:95%;
-    margin-bottom:5%;
+    width:20%;
+   
+   display:inline;
     
     padding-top:8px;
     padding-bottom:8px;
@@ -22,7 +23,7 @@
     border-top-right-radius:10px;
 
     /*margin-left:80px;*/
-
+ 
     color:darkred;
     font-weight:bold;
     font-size:18px;
@@ -33,19 +34,21 @@
 
 #NavigationButtons {
 
-    display:inline-block;
-    width:20%;
+   
+    width:95%;
+   padding-left:0%;
+    margin-bottom:2%;
     
 
 }
 
 .pnlAR {
 
-    width:70%;
+    width:95%;
     background-color:white;
     height:450px;
-    margin-left:24%;
-    margin-top:-7%;
+    
+   
     border-top-left-radius:30px;
     border-top-right-radius:30px;
 
@@ -54,11 +57,10 @@
 
 .pnlPR {
 
-    width:70%;
+    width:95%;
     background-color:white;
     height:450px;
-    margin-left:24%;
-    margin-top:-7%;
+   
     border-top-left-radius:30px;
     border-top-right-radius:30px;
 
@@ -68,7 +70,7 @@
 .info {
 
     border-bottom:2px solid #BA252A;
-    margin-left:35%;
+    margin-left:45%;
     font-weight:bolder;
     font-size:25px;
     color:#BA252A;

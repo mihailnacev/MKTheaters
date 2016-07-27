@@ -12,7 +12,7 @@
 <asp:Panel ID="NavigationButtons" runat="server">
 
 <asp:Button runat="server" ID="btnAR" Text="Ажурирај репертоар" CssClass="options" OnClick="btnAR_Click" ></asp:Button>
-    <br />
+
 <asp:Button runat="server" ID="btnPR" Text="Погледни резервации" CssClass="options" OnClick="btnPR_Click"  ></asp:Button>
 
 </asp:Panel>
