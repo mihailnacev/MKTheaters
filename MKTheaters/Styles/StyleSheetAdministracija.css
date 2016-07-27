@@ -1,0 +1,76 @@
+﻿body {
+
+}
+
+#Panel2 {
+
+    margin-left:5%;
+
+
+}
+
+.options {
+
+     background-color:white;
+    width:95%;
+    margin-bottom:5%;
+    
+    padding-top:8px;
+    padding-bottom:8px;
+
+    border-bottom-right-radius:10px;
+    border-top-right-radius:10px;
+
+    /*margin-left:80px;*/
+
+    color:darkred;
+    font-weight:bold;
+    font-size:18px;
+    font-family:'Malgun Gothic';
+  
+
+}
+
+#NavigationButtons {
+
+    display:inline-block;
+    width:20%;
+    
+
+}
+
+.pnlAR {
+
+    width:70%;
+    background-color:white;
+    height:450px;
+    margin-left:24%;
+    margin-top:-7%;
+    border-top-left-radius:30px;
+    border-top-right-radius:30px;
+
+
+}
+
+.pnlPR {
+
+    width:70%;
+    background-color:white;
+    height:450px;
+    margin-left:24%;
+    margin-top:-7%;
+    border-top-left-radius:30px;
+    border-top-right-radius:30px;
+
+
+}
+
+.info {
+
+    border-bottom:2px solid #BA252A;
+    margin-left:35%;
+    font-weight:bolder;
+    font-size:25px;
+    color:#BA252A;
+
+}
