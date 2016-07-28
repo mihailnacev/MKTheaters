@@ -74,6 +74,7 @@ public partial class Administracija : System.Web.UI.Page
     protected void gvAllPlays_RowEditing(object sender, GridViewEditEventArgs e)
     {
         DataSet ds = (DataSet)ViewState["datasetVS"];
+        gvAllPlays.EditIndex = e.NewEditIndex;
         gvAllPlays.DataSource = ds;
         gvAllPlays.DataBind();
     }
