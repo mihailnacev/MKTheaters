@@ -23,7 +23,7 @@
 
     
 
-    <asp:GridView ID="gvAllPlays" runat="server" AllowPaging="True" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" OnPageIndexChanging="gvAllPlays_PageIndexChanging" PageSize="7" OnRowCancelingEdit="gvAllPlays_RowCancelingEdit" OnRowEditing="gvAllPlays_RowEditing" OnRowUpdating="gvAllPlays_RowUpdating">
+    <asp:GridView ID="gvAllPlays" runat="server" AllowPaging="True" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" OnPageIndexChanging="gvAllPlays_PageIndexChanging" PageSize="7" OnRowCancelingEdit="gvAllPlays_RowCancelingEdit" OnRowEditing="gvAllPlays_RowEditing" OnRowUpdating="gvAllPlays_RowUpdating" OnRowDeleting="gvAllPlays_RowDeleting">
         <AlternatingRowStyle BackColor="White" />
         <Columns>
             <asp:BoundField DataField="Ime" HeaderText="Претстава" ReadOnly="True" />
@@ -36,6 +36,11 @@
             <asp:BoundField DataField="Vremetraenje" HeaderText="Времетраење" />
             <asp:CommandField />
             <asp:CommandField CancelText="Откажи" EditText="Уреди" ShowEditButton="True" UpdateText="Измени" />
+            <asp:TemplateField ShowHeader="False">
+                <ItemTemplate>
+                    <asp:Button ID="LinkButton1" runat="server" CausesValidation="False" CommandName="Delete" Text="Delete"></asp:Button>
+                </ItemTemplate>
+            </asp:TemplateField>
         </Columns>
         <FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
         <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />

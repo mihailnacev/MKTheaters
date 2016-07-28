@@ -12,10 +12,18 @@ public partial class Administracija : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
 
-        if (!IsPostBack) {
-            IspolniMaster();
+        pnlAR.Visible = true;
+        pnlPR.Visible = false;
+        if (Session["index"] == null)
+        {
+            gvAllPlays.PageIndex = 0;
+            Session["index"] = 0;
         }
-
+        else
+        {
+            gvAllPlays.PageIndex = (int)Session["index"];
+        }
+        if (!IsPostBack) IspolniMaster();
     }
 
     public void IspolniMaster() {
@@ -65,6 +73,7 @@ public partial class Administracija : System.Web.UI.Page
     protected void gvAllPlays_PageIndexChanging(object sender, GridViewPageEventArgs e)
     {
         gvAllPlays.PageIndex = e.NewPageIndex;
+        Session["index"] = e.NewPageIndex;
         gvAllPlays.SelectedIndex = -1;
         DataSet ds = (DataSet)ViewState["datasetVS"];
         gvAllPlays.DataSource = ds;
@@ -81,17 +90,18 @@ public partial class Administracija : System.Web.UI.Page
 
     protected void gvAllPlays_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
     {
-        DataSet ds = (DataSet)ViewState["datatsetVS"];
         gvAllPlays.EditIndex = -1;
+        DataSet ds = (DataSet)ViewState["datatsetVS"];
         gvAllPlays.DataSource = ds;
         gvAllPlays.DataBind();
+        Response.Redirect("~/Administracija.aspx");
     }
 
     protected void gvAllPlays_RowUpdating(object sender, GridViewUpdateEventArgs e)
     {
         SqlConnection konekcija = new SqlConnection();
         konekcija.ConnectionString= ConfigurationManager.ConnectionStrings["Test"].ConnectionString;
-        string sqlString = "UPDATE Repertoar set" +
+        string sqlString = "UPDATE Repertoar SET" +
             " Avtor=@Avtor, Reziser=@Reziser, Akteri=@Akteri, Teatar=@Teatar, Grad=@Grad, Datum=@Datum, Vremetraenje=@Vremetraenje WHERE Ime=@Ime";
         SqlCommand komanda = new SqlCommand(sqlString, konekcija);
 
@@ -142,5 +152,35 @@ public partial class Administracija : System.Web.UI.Page
         if (efekt != 0) {
             IspolniMaster();
         }
+    }
+
+    protected void gvAllPlays_RowDeleting(object sender, GridViewDeleteEventArgs e)
+    {
+        string ime = gvAllPlays.Rows[e.RowIndex].Cells[0].Text;
+        SqlConnection konekcija = new SqlConnection();
+        konekcija.ConnectionString = ConfigurationManager.ConnectionStrings["Test"].ConnectionString;
+        string sqlString = "DELETE FROM Repertoar WHERE Ime=@Ime";
+        SqlCommand komanda = new SqlCommand(sqlString, konekcija);
+        komanda.Parameters.AddWithValue("@Ime", ime);
+        SqlDataAdapter adapter = new SqlDataAdapter(komanda);
+        DataSet ds = new DataSet();
+        try
+        {
+
+            konekcija.Open();
+            adapter.Fill(ds, "Repertoar");
+            gvAllPlays.DataSource = ds;
+            gvAllPlays.DataBind();
+            ViewState["datasetVS"] = ds;
+
+        }
+        catch (Exception) { }
+        finally
+        {
+
+            konekcija.Close();
+            Response.Redirect("~/Administracija.aspx");
+        }
+
     }
 }
