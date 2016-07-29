@@ -4,7 +4,7 @@
 .options {
 
     background-color:white;
-    width:125%;
+    width:100%;
     
     padding-top:8px;
     padding-bottom:8px;
@@ -25,8 +25,8 @@
 
 .myProfilePanel {
 
-    width:800px;
-    height:450px;
+    width: 70%;
+    height: 100%;
     background-color:white;
     /*margin-top:-200px;
     margin-left:500px;*/
@@ -39,22 +39,22 @@
 
 .pnlSuggest {
 
-    width:800px;
-    height:450px;
-    background-color:white;
-    /*margin-top:-200px;
-    margin-left:500px;*/
-    border-radius:30px;
+    width: 70%;
+    height: 100%;
+    background-color: white;
+    border-radius: 30px;
     display: inline-block;
     float: right;
+    /* padding: 5%; */
+    text-align: center;
 
 }
 
 
 .pnlReservations {
 
-    width:800px;
-    height:450px;
+    width: 70%;
+    height: 100%;
     background-color:white;
     /*margin-top:-200px;
     margin-left:500px;*/
@@ -64,11 +64,13 @@
 }
 
 .images {
-    width: 250px;
-    height: 130px;
-    margin-top: 12px;
-    background-color: blue;
-    margin-left: 10px;
+    width: 30%;
+    height: 150px;
+    padding: 1%;
+    /* margin-top: 12px; */
+    /* background-color: blue; */
+    /* margin-left: 10px; */
+    /* margin: auto; */
 }
 
 .labeli {
@@ -82,7 +84,6 @@
 .info {
 
     border-bottom:2px solid #BA252A;
-  
     font-weight:bolder;
     font-size:25px;
     color:#BA252A;
@@ -93,11 +94,11 @@
 
     color:rgb(245,222,95);
     background-color:#BA252A;
-    width:150px;
+    width:32%;
     font-weight:bold;
     height:30px;
-    margin-left:20px;
-    font-size:15px;
+    /*margin-left:20px;*/
+    font-size:12px;
 
 
 }
@@ -111,28 +112,30 @@
 
 #tabela {
 
-    background-color:white;
-    padding:30px;
-    padding-right:25px;
-    /*margin-top:10px;*/
-    border:10px solid #F0CB01;
-    width:410px;
-    border-top-left-radius:30px;
+    background-color: white;
+    padding: 3%;
+    /* padding-right: 25px; */
+    /* margin-top: 10px; */
+    border: 10px solid #F0CB01;
+    width: 100%;
+    height: 100%;
+    border-top-left-radius: 30px;
   
 }
 
 #tabela2 {
 
 
-    background-color:white;
-    padding:20px;
-    padding-right:5px;
-    padding-top:10px;
-    margin-top:-298px;
-    margin-left:49%;
-    border:10px solid #F0CB01;
-    width:410px;
-    border-top-right-radius:30px;
+    background-color: white;
+    padding: 3%;
+    /* padding-right: 5px; */
+    /* padding-top: 10px; */
+    /* margin-top: -298px; */
+    /* margin-left: 49%; */
+    border: 10px solid #F0CB01;
+    width: 100%;
+    height: 100%;
+    border-top-right-radius: 30px;
   
 }
 
@@ -145,7 +148,7 @@
     font-size:18px;
     border:10px solid #F0CB01;
     font-family:'Malgun Gothic';
-    margin-left:150px;
+    /*margin-left:150px;*/
     border-top-left-radius:20px;
     border-top-right-radius:20px;
 
@@ -184,7 +187,7 @@
 .infoList {
 
     border-bottom:2px solid #BA252A;
-    margin-left:200px;
+    /*margin-left:200px;*/
     font-weight:bolder;
     font-size:25px;
     color:#BA252A;
@@ -224,27 +227,28 @@
 
 .lblSuggest {
 
-   border-bottom:2px solid #BA252A;
-   margin-left:20px;
-    font-weight:bolder;
-    font-size:25px;
-    color:#BA252A;
-    text-align:center;
-    width:400px;
-    display:inline-block;
+    border-bottom: 2px solid #BA252A;
+    /* margin-left: 20px; */
+    font-weight: bolder;
+    font-size: 25px;
+    color: #BA252A;
+    text-align: center;
+    width: 47%;
+    display: inline-block;
     
 
 }
 
 #tabela3 {
 
-    margin-top:10px;
-    border:10px solid #F0CB01;
-    border-top-left-radius:20px;
-    border-top-right-radius:20px;
-    display:inline-block;
-    height:120px;
-    padding-top:40px;
+    margin-top: 10px;
+    border: 10px solid #F0CB01;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    display: inline-block;
+    height: 120px;
+    padding-top: 40px;
+    width: 47%;
 
 }
 
@@ -254,15 +258,54 @@
     margin-right:auto;
     margin-top:10px;
     width:90%;
-    height: 450px;
+    height: 550px;
 
+}
+
+#Panel2 
+{
+    text-align: center;
+    height: 60%;
+}
+
+#Panel3, #Panel4
+{
+    height: 60%;
 }
 
 #NavigationPanel {
 
     display: inline-block;
     float: left;
-    margin-top:30px;
+    margin-top: 30px;
+    width: 20%;
 
 }
 
+#imagesPanel1, #imagesPanel2, #imagesPanel3 
+{
+    /*margin-top: 2%;*/
+    text-align: center;
+    height: 40%;
+}
+
+.pnlProfile 
+{
+    width: 50%;
+    height: 100%;
+}
+
+#pnlProfile1
+{
+    float: left;
+}
+
+#pnlProfile2
+{
+    float: right;
+}
+
+.imagesPanel 
+{
+    margin: auto;
+}

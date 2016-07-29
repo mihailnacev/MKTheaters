@@ -115,4 +115,25 @@ public static class Connectivity
             }
         }
     }
+
+    public static void updateUserInformation(User user)
+    {
+        SqlConnection connection = new SqlConnection(connectionString);
+        string commandString = "UPDATE Users SET Ime=@ime, Prezime=@prezime, Email=@email, Password=@password WHERE Username=@username";
+        SqlCommand command = new SqlCommand(commandString, connection);
+        command.Parameters.AddWithValue("@username", user.Username);
+        command.Parameters.AddWithValue("@ime", user.Ime);
+        command.Parameters.AddWithValue("@prezime", user.Prezime);
+        command.Parameters.AddWithValue("@email", user.Email);
+        command.Parameters.AddWithValue("@password", user.Password);
+        try
+        {
+            connection.Open();
+            command.ExecuteNonQuery();
+        }
+        finally
+        {
+            connection.Close();
+        }
+    }
 }

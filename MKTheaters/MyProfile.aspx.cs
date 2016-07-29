@@ -22,7 +22,13 @@ public partial class MyProfile : System.Web.UI.Page
             lblLastNameText.Text = tekoven.Prezime;
             lblEmailText.Text = tekoven.Email;
             lblUsernameText.Text = tekoven.Username;
-            if (!IsPostBack) IspolniLista();
+            if (!IsPostBack)
+            {
+                IspolniLista();
+                txtFirstNameText.Text = tekoven.Ime;
+                txtLastNameText.Text = tekoven.Prezime;
+                txtEmailText.Text = tekoven.Email;
+            }
         }
     }
 
@@ -32,7 +38,7 @@ public partial class MyProfile : System.Web.UI.Page
         pnlReservations.Visible = false;
         pnlSuggest.Visible = false;
         pnlMyProfile.Visible = true;
-
+        lblError.Text = "";
     }
 
     protected void btnReservations_Click(object sender, EventArgs e)
@@ -41,6 +47,7 @@ public partial class MyProfile : System.Web.UI.Page
         pnlReservations.Visible = false;
         pnlSuggest.Visible = false;
         pnlReservations.Visible = true;
+        lblError.Text = "";
     }
 
     protected void btnSuggestions_Click(object sender, EventArgs e)
@@ -49,6 +56,7 @@ public partial class MyProfile : System.Web.UI.Page
         pnlReservations.Visible = false;
         pnlSuggest.Visible = false;
         pnlSuggest.Visible = true;
+        lblError.Text = "";
     }
 
     protected void IspolniLista()
@@ -62,11 +70,19 @@ public partial class MyProfile : System.Web.UI.Page
         {
             konekcija.Open();
             SqlDataReader citac = komanda.ExecuteReader();
+            List<string> pretstavi1 = new List<string>();
+            List<string> pretstavi2 = new List<string>();
             while (citac.Read())
             {
-                ListItem li = new ListItem(citac[0].ToString() +" " +citac[2].ToString());
-                lbRezervacii.Items.Add(li);
+                //ListItem li = new ListItem(citac[0].ToString() + " " + citac[2].ToString(), citac[0].ToString());
+                //lbRezervacii.Items.Add(li);
+                pretstavi1.Add(citac[0].ToString() + " " + citac[2].ToString());
+                pretstavi2.Add(citac[0].ToString());
             }
+            lbRezervacii.DataSource = pretstavi1;
+            lbRezervacii.DataBind();
+            ddlPretstavi.DataSource = pretstavi2;
+            ddlPretstavi.DataBind();
             citac.Close();
 
         }
@@ -76,7 +92,6 @@ public partial class MyProfile : System.Web.UI.Page
             konekcija.Close();
         }
     }
-
 
     public void MoveUp()
     {
@@ -115,12 +130,48 @@ public partial class MyProfile : System.Web.UI.Page
         MoveUp();
     }
 
-
-
     protected void btnDown_Click(object sender, EventArgs e)
     {
         MoveDown();
     }
 
-    
+    protected void btnZachuvaj_Click(object sender, EventArgs e)
+    {
+        string ime = txtFirstNameText.Text;
+        string prezime = txtLastNameText.Text;
+        string email = txtEmailText.Text;
+        string newPass = txtNovaLozinka.Text;
+        string pass = txtTekovnaLozinka.Text.GetHashCode().ToString();
+        User tekoven = (User)Session["Najaven"];
+        if (pass != tekoven.Password)
+        {
+            lblError.Text = "Погрешна лозинка";
+        }
+        else
+        {
+            if (ime == "")
+            {
+                ime = tekoven.Ime;
+            }
+            if (prezime == "")
+            {
+                prezime = tekoven.Prezime;
+            }
+            if (email == "")
+            {
+                email = tekoven.Email;
+            }
+            if (newPass != "")
+            {
+                pass = newPass;
+            }
+            User newUser = new User(ime, prezime, tekoven.Username, pass.GetHashCode().ToString(), email, tekoven.Admin);
+            Connectivity.updateUserInformation(newUser);
+            Session["Najaven"] = newUser;
+            lblFirstNameText.Text = newUser.Ime;
+            lblLastNameText.Text = newUser.Prezime;
+            lblEmailText.Text = newUser.Email;
+            lblError.Text = "Информациите се успешно ажурирани";
+        }
+    }
 }
