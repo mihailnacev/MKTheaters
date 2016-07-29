@@ -78,3 +78,34 @@
     margin-bottom:1%;
 
 }
+
+#tabela4 {
+
+
+    background-color:white;
+    padding:5px;
+    text-align:left;
+    border:10px solid #F0CB01;
+    width:25%;
+    border-top-right-radius:30px;
+    border-top-left-radius:30px;
+    margin-left:35%;
+
+}
+
+.labeli {
+    color: #BA252A;
+    font-weight: bold;
+}
+
+
+.buttons {
+    color: rgb(245,222,95);
+    background-color: #BA252A;
+    width: 150px;
+    font-weight: bold;
+    height: 30px;
+    margin-left: 20px;
+    font-size: 15px;
+}
+
