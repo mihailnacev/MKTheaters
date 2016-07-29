@@ -141,9 +141,9 @@ public partial class MyProfile : System.Web.UI.Page
         string prezime = txtLastNameText.Text;
         string email = txtEmailText.Text;
         string newPass = txtNovaLozinka.Text;
-        string pass = txtTekovnaLozinka.Text.GetHashCode().ToString();
+        string pass = txtTekovnaLozinka.Text/*.GetHashCode().ToString()*/;
         User tekoven = (User)Session["Najaven"];
-        if (pass != tekoven.Password)
+        if (pass.GetHashCode().ToString() != tekoven.Password)
         {
             lblError.Text = "Погрешна лозинка";
         }
