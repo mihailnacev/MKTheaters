@@ -64,13 +64,20 @@ public partial class MasterPage : System.Web.UI.MasterPage
     protected void MojProfil_Click(object sender, EventArgs e)
     {
         User tekoven = (User)Session["Najaven"];
-        if (tekoven.Admin == "False")
+        if (tekoven != null)
         {
-            Response.Redirect("~/MyProfile.aspx");
+            if (tekoven.Admin == "False")
+            {
+                Response.Redirect("~/MyProfile.aspx");
+            }
+            else
+            {
+                Response.Redirect("~/Administracija.aspx");
+            }
         }
         else
         {
-            Response.Redirect("~/Administracija.aspx");
+            Response.Redirect("~/Najava.aspx");
         }
     }
 }
