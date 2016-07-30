@@ -219,7 +219,7 @@
             <td> <asp:Button ID="btnDown" runat="server" Text="" CssClass="btnDown" OnClick="btnDown_Click" /></td>
         </tr>
         <tr>
-            <td>  <asp:Button ID="Button3" runat="server" CssClass="btnRemove" Text="" /></td>
+            <td>  <asp:Button ID="btnRemove" runat="server" CssClass="btnRemove" Text="" OnClick="btnRemove_Click" /></td>
         </tr>
     </table>
     </asp:Panel>

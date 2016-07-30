@@ -76,7 +76,7 @@ public partial class MyProfile : System.Web.UI.Page
             {
                 //ListItem li = new ListItem(citac[0].ToString() + " " + citac[2].ToString(), citac[0].ToString());
                 //lbRezervacii.Items.Add(li);
-                pretstavi1.Add(citac[0].ToString() + " " + citac[2].ToString());
+                pretstavi1.Add(citac[0].ToString() + ";" + citac[2].ToString());
                 pretstavi2.Add(citac[0].ToString());
             }
             lbRezervacii.DataSource = pretstavi1;
@@ -172,6 +172,38 @@ public partial class MyProfile : System.Web.UI.Page
             lblLastNameText.Text = newUser.Prezime;
             lblEmailText.Text = newUser.Email;
             lblError.Text = "Информациите се успешно ажурирани";
+        }
+    }
+
+
+    protected void btnRemove_Click(object sender, EventArgs e)
+    {
+        if (lbRezervacii.SelectedItem != null)
+        {
+            User tekoven = (User)Session["Najaven"];
+            string selected = lbRezervacii.SelectedItem.Text;
+            char[] whitespace = new char[] {';'};
+            string[] parts = selected.Split(whitespace);
+            string pretstava = parts[0];
+            string datum = parts[1];
+            SqlConnection konekcija = new SqlConnection();
+            konekcija.ConnectionString = ConfigurationManager.ConnectionStrings["Test"].ConnectionString;
+            string sqlString = "DELETE FROM Rezervacii WHERE Username='" + tekoven.Username + "' AND Pretstava=@pretstava AND Datum=@datum";
+            SqlCommand komanda = new SqlCommand(sqlString, konekcija);
+            komanda.Parameters.AddWithValue("@pretstava", pretstava);
+            komanda.Parameters.AddWithValue("@datum", datum);
+            try
+            {
+                konekcija.Open();
+                komanda.ExecuteNonQuery();
+
+            }
+            catch (Exception) { }
+            finally
+            {
+                konekcija.Close();
+            }
+            IspolniLista();
         }
     }
 }
