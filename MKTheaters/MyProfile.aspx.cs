@@ -206,4 +206,34 @@ public partial class MyProfile : System.Web.UI.Page
             IspolniLista();
         }
     }
+
+    public void updatePretstavaDetails(string username,string pretstava,string ocena)
+    {
+        string connectionString = ConfigurationManager.ConnectionStrings["Test"].ConnectionString;
+        SqlConnection connection = new SqlConnection(connectionString);
+        string commandString = "UPDATE Rezervacii SET Ocena=@ocena WHERE Username=@username AND Pretstava=@pretstava";
+        SqlCommand command = new SqlCommand(commandString, connection);
+        command.Parameters.AddWithValue("@username", username);
+        command.Parameters.AddWithValue("@pretstava", pretstava);
+        command.Parameters.AddWithValue("@ocena", ocena);
+        try
+        {
+            connection.Open();
+            command.ExecuteNonQuery();
+        }
+        finally
+        {
+            connection.Close();
+        }
+    }
+    protected void btnOcena_Click(object sender, EventArgs e)
+    {
+        User najaven = (User)Session["Najaven"];
+        string username = najaven.Username;
+        string pretstava = ddlPretstavi.SelectedItem.Text;
+        string ocena = rblOceni.SelectedItem.Text;
+        updatePretstavaDetails(username, pretstava, ocena);
+        lblStatus.Text = "Успешно ја оценивте претставата!";
+        lblStatus.Visible = true;
+    }
 }

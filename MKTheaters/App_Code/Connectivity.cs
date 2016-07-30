@@ -28,7 +28,7 @@ public static class Connectivity
                 SqlDataReader dataReader = command.ExecuteReader();
                 while (dataReader.Read())
                 {
-                    user = new User(dataReader[0].ToString(), dataReader[1].ToString(), dataReader[2].ToString(), dataReader[3].ToString(), dataReader[4].ToString(), false);
+                    user = new User(dataReader[0].ToString(), dataReader[1].ToString(), dataReader[2].ToString(), dataReader[3].ToString(), dataReader[4].ToString(), dataReader[5].ToString());
                     lista.Add(user);
                 }
                 dataReader.Close();
@@ -65,12 +65,13 @@ public static class Connectivity
                 /// <summary>
                 /// SqlCommand object contains SqlConnection object and queryString (INSERT command with parameters) 
                 /// </summary>
-                SqlCommand commandInsert = new SqlCommand("INSERT INTO Users(Ime,Prezime,Username,Password,Email) VALUES(@ime,@prezime,@username,@password,@email)", connection);
+                SqlCommand commandInsert = new SqlCommand("INSERT INTO Users(Ime,Prezime,Username,Password,Email,Admin) VALUES(@ime,@prezime,@username,@password,@email,@admin)", connection);
                 commandInsert.Parameters.AddWithValue("@ime", user.Ime);
                 commandInsert.Parameters.AddWithValue("@prezime", user.Prezime);
                 commandInsert.Parameters.AddWithValue("@email", user.Email);
                 commandInsert.Parameters.AddWithValue("@username", user.Username);
                 commandInsert.Parameters.AddWithValue("@password", user.Password.GetHashCode().ToString());
+                commandInsert.Parameters.AddWithValue("@admin", "False");
                 commandInsert.ExecuteNonQuery();
                 commandInsert.Parameters.Clear();
             }
@@ -104,7 +105,7 @@ public static class Connectivity
                 if (dataReader.Read() == false) user = null;
                 else
                 {
-                    user = new User(dataReader[0].ToString(), dataReader[1].ToString(), dataReader[2].ToString(), dataReader[3].ToString(), dataReader[4].ToString(), false);
+                    user = new User(dataReader[0].ToString(), dataReader[1].ToString(), dataReader[2].ToString(), dataReader[3].ToString(), dataReader[4].ToString(), dataReader[5].ToString());
                 }
                 return user;
 
@@ -136,4 +137,5 @@ public static class Connectivity
             connection.Close();
         }
     }
+
 }

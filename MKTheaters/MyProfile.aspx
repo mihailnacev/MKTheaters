@@ -187,11 +187,13 @@
             </tr>
             <tr>
                 <td class="auto-style7">&nbsp;</td>
-                <td class="auto-style9">&nbsp;</td>
+                <td class="auto-style9">
+                    <asp:Label ID="lblStatus" runat="server" CssClass="labeli" Text="Label" Visible="False"></asp:Label>
+                </td>
             </tr>
             <tr>
                 <td class="auto-style11 auto-style13" colspan="2">
-                    <asp:Button ID="Button1" runat="server" CssClass="buttons" Text="Поднеси" />
+                    <asp:Button ID="btnOcena" runat="server" CssClass="buttons" Text="Поднеси" OnClick="btnOcena_Click" />
                 </td>
             </tr>
         </table>

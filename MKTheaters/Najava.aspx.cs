@@ -10,7 +10,15 @@ public partial class Najava : System.Web.UI.Page
     {
         if (Session["Najaven"] != null)
         {
-            Response.Redirect("~/MyProfile.aspx");
+            User najaven = (User)Session["Najaven"];
+            if (najaven.Admin == "False")
+            {
+                Response.Redirect("~/MyProfile.aspx");
+            }
+            else
+            {
+                Response.Redirect("~/Administracija.aspx");
+            }
         }
     }
 
@@ -38,7 +46,14 @@ public partial class Najava : System.Web.UI.Page
             else
             {
                 Session["Najaven"] = tekoven;
-                Response.Redirect("~/MyProfile.aspx");
+                if (tekoven.Admin == "False")
+                {
+                    Response.Redirect("~/MyProfile.aspx");
+                }
+                else
+                {
+                    Response.Redirect("~/Administracija.aspx");
+                }
             }
         }
     }

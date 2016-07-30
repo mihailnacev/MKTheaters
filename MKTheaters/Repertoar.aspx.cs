@@ -151,11 +151,11 @@ public partial class Repertoar : System.Web.UI.Page
                 /// <summary>
                 /// SqlCommand object contains SqlConnection object and queryString (INSERT command with parameters) 
                 /// </summary>
-                SqlCommand commandInsert = new SqlCommand("INSERT INTO Rezervacii(Username,Pretstava,Datum) VALUES(@username,@pretstava,@datum)", connection);
+                SqlCommand commandInsert = new SqlCommand("INSERT INTO Rezervacii(Username,Pretstava,Datum,Ocena) VALUES(@username,@pretstava,@datum,@ocena)", connection);
                 commandInsert.Parameters.AddWithValue("@username", user.Username);
                 commandInsert.Parameters.AddWithValue("@pretstava", ime);
                 commandInsert.Parameters.AddWithValue("@datum", datum);
-                
+                commandInsert.Parameters.AddWithValue("@ocena", "0");
                 commandInsert.ExecuteNonQuery();
                 commandInsert.Parameters.Clear();
             }

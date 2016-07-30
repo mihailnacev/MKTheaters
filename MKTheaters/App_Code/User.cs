@@ -13,7 +13,7 @@ public class User
     public string Ime;
     public string Prezime;
     public string Email;
-    public bool Admin;
+    public string Admin;
 
     public User()
     {
@@ -22,10 +22,10 @@ public class User
         Ime = null;
         Prezime = null;
         Email = null;
-        Admin = false;
+        Admin = "False";
     }
 
-    public User(string ime, string prezime, string username,string password, string email, bool admin)
+    public User(string ime, string prezime, string username,string password, string email, string admin)
     {
         Ime = ime;
         Prezime = prezime;

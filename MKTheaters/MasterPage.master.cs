@@ -14,6 +14,12 @@ public partial class MasterPage : System.Web.UI.MasterPage
             user.Text = u.Username;
             loggedUser.Visible = true;
             noLoggedUser.Visible = false;
+           if (u.Admin == "True")
+            {
+              //  user.NavigateUrl = "~/Administracija.aspx";
+                MojProfil.Text = "АДМИНИСТРАЦИЈА";
+                MojProfil.Font.Name = "Malgun Gothic";
+            }
         }
         else
         {
@@ -57,6 +63,14 @@ public partial class MasterPage : System.Web.UI.MasterPage
 
     protected void MojProfil_Click(object sender, EventArgs e)
     {
-        Response.Redirect("~/MyProfile.aspx");
+        User tekoven = (User)Session["Najaven"];
+        if (tekoven.Admin == "False")
+        {
+            Response.Redirect("~/MyProfile.aspx");
+        }
+        else
+        {
+            Response.Redirect("~/Administracija.aspx");
+        }
     }
 }
