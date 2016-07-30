@@ -14,7 +14,8 @@
    
     font-size: 15px;
 }
-        .buttons2 {
+    
+    .buttons2 {
     color: rgb(245,222,95);
     background-color: #BA252A;
     width: 150px;
@@ -29,7 +30,7 @@
     width: 150px;
     font-weight: bold;
     height: 30px;
-   
+    margin-top:20px;
     font-size: 15px;
 }
         #tabela4 {
@@ -77,8 +78,7 @@
             <asp:Label runat="server" ID="lblAR" CssClass="info" Text="Репертоар"></asp:Label>
 
 
-              <asp:GridView ID="gvAllPlays" runat="server" AllowPaging="True" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" OnPageIndexChanging="gvAllPlays_PageIndexChanging" PageSize="7" OnRowCancelingEdit="gvAllPlays_RowCancelingEdit" OnRowEditing="gvAllPlays_RowEditing" OnRowUpdating="gvAllPlays_RowUpdating" OnRowDeleting="gvAllPlays_RowDeleting" Visible="True">
-        <AlternatingRowStyle BackColor="White" />
+              <asp:GridView ID="gvAllPlays" runat="server" AllowPaging="True" AutoGenerateColumns="False" CellPadding="4" OnPageIndexChanging="gvAllPlays_PageIndexChanging" PageSize="7" OnRowCancelingEdit="gvAllPlays_RowCancelingEdit" OnRowEditing="gvAllPlays_RowEditing" OnRowUpdating="gvAllPlays_RowUpdating" OnRowDeleting="gvAllPlays_RowDeleting" Visible="True" BorderColor="#F0CB01" BorderStyle="Solid" BorderWidth="5px">
         <Columns>
             <asp:BoundField DataField="Ime" HeaderText="Претстава" ReadOnly="True" />
             <asp:BoundField DataField="Avtor" HeaderText="Автор" />
@@ -95,10 +95,10 @@
                 </ItemTemplate>
             </asp:TemplateField>
         </Columns>
-        <FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
-        <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
-        <PagerStyle BackColor="#FFCC66" ForeColor="#333333" HorizontalAlign="Center" />
-        <RowStyle BackColor="#FFFBD6" ForeColor="#333333" />
+        <FooterStyle Font-Bold="True" />
+        <HeaderStyle BackColor="#BA252A" Font-Bold="True" ForeColor="#FFFFCC" HorizontalAlign="Center" VerticalAlign="Middle" />
+        <PagerStyle BackColor="Orange" ForeColor="Maroon" HorizontalAlign="Center" VerticalAlign="Middle" />
+        <RowStyle BackColor="#BA252A" ForeColor="#F0CB01" Font-Names="'malgun gothic'" HorizontalAlign="Center" VerticalAlign="Middle" Wrap="True" />
         <SelectedRowStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="Navy" />
         <SortedAscendingCellStyle BackColor="#FDF5AC" />
         <SortedAscendingHeaderStyle BackColor="#4D0000" />
@@ -180,6 +180,7 @@
     </table>
 
             <asp:Button ID="btnDodadi" runat="server" Text="Вметни" CssClass="buttons2" OnClick="btnDodadi_Click" />
+            &nbsp;
             <asp:Button ID="btnNazad" runat="server" Text="<<" CssClass="buttons3" OnClick="btnNazad_Click" />
 
         </asp:View>

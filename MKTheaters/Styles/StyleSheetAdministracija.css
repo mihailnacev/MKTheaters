@@ -46,8 +46,7 @@
 .pnlAR {
 
     width:95%;
-    background-color:white;
-    height:450px;
+    /*background-color:white;*/
     
    
     border-top-left-radius:30px;
@@ -70,28 +69,15 @@
 
 .info {
 
-    border-bottom:2px solid #BA252A;
+    /*border-bottom:2px solid #BA252A;*/
     margin-left:45%;
     font-weight:bolder;
     font-size:25px;
-    color:#BA252A;
+    color:white;
     margin-bottom:1%;
 
 }
 
-#tabela4 {
-
-
-    background-color:white;
-    padding:5px;
-    text-align:left;
-    border:10px solid #F0CB01;
-    width:25%;
-    border-top-right-radius:30px;
-    border-top-left-radius:30px;
-    margin-left:35%;
-
-}
 
 .labeli {
     color: #BA252A;
@@ -105,6 +91,7 @@
     width: 150px;
     font-weight: bold;
     height: 30px;
+    margin-top: 20px;
     margin-left: 20px;
     font-size: 15px;
 }
