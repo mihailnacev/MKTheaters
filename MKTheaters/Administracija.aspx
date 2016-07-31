@@ -222,7 +222,14 @@
 
 <asp:View ID="View4" runat="server">
 
-<asp:GridView ID="gvByUser" runat="server" AutoGenerateColumns="True"></asp:GridView>
+<asp:Label runat="server" ID="lblSearchUser" Text="Резервации од страна на " CssClass="info"></asp:Label>
+<asp:GridView ID="gvByUser" CssClass="pomesti" runat="server" AutoGenerateColumns="False" BackColor="#BA252A" BorderColor="#F0CB01" BorderStyle="Solid" BorderWidth="5px" ForeColor="#F0CB01">
+    <Columns>
+        <asp:BoundField DataField="Pretstava" HeaderText="Претстава" />
+        <asp:BoundField DataField="Datum" HeaderText="Датум" />
+        <asp:BoundField DataField="Ocena" HeaderText="Оцена" />
+    </Columns>
+    </asp:GridView>
 <asp:Button runat="server" ID="btnGoBack" CssClass="buttons5" Text="<<" OnClick="btnGoBack_Click"></asp:Button>
 
 

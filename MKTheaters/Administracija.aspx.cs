@@ -280,9 +280,11 @@ public partial class Administracija : System.Web.UI.Page
 
     protected void btnSearchUser_Click(object sender, EventArgs e)
     {
-        //probav i so mvVtorPanel.ActiveViewIndex=1; istoto mi go pravi
-        mvVtorPanel.SetActiveView(View4);
-       /* string korisnik = txtSearchUser.Text;
+        pnlAR.Visible = false;
+        pnlPR.Visible = true;
+        mvVtorPanel.ActiveViewIndex = 1;
+        string korisnik = txtSearchUser.Text;
+        lblSearchUser.Text += korisnik;
         SqlConnection konekcija = new SqlConnection();
         konekcija.ConnectionString = ConfigurationManager.ConnectionStrings["Test"].ConnectionString;
         string sqlString = "SELECT Pretstava,Datum,Ocena FROM Rezervacii WHERE Username=@korisnik";
@@ -311,11 +313,13 @@ public partial class Administracija : System.Web.UI.Page
 
             konekcija.Close();
         }
-        */
+        
     }
 
     protected void btnGoBack_Click(object sender, EventArgs e)
     {
+        pnlAR.Visible = false;
+        pnlPR.Visible = true;
         mvVtorPanel.ActiveViewIndex = 0;
     }
 }
