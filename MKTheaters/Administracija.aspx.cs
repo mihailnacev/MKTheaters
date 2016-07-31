@@ -14,6 +14,7 @@ public partial class Administracija : System.Web.UI.Page
 
         pnlAR.Visible = true;
         mvPrvPanel.ActiveViewIndex = 0;
+        mvVtorPanel.ActiveViewIndex = 0;
         pnlPR.Visible = false;
         if (Session["index"] == null)
         {
@@ -25,6 +26,7 @@ public partial class Administracija : System.Web.UI.Page
             gvAllPlays.PageIndex = (int)Session["index"];
         }
         if (!IsPostBack) IspolniMaster();
+        if (!IsPostBack) IspolniRezervacii();
       
     }
 
@@ -241,5 +243,79 @@ public partial class Administracija : System.Web.UI.Page
     protected void btnNazad_Click(object sender, EventArgs e)
     {
         mvPrvPanel.ActiveViewIndex = 0;
+    }
+
+    protected void IspolniRezervacii() {
+
+        SqlConnection konekcija = new SqlConnection();
+        konekcija.ConnectionString = ConfigurationManager.ConnectionStrings["Test"].ConnectionString;
+        string sqlString = "SELECT * FROM Rezervacii";
+        SqlCommand komanda = new SqlCommand(sqlString, konekcija);
+        SqlDataAdapter adapter = new SqlDataAdapter(komanda);
+        DataSet ds = new DataSet();
+
+        try
+        {
+
+            konekcija.Open();
+            adapter.Fill(ds, "Rezervacii");
+            gvSeeReservations.DataSource = ds;
+            gvSeeReservations.DataBind();
+            ViewState["datasetRezervacii"] = ds;
+
+        }
+        catch (Exception err)
+        {
+
+
+        }
+        finally
+        {
+
+            konekcija.Close();
+        }
+
+
+    }
+
+    protected void btnSearchUser_Click(object sender, EventArgs e)
+    {
+        //probav i so mvVtorPanel.ActiveViewIndex=1; istoto mi go pravi
+        mvVtorPanel.SetActiveView(View4);
+       /* string korisnik = txtSearchUser.Text;
+        SqlConnection konekcija = new SqlConnection();
+        konekcija.ConnectionString = ConfigurationManager.ConnectionStrings["Test"].ConnectionString;
+        string sqlString = "SELECT Pretstava,Datum,Ocena FROM Rezervacii WHERE Username=@korisnik";
+        SqlCommand komanda = new SqlCommand(sqlString, konekcija);
+        komanda.Parameters.AddWithValue("@korisnik", korisnik);
+        SqlDataAdapter adapter = new SqlDataAdapter(komanda);
+        DataSet ds = new DataSet();
+
+        try
+        {
+
+            konekcija.Open();
+            adapter.Fill(ds, "ByUser");
+            gvByUser.DataSource = ds;
+            gvByUser.DataBind();
+            ViewState["datasetByUser"] = ds;
+
+        }
+        catch (Exception err)
+        {
+
+
+        }
+        finally
+        {
+
+            konekcija.Close();
+        }
+        */
+    }
+
+    protected void btnGoBack_Click(object sender, EventArgs e)
+    {
+        mvVtorPanel.ActiveViewIndex = 0;
     }
 }

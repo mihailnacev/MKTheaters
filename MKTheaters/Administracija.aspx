@@ -185,28 +185,52 @@
 
         </asp:View>
 
-
-
-
     </asp:MultiView>
-
-
-
-    
-
- 
 
 </asp:Panel>
 
+
 <asp:Panel ID="pnlPR" CssClass="pnlPR" runat="server">
 
-<asp:Label runat="server" ID="lblOR" CssClass="info" Text="Остварени резервации" Visible="False"></asp:Label>
-    <br />
 
-<asp:GridView ID="gvSeeReservations" runat="server" >
+<asp:MultiView ID="mvVtorPanel" runat="server">
+
+<asp:View ID="View3" runat="server">
+
+<asp:Label runat="server" ID="lblOR" Text="Резервации" CssClass="info" ></asp:Label>
+    <br />
+    
+    <asp:GridView ID="gvSeeReservations" runat="server" AutoGenerateColumns="False" BackColor="#BA252A" BorderColor="#F0CB01" BorderStyle="Solid" BorderWidth="5px" ForeColor="#F0CB01" Width="95%" >
+
+
+    <Columns>
+        <asp:BoundField DataField="Pretstava" HeaderText="Претстава" />
+        <asp:BoundField DataField="Username" HeaderText="Koрисник" />
+        <asp:BoundField DataField="Datum" HeaderText="Датум" />
+        <asp:BoundField DataField="Ocena" HeaderText="Оцена" />
+    </Columns>
 
 
 </asp:GridView>
+
+    <br />
+
+<asp:TextBox runat="server" ID="txtSearchUser" CssClass="txtSearchUser" ></asp:TextBox>
+<asp:Button runat="server"  ID="btnSearchUser" CssClass="buttons5" Text="Пребарај по корисник" OnClick="btnSearchUser_Click"></asp:Button>
+
+</asp:View>
+
+<asp:View ID="View4" runat="server">
+
+<asp:GridView ID="gvByUser" runat="server" AutoGenerateColumns="True"></asp:GridView>
+<asp:Button runat="server" ID="btnGoBack" CssClass="buttons5" Text="<<" OnClick="btnGoBack_Click"></asp:Button>
+
+
+</asp:View>
+
+
+</asp:MultiView>
+
 
 </asp:Panel>
 
