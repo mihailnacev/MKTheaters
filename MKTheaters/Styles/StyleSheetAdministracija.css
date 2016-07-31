@@ -109,14 +109,18 @@
 
 .txtSearchUser {
 
-    margin-left:68%;
-    height:25px;
+    margin-left:58%;
+    height:35px;
     width:200px;
 
 }
 
 .pomesti {
 
-    margin-left:45%;
+    margin:auto;
 
+}
+
+#btnGoBack {
+    margin-left:30%;
 }

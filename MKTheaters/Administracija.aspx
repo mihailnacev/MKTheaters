@@ -53,6 +53,19 @@
     font-weight: bold;
 }
 
+#gvSeeReservations{
+    margin:auto;
+}
+
+        .auto-style1 {
+            color: rgb(245,222,95);
+            background-color: #BA252A;
+            font-weight: bold;
+            margin-top: 20px;
+            margin-left: 0px;
+            font-size: 15px;
+        }
+
     </style>
     <script src="Scripts/jquery.js"></script>
     <script src="Scripts/ScriptMyProfile.js" type="text/javascript"></script>
@@ -200,7 +213,7 @@
 <asp:Label runat="server" ID="lblOR" Text="Резервации" CssClass="info" ></asp:Label>
     <br />
     
-    <asp:GridView ID="gvSeeReservations" runat="server" AutoGenerateColumns="False" BackColor="#BA252A" BorderColor="#F0CB01" BorderStyle="Solid" BorderWidth="5px" ForeColor="#F0CB01" Width="95%" >
+    <asp:GridView ID="gvSeeReservations" runat="server" AutoGenerateColumns="False" BackColor="#BA252A" BorderColor="#F0CB01" BorderStyle="Solid" BorderWidth="5px" ForeColor="#F0CB01" Width="60%" >
 
 
     <Columns>
@@ -211,26 +224,34 @@
     </Columns>
 
 
+        <HeaderStyle Font-Names="'malgun gothic'" Font-Size="20px" ForeColor="White" />
+
+
+        <RowStyle HorizontalAlign="Center" VerticalAlign="Middle" Font-Names="'malgun gothic'" Font-Size="20px" />
+
+
 </asp:GridView>
 
     <br />
 
 <asp:TextBox runat="server" ID="txtSearchUser" CssClass="txtSearchUser" ></asp:TextBox>
-<asp:Button runat="server"  ID="btnSearchUser" CssClass="buttons5" Text="Пребарај по корисник" OnClick="btnSearchUser_Click"></asp:Button>
+<asp:Button runat="server"  ID="btnSearchUser" CssClass="auto-style1" Text="Пребарај по корисник" OnClick="btnSearchUser_Click" Height="41px"></asp:Button>
 
 </asp:View>
 
 <asp:View ID="View4" runat="server">
 
 <asp:Label runat="server" ID="lblSearchUser" Text="Резервации од страна на " CssClass="info"></asp:Label>
-<asp:GridView ID="gvByUser" CssClass="pomesti" runat="server" AutoGenerateColumns="False" BackColor="#BA252A" BorderColor="#F0CB01" BorderStyle="Solid" BorderWidth="5px" ForeColor="#F0CB01">
+<asp:GridView ID="gvByUser" CssClass="pomesti" runat="server" AutoGenerateColumns="False" BackColor="#BA252A" BorderColor="#F0CB01" BorderStyle="Solid" BorderWidth="5px" ForeColor="#F0CB01" Width="40%">
     <Columns>
         <asp:BoundField DataField="Pretstava" HeaderText="Претстава" />
         <asp:BoundField DataField="Datum" HeaderText="Датум" />
         <asp:BoundField DataField="Ocena" HeaderText="Оцена" />
     </Columns>
+    <HeaderStyle Font-Names="'Malgun gothic'" Font-Size="20px" ForeColor="White" HorizontalAlign="Center" VerticalAlign="Middle" />
+    <RowStyle Font-Names="Malgun Gothic" Font-Size="20px" HorizontalAlign="Center" VerticalAlign="Middle" />
     </asp:GridView>
-<asp:Button runat="server" ID="btnGoBack" CssClass="buttons5" Text="<<" OnClick="btnGoBack_Click"></asp:Button>
+<asp:Button runat="server" ID="btnGoBack" CssClass="auto-style1" Text="<<" OnClick="btnGoBack_Click" Height="45px" Width="203px"></asp:Button>
 
 
 </asp:View>
