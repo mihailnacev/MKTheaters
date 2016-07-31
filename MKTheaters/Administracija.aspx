@@ -9,8 +9,8 @@
     background-color: #BA252A;
     width: 150px;
     font-weight: bold;
-    height: 30px;
-    margin-left:89%;
+    height: 35px;
+    margin-left:91.2%;
    
     font-size: 15px;
 }
