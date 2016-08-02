@@ -1,0 +1,17 @@
+﻿#Main 
+{
+    margin: auto;
+    width: 90%;
+}
+
+.img-responsive
+{
+    margin: auto;
+}
+
+.arrows 
+{
+    background-color: yellow;
+    border-radius: 15px;
+    color: darkred;
+}
