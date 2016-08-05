@@ -5,6 +5,7 @@
         <siteMapNode url="~/PretstavaDetails.aspx" title="Детали за избраната претстава"  description="Детали за избраната претстава" />
       </siteMapNode>
         <siteMapNode url="~/MyProfile.aspx" title="Мој профил"  description="Мој профил" />
+      <siteMapNode url="~/Administracija.aspx" title="Администрација"  description="Мој профил" />
         <siteMapNode url="~/About.aspx" title="За нас"  description="За нас" />
         <siteMapNode url="~/Najava.aspx" title="Најава"  description="Најава" />
         <siteMapNode url="~/Registracija.aspx" title="Регистрација" description="Регистрација">
