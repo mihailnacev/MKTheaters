@@ -29,6 +29,7 @@
         $("#btnPromeni").toggle();
         $(".PassTextBoxes").hide();
         $("#revEmail:visible").css({ "visibility": "hidden" });
+        $("#revPass:visible").css({ "visibility": "hidden" });
         $("#cvLozinki:visible").css({ "visibility": "hidden" });
         $("#txtFirstNameText").val($("#lblFirstNameText").text());
         $("#txtLastNameText").val($("#lblLastNameText").text());
@@ -38,6 +39,10 @@
     $("#btnPromeniLozinka").click(function () {
         $(".PassTextBoxes").toggle();
         $("#cvLozinki:visible").css({ "visibility": "hidden" });
-        $("#revEmail:visible").css({ "visibility": "hidden" });
+        $("#revPass:visible").css({ "visibility": "hidden" });
     });
+
+    $("#revEmail").tooltip();
+    $("#revPass").tooltip();
+    $("#cvLozinki").tooltip();
 })

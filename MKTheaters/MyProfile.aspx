@@ -1,10 +1,12 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="MyProfile.aspx.cs" ClientIDMode="Static" Inherits="MyProfile" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
-     <link href="Styles/StyleSheetMyProfile.css" type="text/css" rel="stylesheet" />
+    <link href="Styles/StyleSheetMyProfile.css" type="text/css" rel="stylesheet" />
+    <link href="Styles/jquery-ui.css" type="text/css" rel="stylesheet" />
     <script src="Scripts/jquery.js"></script>
+    <script src="Scripts/jquery-ui.js"></script>
     <script src="Scripts/ScriptMyProfile.js" type="text/javascript"></script>
-     <style type="text/css">
+    <style type="text/css">
          .auto-style1 {
              margin: auto;
          }
@@ -105,7 +107,7 @@
                 <td class="auto-style9">
                     <asp:Label ID="lblEmailText" CssClass="Labels" runat="server"></asp:Label>
                     <asp:TextBox ID="txtEmailText" CssClass="TextBoxes" runat="server"></asp:TextBox>
-                    <asp:RegularExpressionValidator ID="revEmail" runat="server" ControlToValidate="txtEmailText" ErrorMessage="*" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ToolTip="Неправилен формат на е-mail адреса" ForeColor="#BA252A"></asp:RegularExpressionValidator>
+                    <asp:RegularExpressionValidator ID="revEmail" runat="server" ControlToValidate="txtEmailText" ErrorMessage="*" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ForeColor="#BA252A" ToolTip="Погрешен формат на email адреса"></asp:RegularExpressionValidator>
                 </td>
             </tr>
             <tr>
@@ -114,6 +116,7 @@
                 </td>
                 <td class="auto-style9">
                     <asp:TextBox ID="txtNovaLozinka" CssClass="PassTextBoxes" runat="server" TextMode="Password"></asp:TextBox>
+                    <asp:RegularExpressionValidator ID="revPass" runat="server" ControlToValidate="txtNovaLozinka" ErrorMessage="*" ForeColor="#BA252A" ValidationExpression=".*[0-9]+.*" ToolTip="Лозинката треба да содржи барем една цифра"></asp:RegularExpressionValidator>
                 </td>
             </tr>
             <tr>
