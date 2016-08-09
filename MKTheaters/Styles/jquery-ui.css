@@ -844,10 +844,11 @@ body .ui-tooltip {
 	font-size: 1em;
 }
 .ui-widget-content {
-	border: 1px solid yellow;
-	background: #eeeeee url("images/ui-bg_highlight-soft_100_eeeeee_1x100.png") 50% top repeat-x;
-	color: darkred;
-    font-style: italic;
+	border: 1px solid t .ui-state-hover,
+.ui-widget-header .ui-state-hover,
+.ui-state-focus,
+.ui-widget-content .ui-state-focus,
+.ui-widgeta-get-widget-headget-headhe-he;
 }
 .ui-widget-content a {
 	color: #333333;

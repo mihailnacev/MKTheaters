@@ -309,3 +309,12 @@
 {
     margin: auto;
 }
+
+#Label5 
+{
+    font-weight: bolder;
+    font-size: 25px;
+    color: #BA252A;
+    padding: 3%;
+    text-align: center;
+}

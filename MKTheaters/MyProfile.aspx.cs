@@ -84,7 +84,34 @@ public partial class MyProfile : System.Web.UI.Page
             ddlPretstavi.DataSource = pretstavi2;
             ddlPretstavi.DataBind();
             citac.Close();
-
+            if (pretstavi1.Count == 0)
+            {
+                pnlOstvareniRezervacii.Visible = false;
+                pnlOstvareniRezervaciiEmpty.Visible = true;
+            }
+            else
+            {
+                pnlOstvareniRezervaciiEmpty.Visible = false;
+                pnlOstvareniRezervacii.Visible = true;
+            }
+            if (pretstavi2.Count == 0)
+            {
+                Label3.Visible = true;
+                lblPretstava.Visible = false;
+                ddlPretstavi.Visible = false;
+                Label4.Visible = false;
+                rblOceni.Visible = false;
+                btnOcena.Visible = false;
+            }
+            else
+            {
+                Label3.Visible = false;
+                lblPretstava.Visible = true;
+                ddlPretstavi.Visible = true;
+                Label4.Visible = true;
+                rblOceni.Visible = true;
+                btnOcena.Visible = true;
+            }
         }
         catch (Exception) { }
         finally

@@ -159,8 +159,9 @@
                 </td>
             </tr>
             <tr>
-                <td class="auto-style7">&nbsp;</td>
-                <td class="auto-style9">&nbsp;</td>
+                <td colspan="2" class="auto-style13">
+                    <asp:Label ID="Label3" runat="server" CssClass="labeli" Text="Немате претстави за оценување."></asp:Label>
+                </td>
             </tr>
             <tr>
                 <td>
@@ -215,18 +216,31 @@
         <asp:Label ID="lblList" runat="server" Text="Листа на остварени резервации" CssClass="infoList" ></asp:Label>
         <br />
         <br />
-        <table class="auto-style1">
-        <tr>
-            <td rowspan="3" class="auto-style13"> <asp:ListBox ID="lbRezervacii" runat="server" CssClass="listbox" Rows="3"></asp:ListBox></td>
-            <td>  <asp:Button ID="Button2" runat="server" Text="" CssClass="btnUp" OnClick="btnUp_Click" /></td>
-        </tr>
-        <tr>
-            <td> <asp:Button ID="btnDown" runat="server" Text="" CssClass="btnDown" OnClick="btnDown_Click" /></td>
-        </tr>
-        <tr>
-            <td>  <asp:Button ID="btnRemove" runat="server" CssClass="btnRemove" Text="" OnClick="btnRemove_Click" /></td>
-        </tr>
-    </table>
+        <asp:Panel ID="pnlOstvareniRezervaciiEmpty" runat="server">
+            <asp:Label ID="Label5" runat="server" Text="Немате резервирано претстави. Можете да го погледнете репертоарот и да ја резервирате посакуваната претстава."></asp:Label>
+        </asp:Panel>
+        <asp:Panel ID="pnlOstvareniRezervacii" runat="server">
+            <table class="auto-style1">
+                <tr>
+                    <td rowspan="3" class="auto-style13"> 
+                        <asp:ListBox ID="lbRezervacii" runat="server" CssClass="listbox" Rows="3"></asp:ListBox>
+                    </td>
+                    <td>  
+                        <asp:Button ID="Button2" runat="server" Text="" CssClass="btnUp" OnClick="btnUp_Click" />
+                    </td>
+                </tr>
+                <tr>
+                    <td> 
+                        <asp:Button ID="btnDown" runat="server" Text="" CssClass="btnDown" OnClick="btnDown_Click" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>  
+                        <asp:Button ID="btnRemove" runat="server" CssClass="btnRemove" Text="" OnClick="btnRemove_Click" />
+                    </td>
+                </tr>
+            </table>
+        </asp:Panel>
     </asp:Panel>
         <asp:Panel ID="imagesPanel2" runat="server">
             <asp:Panel ID="imagesPanel22" CssClass="imagesPanel" runat="server">
