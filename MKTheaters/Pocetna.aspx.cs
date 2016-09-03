@@ -25,7 +25,7 @@ private void BindListView()
     {
         using (SqlCommand cmd = new SqlCommand())
         {
-            cmd.CommandText = "SELECT * FROM Repertoar";
+            cmd.CommandText = "SELECT * FROM Details";
             cmd.Connection = con;
             using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
             {
@@ -43,4 +43,11 @@ protected void OnPagePropertiesChanging(object sender, PagePropertiesChangingEve
     this.BindListView();
 }
 
+
+    protected void nasocuvac_Click(object sender, EventArgs e)
+    {
+        Button clickedButton = (Button)sender;
+        Session["imenaP"] = clickedButton.Text;
+        Response.Redirect("~/PretstavaDetails.aspx");
+    }
 }

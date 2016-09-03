@@ -8,16 +8,56 @@
     <script src="Scripts/jquery.min.js"></script>
     <script src="Scripts/bootstrap.min.js"></script>
    <style type="text/css">
-      #lvP
-      {
-        background-color:white;
+     #BOX
+     {
+         background-color:white;
     padding:30px;
     margin:auto;
-    margin-top:10px;
-    width:40%;
+    margin-top:4%;
+    margin-bottom:10px;
+    width:85%;
     border-radius:20px;
-    border:20px solid #F0CB01;  
-      }
+    border:20px solid #F0CB01;
+     } 
+     
+     #Pan1{
+          font-family:'Malgun Gothic';
+          font-size:x-large;
+          font-weight:bolder;
+          padding-left:40%;
+          color:#BA252A;
+
+     } 
+
+     #Pan2{
+          font-family:'Malgun Gothic';
+          font-size:large;
+          font-weight:bold;
+          margin:auto;
+          color:orangered;
+          text-align:justify;
+          
+     }
+
+     .dolno{
+          font-family:'Malgun Gothic';
+          font-size:x-large;
+          font-weight:bold;
+          color:#BA252A;
+     }
+
+     .dolnoNamaleno{
+        font-family:'Malgun Gothic';
+          font-size:large;
+          font-weight:bolder;
+          text-decoration:underline;
+          color:#BA252A;
+     }
+
+     #nasocuvac{
+         background-color:transparent;
+         border:none;
+     }
    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
@@ -74,11 +114,11 @@
         </div> 
     </asp:Panel>
     
-    <asp:ListView ID="lvPlays" runat="server" GroupPlaceholderID="groupPlaceHolder1"
-   ItemPlaceholderID="itemPlaceHolder1" OnPagePropertiesChanging="OnPagePropertiesChanging">
+    <asp:Panel ID="BOX" runat="server">
+    <asp:ListView ID="lvPlays" runat="server" GroupPlaceholderID="groupPlaceHolder1" ItemPlaceholderID="itemPlaceHolder1" OnPagePropertiesChanging="OnPagePropertiesChanging">
 <LayoutTemplate>
     <table ID="lvP" cellpadding="0" cellspacing="0">
-        <tr>
+        <!--<tr>
             <th>
                 Претстава &nbsp;
             </th>
@@ -88,16 +128,16 @@
             <th>
                 Режисер &nbsp;
             </th>
-        </tr>
+        </tr>-->
         <asp:PlaceHolder runat="server" ID="groupPlaceHolder1"></asp:PlaceHolder>
         <tr>
             <td colspan = "3">
-                <asp:DataPager ID="DataPager1" runat="server" PagedControlID="lvPlays" PageSize="10">
+                <asp:DataPager ID="DataPager1" runat="server" PagedControlID="lvPlays" PageSize="2">
                     <Fields>
                         <asp:NextPreviousPagerField ButtonType="Link" ShowFirstPageButton="false" ShowPreviousPageButton="true"
-                            ShowNextPageButton="false" />
-                        <asp:NumericPagerField ButtonType="Link" />
-                        <asp:NextPreviousPagerField ButtonType="Link" ShowNextPageButton="true" ShowLastPageButton="false" ShowPreviousPageButton = "false" />
+                            ShowNextPageButton="false" ButtonCssClass="dolno" />
+                        <asp:NumericPagerField ButtonType="Link" CurrentPageLabelCssClass="dolno" NextPreviousButtonCssClass="dolnoNamaleno" NumericButtonCssClass="dolnoNamaleno" PreviousPageImageUrl="dolnoNamaleno" />
+                        <asp:NextPreviousPagerField ButtonType="Link" ShowNextPageButton="true" ShowLastPageButton="false" ShowPreviousPageButton = "false" ButtonCssClass="dolno" />
                     </Fields>
                 </asp:DataPager>
             </td>
@@ -110,17 +150,22 @@
     </tr>
 </GroupTemplate>
 <ItemTemplate>
+    <tr>
     <td>
-        <%# Eval("Ime") %> &nbsp;
-    </td>
+       <asp:Panel runat="server" ID="Pan1"> <asp:Button runat="server" ID="nasocuvac" onClick="nasocuvac_Click" Text=<%# Eval("Pretstava") %> /></asp:Button></asp:Panel>
+        <br> 
+    </td> 
+    </tr>
+    
+    <tr>
     <td>
-        <%# Eval("Avtor") %> &nbsp;
+       <asp:Panel runat="server" ID="Pan2"> <%# Eval("Sodrzina") %> </asp:Panel>
+        <br>
     </td>
-    <td>
-        <%# Eval("Reziser") %> &nbsp;
-    </td>
+    </tr>
+    
 </ItemTemplate>
 </asp:ListView>
-
+</asp:Panel>
 </asp:Content>
 
