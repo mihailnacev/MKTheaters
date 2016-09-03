@@ -25,7 +25,7 @@ private void BindListView()
     {
         using (SqlCommand cmd = new SqlCommand())
         {
-            cmd.CommandText = "SELECT * FROM Repertoar";
+            cmd.CommandText = "SELECT * FROM Details";
             cmd.Connection = con;
             using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
             {
