@@ -20,6 +20,11 @@ public partial class Najava : System.Web.UI.Page
                 Response.Redirect("~/Administracija.aspx");
             }
         }
+        if (!IsPostBack)
+        {
+            rfvPassword.ErrorMessage = "<img id='error' src='Images/error-icon-25257-16x16.ico' alt='*'>";
+            rfvUsername.ErrorMessage = "<img id='error' src='Images/error-icon-25257-16x16.ico' alt='*'>";
+        }
     }
 
     protected void btnRegister_Click(object sender, EventArgs e)
@@ -34,14 +39,14 @@ public partial class Najava : System.Web.UI.Page
         if (tekoven == null)
         {
             LogInStatus.Text = "Не постои корисник со тоа корисничко име!";
-            LogInStatus.Visible = true;
+            statusContainer.Visible = true;
         }
         else
         {
             if (tekoven.Password != txtLozinka.Text.GetHashCode().ToString())
             {
                 LogInStatus.Text = "Погрешна лозинка!";
-                LogInStatus.Visible = true;
+                statusContainer.Visible = true;
             }
             else
             {
