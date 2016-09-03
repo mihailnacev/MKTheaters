@@ -43,4 +43,11 @@ protected void OnPagePropertiesChanging(object sender, PagePropertiesChangingEve
     this.BindListView();
 }
 
+
+    protected void nasocuvac_Click(object sender, EventArgs e)
+    {
+        Button clickedButton = (Button)sender;
+        Session["imenaP"] = clickedButton.Text;
+        Response.Redirect("~/PretstavaDetails.aspx");
+    }
 }

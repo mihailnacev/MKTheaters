@@ -35,6 +35,7 @@
           font-weight:bold;
           margin:auto;
           color:orangered;
+          text-align:justify;
           
      }
 
@@ -51,6 +52,11 @@
           font-weight:bolder;
           text-decoration:underline;
           color:#BA252A;
+     }
+
+     #nasocuvac{
+         background-color:transparent;
+         border:none;
      }
    </style>
 </asp:Content>
@@ -146,7 +152,7 @@
 <ItemTemplate>
     <tr>
     <td>
-       <asp:Panel runat="server" ID="Pan1"> <%# Eval("Pretstava") %> </asp:Panel>
+       <asp:Panel runat="server" ID="Pan1"> <asp:Button runat="server" ID="nasocuvac" onClick="nasocuvac_Click" Text=<%# Eval("Pretstava") %> /></asp:Button></asp:Panel>
         <br> 
     </td> 
     </tr>
