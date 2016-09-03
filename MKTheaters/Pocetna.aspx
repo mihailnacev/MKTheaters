@@ -7,6 +7,18 @@
     <script src="Scripts/ScriptPocetna.js" type="text/javascript"></script>
     <script src="Scripts/jquery.min.js"></script>
     <script src="Scripts/bootstrap.min.js"></script>
+   <style type="text/css">
+      #lvP
+      {
+        background-color:white;
+    padding:30px;
+    margin:auto;
+    margin-top:10px;
+    width:40%;
+    border-radius:20px;
+    border:20px solid #F0CB01;  
+      }
+   </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <asp:Panel ID="Main" runat="server">
@@ -61,5 +73,54 @@
             </a>
         </div> 
     </asp:Panel>
+    
+    <asp:ListView ID="lvPlays" runat="server" GroupPlaceholderID="groupPlaceHolder1"
+   ItemPlaceholderID="itemPlaceHolder1" OnPagePropertiesChanging="OnPagePropertiesChanging">
+<LayoutTemplate>
+    <table ID="lvP" cellpadding="0" cellspacing="0">
+        <tr>
+            <th>
+                Претстава &nbsp;
+            </th>
+            <th>
+                Автор &nbsp;
+            </th>
+            <th>
+                Режисер &nbsp;
+            </th>
+        </tr>
+        <asp:PlaceHolder runat="server" ID="groupPlaceHolder1"></asp:PlaceHolder>
+        <tr>
+            <td colspan = "3">
+                <asp:DataPager ID="DataPager1" runat="server" PagedControlID="lvPlays" PageSize="10">
+                    <Fields>
+                        <asp:NextPreviousPagerField ButtonType="Link" ShowFirstPageButton="false" ShowPreviousPageButton="true"
+                            ShowNextPageButton="false" />
+                        <asp:NumericPagerField ButtonType="Link" />
+                        <asp:NextPreviousPagerField ButtonType="Link" ShowNextPageButton="true" ShowLastPageButton="false" ShowPreviousPageButton = "false" />
+                    </Fields>
+                </asp:DataPager>
+            </td>
+        </tr>
+    </table>
+</LayoutTemplate>
+<GroupTemplate>
+    <tr>
+        <asp:PlaceHolder runat="server" ID="itemPlaceHolder1"></asp:PlaceHolder>
+    </tr>
+</GroupTemplate>
+<ItemTemplate>
+    <td>
+        <%# Eval("Ime") %> &nbsp;
+    </td>
+    <td>
+        <%# Eval("Avtor") %> &nbsp;
+    </td>
+    <td>
+        <%# Eval("Reziser") %> &nbsp;
+    </td>
+</ItemTemplate>
+</asp:ListView>
+
 </asp:Content>
 
