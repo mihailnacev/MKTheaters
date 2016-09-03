@@ -53,6 +53,7 @@
     padding:30px;
     margin:auto;
     margin-top:10px;
+    margin-bottom:10px;
     width:40%;
     border-radius:20px;
     border:20px solid #F0CB01;
