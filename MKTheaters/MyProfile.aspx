@@ -25,7 +25,7 @@
              height: 26px;
          }
          .auto-style9 {
-             width: 180px;
+             width: 185px;
          }
          .auto-style10 {
              width: 157px;
@@ -107,7 +107,7 @@
                 <td class="auto-style9">
                     <asp:Label ID="lblEmailText" CssClass="Labels" runat="server"></asp:Label>
                     <asp:TextBox ID="txtEmailText" CssClass="TextBoxes" runat="server"></asp:TextBox>
-                    <asp:RegularExpressionValidator ID="revEmail" runat="server" ControlToValidate="txtEmailText" ErrorMessage="*" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ForeColor="#BA252A" ToolTip="Погрешен формат на email адреса"></asp:RegularExpressionValidator>
+                    <asp:RegularExpressionValidator ID="revEmail" runat="server" ControlToValidate="txtEmailText" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ForeColor="#BA252A" ToolTip="Погрешен формат на email адреса" ErrorMessage="*"></asp:RegularExpressionValidator>
                 </td>
             </tr>
             <tr>

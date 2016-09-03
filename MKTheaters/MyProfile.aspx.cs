@@ -28,6 +28,9 @@ public partial class MyProfile : System.Web.UI.Page
                 txtFirstNameText.Text = tekoven.Ime;
                 txtLastNameText.Text = tekoven.Prezime;
                 txtEmailText.Text = tekoven.Email;
+                revEmail.ErrorMessage = "<img id='error' src='Images/error-icon-25257-16x16.ico' alt='*'>";
+                revPass.ErrorMessage = "<img id='error' src='Images/error-icon-25257-16x16.ico' alt='*'>";
+                cvLozinki.ErrorMessage = "<img id='error' src='Images/error-icon-25257-16x16.ico' alt='*'>";
             }
         }
     }
