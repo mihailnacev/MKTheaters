@@ -13,6 +13,20 @@
   
 }
 
+option 
+{
+    background-color: #BA252A;
+    color: #F0CB01;
+}
+
+select
+{
+    background-color: #BA252A;
+    border: 2px solid darkred;
+    color: #F0CB01;
+    padding: 3px;
+}
+
 #lblIme {
     font-size: 40px;
     color: #DA621E;
