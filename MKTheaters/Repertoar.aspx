@@ -154,8 +154,9 @@
                    <td class="auto-style7">
                        <asp:DropDownList ID="ddlKriterium" runat="server" Height="35px" Width="278px" OnSelectedIndexChanged="ddlKriterium_SelectedIndexChanged">
                            <asp:ListItem>- Default -</asp:ListItem>
-                           <asp:ListItem>Град</asp:ListItem>
+                           <asp:ListItem>Име</asp:ListItem>
                            <asp:ListItem>Режисер</asp:ListItem>
+                           <asp:ListItem>Град</asp:ListItem>
                            <asp:ListItem>Автор</asp:ListItem>
                            <asp:ListItem>Актер</asp:ListItem>
                            <asp:ListItem>Театар</asp:ListItem>

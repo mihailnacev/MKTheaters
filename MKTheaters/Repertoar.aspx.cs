@@ -202,6 +202,7 @@ public partial class Repertoar : System.Web.UI.Page
         ViewState["set3"] = null;
         ViewState["set4"] = null;
         ViewState["set5"] = null;
+        ViewState["set6"] = null;
     }
 
     protected void btnPreb_Click(object sender, EventArgs e)
@@ -277,6 +278,17 @@ public partial class Repertoar : System.Web.UI.Page
             main.Visible = false;
             Panel1.Visible = false;
         }
+        else if (ddlKriterium.SelectedItem.Text == "Име")
+        {
+            theatersService servis = new theatersService();
+            DataSet result = servis.findByName(tbKluc.Text);
+            dvPretstavi.DataSource = result;
+            dvPretstavi.DataBind();
+            ViewState["set6"] = result;
+            mvSearch.ActiveViewIndex = 2;
+            main.Visible = false;
+            Panel1.Visible = false;
+        }
         else
         {
             mvSearch.ActiveViewIndex = 0;
@@ -341,6 +353,16 @@ public partial class Repertoar : System.Web.UI.Page
         if (ddlKriterium.SelectedItem.Text == "Театар")
         {
             DataSet ds = (DataSet)ViewState["set5"];
+            dvPretstavi.DataSource = ds;
+            dvPretstavi.DataBind();
+            mvSearch.ActiveViewIndex = 2;
+            main.Visible = false;
+            Panel1.Visible = false;
+        }
+
+        if (ddlKriterium.SelectedItem.Text == "Име")
+        {
+            DataSet ds = (DataSet)ViewState["set6"];
             dvPretstavi.DataSource = ds;
             dvPretstavi.DataBind();
             mvSearch.ActiveViewIndex = 2;

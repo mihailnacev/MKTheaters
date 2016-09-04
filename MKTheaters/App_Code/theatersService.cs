@@ -242,4 +242,40 @@ public class theatersService : System.Web.Services.WebService
         }
         return ds;
     }
+
+    [WebMethod(Description = "Vraka DataSet od imeto na pretstavata koja e zadadena kako vlezen argument")]
+    public DataSet findByName(string Ime)
+    {
+        List<Play> pretstavi = new List<Play>();
+        SqlConnection konekcija = new SqlConnection();
+        konekcija.ConnectionString = ConfigurationManager.ConnectionStrings["Test"].ConnectionString;
+        string sqlString = "SELECT * FROM Repertoar WHERE Ime=@ime";
+        SqlCommand komanda = new SqlCommand(sqlString, konekcija);
+        komanda.Parameters.AddWithValue("@ime", Ime);
+        SqlDataAdapter adapter = new SqlDataAdapter(komanda);
+        DataSet ds = new DataSet();
+        try
+        {
+            konekcija.Open();
+            adapter.Fill(ds, "Repertoar");
+            /*SqlDataReader citac = komanda.ExecuteReader();
+            while (citac.Read())
+            {
+                string listOfDates = citac[6].ToString();
+                string[] dates = listOfDates.Split(';');
+                foreach (string s in dates)
+                {
+                    Play tmp = new Play(citac[0].ToString(), citac[1].ToString(), citac[2].ToString(), citac[4].ToString(),
+                        citac[5].ToString(), s, citac[7].ToString(), citac[3].ToString());
+                    pretstavi.Add(tmp);
+                }
+            }
+            citac.Close();*/
+        }
+        finally
+        {
+            konekcija.Close();
+        }
+        return ds;
+    }
 }
