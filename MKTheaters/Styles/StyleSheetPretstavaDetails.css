@@ -14,9 +14,10 @@
 }
 
 #lblIme {
-    font-size: 35px;
-    color: rgba(230,159,36,1);
+    font-size: 40px;
+    color: #DA621E;
     font-style: italic;
+    font-weight: bold;
 }
 
 .labeli {
@@ -44,7 +45,7 @@
 
 .results {
 
-    color: rgba(230,159,36,1);
+    color: #DA621E;
     font-weight:bold;
     text-align:center;
     font-size:x-large;

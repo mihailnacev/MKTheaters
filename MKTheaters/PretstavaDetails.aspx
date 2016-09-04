@@ -10,7 +10,7 @@
             height: 50px;
         }
         .auto-style13 {
-            width: 605px;
+            width: 30%;
             height: 50px;
         }
         .auto-style14 {
@@ -31,7 +31,7 @@
             </td>
         </tr>
         <tr>
-            <td class="auto-style13" style="vertical-align:top">
+            <td class="auto-style13">
                 <asp:Label ID="Label5" runat="server" Text="Автор:" CssClass="labeli"></asp:Label>
             </td>
             <td class="auto-style12">
@@ -47,7 +47,7 @@
             </td>
         </tr>
         <tr>
-            <td class="auto-style13" style="vertical-align:top">
+            <td class="auto-style13">
                 <asp:Label ID="Label7" runat="server" Text="Актери:" CssClass="labeli"></asp:Label>
                 <br/>
             </td>

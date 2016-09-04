@@ -55,9 +55,9 @@ public partial class PretstavaDetails : System.Web.UI.Page
             if (citac.Read() != false)
             {
                 lblIme.Text = citac[0].ToString();
-                lblAvtor.Text = citac[1].ToString().Replace(";", "<br/>");
+                lblAvtor.Text = citac[1].ToString().Replace(";", ", ");
                 lblReziser.Text = citac[2].ToString();
-                lblAkteri.Text = citac[3].ToString().Replace(";", "<br/>");
+                lblAkteri.Text = citac[3].ToString().Replace(";", ", ");
                 lblTeatarGrad.Text = citac[4].ToString() + " " + citac[5].ToString();
                 string datumi = citac[6].ToString();
                 string[] parts = datumi.Split(';');
