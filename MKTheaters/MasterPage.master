@@ -224,10 +224,10 @@
                     <asp:ImageButton ID="logoImage" runat="server" ImageUrl="Images/logo_4.png" Width="247px" Height="137px" PostBackUrl="~/Pocetna.aspx" />
                 </asp:Panel>
                 <asp:Panel ID="menu" runat="server">
-                    <asp:LinkButton ID="Pocetna" runat="server" OnClick="Pocetna_Click">ПОЧЕТНА</asp:LinkButton>
-                    <asp:LinkButton ID="Repertoar" runat="server" OnClick="Repertoar_Click">РЕПЕРТОАР</asp:LinkButton>
-                    <asp:LinkButton ID="MojProfil" runat="server" OnClick="MojProfil_Click">МОЈ ПРОФИЛ</asp:LinkButton>
-                    <asp:LinkButton ID="ZaNas" runat="server" OnClick="ZaNas_Click">ЗА НАС</asp:LinkButton>
+                    <asp:LinkButton ID="Pocetna" runat="server" OnClick="Pocetna_Click" CausesValidation="false">ПОЧЕТНА</asp:LinkButton>
+                    <asp:LinkButton ID="Repertoar" runat="server" OnClick="Repertoar_Click" CausesValidation="false">РЕПЕРТОАР</asp:LinkButton>
+                    <asp:LinkButton ID="MojProfil" runat="server" OnClick="MojProfil_Click" CausesValidation="false">МОЈ ПРОФИЛ</asp:LinkButton>
+                    <asp:LinkButton ID="ZaNas" runat="server" OnClick="ZaNas_Click" CausesValidation="false">ЗА НАС</asp:LinkButton>
                 </asp:Panel>
             </asp:Panel>
         </asp:Panel>

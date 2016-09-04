@@ -20,8 +20,17 @@
     font-family:'Malgun Gothic'
 }
 
+#ddlPretstavi option {
+    background-color: #BA252A;
+    color: #F0CB01;
+}
 
-
+#ddlPretstavi {
+    background-color: #BA252A;
+    border: 2px solid darkred;
+    color: #F0CB01;
+    padding: 3px;
+}
 
 .myProfilePanel {
 

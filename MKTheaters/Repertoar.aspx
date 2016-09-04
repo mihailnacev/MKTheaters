@@ -2,6 +2,10 @@
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolKit" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
     <link href="Styles/StyleSheetRepertoar.css" rel="stylesheet"/>
+    <link href="Styles/jquery-ui.css" type="text/css" rel="stylesheet" />
+    <script src="Scripts/jquery.js"></script>
+    <script src="Scripts/jquery-ui.js"></script>
+    <script src="Scripts/ScriptRepertoar.js" type="text/javascript"></script>
     <style type="text/css">
 .modalBackground{
     background-color:black;
@@ -170,7 +174,7 @@
                        <asp:TextBox ID="tbKluc" runat="server" Width="272px" Height="35px"></asp:TextBox>
                    </td>
                    <td class="auto-style13">
-                       <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="tbKluc" ErrorMessage="* Полето е задолжително!" Font-Bold="True" ForeColor="#BA252A"></asp:RequiredFieldValidator>
+                       <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="tbKluc" ErrorMessage="*" Font-Bold="True" ForeColor="#BA252A" ToolTip="Полето е задолжително!"></asp:RequiredFieldValidator>
                    </td>
                </tr>
                <tr>

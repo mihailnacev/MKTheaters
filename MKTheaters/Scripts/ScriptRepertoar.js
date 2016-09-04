@@ -1,4 +1,5 @@
-﻿$(function () {
+﻿/*$(function () {*/
+//skriptata ne beshe vkluchena vo Repertoar.aspx, pa staviv vo /**/ za da ne napravam problemi :D
     /*
       $( "#dialog" ).dialog({
         autoOpen: true,
@@ -17,7 +18,7 @@
       });
       */
 
-    $("#dialog").dialog({
+    /*$("#dialog").dialog({
         autoOpen: false,
         modal: true,
         buttons: {
@@ -35,4 +36,8 @@
     $(".OPP").click(function () {
         $("#dialog").dialog("open");
     });
-});
+});*/
+$(document).ready(function ()
+{
+    $("#RequiredFieldValidator1").tooltip();
+})

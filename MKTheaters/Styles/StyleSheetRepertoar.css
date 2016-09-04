@@ -55,3 +55,22 @@
     width: 90%;
     text-align: right;
 }
+
+#gvPretstavi option 
+{
+    background-color: #DA621E;
+}
+
+option 
+{
+    background-color: #BA252A;
+    color: #F0CB01;
+}
+
+select
+{
+    background-color: #BA252A;
+    border: 2px solid darkred;
+    color: #F0CB01;
+    padding: 3px;
+}

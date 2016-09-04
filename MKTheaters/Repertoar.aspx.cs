@@ -12,7 +12,11 @@ public partial class Repertoar : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (!IsPostBack) IspolniMaster();
+        if (!IsPostBack)
+        {
+            RequiredFieldValidator1.ErrorMessage = "<img id='error' src='Images/error-icon-25257-16x16.ico' alt='*'>";
+            IspolniMaster();
+        }
         main.Visible = true;
         mvSearch.ActiveViewIndex = 0;
     }
