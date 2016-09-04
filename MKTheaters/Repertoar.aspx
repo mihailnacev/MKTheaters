@@ -87,7 +87,7 @@
 }
 
 #dvPretstavi{
-     background-color:white;
+    background-color:white;
     padding:30px;
     margin:auto;
     margin-top:10px;
@@ -184,22 +184,38 @@
                </asp:Panel>
        </asp:View>
        <asp:View ID="View3" runat="server">
-           <asp:DetailsView ID="dvPretstavi" runat="server" Height="50px" Width="40%" AllowPaging="True" OnPageIndexChanging="dvPretstavi_PageIndexChanging" BorderColor="#F0CB01" BorderStyle="Solid" BorderWidth="5px" CellPadding="6" AutoGenerateRows="False" CellSpacing="2" DataKeyNames="Ime" OnItemCommand="dvPretstavi_ItemCommand">
-               <EmptyDataRowStyle BackColor="Red" BorderColor="#FFCC00" BorderWidth="5px" />
+           <asp:DetailsView ID="dvPretstavi" runat="server" Height="50px" Width="40%" 
+               AllowPaging="True" OnPageIndexChanging="dvPretstavi_PageIndexChanging" 
+               BorderColor="#F0CB01" BorderStyle="Solid" BorderWidth="10px" CellPadding="100" 
+               AutoGenerateRows="False" CellSpacing="5" DataKeyNames="Ime" 
+               OnItemCommand="dvPretstavi_ItemCommand" Font-Size="X-Large">
+               <AlternatingRowStyle Font-Bold="True" />
+               <CommandRowStyle BorderStyle="Solid" BorderWidth="3px" />
+               <EditRowStyle BorderStyle="Solid" BorderWidth="3px" Font-Size="Larger" />
+               <EmptyDataRowStyle BackColor="Red" BorderColor="#FFCC00" BorderWidth="5px" 
+                   Font-Size="Larger" />
+               <FieldHeaderStyle Font-Size="Larger" />
                <Fields>
                    <asp:ButtonField CommandName="select" DataTextField="Ime" HeaderText="Претстава" Text="Button">
-                   <ControlStyle Font-Size="Large" />
-                   <ItemStyle Font-Size="Large" HorizontalAlign="Center" VerticalAlign="Middle" />
+                   <ControlStyle Font-Size="Larger" />
+                   <HeaderStyle Font-Size="Larger" />
+                   <ItemStyle Font-Size="X-Large" HorizontalAlign="Center" VerticalAlign="Middle" 
+                       Font-Bold="True" />
                    </asp:ButtonField>
                    <asp:BoundField DataField="Avtor" HeaderText="Автор" />
                    <asp:BoundField DataField="Reziser" HeaderText="Режисер" />
-                   <asp:BoundField DataField="Akteri" HeaderText="Актери" />
                    <asp:BoundField DataField="Teatar" HeaderText="Театар" />
                    <asp:BoundField DataField="Grad" HeaderText="Град" />
-                   <asp:BoundField DataField="Vremetraenje" HeaderText="Времетраење" />
                </Fields>
-               <PagerStyle BackColor="Orange" Font-Bold="True" ForeColor="Maroon" HorizontalAlign="Center" VerticalAlign="Middle" />
-               <RowStyle BackColor="#BA252A" Font-Bold="True" ForeColor="#F0CB01" HorizontalAlign="Left" VerticalAlign="Middle" />
+               <FooterStyle Font-Size="Larger" />
+               <HeaderStyle Font-Size="Larger" Font-Bold="True" />
+               <InsertRowStyle BorderStyle="Solid" BorderWidth="3px" Font-Size="Larger" />
+               <PagerStyle BackColor="Orange" Font-Bold="True" ForeColor="Maroon" 
+                   HorizontalAlign="Center" VerticalAlign="Middle" BorderStyle="Solid" 
+                   BorderWidth="3px" />
+               <RowStyle BackColor="#BA252A" Font-Bold="True" ForeColor="#F0CB01" 
+                   HorizontalAlign="Left" VerticalAlign="Middle" Font-Size="Larger" 
+                   BorderStyle="Solid" BorderWidth="3px" />
            </asp:DetailsView>
        </asp:View>
    </asp:MultiView>
