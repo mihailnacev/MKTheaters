@@ -10,6 +10,10 @@ public partial class PretstavaDetails : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        if (Session["imenaP"] == null)
+        {
+            Response.Redirect("~/Repertoar.aspx");
+        }
         string ime = (string)Session["imenaP"];
         lblIme.Text = ime;
         selektirajPretstava(ime);
@@ -51,9 +55,9 @@ public partial class PretstavaDetails : System.Web.UI.Page
             if (citac.Read() != false)
             {
                 lblIme.Text = citac[0].ToString();
-                lblAvtor.Text = citac[1].ToString().Replace(';', ',');
+                lblAvtor.Text = citac[1].ToString().Replace(";", "<br/>");
                 lblReziser.Text = citac[2].ToString();
-                lblAkteri.Text = citac[3].ToString().Replace(';', ',');
+                lblAkteri.Text = citac[3].ToString().Replace(";", "<br/>");
                 lblTeatarGrad.Text = citac[4].ToString() + " " + citac[5].ToString();
                 string datumi = citac[6].ToString();
                 string[] parts = datumi.Split(';');

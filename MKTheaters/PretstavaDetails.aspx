@@ -26,16 +26,13 @@
         
     <table class="auto-style1" id="tabela">
         <tr>
-            <td class="auto-style13">
-                <asp:Label ID="Label4" runat="server" Text="Име на претставата:" CssClass="labeli"></asp:Label>
-            </td>
-            <td class="auto-style12">
-                <asp:Label ID="lblIme" runat="server" CssClass="results" Text="Label"></asp:Label>
+            <td colspan="2" style="text-align:center">
+                <asp:Label ID="lblIme" runat="server" Text="Label"></asp:Label>
             </td>
         </tr>
         <tr>
-            <td class="auto-style13">
-                <asp:Label ID="Label5" runat="server" Text="Автор на претставата:" CssClass="labeli"></asp:Label>
+            <td class="auto-style13" style="vertical-align:top">
+                <asp:Label ID="Label5" runat="server" Text="Автор:" CssClass="labeli"></asp:Label>
             </td>
             <td class="auto-style12">
                 <asp:Label ID="lblAvtor" runat="server" CssClass="results" Text="Label"></asp:Label>
@@ -43,15 +40,15 @@
         </tr>
         <tr>
             <td class="auto-style13">
-                <asp:Label ID="Label6" runat="server" Text="Режисер на претставата:" CssClass="labeli"></asp:Label>
+                <asp:Label ID="Label6" runat="server" Text="Режисер:" CssClass="labeli"></asp:Label>
             </td>
             <td class="auto-style12">
                 <asp:Label ID="lblReziser" runat="server" CssClass="results" Text="Label"></asp:Label>
             </td>
         </tr>
         <tr>
-            <td class="auto-style13">
-                <asp:Label ID="Label7" runat="server" Text="Актери кои учествуваат во претставата:" CssClass="labeli"></asp:Label>
+            <td class="auto-style13" style="vertical-align:top">
+                <asp:Label ID="Label7" runat="server" Text="Актери:" CssClass="labeli"></asp:Label>
                 <br/>
             </td>
             <td class="auto-style12">
@@ -68,7 +65,7 @@
         </tr>
         <tr>
             <td class="auto-style13">
-                <asp:Label ID="Label9" runat="server" Text="Времетраење на претставата:" CssClass="labeli"></asp:Label>
+                <asp:Label ID="Label9" runat="server" Text="Времетраење:" CssClass="labeli"></asp:Label>
             </td>
             <td class="auto-style12">
                 <asp:Label ID="lblVremetraenje" runat="server" CssClass="results" Text="Label"></asp:Label>
@@ -76,7 +73,7 @@
         </tr>
         <tr>
             <td class="auto-style13">
-                <asp:Label ID="Label10" runat="server" CssClass="labeli" Text="Датум и време на претставата:"></asp:Label>
+                <asp:Label ID="Label10" runat="server" CssClass="labeli" Text="Датум и време:"></asp:Label>
             </td>
             <td class="auto-style12">
                 <asp:DropDownList ID="ddlDatumi" runat="server">

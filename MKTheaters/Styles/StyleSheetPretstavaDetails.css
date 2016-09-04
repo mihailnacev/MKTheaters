@@ -13,6 +13,12 @@
   
 }
 
+#lblIme {
+    font-size: 35px;
+    color: rgba(230,159,36,1);
+    font-style: italic;
+}
+
 .labeli {
 
     padding-left:5%;
@@ -38,7 +44,7 @@
 
 .results {
 
-    color:#FF4500;
+    color: rgba(230,159,36,1);
     font-weight:bold;
     text-align:center;
     font-size:x-large;
