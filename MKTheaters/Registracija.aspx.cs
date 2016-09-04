@@ -9,6 +9,24 @@ public partial class Registracija : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         lblMsg.Text = "";
+        statusContainer.Visible = false;
+        if (!IsPostBack)
+        {
+            revEmail.ErrorMessage = "<img id='error' src='Images/error-icon-25257-16x16.ico' alt='*'>";
+            revPassword.ErrorMessage = "<img id='error' src='Images/error-icon-25257-16x16.ico' alt='*'>";
+            revUsername.ErrorMessage = "<img id='error' src='Images/error-icon-25257-16x16.ico' alt='*'>";
+            cvConfirmPassword.ErrorMessage = "<img id='error' src='Images/error-icon-25257-16x16.ico' alt='*'>";
+        }
+    }
+
+    protected bool uniqueUsername(string userName)
+    {
+        HashSet<string> set = Connectivity.getUsernames();
+        if (set.Contains(userName))
+        {
+            return false;
+        }
+        return true;
     }
 
     protected void btnPodnesi_Click(object sender, EventArgs e)
@@ -19,15 +37,26 @@ public partial class Registracija : System.Web.UI.Page
         string username = txtUsername.Text;
         string password = txtPassword.Text;
         string confirm = txtConfirmPassword.Text;
-        if (ime == "" || prezime == "" || email == "" || username == "" || password == "" || confirm == "") 
+        if (!uniqueUsername(username) && username != "")
         {
-            lblMsg.Text = "Сите полиња се задолжителни";   
+            lblMsg.Text = "Веќе постои корисник со тоа корисничко име. Корисничките имиња се единствени.";
+            statusContainer.Visible = true;
+        }
+        else if (ime == "" || prezime == "" || email == "" || username == "" || password == "" || confirm == "")
+        {
+            lblMsg.Text = "Сите полиња се задолжителни.";
+            statusContainer.Visible = true;
         }
         else
         {
-           User user = new User(ime, prezime,username,password,email, "False");
-           Connectivity.SignUp(user);
-           Response.Redirect("~/UspesnaRegistracija.aspx");
+            User user = new User(ime, prezime, username, password, email, "False");
+            Connectivity.SignUp(user);
+            Response.Redirect("~/UspesnaRegistracija.aspx");
         }
+    }
+
+    protected void btnLogin_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("Najava.aspx");
     }
 }

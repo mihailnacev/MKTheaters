@@ -211,12 +211,12 @@
                     <asp:Label ID="Label1" runat="server" Text="Најавени сте како "></asp:Label>
                     <asp:HyperLink ID="user" runat="server" NavigateUrl="~/MyProfile.aspx" ForeColor="#FF9933">[user]</asp:HyperLink>
                     <asp:Label ID="Label2" runat="server" Text="|"></asp:Label>
-                    <asp:LinkButton ID="logOut" runat="server" OnClick="logOut_Click">Одјави се</asp:LinkButton>
+                    <asp:LinkButton ID="logOut" runat="server" OnClick="logOut_Click" CausesValidation="False">Одјави се</asp:LinkButton>
                 </asp:Panel>
                 <asp:Panel ID="noLoggedUser" runat="server">
-                    <asp:LinkButton ID="logIn" runat="server" OnClick="logIn_Click">Најави се</asp:LinkButton>
+                    <asp:LinkButton ID="logIn" runat="server" OnClick="logIn_Click" CausesValidation="False">Најави се</asp:LinkButton>
                     <asp:Label ID="Label3" runat="server" Text="|"></asp:Label>
-                    <asp:LinkButton ID="register" runat="server" OnClick="register_Click">Регистрирај се</asp:LinkButton>
+                    <asp:LinkButton ID="register" runat="server" OnClick="register_Click" CausesValidation="False">Регистрирај се</asp:LinkButton>
                 </asp:Panel>
             </asp:Panel>
             <asp:Panel ID="container" runat="server">

@@ -8,10 +8,20 @@
     padding:30px;
     margin:auto;
     margin-top:10px;
-    width:40%;
+    width:100%;
     border-radius:20px;
     border:20px solid #F0CB01;
   
+}
+
+td {
+    padding-bottom: 1%;
+    padding-top: 1%;
+}
+
+#Panel1 {
+    width: 35%;
+    margin: auto;
 }
 
 .registracija {
@@ -26,9 +36,9 @@
 
 .labeli {
 
-    color:#BA252A;
-    font-weight:bold;
-    text-align:end;
+    color: #BA252A;
+    font-weight: bold;
+    padding-right: 5%;
 
 }
 
@@ -39,24 +49,38 @@
     width:150px;
     font-weight:bold;
     height:30px;
-    margin-left:20px;
+    /*margin-left:20px;*/
     font-size:15px;
 
 
 }
 
+.or {
+
+    color:#BA252A;
+    font-style:italic;
+    font-weight:bold;
+
+}
+
+#btnLogin {
+    color: #F0CB01;
+    font-style: italic;
+    font-weight: bold;
+}
+
 .textFields {
 
-    width:188px;
-     height:20px;
+    /*width:188px;*/
+    height:20px;
 
 }
 
 .validationText {
 
-font-style:italic;
+/*font-style:italic;
 color:#BA252A;
 border-radius:5px;
-border-bottom:1px solid rgb(245,222,95);
+border-bottom:1px solid rgb(245,222,95);*/
 
 }

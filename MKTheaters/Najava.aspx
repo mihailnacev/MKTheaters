@@ -50,7 +50,7 @@
             <asp:Label ID="lblUsername" runat="server" CssClass="labeli" Text="Корисничко име*"></asp:Label>
         </td>
         <td>
-            <asp:TextBox ID="txtUsername" runat="server" CssClass="textFields"   ValidationGroup="najava" TabIndex="1"></asp:TextBox>
+            <asp:TextBox ID="txtUsername" runat="server" CssClass="textFields" ValidationGroup="najava" TabIndex="1" placeholder="Вашето корисничко име"></asp:TextBox>
             <asp:RequiredFieldValidator ID="rfvUsername" runat="server" CssClass="validationText" ControlToValidate="txtUsername" ErrorMessage="*" ValidationGroup="najava" TabIndex="1" ToolTip="Внесете го вашето корисничко име"></asp:RequiredFieldValidator>
         </td>
     </tr>
@@ -59,7 +59,7 @@
             <asp:Label ID="lblLozinka" runat="server" CssClass="labeli" Text="Лозинка*"></asp:Label>
         </td>
         <td>
-            <asp:TextBox ID="txtLozinka" runat="server" CssClass="textFields"  ValidationGroup="najava" TextMode="Password" TabIndex="2"></asp:TextBox>
+            <asp:TextBox ID="txtLozinka" runat="server" CssClass="textFields"  ValidationGroup="najava" TextMode="Password" TabIndex="2" placeholder="Вашата лозинка"></asp:TextBox>
             <asp:RequiredFieldValidator ID="rfvPassword" CssClass="validationText" runat="server" ControlToValidate="txtLozinka" ErrorMessage="*" ValidationGroup="najava" TabIndex="2" ToolTip="Внесете ја вашата лозинка"></asp:RequiredFieldValidator>
         </td>
     </tr>
@@ -85,8 +85,8 @@
     </tr>
     <tr>
         <td class="auto-style2" colspan="2">
-            <asp:Label ID="lblOr" CssClass="or"  runat="server" Text="Немате отворено сметка?" TabIndex="4"></asp:Label>
-            <asp:LinkButton ID="btnRegister" runat="server" Text="Регистрирај се" OnClick="btnRegister_Click" TabIndex="5" />
+            <asp:Label ID="lblOr" CssClass="or"  runat="server" Text="Немате отворено сметка?"></asp:Label>
+            <asp:LinkButton ID="btnRegister" runat="server" Text="Регистрирај се" OnClick="btnRegister_Click" TabIndex="4" />
         </td>
     </tr>
     </table>

@@ -41,6 +41,30 @@ public static class Connectivity
         return lista;
     }
 
+    public static HashSet<string> getUsernames()
+    {
+        HashSet<string> set = new HashSet<string>();
+        SqlConnection connection = new SqlConnection(connectionString);
+        SqlCommand command = new SqlCommand("SELECT * FROM Users", connection);
+        {
+            try
+            {
+                connection.Open();
+                SqlDataReader dataReader = command.ExecuteReader();
+                while (dataReader.Read())
+                {
+                    set.Add(dataReader[2].ToString());
+                }
+                dataReader.Close();
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+        return set;
+    }
+
     public static string hesiranje(string input)
     {
         string final = "";
