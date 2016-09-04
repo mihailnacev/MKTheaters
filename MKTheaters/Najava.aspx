@@ -86,11 +86,7 @@
     <tr>
         <td class="auto-style2" colspan="2">
             <asp:Label ID="lblOr" CssClass="or"  runat="server" Text="Немате отворено сметка?" TabIndex="4"></asp:Label>
-        </td>
-    </tr>
-    <tr>
-        <td class="auto-style2" colspan="2">
-            <asp:Button ID="btnRegister" runat="server" CssClass="buttons" Text="Регистрирај се" OnClick="btnRegister_Click" TabIndex="5" />
+            <asp:LinkButton ID="btnRegister" runat="server" Text="Регистрирај се" OnClick="btnRegister_Click" TabIndex="5" />
         </td>
     </tr>
     </table>

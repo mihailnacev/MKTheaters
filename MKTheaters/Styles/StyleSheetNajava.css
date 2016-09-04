@@ -56,6 +56,13 @@ td {
     /*margin-left:20px;*/
     font-size:15px;
 
+}
+
+#btnRegister {
+
+    color: #F0CB01;
+    font-style: italic;
+    font-weight: bold;
 
 }
 
