@@ -238,7 +238,10 @@
         <FooterStyle BackColor="#BA252A" ForeColor="#BA252A" />
         <HeaderStyle BackColor="#BA252A" Font-Bold="True" ForeColor="#FFFFCC" HorizontalAlign="Center" VerticalAlign="Middle" />
         <PagerStyle BackColor="Orange" Font-Bold="True" ForeColor="Maroon" HorizontalAlign="Center" VerticalAlign="Middle" Wrap="True" />
-        <RowStyle BackColor="#BA252A" ForeColor="#F0CB01" HorizontalAlign="Center" VerticalAlign="Middle" Font-Names="'Franklin Gothic Medium','Arial Narrow',Arial,sans-serif" />
+        <RowStyle BackColor="#BA252A" ForeColor="#F0CB01" HorizontalAlign="Center" 
+                    VerticalAlign="Middle" 
+                    Font-Names="'Franklin Gothic Medium','Arial Narrow',Arial,sans-serif" 
+                    Font-Size="Large" />
         <SelectedRowStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="#663399" />
         <SortedAscendingCellStyle BackColor="#FEFCEB" />
         <SortedAscendingHeaderStyle BackColor="#AF0101" />

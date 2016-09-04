@@ -132,7 +132,7 @@
         <asp:PlaceHolder runat="server" ID="groupPlaceHolder1"></asp:PlaceHolder>
         <tr>
             <td colspan = "3">
-                <asp:DataPager ID="DataPager1" runat="server" PagedControlID="lvPlays" PageSize="2">
+                <asp:DataPager ID="DataPager1" runat="server" PagedControlID="lvPlays" PageSize="1">
                     <Fields>
                         <asp:NextPreviousPagerField ButtonType="Link" ShowFirstPageButton="false" ShowPreviousPageButton="true"
                             ShowNextPageButton="false" ButtonCssClass="dolno" />
