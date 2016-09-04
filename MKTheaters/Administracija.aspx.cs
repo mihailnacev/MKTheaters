@@ -11,7 +11,10 @@ public partial class Administracija : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        if (Session["Najaven"] == null)
+        {
+            Response.Redirect("~/Najava.aspx");
+        }
         pnlAR.Visible = true;
         mvPrvPanel.ActiveViewIndex = 0;
         mvVtorPanel.ActiveViewIndex = 0;
@@ -284,7 +287,7 @@ public partial class Administracija : System.Web.UI.Page
         pnlPR.Visible = true;
         mvVtorPanel.ActiveViewIndex = 1;
         string korisnik = txtSearchUser.Text;
-        lblSearchUser.Text += korisnik;
+        lblSearchUser.Text = "Резервации од страна на " + korisnik;
         SqlConnection konekcija = new SqlConnection();
         konekcija.ConnectionString = ConfigurationManager.ConnectionStrings["Test"].ConnectionString;
         string sqlString = "SELECT Pretstava,Datum,Ocena FROM Rezervacii WHERE Username=@korisnik";

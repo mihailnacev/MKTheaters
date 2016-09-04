@@ -5,64 +5,64 @@
     <style>
 
         .buttons1 {
-    color: rgb(245,222,95);
-    background-color: #BA252A;
-    width: 150px;
-    font-weight: bold;
-    height: 35px;
-    margin-left:91.2%;
-   
-    font-size: 15px;
-}
-    
-    .buttons2 {
-    color: rgb(245,222,95);
-    background-color: #BA252A;
-    width: 150px;
-    font-weight: bold;
-    height: 30px;
-   margin-left:37%;
-    font-size: 15px;
-}
-                .buttons3 {
-    color: rgb(245,222,95);
-    background-color: #BA252A;
-    width: 150px;
-    font-weight: bold;
-    height: 30px;
-    margin-top:20px;
-    font-size: 15px;
-}
+            color: rgb(245,222,95);
+            background-color: #BA252A;
+            width: 150px;
+            font-weight: bold;
+            height: 35px;
+            /*margin-left:91.2%;*/
+            float: right;
+            margin-top: 15px;
+            font-size: 15px;
+        }
+
+        .buttons2 {
+            color: rgb(245,222,95);
+            background-color: #BA252A;
+            width: 150px;
+            font-weight: bold;
+            height: 30px;
+            /*margin-left: 37%;*/
+            float: left;
+            font-size: 15px;
+        }
+        .buttons3 {
+            color: rgb(245,222,95);
+            background-color: #BA252A;
+            width: 150px;
+            font-weight: bold;
+            height: 30px;
+            /*margin-top: 20px;*/
+            float: right;
+            font-size: 15px;
+        }
         #tabela4 {
+            background-color: white;
+            padding: 5px;
+            text-align: left;
+            border: 10px solid #F0CB01;
+            width: 30%;
+            border-top-right-radius: 30px;
+            border-top-left-radius: 30px;
+            /*margin-left: 35%;*/
+            margin: auto;
+        }
 
+        .labeli {
+            color: #BA252A;
+            font-weight: bold;
+        }
 
-    background-color:white;
-    padding:5px;
-    text-align:left;
-    border:10px solid #F0CB01;
-    width:25%;
-    border-top-right-radius:30px;
-    border-top-left-radius:30px;
-    margin-left:35%;
-
-
-}
-
-.labeli {
-    color: #BA252A;
-    font-weight: bold;
-}
-
-#gvSeeReservations{
-    margin:auto;
-}
+        #gvSeeReservations {
+            margin: auto;
+        }
 
         .auto-style1 {
             color: rgb(245,222,95);
             background-color: #BA252A;
             font-weight: bold;
-            margin-top: 20px;
-            margin-left: 0px;
+            /*margin-top: 20px;*/
+            /*margin-left: 0px;*/
             font-size: 15px;
         }
 
@@ -191,11 +191,11 @@
             </td>
         </tr>
     </table>
-
+            <asp:Panel ID="kopchinja" runat="server">
             <asp:Button ID="btnDodadi" runat="server" Text="Вметни" CssClass="buttons2" OnClick="btnDodadi_Click" />
             &nbsp;
             <asp:Button ID="btnNazad" runat="server" Text="<<" CssClass="buttons3" OnClick="btnNazad_Click" />
-
+            </asp:Panel>
         </asp:View>
 
     </asp:MultiView>
@@ -233,10 +233,10 @@
 </asp:GridView>
 
     <br />
-
-<asp:TextBox runat="server" ID="txtSearchUser" CssClass="txtSearchUser" ></asp:TextBox>
-<asp:Button runat="server"  ID="btnSearchUser" CssClass="auto-style1" Text="Пребарај по корисник" OnClick="btnSearchUser_Click" Height="41px"></asp:Button>
-
+    <asp:Panel ID="search" runat="server">
+        <asp:TextBox runat="server" ID="txtSearchUser" CssClass="txtSearchUser" ></asp:TextBox>
+        <asp:Button runat="server"  ID="btnSearchUser" CssClass="auto-style1" Text="Пребарај по корисник" OnClick="btnSearchUser_Click" Height="41px"></asp:Button>
+    </asp:Panel>
 </asp:View>
 
 <asp:View ID="View4" runat="server">

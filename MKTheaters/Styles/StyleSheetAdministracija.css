@@ -3,10 +3,8 @@
 }
 
 #Panel2 {
-
-    margin-left:5%;
-
-
+    margin: auto;
+    width: 90%;
 }
 
 .options {
@@ -43,9 +41,29 @@
 
 }
 
+#kopchinja {
+    width: 30%;
+    margin: auto;
+    padding-top: 15px;
+}
+
+#tabela4 tr td:first-child {
+    text-align: right;
+}
+
+#tabela4 tr td:last-child {
+    text-align: left;
+}
+
+#tabela4 td {
+    width: 50%;
+    padding-left: 2%;
+    padding-right: 2%;  
+}
+
 .pnlAR {
 
-    width:95%;
+    width:100%;
     /*background-color:white;*/
     
    
@@ -84,6 +102,11 @@
     font-weight: bold;
 }
 
+#search {
+    text-align: right;
+    width: 60%;
+    margin: auto;
+}
 
 .buttons {
     color: rgb(245,222,95);
@@ -109,7 +132,7 @@
 
 .txtSearchUser {
 
-    margin-left:58%;
+    /*margin-left:58%;*/
     height:35px;
     width:200px;
 
