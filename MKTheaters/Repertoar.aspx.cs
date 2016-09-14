@@ -19,6 +19,10 @@ public partial class Repertoar : System.Web.UI.Page
         }
         main.Visible = true;
         mvSearch.ActiveViewIndex = 0;
+
+        
+
+        
     }
 
     public void IspolniMaster()
@@ -192,6 +196,9 @@ public partial class Repertoar : System.Web.UI.Page
         mvSearch.ActiveViewIndex = 1;
         main.Visible = false;
         Panel1.Visible = false;
+
+        imCalendar.Visible = false;
+        calendarSearch.Visible = false;
     }
 
     protected void btnNazad_Click(object sender, EventArgs e)
@@ -210,7 +217,10 @@ public partial class Repertoar : System.Web.UI.Page
     }
 
     protected void btnPreb_Click(object sender, EventArgs e)
+
     {
+
+
         if (ddlKriterium.SelectedItem.Text == "Град")
         {
             theatersService servis = new theatersService();
@@ -261,6 +271,8 @@ public partial class Repertoar : System.Web.UI.Page
 
         else if (ddlKriterium.SelectedItem.Text == "Датум")
         {
+
+    
             theatersService servis = new theatersService();
             DataSet result = servis.findByDate(tbKluc.Text);
             dvPretstavi.DataSource = result;
@@ -391,9 +403,72 @@ public partial class Repertoar : System.Web.UI.Page
 
     protected void ddlKriterium_SelectedIndexChanged(object sender, EventArgs e)
     {
+        tbKluc.Text = "";
         if(ddlKriterium.SelectedItem.Text!=" -Default -")
         {
             tbKluc.Enabled = true;
         }
+        
+        if (ddlKriterium.SelectedItem.Text == "Датум")
+        {
+
+            imCalendar.Visible = true;
+            mvSearch.ActiveViewIndex = 1;
+            main.Visible = false;
+
+        }
+        else {
+
+            imCalendar.Visible = false;
+            calendarSearch.Visible = false;
+            mvSearch.ActiveViewIndex = 1;
+            main.Visible = false;
+        }
+    }
+
+
+
+    protected void imCalendar_Click(object sender, ImageClickEventArgs e)
+    {
+       
+        mvSearch.ActiveViewIndex = 1;
+        main.Visible = false;
+        calendarSearch.Visible = true;
+
+    }
+
+    protected void calendarSearch_SelectionChanged(object sender, EventArgs e)
+    {
+        string help = calendarSearch.SelectedDate.ToShortDateString();
+        string[] tokens=help.Split('/');
+        string month = tokens[0];
+        if (month.Length == 1) {
+            month = "0" + month;
+        }
+        string day = tokens[1];
+        if (day.Length == 1) {
+            day = "0" + day;
+        }
+        string year = tokens[2];
+        string argument = day + "." + month + "." + year;
+        tbKluc.Text = argument;
+        calendarSearch.Visible = false;
+        mvSearch.ActiveViewIndex = 1;
+        main.Visible = false;
+      
+    }
+
+    protected void calendarSearch_VisibleMonthChanged(object sender, MonthChangedEventArgs e)
+    {
+        calendarSearch.Visible = true;
+        mvSearch.ActiveViewIndex = 1;
+        main.Visible = false;
+    }
+
+    protected void btnBackView3_Click(object sender, EventArgs e)
+    {
+        mvSearch.ActiveViewIndex = 1;
+        main.Visible = false;
+        tbKluc.Text = "";
     }
 }

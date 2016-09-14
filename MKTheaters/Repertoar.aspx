@@ -156,7 +156,7 @@
                </tr>
                <tr>
                    <td class="auto-style7">
-                       <asp:DropDownList ID="ddlKriterium" runat="server" Height="35px" Width="278px" OnSelectedIndexChanged="ddlKriterium_SelectedIndexChanged">
+                       <asp:DropDownList ID="ddlKriterium" runat="server" Height="35px" Width="278px" OnSelectedIndexChanged="ddlKriterium_SelectedIndexChanged" AutoPostBack="True">
                            <asp:ListItem>- Default -</asp:ListItem>
                            <asp:ListItem>Име</asp:ListItem>
                            <asp:ListItem>Режисер</asp:ListItem>
@@ -167,15 +167,32 @@
                            <asp:ListItem>Датум</asp:ListItem>
                        </asp:DropDownList>
                    </td>
-                   <td class="auto-style14"></td>
+                   <td class="auto-style14">
+                       <br />
+                   </td>
                </tr>
                <tr>
                    <td class="auto-style12">
                        <asp:TextBox ID="tbKluc" runat="server" Width="272px" Height="35px"></asp:TextBox>
+                      
+                      
                    </td>
                    <td class="auto-style13">
-                       <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="tbKluc" ErrorMessage="*" Font-Bold="True" ForeColor="#BA252A" ToolTip="Полето е задолжително!"></asp:RequiredFieldValidator>
+                       &nbsp;<asp:ImageButton ID="imCalendar" runat="server" CausesValidation="False" ImageUrl="~/Images/calendar_icon.png" OnClick="imCalendar_Click" />
+&nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="tbKluc" ErrorMessage="*" Font-Bold="True" ForeColor="#BA252A" ToolTip="Полето е задолжително!"></asp:RequiredFieldValidator>
                    </td>
+               </tr>
+               <tr>
+
+                   <td>
+                        <asp:Calendar ID="calendarSearch" runat="server" OnSelectionChanged="calendarSearch_SelectionChanged" OnVisibleMonthChanged="calendarSearch_VisibleMonthChanged"></asp:Calendar>
+                   </td>
+
+                   <td>
+
+
+                   </td>
+
                </tr>
                <tr>
                    <td class="auto-style10">
@@ -222,6 +239,10 @@
                    HorizontalAlign="Left" VerticalAlign="Middle" Font-Size="Larger" 
                    BorderStyle="Solid" BorderWidth="3px" />
            </asp:DetailsView>
+
+         <asp:Button ID="btnBackView3" runat="server" CssClass="back" Text="&lt;&lt;&lt;" Width="268px" Height="50px" CausesValidation="False" OnClick="btnBackView3_Click" />
+
+
        </asp:View>
    </asp:MultiView>
     </asp:Panel> 
