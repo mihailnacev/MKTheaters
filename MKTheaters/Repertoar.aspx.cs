@@ -433,19 +433,19 @@ public partial class Repertoar : System.Web.UI.Page
        
         mvSearch.ActiveViewIndex = 1;
         main.Visible = false;
-        calendarSearch.Visible = true;
+        calendarSearch.Visible = !calendarSearch.Visible;
 
     }
 
     protected void calendarSearch_SelectionChanged(object sender, EventArgs e)
     {
         string help = calendarSearch.SelectedDate.ToShortDateString();
-        string[] tokens=help.Split('/');
-        string month = tokens[0];
+        string[] tokens=help.Split('.');
+        string month = tokens[1];
         if (month.Length == 1) {
             month = "0" + month;
         }
-        string day = tokens[1];
+        string day = tokens[0];
         if (day.Length == 1) {
             day = "0" + day;
         }

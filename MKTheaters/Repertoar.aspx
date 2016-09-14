@@ -133,6 +133,15 @@
             margin-left: 44px;
             background-color: #BA252A;
         }
+        .style1
+        {
+            width: 276px;
+            height: 50px;
+        }
+        .style2
+        {
+            height: 50px;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
@@ -155,8 +164,10 @@
                    </td>
                </tr>
                <tr>
-                   <td class="auto-style7">
-                       <asp:DropDownList ID="ddlKriterium" runat="server" Height="35px" Width="278px" OnSelectedIndexChanged="ddlKriterium_SelectedIndexChanged" AutoPostBack="True">
+                   <td class="style1">
+                       <asp:DropDownList ID="ddlKriterium" runat="server" Height="40px" Width="278px" 
+                           OnSelectedIndexChanged="ddlKriterium_SelectedIndexChanged" 
+                           AutoPostBack="True">
                            <asp:ListItem>- Default -</asp:ListItem>
                            <asp:ListItem>Име</asp:ListItem>
                            <asp:ListItem>Режисер</asp:ListItem>
@@ -167,7 +178,7 @@
                            <asp:ListItem>Датум</asp:ListItem>
                        </asp:DropDownList>
                    </td>
-                   <td class="auto-style14">
+                   <td class="style2">
                        <br />
                    </td>
                </tr>
@@ -185,7 +196,18 @@
                <tr>
 
                    <td>
-                        <asp:Calendar ID="calendarSearch" runat="server" OnSelectionChanged="calendarSearch_SelectionChanged" OnVisibleMonthChanged="calendarSearch_VisibleMonthChanged"></asp:Calendar>
+                        <asp:Calendar ID="calendarSearch" runat="server" 
+                            OnSelectionChanged="calendarSearch_SelectionChanged" 
+                            OnVisibleMonthChanged="calendarSearch_VisibleMonthChanged" Font-Size="Medium" 
+                            Width="271px" BorderColor="#F0CB01" BorderWidth="6px">
+                            <DayHeaderStyle BackColor="#BA252A" Font-Bold="True" Font-Size="Small" 
+                                ForeColor="White" />
+                            <DayStyle BackColor="#BA252A" ForeColor="#F0CB01" />
+                            <NextPrevStyle BackColor="#BA252A" ForeColor="#F0CB01" />
+                            <SelectedDayStyle BackColor="#F0CB01" Font-Bold="True" ForeColor="#BA252A" />
+                            <TitleStyle BackColor="#BA252A" Font-Bold="True" Font-Overline="True" 
+                                Font-Size="Medium" ForeColor="#F0CB01" />
+                        </asp:Calendar>
                    </td>
 
                    <td>
