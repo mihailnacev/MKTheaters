@@ -15,7 +15,7 @@
     margin:auto;
     margin-top:4%;
     margin-bottom:10px;
-    width:85%;
+    width:65%;
     border-radius:20px;
     border:20px solid #F0CB01;
      } 
@@ -31,24 +31,53 @@
 
      #Pan2{
           font-family:'Malgun Gothic';
-          font-size:large;
+          font-size:larger;
           font-weight:bold;
           margin:auto;
           color:orangered;
           text-align:justify;
           
      }
+     
+      #Pan3{
+          font-family:'Malgun Gothic';
+          font-size:x-large;
+          font-weight:bold;
+          margin:auto;
+          color:#BA252A;
+          text-align:justify;
+          padding-left:75%;
+          
+     }
+     
+     #Rep
+     {
+      margin:auto;
+      margin-top:3%;
+      width:65%;
+     }
+     
+     #RepButton
+     {
+        position:relative;
+        left:60%;
+        color:rgb(245,222,95);
+    font-weight:bold;
+    /*margin-left:20px;*/
+    font-size:xx-large;
+     }
+     
 
      .dolno{
           font-family:'Malgun Gothic';
-          font-size:x-large;
+          font-size:xx-large;
           font-weight:bold;
           color:#BA252A;
      }
 
      .dolnoNamaleno{
-        font-family:'Malgun Gothic';
-          font-size:large;
+         font-family:'Malgun Gothic';
+          font-size:x-large;
           font-weight:bolder;
           text-decoration:underline;
           color:#BA252A;
@@ -113,8 +142,9 @@
             </a>
         </div> 
     </asp:Panel>
-    
-    <asp:Panel ID="BOX" runat="server">
+    <asp:ScriptManager ID="ScriptManager1" runat="server"> </asp:ScriptManager>
+    <asp:UpdatePanel ID="BOX" runat="server">
+    <ContentTemplate>
     <asp:ListView ID="lvPlays" runat="server" GroupPlaceholderID="groupPlaceHolder1" ItemPlaceholderID="itemPlaceHolder1" OnPagePropertiesChanging="OnPagePropertiesChanging">
 <LayoutTemplate>
     <table ID="lvP" cellpadding="0" cellspacing="0">
@@ -163,9 +193,20 @@
         <br>
     </td>
     </tr>
-    
+     <tr>
+    <td>
+       <asp:Panel runat="server" ID="Pan3">Термин:&nbsp; <%# Eval("Termin") %> </asp:Panel>
+        <br> 
+    </td> 
+    </tr>
+   
 </ItemTemplate>
 </asp:ListView>
-</asp:Panel>
+</ContentTemplate>
+</asp:UpdatePanel>
+    <asp:Panel ID="Rep" runat="server">
+    <asp:LinkButton ID="RepButton" runat="server" onclick="RepButton_Click">Погледнете го целосниот репертоар</asp:LinkButton>
+    </asp:Panel>
+
 </asp:Content>
 

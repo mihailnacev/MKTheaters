@@ -50,4 +50,8 @@ protected void OnPagePropertiesChanging(object sender, PagePropertiesChangingEve
         Session["imenaP"] = clickedButton.Text;
         Response.Redirect("~/PretstavaDetails.aspx");
     }
+    protected void RepButton_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("~/Repertoar.aspx");
+    }
 }
