@@ -3,6 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
     <link href="Styles/StyleSheetPocetna.css" type="text/css" rel="stylesheet" />
     <link href="Styles/bootstrap.min.css" type="text/css" rel="stylesheet" />
+    <link rel="stylesheet" href="Styles/font-awesome-animation.min.css" />
     <script src="Scripts/jquery.js"></script>
     <script src="Scripts/ScriptPocetna.js" type="text/javascript"></script>
     <script src="Scripts/jquery.min.js"></script>
@@ -205,7 +206,7 @@
 </ContentTemplate>
 </asp:UpdatePanel>
     <asp:Panel ID="Rep" runat="server">
-    <asp:LinkButton ID="RepButton" runat="server" onclick="RepButton_Click">Погледнете го целосниот репертоар</asp:LinkButton>
+    <asp:Button ID="RepButton" runat="server" CssClass="faa-float animated-hover" BackColor="Transparent" BorderStyle="None" onclick="RepButton_Click" Text="Погледнете го целосниот репертоар"/>
     </asp:Panel>
 
 </asp:Content>

@@ -3,6 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
     <link href="Styles/StyleSheetRepertoar.css" rel="stylesheet"/>
     <link href="Styles/jquery-ui.css" type="text/css" rel="stylesheet" />
+    <link rel="stylesheet" href="Styles/font-awesome-animation.min.css" />
     <script src="Scripts/jquery.js"></script>
     <script src="Scripts/jquery-ui.js"></script>
     <script src="Scripts/ScriptRepertoar.js" type="text/javascript"></script>
@@ -152,7 +153,7 @@
    <asp:MultiView ID="mvSearch" runat="server">
        <asp:View ID="View1" runat="server">
             <asp:Panel runat="server" ID="Panel2">
-                <asp:Button ID="btnPrebarajPretstava" runat="server" CssClass="auto-style5" OnClick="btnPrebarajPretstava_Click" Text="Пребарај претстава ..." Width="223px" Height="38px" />
+                <asp:Button ID="btnPrebarajPretstava" runat="server" CssClass="auto-style5 faa-vertical animated-hover" OnClick="btnPrebarajPretstava_Click" Text="Пребарај претстава ..." Width="223px" Height="38px" />
             </asp:Panel>
        </asp:View>
        <asp:View ID="View2" runat="server">
@@ -189,7 +190,7 @@
                       
                    </td>
                    <td class="auto-style13">
-                       &nbsp;<asp:ImageButton ID="imCalendar" runat="server" CausesValidation="False" ImageUrl="~/Images/calendar_icon.png" OnClick="imCalendar_Click" />
+                       &nbsp;<asp:ImageButton ID="imCalendar" runat="server" CausesValidation="False" ImageUrl="~/Images/calendar_icon.png" OnClick="imCalendar_Click" CssClass="faa-shake animated-hover" />
 &nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="tbKluc" ErrorMessage="*" Font-Bold="True" ForeColor="#BA252A" ToolTip="Полето е задолжително!"></asp:RequiredFieldValidator>
                    </td>
                </tr>
@@ -218,10 +219,10 @@
                </tr>
                <tr>
                    <td class="auto-style10">
-                       <asp:Button ID="btnNazad" runat="server" CssClass="auto-style9" OnClick="btnNazad_Click" Text="&lt;&lt;&lt;" Width="268px" Height="50px" CausesValidation="False" />
+                       <asp:Button ID="btnNazad" runat="server" CssClass="auto-style9 faa-vertical animated-hover" OnClick="btnNazad_Click" Text="&lt;&lt;&lt;" Width="268px" Height="50px" CausesValidation="False" />
                    </td>
                    <td class="auto-style11">
-                       <asp:Button ID="btnPreb" runat="server" CssClass="auto-style16" Text="Пребарај" Width="268px" OnClick="btnPreb_Click" Height="51px" />
+                       <asp:Button ID="btnPreb" runat="server" CssClass="auto-style16 faa-vertical animated-hover" Text="Пребарај" Width="268px" OnClick="btnPreb_Click" Height="51px" />
                    </td>
                </tr>
            </table>
@@ -262,7 +263,7 @@
                    BorderStyle="Solid" BorderWidth="3px" />
            </asp:DetailsView>
 
-         <asp:Button ID="btnBackView3" runat="server" CssClass="back" Text="&lt;&lt;&lt;" Width="268px" Height="50px" CausesValidation="False" OnClick="btnBackView3_Click" />
+         <asp:Button ID="btnBackView3" runat="server" CssClass="back faa-vertical animated-hover" Text="&lt;&lt;&lt;" Width="268px" Height="50px" CausesValidation="False" OnClick="btnBackView3_Click" />
 
 
        </asp:View>
