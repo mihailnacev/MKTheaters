@@ -261,7 +261,8 @@ public partial class MyProfile : System.Web.UI.Page
         User najaven = (User)Session["Najaven"];
         string username = najaven.Username;
         string pretstava = ddlPretstavi.SelectedItem.Text;
-        string ocena = rblOceni.SelectedItem.Text;
+        //string ocena = rblOceni.SelectedItem.Text;
+        string ocena = ocenaHidden.Text;
         updatePretstavaDetails(username, pretstava, ocena);
         lblStatus.Text = "Успешно ја оценивте претставата!";
         lblStatus.Visible = true;

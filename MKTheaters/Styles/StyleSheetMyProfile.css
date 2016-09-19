@@ -1,6 +1,25 @@
 ﻿body {
 }
 
+.rating {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+  text-align: left;
+  font-size: 30px;
+  color: darkred;
+}
+.rating > span:hover:before,
+.rating > span:hover ~ span:before {
+   content: "\2605";
+   position: absolute;
+   color: #F0CB01;
+}
+.rating > span {
+  display: inline-block;
+  position: relative;
+  width: 0.8em;
+}
+
 .options {
 
     background-color:white;

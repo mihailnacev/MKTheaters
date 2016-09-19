@@ -6,6 +6,42 @@
         $(this).css({ "background-color": "#FFFFFF", "border": "none" });
     });
 
+    $("#btnOcena").hide();
+    $("#ocenaHidden").hide();
+
+    $("#btnOcenaClickable").click(function () {
+        var counter = 0;
+        $(".star").each(function () {
+            var v = $(this).attr("star");
+            if (v == "true")
+            {
+                counter++;
+            }
+        });
+        if (counter != 0)
+        {
+            $("#ocenaHidden").text(counter + 5);
+            $("#btnOcena").trigger("click");
+        }
+    });
+
+    $("#ddlPretstavi").change(function () {
+        $(".star").text("☆");
+        $(".star").attr("star", "false");
+    });
+
+    $(".star").click(function () {
+        $(this).css({ "color": "darkred" });
+        $(this).text("★");
+        $(this).attr("star","true");
+        $(this).nextAll().css({ "color": "darkred" });
+        $(this).nextAll().text("★");
+        $(this).nextAll().attr("star", "true");
+        $(this).prevAll().css({ "color": "#BA252A" });
+        $(this).prevAll().text("☆");
+        $(this).prevAll().attr("star", "false");
+    });
+
     $(".TextBoxes").hide();
     $(".PassTextBoxes").hide();
     $("#btnOtkazi").hide();

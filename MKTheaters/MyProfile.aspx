@@ -3,6 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
     <link href="Styles/StyleSheetMyProfile.css" type="text/css" rel="stylesheet" />
     <link href="Styles/jquery-ui.css" type="text/css" rel="stylesheet" />
+    <link rel="stylesheet" href="Styles/font-awesome-animation.min.css" />
     <script src="Scripts/jquery.js"></script>
     <script src="Scripts/jquery-ui.js"></script>
     <script src="Scripts/ScriptMyProfile.js" type="text/javascript"></script>
@@ -143,10 +144,10 @@
             </tr>
             <tr>
                 <td colspan="2" class="auto-style13">
-                    <asp:Button ID="btnPromeni" runat="server" CssClass="buttons" Text="Промени" OnClientClick="return false" />
-                    <asp:Button ID="btnOtkazi" runat="server" CssClass="buttons" Text="Откажи" OnClientClick="return false" />
-                    <asp:Button ID="btnZachuvaj" runat="server" CssClass="buttons" Text="Зачувај" OnClick="btnZachuvaj_Click" />
-                    <asp:Button ID="btnPromeniLozinka" runat="server" CssClass="buttons" Text="Промени Лозинка" OnClientClick="return false" />
+                    <asp:Button ID="btnPromeni" runat="server" CssClass="buttons faa-horizontal animated-hover" Text="Промени" OnClientClick="return false" />
+                    <asp:Button ID="btnOtkazi" runat="server" CssClass="buttons faa-horizontal animated-hover" Text="Откажи" OnClientClick="return false" />
+                    <asp:Button ID="btnZachuvaj" runat="server" CssClass="buttons faa-horizontal animated-hover" Text="Зачувај" OnClick="btnZachuvaj_Click" />
+                    <asp:Button ID="btnPromeniLozinka" runat="server" CssClass="buttons faa-horizontal animated-hover" Text="Промени Лозинка" OnClientClick="return false" />
                 </td>
             </tr>
         </table>
@@ -176,13 +177,20 @@
                     <asp:Label ID="Label4" runat="server" CssClass="labeli" Text="Оценка"></asp:Label>
                 </td>
                 <td class="auto-style12">
-                    <asp:RadioButtonList ID="rblOceni" runat="server" RepeatDirection="Horizontal">
+                    <!--<asp:RadioButtonList ID="rblOceni" runat="server" RepeatDirection="Horizontal">
                         <asp:ListItem>1</asp:ListItem>
                         <asp:ListItem>2</asp:ListItem>
                         <asp:ListItem>3</asp:ListItem>
                         <asp:ListItem>4</asp:ListItem>
                         <asp:ListItem Selected="True">5</asp:ListItem>
-                    </asp:RadioButtonList>
+                    </asp:RadioButtonList>-->
+                    <asp:Panel ID="rating" runat="server" CssClass="rating">
+                        <asp:Label ID="star10" runat="server" CssClass="star faa-tada animated-hover">☆</asp:Label>
+                        <asp:Label ID="star9" runat="server" CssClass="star faa-tada animated-hover">☆</asp:Label>
+                        <asp:Label ID="star8" runat="server" CssClass="star faa-tada animated-hover">☆</asp:Label>
+                        <asp:Label ID="star7" runat="server" CssClass="star faa-tada animated-hover">☆</asp:Label>
+                        <asp:Label ID="star6" runat="server" CssClass="star faa-tada animated-hover">☆</asp:Label>
+                    </asp:Panel>
                 </td>
             </tr>
             <tr>
@@ -197,7 +205,9 @@
             </tr>
             <tr>
                 <td class="auto-style11 auto-style13" colspan="2">
-                    <asp:Button ID="btnOcena" runat="server" CssClass="buttons" Text="Поднеси" OnClick="btnOcena_Click" />
+                    <asp:Button ID="btnOcena" runat="server" OnClick="btnOcena_Click" Visible="false"/>
+                    <asp:Button ID="btnOcenaClickable" runat="server" CssClass="buttons faa-horizontal animated-hover" Text="Поднеси" OnClientClick="return false"/>
+                    <asp:Label ID="ocenaHidden" runat="server"></asp:Label>
                 </td>
             </tr>
         </table>
@@ -268,7 +278,7 @@
                 </tr>
                 <tr>
                     <td class="auto-style14"></td>
-                    <td class="auto-style14"><asp:Button runat="server" CssClass="buttons" ID="btnSubmit" Text="Поднеси"></asp:Button></td>
+                    <td class="auto-style14"><asp:Button runat="server" CssClass="buttons faa-horizontal animated-hover" ID="btnSubmit" Text="Поднеси"></asp:Button></td>
                 </tr>
             </table>
         </asp:Panel>
