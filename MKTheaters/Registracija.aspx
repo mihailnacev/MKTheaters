@@ -3,6 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
     <link href="Styles/StyleSheetRegistracija.css" rel="stylesheet" />
     <link href="Styles/jquery-ui.css" type="text/css" rel="stylesheet" />
+    <link rel="stylesheet" href="Styles/font-awesome-animation.min.css" />
     <script src="Scripts/jquery.js"></script>
     <script src="Scripts/jquery-ui.js"></script>
     <script src="Scripts/ScriptRegistracija.js" type="text/javascript"></script>
@@ -94,7 +95,7 @@
         <tr>
             <td>&nbsp;</td>
             <td>
-                <asp:Button ID="btnPodnesi" runat="server" CssClass="buttons" OnClick="btnPodnesi_Click" Text="Регистрирај се" TabIndex="7"/>
+                <asp:Button ID="btnPodnesi" runat="server" CssClass="buttons faa-vertical animated-hover" OnClick="btnPodnesi_Click" Text="Регистрирај се" TabIndex="7"/>
             </td>
         </tr>
         <tr>

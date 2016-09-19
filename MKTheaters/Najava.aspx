@@ -3,6 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
     <link href="Styles/StyleSheetNajava.css" rel="stylesheet" />
     <link href="Styles/jquery-ui.css" type="text/css" rel="stylesheet" />
+    <link rel="stylesheet" href="Styles/font-awesome-animation.min.css" />
     <script src="Scripts/jquery.js"></script>
     <script src="Scripts/jquery-ui.js"></script>
     <script src="Scripts/ScriptNajava.js" type="text/javascript"></script>
@@ -66,7 +67,7 @@
     <tr>
         <td>&nbsp;</td>
         <td class="auto-style2">
-            <asp:Button ID="btnLogin" runat="server" Text="Најави се" CssClass="buttons" ValidationGroup="najava" OnClick="btnLogin_Click" TabIndex="3" />
+            <asp:Button ID="btnLogin" runat="server" Text="Најави се" CssClass="buttons faa-vertical animated-hover" ValidationGroup="najava" OnClick="btnLogin_Click" TabIndex="3" />
         </td>
     </tr>
     <tr>

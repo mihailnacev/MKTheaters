@@ -69,6 +69,10 @@ td {
     font-weight: bold;
 }
 
+#btnLogin:hover {
+    font-size: larger;
+}
+
 .textFields {
 
     /*width:188px;*/

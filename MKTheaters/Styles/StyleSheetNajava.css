@@ -63,7 +63,10 @@ td {
     color: #F0CB01;
     font-style: italic;
     font-weight: bold;
+}
 
+#btnRegister:hover {
+    font-size: larger;
 }
 
 .textFields {
