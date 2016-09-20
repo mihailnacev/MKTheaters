@@ -1,26 +1,23 @@
-﻿body{
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+﻿body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
+
 #tabela {
-
-    background-color:white;
-    padding:30px;
-    margin:auto;
-    margin-top:10px;
-    width:90%;
-    border-radius:20px;
-    border:20px solid #F0CB01;
-  
+    background-color: white;
+    padding: 30px;
+    margin: auto;
+    margin-top: 10px;
+    width: 90%;
+    border-radius: 20px;
+    border: 20px solid #F0CB01;
 }
 
-option 
-{
+option {
     background-color: #BA252A;
     color: #F0CB01;
 }
 
-select
-{
+select {
     background-color: #BA252A;
     border: 2px solid darkred;
     color: #F0CB01;
@@ -35,35 +32,26 @@ select
 }
 
 .labeli {
-
-    padding-left:5%;
-    color:#BA252A;
-    font-weight:bold;
-    text-align:center;
-    font-size:x-large;
-
+    padding-left: 5%;
+    color: #BA252A;
+    font-weight: bold;
+    text-align: center;
+    font-size: x-large;
 }
 
 .buttons {
-
-    color:rgb(245,222,95);
-    background-color:#BA252A;
-    width:150px;
-    font-weight:bold;
-    height:30px;
-    margin-left:20px;
-    font-size:x-large;
-
-
+    color: rgb(245,222,95);
+    background-color: #BA252A;
+    width: 150px;
+    font-weight: bold;
+    height: 30px;
+    margin-left: 20px;
+    font-size: x-large;
 }
 
 .results {
-
     color: #DA621E;
-    font-weight:bold;
-    text-align:center;
-    font-size:x-large;
-
+    font-weight: bold;
+    text-align: center;
+    font-size: x-large;
 }
-
-

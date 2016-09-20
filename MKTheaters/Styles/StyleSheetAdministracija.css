@@ -1,5 +1,4 @@
 ﻿body {
-
 }
 
 #Panel2 {
@@ -8,37 +7,24 @@
 }
 
 .options {
-
-     background-color:white;
-    width:20%;
-   
-   display:inline;
-    
-    padding-top:8px;
-    padding-bottom:8px;
-
-    border-bottom-right-radius:10px;
-    border-top-right-radius:10px;
-
+    background-color: white;
+    width: 20%;
+    display: inline;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
     /*margin-left:80px;*/
- 
-    color:darkred;
-    font-weight:bold;
-    font-size:18px;
-    font-family:'Malgun Gothic';
-  
-
+    color: darkred;
+    font-weight: bold;
+    font-size: 18px;
+    font-family: 'Malgun Gothic';
 }
 
 #NavigationButtons {
-
-   
-    width:95%;
-   padding-left:0%;
-    margin-bottom:2%;
-
-    
-
+    width: 95%;
+    padding-left: 0%;
+    margin-bottom: 2%;
 }
 
 #kopchinja {
@@ -58,42 +44,31 @@
 #tabela4 td {
     width: 50%;
     padding-left: 2%;
-    padding-right: 2%;  
+    padding-right: 2%;
 }
 
 .pnlAR {
-
-    width:100%;
+    width: 100%;
     /*background-color:white;*/
-    
-   
-    border-top-left-radius:30px;
-    border-top-right-radius:30px;
-
-
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
 }
 
 .pnlPR {
-
-    width:95%;
-   background-color:transparent;
-    height:450px;
-   
-    border-top-left-radius:30px;
-    border-top-right-radius:30px;
-
-
+    width: 95%;
+    background-color: transparent;
+    height: 450px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
 }
 
 .info {
-
     /*border-bottom:2px solid #BA252A;*/
-    margin-left:45%;
-    font-weight:bolder;
-    font-size:25px;
-    color:white;
-    margin-bottom:1%;
-
+    margin-left: 45%;
+    font-weight: bolder;
+    font-size: 25px;
+    color: white;
+    margin-bottom: 1%;
 }
 
 
@@ -131,19 +106,15 @@
 }
 
 .txtSearchUser {
-
     /*margin-left:58%;*/
-    height:35px;
-    width:200px;
-
+    height: 35px;
+    width: 200px;
 }
 
 .pomesti {
-
-    margin:auto;
-
+    margin: auto;
 }
 
 #btnGoBack {
-    margin-left:30%;
+    margin-left: 30%;
 }

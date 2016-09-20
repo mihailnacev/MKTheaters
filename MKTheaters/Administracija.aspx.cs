@@ -30,10 +30,11 @@ public partial class Administracija : System.Web.UI.Page
         }
         if (!IsPostBack) IspolniMaster();
         if (!IsPostBack) IspolniRezervacii();
-      
+
     }
 
-    public void IspolniMaster() {
+    public void IspolniMaster()
+    {
 
         SqlConnection konekcija = new SqlConnection();
         konekcija.ConnectionString = ConfigurationManager.ConnectionStrings["Test"].ConnectionString;
@@ -57,7 +58,8 @@ public partial class Administracija : System.Web.UI.Page
 
 
         }
-        finally {
+        finally
+        {
 
             konekcija.Close();
         }
@@ -107,12 +109,12 @@ public partial class Administracija : System.Web.UI.Page
     protected void gvAllPlays_RowUpdating(object sender, GridViewUpdateEventArgs e)
     {
         SqlConnection konekcija = new SqlConnection();
-        konekcija.ConnectionString= ConfigurationManager.ConnectionStrings["Test"].ConnectionString;
+        konekcija.ConnectionString = ConfigurationManager.ConnectionStrings["Test"].ConnectionString;
         string sqlString = "UPDATE Repertoar SET" +
             " Avtor=@Avtor, Reziser=@Reziser, Akteri=@Akteri, Teatar=@Teatar, Grad=@Grad, Datum=@Datum, Vremetraenje=@Vremetraenje WHERE Ime=@Ime";
         SqlCommand komanda = new SqlCommand(sqlString, konekcija);
 
-   
+
 
         TextBox tbAvtor = (TextBox)gvAllPlays.Rows[e.RowIndex].Cells[1].Controls[0];
         komanda.Parameters.AddWithValue("@Avtor", tbAvtor.Text);
@@ -149,14 +151,16 @@ public partial class Administracija : System.Web.UI.Page
         {
 
         }
-        finally {
+        finally
+        {
 
             konekcija.Close();
             gvAllPlays.EditIndex = -1;
 
         }
 
-        if (efekt != 0) {
+        if (efekt != 0)
+        {
             IspolniMaster();
         }
     }
@@ -206,7 +210,7 @@ public partial class Administracija : System.Web.UI.Page
         string sqlString = "INSERT INTO Repertoar (Ime, Avtor, Reziser, Akteri, Teatar, Grad, Datum, Vremetraenje) VALUES (@ime, @avtor, @reziser, @akteri, @teatar, @grad, @datum, @vreme)";
 
         SqlCommand komanda = new SqlCommand(sqlString, konekcija);
-        komanda.Parameters.AddWithValue("@ime",ime);
+        komanda.Parameters.AddWithValue("@ime", ime);
         komanda.Parameters.AddWithValue("@avtor", avtor);
         komanda.Parameters.AddWithValue("@reziser", reziser);
         komanda.Parameters.AddWithValue("@akteri", akter);
@@ -236,7 +240,7 @@ public partial class Administracija : System.Web.UI.Page
         }
     }
 
-  
+
 
     protected void btnAddPlay_Click(object sender, EventArgs e)
     {
@@ -248,7 +252,8 @@ public partial class Administracija : System.Web.UI.Page
         mvPrvPanel.ActiveViewIndex = 0;
     }
 
-    protected void IspolniRezervacii() {
+    protected void IspolniRezervacii()
+    {
 
         SqlConnection konekcija = new SqlConnection();
         konekcija.ConnectionString = ConfigurationManager.ConnectionStrings["Test"].ConnectionString;
@@ -316,7 +321,7 @@ public partial class Administracija : System.Web.UI.Page
 
             konekcija.Close();
         }
-        
+
     }
 
     protected void btnGoBack_Click(object sender, EventArgs e)

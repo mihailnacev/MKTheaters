@@ -1,21 +1,17 @@
-﻿$(document).ready(function ()
-{
-    if ($(window).width() < 800)
-    {
+﻿$(document).ready(function () {
+    if ($(window).width() < 800) {
         $("#menu a").addClass("menuItem2");
         $("#logo").addClass("logoPosition1");
         $("#menu").addClass("menuPosition");
         $("#header").addClass("headerHeight3");
     }
-    else if ($(window).width() < 1130)
-    {
+    else if ($(window).width() < 1130) {
         $("#menu a").addClass("menuItem3");
         $("#logo").addClass("logoPosition1");
         $("#menu").addClass("menuPosition");
         $("#header").addClass("headerHeight2");
     }
-    else
-    {
+    else {
         $("#menu a").addClass("menuItem1");
         $("#logo").addClass("logoPosition2");
         $("#header").addClass("headerHeight1");
@@ -40,11 +36,9 @@
         $(this).css({ "color": "#F0CB01" });
     });
 
-    $(window).resize(function ()
-    {
+    $(window).resize(function () {
         var w = $(window).width();
-        if (w < 800)
-        {
+        if (w < 800) {
             $("#menu a").removeClass("menuItem1");
             $("#menu a").addClass("menuItem2");
             $("#menu a").removeClass("menuItem3");
@@ -56,8 +50,7 @@
             $("#header").addClass("headerHeight3");
             $("#menu").removeClass("menuPadding");
         }
-        else if (w < 1130)
-        {
+        else if (w < 1130) {
             $("#menu a").removeClass("menuItem1");
             $("#menu a").removeClass("menuItem2");
             $("#menu a").addClass("menuItem3");
@@ -69,8 +62,7 @@
             $("#header").removeClass("headerHeight3");
             $("#menu").removeClass("menuPadding");
         }
-        else
-        {
+        else {
             $("#menu a").addClass("menuItem1");
             $("#menu a").removeClass("menuItem2");
             $("#menu a").removeClass("menuItem3");

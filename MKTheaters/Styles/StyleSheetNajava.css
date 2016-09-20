@@ -1,19 +1,16 @@
 ﻿body {
-
-   /* background-color:blue;*/
-   font-family:'Malgun Gothic';
+    /* background-color:blue;*/
+    font-family: 'Malgun Gothic';
 }
 
 #tabela {
-
-    background-color:white;
-    padding:30px;
-    margin:auto;
-    margin-top:10px;
-    width:100%;
-    border-radius:20px;
-    border:20px solid #F0CB01;
-  
+    background-color: white;
+    padding: 30px;
+    margin: auto;
+    margin-top: 10px;
+    width: 100%;
+    border-radius: 20px;
+    border: 20px solid #F0CB01;
 }
 
 td {
@@ -22,58 +19,48 @@ td {
 }
 
 .najava {
-
-    border-bottom:2px solid #BA252A;
+    border-bottom: 2px solid #BA252A;
     /*margin-left:50px;*/
-    font-weight:bolder;
-    font-size:25px;
-    color:#BA252A;
-
+    font-weight: bolder;
+    font-size: 25px;
+    color: #BA252A;
 }
 
 .or {
-
-    color:#BA252A;
-    font-style:italic;
-    font-weight:bold;
-
+    color: #BA252A;
+    font-style: italic;
+    font-weight: bold;
 }
 
 .labeli {
-
-    color:#BA252A;
-    font-weight:bold;
+    color: #BA252A;
+    font-weight: bold;
     padding-right: 5%;
 }
 
 .buttons {
-
-    color:rgb(245,222,95);
-    background-color:#BA252A;
-    width:150px;
-    font-weight:bold;
-    height:30px;
+    color: rgb(245,222,95);
+    background-color: #BA252A;
+    width: 150px;
+    font-weight: bold;
+    height: 30px;
     /*margin-left:20px;*/
-    font-size:15px;
-
+    font-size: 15px;
 }
 
 #btnRegister {
-
     color: #F0CB01;
     font-style: italic;
     font-weight: bold;
 }
 
-#btnRegister:hover {
-    font-size: larger;
-}
+    #btnRegister:hover {
+        font-size: larger;
+    }
 
 .textFields {
-
     /*width:188px;*/
-    height:20px;
-
+    height: 20px;
 }
 
 /*.validationText {
@@ -91,5 +78,3 @@ border-bottom:1px solid rgb(245,222,95);
     width: 35%;
     margin: auto;
 }
-
-

@@ -25,7 +25,7 @@ public class User
         Admin = "False";
     }
 
-    public User(string ime, string prezime, string username,string password, string email, string admin)
+    public User(string ime, string prezime, string username, string password, string email, string admin)
     {
         Ime = ime;
         Prezime = prezime;

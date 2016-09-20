@@ -20,9 +20,9 @@ public partial class Repertoar : System.Web.UI.Page
         main.Visible = true;
         mvSearch.ActiveViewIndex = 0;
 
-        
 
-        
+
+
     }
 
     public void IspolniMaster()
@@ -41,7 +41,7 @@ public partial class Repertoar : System.Web.UI.Page
             gvPretstavi.DataBind();
             ViewState["dataset"] = ds;
         }
-        catch(Exception err){ }
+        catch (Exception err) { }
         finally
         {
             konekcija.Close();
@@ -104,7 +104,7 @@ public partial class Repertoar : System.Web.UI.Page
         {
             int rowIndex = Convert.ToInt32(e.CommandArgument);
             ModalPopupExtender modalPopupExtender1 = (ModalPopupExtender)gvPretstavi.Rows[rowIndex].FindControl("ModalPopupExtender1");
-            LinkButton lb=(LinkButton)gvPretstavi.Rows[rowIndex].Cells[0].Controls[0];
+            LinkButton lb = (LinkButton)gvPretstavi.Rows[rowIndex].Cells[0].Controls[0];
             DropDownList datumi = (DropDownList)gvPretstavi.Rows[rowIndex].Cells[7].Controls[1];
             Session["Ime"] = lb.Text;
             Session["Datum"] = datumi.SelectedItem.Text;
@@ -122,7 +122,7 @@ public partial class Repertoar : System.Web.UI.Page
         string datum = (string)Session["Datum"];
         if (najaven != null)
         {
-            funkcija(najaven, selektirano,datum);
+            funkcija(najaven, selektirano, datum);
             string message = "Успешна резервација!";
             System.Text.StringBuilder sb = new System.Text.StringBuilder();
             sb.Append("<script type = 'text/javascript'>");
@@ -145,10 +145,10 @@ public partial class Repertoar : System.Web.UI.Page
             sb.Append("</script>");
             ClientScript.RegisterClientScriptBlock(this.GetType(), "alert", sb.ToString());
         }
-        
+
     }
 
-    public void funkcija(User user,string ime,string datum)
+    public void funkcija(User user, string ime, string datum)
     {
         string connectionString = ConfigurationManager.ConnectionStrings["Test"].ConnectionString;
         using (SqlConnection connection = new SqlConnection(connectionString))
@@ -187,7 +187,7 @@ public partial class Repertoar : System.Web.UI.Page
 
     protected void gvPretstavi_RowCreated(object sender, GridViewRowEventArgs e)
     {
-        
+
     }
 
 
@@ -217,14 +217,13 @@ public partial class Repertoar : System.Web.UI.Page
     }
 
     protected void btnPreb_Click(object sender, EventArgs e)
-
     {
 
 
         if (ddlKriterium.SelectedItem.Text == "Град")
         {
             theatersService servis = new theatersService();
-            DataSet result=servis.findByCity(tbKluc.Text);
+            DataSet result = servis.findByCity(tbKluc.Text);
             dvPretstavi.DataSource = result;
             dvPretstavi.DataBind();
             ViewState["set"] = result;
@@ -272,7 +271,7 @@ public partial class Repertoar : System.Web.UI.Page
         else if (ddlKriterium.SelectedItem.Text == "Датум")
         {
 
-    
+
             theatersService servis = new theatersService();
             DataSet result = servis.findByDate(tbKluc.Text);
             dvPretstavi.DataSource = result;
@@ -404,11 +403,11 @@ public partial class Repertoar : System.Web.UI.Page
     protected void ddlKriterium_SelectedIndexChanged(object sender, EventArgs e)
     {
         tbKluc.Text = "";
-        if(ddlKriterium.SelectedItem.Text!=" -Default -")
+        if (ddlKriterium.SelectedItem.Text != " -Default -")
         {
             tbKluc.Enabled = true;
         }
-        
+
         if (ddlKriterium.SelectedItem.Text == "Датум")
         {
 
@@ -417,7 +416,8 @@ public partial class Repertoar : System.Web.UI.Page
             main.Visible = false;
 
         }
-        else {
+        else
+        {
 
             imCalendar.Visible = false;
             calendarSearch.Visible = false;
@@ -430,7 +430,7 @@ public partial class Repertoar : System.Web.UI.Page
 
     protected void imCalendar_Click(object sender, ImageClickEventArgs e)
     {
-       
+
         mvSearch.ActiveViewIndex = 1;
         main.Visible = false;
         calendarSearch.Visible = !calendarSearch.Visible;
@@ -440,13 +440,15 @@ public partial class Repertoar : System.Web.UI.Page
     protected void calendarSearch_SelectionChanged(object sender, EventArgs e)
     {
         string help = calendarSearch.SelectedDate.ToShortDateString();
-        string[] tokens=help.Split('.');
+        string[] tokens = help.Split('.');
         string month = tokens[1];
-        if (month.Length == 1) {
+        if (month.Length == 1)
+        {
             month = "0" + month;
         }
         string day = tokens[0];
-        if (day.Length == 1) {
+        if (day.Length == 1)
+        {
             day = "0" + day;
         }
         string year = tokens[2];
@@ -455,7 +457,7 @@ public partial class Repertoar : System.Web.UI.Page
         calendarSearch.Visible = false;
         mvSearch.ActiveViewIndex = 1;
         main.Visible = false;
-      
+
     }
 
     protected void calendarSearch_VisibleMonthChanged(object sender, MonthChangedEventArgs e)

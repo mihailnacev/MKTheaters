@@ -14,9 +14,9 @@ public partial class MasterPage : System.Web.UI.MasterPage
             user.Text = u.Username;
             loggedUser.Visible = true;
             noLoggedUser.Visible = false;
-           if (u.Admin == "True")
+            if (u.Admin == "True")
             {
-              //  user.NavigateUrl = "~/Administracija.aspx";
+                //  user.NavigateUrl = "~/Administracija.aspx";
                 MojProfil.Text = "АДМИНИСТРАЦИЈА";
                 MojProfil.Font.Name = "Malgun Gothic";
             }

@@ -19,8 +19,8 @@ public class Play
     public int Vremetraenje;
     public List<string> Akteri;
 
-	public Play()
-	{
+    public Play()
+    {
         Ime = null;
         Avtori = null;
         Reziser = null;
@@ -29,7 +29,7 @@ public class Play
         Datum = DateTime.MinValue;
         Vremetraenje = 0;
         Akteri = null;
-	}
+    }
 
     public Play(string ime, string avtori, string reziser, string teatar, string grad, string datum, string vremetraenje, string akteri)
     {
@@ -46,7 +46,7 @@ public class Play
         Datum = DateTime.ParseExact(datum, "dd.MM.yyyy HH:mm", CultureInfo.InvariantCulture);
         Vremetraenje = Convert.ToInt32(vremetraenje);
         Akteri = new List<string>();
-        parts=akteri.Split(';');
+        parts = akteri.Split(';');
         foreach (string s in parts)
         {
             Akteri.Add(s);

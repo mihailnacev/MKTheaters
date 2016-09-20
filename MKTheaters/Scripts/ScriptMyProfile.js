@@ -1,5 +1,4 @@
-﻿$(document).ready(function ()
-{
+﻿$(document).ready(function () {
     $(".options").hover(function () {
         $(this).css({ "background-color": "#F0CB01", "border": "3px solid darkred" });
     }, function () {
@@ -13,13 +12,11 @@
         var counter = 0;
         $(".star").each(function () {
             var v = $(this).attr("star");
-            if (v == "true")
-            {
+            if (v == "true") {
                 counter++;
             }
         });
-        if (counter != 0)
-        {
+        if (counter != 0) {
             $("#ocenaHidden").text(counter + 5);
             $("#btnOcena").trigger("click");
         }
@@ -33,7 +30,7 @@
     $(".star").click(function () {
         $(this).css({ "color": "darkred" });
         $(this).text("★");
-        $(this).attr("star","true");
+        $(this).attr("star", "true");
         $(this).nextAll().css({ "color": "darkred" });
         $(this).nextAll().text("★");
         $(this).nextAll().attr("star", "true");

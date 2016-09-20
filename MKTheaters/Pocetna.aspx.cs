@@ -11,37 +11,37 @@ using System.Data;
 public partial class Pocetna : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
-{
-    if (!this.IsPostBack)
     {
-        this.BindListView();
-    }
-}
- 
-private void BindListView()
-{
-    string constr = ConfigurationManager.ConnectionStrings["Test"].ConnectionString;
-    using (SqlConnection con = new SqlConnection(constr))
-    {
-        using (SqlCommand cmd = new SqlCommand())
+        if (!this.IsPostBack)
         {
-            cmd.CommandText = "SELECT * FROM Details";
-            cmd.Connection = con;
-            using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
+            this.BindListView();
+        }
+    }
+
+    private void BindListView()
+    {
+        string constr = ConfigurationManager.ConnectionStrings["Test"].ConnectionString;
+        using (SqlConnection con = new SqlConnection(constr))
+        {
+            using (SqlCommand cmd = new SqlCommand())
             {
-                DataTable dt = new DataTable();
-                sda.Fill(dt);
-                lvPlays.DataSource = dt;
-                lvPlays.DataBind();
+                cmd.CommandText = "SELECT * FROM Details";
+                cmd.Connection = con;
+                using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
+                {
+                    DataTable dt = new DataTable();
+                    sda.Fill(dt);
+                    lvPlays.DataSource = dt;
+                    lvPlays.DataBind();
+                }
             }
         }
     }
-}
-protected void OnPagePropertiesChanging(object sender, PagePropertiesChangingEventArgs e)
-{
-    (lvPlays.FindControl("DataPager1") as DataPager).SetPageProperties(e.StartRowIndex, e.MaximumRows, false);
-    this.BindListView();
-}
+    protected void OnPagePropertiesChanging(object sender, PagePropertiesChangingEventArgs e)
+    {
+        (lvPlays.FindControl("DataPager1") as DataPager).SetPageProperties(e.StartRowIndex, e.MaximumRows, false);
+        this.BindListView();
+    }
 
 
     protected void nasocuvac_Click(object sender, EventArgs e)
