@@ -17,7 +17,7 @@
             }
         });
         if (counter != 0) {
-            $("#ocenaHidden").text(counter + 5);
+            $("#ocenaHidden").val(counter + 5);
             $("#btnOcena").trigger("click");
         }
     });

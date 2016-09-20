@@ -218,7 +218,7 @@
                             <td class="auto-style11 auto-style13" colspan="2">
                                 <asp:Button ID="btnOcena" runat="server" OnClick="btnOcena_Click" Visible="false" />
                                 <asp:Button ID="btnOcenaClickable" runat="server" CssClass="buttons faa-horizontal animated-hover" Text="Поднеси" OnClientClick="return false" />
-                                <asp:Label ID="ocenaHidden" runat="server"></asp:Label>
+                                <asp:TextBox ID="ocenaHidden" runat="server"></asp:TextBox>
                             </td>
                         </tr>
                     </table>
