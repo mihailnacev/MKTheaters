@@ -52,6 +52,10 @@
     background-color: #DA621E;
 }
 
+#gvPretstavi td, #gvPretstavi th {
+    padding: 5px;
+}
+
 option {
     background-color: #BA252A;
     color: #F0CB01;

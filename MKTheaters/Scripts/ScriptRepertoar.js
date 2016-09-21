@@ -39,4 +39,14 @@ $(".OPP").click(function () {
 });*/
 $(document).ready(function () {
     $("#RequiredFieldValidator1").tooltip();
+    $("#gvPretstavi>tbody>tr>td:nth-child(2)").each(function () {
+        var val = $(this).text();
+        var val2=val.replace(/;/g, ", ");
+        $(this).text(val2);
+    })
+    $("#gvPretstavi>tbody>tr>td:nth-child(4)").each(function () {
+        var val = $(this).text();
+        var val2 = val.replace(/;/g, ", ");
+        $(this).text(val2);
+    })
 })

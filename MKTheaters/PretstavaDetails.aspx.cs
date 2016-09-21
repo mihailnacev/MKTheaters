@@ -19,7 +19,7 @@ public partial class PretstavaDetails : System.Web.UI.Page
         lblVremetraenje.Text = pretstava.Vremetraenje + " минути";
         lblTeatarGrad.Text = pretstava.Teatar + " " + pretstava.Grad;
         lblReziser.Text = pretstava.Reziser;
-        double ocena = pretstava.Ocena;
+        double ocena = prosechnaOcena(pretstava.Ime);
         int ocenaInt = (int)ocena;
         double ocenaDouble = ocena - ocenaInt;
         int i = 5;
@@ -70,6 +70,38 @@ public partial class PretstavaDetails : System.Web.UI.Page
         }
         catch (Exception) { }
         finally { konekcija.Close(); }*/
+    }
+
+    public double prosechnaOcena(string pretstava)
+    {
+        string connectionString = ConfigurationManager.ConnectionStrings["Test"].ConnectionString;
+        SqlConnection connection = new SqlConnection(connectionString);
+        string commandString = "SELECT Ocena FROM Rezervacii WHERE Pretstava=@pretstava";
+        SqlCommand command = new SqlCommand(commandString, connection);
+        command.Parameters.AddWithValue("@pretstava", pretstava);
+        int oceni = 0;
+        int count = 0;
+        try
+        {
+            connection.Open();
+            SqlDataReader dataReader = command.ExecuteReader();
+            while (dataReader.Read())
+            {
+                oceni += Convert.ToInt32(dataReader[0]);
+                count++;
+            }
+            dataReader.Close();
+            if (oceni <= 0)
+            {
+                oceni = 5;
+                count = 1;
+            }
+        }
+        finally
+        {
+            connection.Close();
+        }
+        return oceni * 1.0 / count;
     }
 
     protected void selektirajPretstava(string ime)

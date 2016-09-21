@@ -178,7 +178,7 @@
                     <tr>
                         <td>
                             <asp:Panel runat="server" ID="Pan1">
-                                <asp:Button runat="server" ID="nasocuvac" OnClick="nasocuvac_Click" Text='<%# Eval("Pretstava") %>' /></asp:Button></asp:Panel>
+                                <asp:Button runat="server" ID="nasocuvac" CssClass="faa-pulse animated-hover faa-slow" OnClick="nasocuvac_Click" Text='<%# Eval("Pretstava") %>' /></asp:Button></asp:Panel>
                             <br>
                         </td>
                     </tr>

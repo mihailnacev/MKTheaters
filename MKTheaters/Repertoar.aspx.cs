@@ -178,38 +178,6 @@ public partial class Repertoar : System.Web.UI.Page
         }
     }
 
-    public double prosechnaOcena(string pretstava)
-    {
-        string connectionString = ConfigurationManager.ConnectionStrings["Test"].ConnectionString;
-        SqlConnection connection = new SqlConnection(connectionString);
-        string commandString = "SELECT Ocena FROM Rezervacii WHERE Pretstava=@pretstava";
-        SqlCommand command = new SqlCommand(commandString, connection);
-        command.Parameters.AddWithValue("@pretstava", pretstava);
-        int oceni = 0;
-        int count = 0;
-        try
-        {
-            connection.Open();
-            SqlDataReader dataReader = command.ExecuteReader();
-            while (dataReader.Read())
-            {
-                oceni += Convert.ToInt32(dataReader[0]);
-                count++;
-            }
-            dataReader.Close();
-            if (oceni <= 0)
-            {
-                oceni = 5;
-                count = 1;
-            }
-        }
-        finally
-        {
-            connection.Close();
-        }
-        return oceni * 1.0 / count;
-    }
-
     protected void gvPretstavi_SelectedIndexChanged(object sender, EventArgs e)
     {
         string ime = gvPretstavi.DataKeys[gvPretstavi.SelectedIndex].Value.ToString();
@@ -219,14 +187,13 @@ public partial class Repertoar : System.Web.UI.Page
         string teatar = gvPretstavi.SelectedRow.Cells[4].Text;
         string grad = gvPretstavi.SelectedRow.Cells[5].Text;
         string vremetraenje = gvPretstavi.SelectedRow.Cells[6].Text;
-        double ocena = prosechnaOcena(ime);
         DropDownList datum = (DropDownList)gvPretstavi.SelectedRow.Cells[7].FindControl("ddlDatumi");
         List<string> datumi = new List<string>();
         for (int i = 0; i < datum.Items.Count; i++)
         {
             datumi.Add(datum.Items[i].ToString());
         }
-        Play pretstava = new Play(ime, avtori, reziser, teatar, grad, datumi, vremetraenje, akteri, ocena);
+        Play pretstava = new Play(ime, avtori, reziser, teatar, grad, datumi, vremetraenje, akteri);
         Session["imenaP"] = pretstava;
         //Session["imenaP"] = gvPretstavi.DataKeys[gvPretstavi.SelectedIndex].Value.ToString();
         Response.Redirect("~/PretstavaDetails.aspx");

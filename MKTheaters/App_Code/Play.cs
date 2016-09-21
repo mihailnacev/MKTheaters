@@ -19,7 +19,6 @@ public class Play
     public List<string> Datumi;
     public string Vremetraenje;
     public string Akteri;
-    public double Ocena;
 
     public Play()
     {
@@ -31,10 +30,9 @@ public class Play
         Datumi = null;
         Vremetraenje = null;
         Akteri = null;
-        Ocena = 0;
     }
 
-    public Play(string ime, string avtori, string reziser, string teatar, string grad, List<string> datum, string vremetraenje, string akteri, double ocena)
+    public Play(string ime, string avtori, string reziser, string teatar, string grad, List<string> datum, string vremetraenje, string akteri)
     {
         Ime = ime;
         Avtori = avtori;
@@ -45,7 +43,6 @@ public class Play
         Datumi = datum;
         Vremetraenje = vremetraenje;
         Akteri = akteri;
-        Ocena = ocena;
     }
 
     public override string ToString()

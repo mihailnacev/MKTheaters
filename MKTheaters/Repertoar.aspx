@@ -246,7 +246,7 @@
                         Font-Size="Larger" />
                     <FieldHeaderStyle Font-Size="Larger" />
                     <Fields>
-                        <asp:ButtonField CommandName="select" DataTextField="Ime" HeaderText="Претстава" Text="Button">
+                        <asp:ButtonField CommandName="select" DataTextField="Ime" HeaderText="Претстава" Text="Button" ItemStyle-CssClass="faa-pulse animated-hover faa-slow">
                             <ControlStyle Font-Size="Larger" />
                             <HeaderStyle Font-Size="Larger" />
                             <ItemStyle Font-Size="X-Large" HorizontalAlign="Center" VerticalAlign="Middle"
@@ -279,7 +279,7 @@
             <asp:GridView ID="gvPretstavi" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#F0CB01" BorderStyle="Solid" BorderWidth="5px" CellPadding="4" Font-Bold="False" Width="95%" AllowPaging="True" OnPageIndexChanging="gvPretstavi_PageIndexChanging" OnRowDataBound="gvPretstavi_RowDataBound" OnRowCommand="gvPretstavi_RowCommand" DataKeyNames="Ime" OnSelectedIndexChanged="gvPretstavi_SelectedIndexChanged" ForeColor="Red" OnRowCreated="gvPretstavi_RowCreated">
 
                 <Columns>
-                    <asp:ButtonField CommandName="select" DataTextField="Ime" Text="Button" HeaderText="Претстава"/>
+                    <asp:ButtonField CommandName="select" DataTextField="Ime" Text="Button" HeaderText="Претстава" ItemStyle-CssClass="faa-pulse animated-hover faa-slow"/>
                     <asp:BoundField DataField="Avtor" HeaderText="Автор" />
                     <asp:BoundField DataField="Reziser" HeaderText="Режисер" />
                     <asp:BoundField DataField="Akteri" HeaderText="Актери" />
