@@ -16,7 +16,7 @@ public partial class PretstavaDetails : System.Web.UI.Page
         }
         Play pretstava = (Play)Session["imenaP"];
         lblIme.Text = pretstava.Ime;
-        lblVremetraenje.Text = pretstava.Vremetraenje;
+        lblVremetraenje.Text = pretstava.Vremetraenje + " минути";
         lblTeatarGrad.Text = pretstava.Teatar + " " + pretstava.Grad;
         lblReziser.Text = pretstava.Reziser;
         double ocena = pretstava.Ocena;

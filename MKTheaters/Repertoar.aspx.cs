@@ -440,8 +440,23 @@ public partial class Repertoar : System.Web.UI.Page
     {
         if (e.CommandName.ToString() == "select")
         {
-            Session["imenaP"] = dvPretstavi.DataKey[0].ToString();
-            Response.Redirect("~/PretstavaDetails.aspx");
+            string ime = dvPretstavi.DataKey[0].ToString();
+            int rowIndex = -1;
+            gvPretstavi.AllowPaging = false;
+            gvPretstavi.DataSource = ViewState["dataset"] as DataSet;
+            gvPretstavi.DataBind();
+            for (int i = 0; i < gvPretstavi.Rows.Count; i++)
+            {
+                string x = gvPretstavi.DataKeys[i].Value.ToString();
+                //string x = gvPretstavi.Rows[i].Cells[0].Text;
+                if (x == ime)
+                {
+                    rowIndex = i;
+                    break;
+                }
+            }
+            gvPretstavi.SelectedIndex = rowIndex;
+            gvPretstavi_SelectedIndexChanged(sender, e);
         }
 
     }
