@@ -14,9 +14,40 @@ public partial class PretstavaDetails : System.Web.UI.Page
         {
             Response.Redirect("~/Repertoar.aspx");
         }
-        string ime = (string)Session["imenaP"];
-        lblIme.Text = ime;
-        selektirajPretstava(ime);
+        Play pretstava = (Play)Session["imenaP"];
+        lblIme.Text = pretstava.Ime;
+        lblVremetraenje.Text = pretstava.Vremetraenje;
+        lblTeatarGrad.Text = pretstava.Teatar + " " + pretstava.Grad;
+        lblReziser.Text = pretstava.Reziser;
+        double ocena = pretstava.Ocena;
+        int ocenaInt = (int)ocena;
+        double ocenaDouble = ocena - ocenaInt;
+        int i = 5;
+        for (i = 5; i < ocenaInt; i++)
+        {
+            lblProsechnaOcenka.Text += "<i class='fa fa-star faa-pulse faa-slow' aria-hidden='true' style='font-size:1.2em;color:#BA252A'></i>";
+        }
+        if (ocenaDouble >= 0.5)
+        {
+            lblProsechnaOcenka.Text += "<i class='fa fa-star-half-o faa-pulse faa-slow' aria-hidden='true' style='font-size:1.2em;color:#BA252A'></i>";
+            i++;
+        }
+        while (i < 10)
+        {
+            lblProsechnaOcenka.Text += "<i class='fa fa-star-o faa-pulse faa-slow' aria-hidden='true' style='font-size:1.2em;color:#BA252A'></i>";
+            i++;
+        }
+        //lblProsechnaOcenka.Text = pretstava.Ocena.ToString();
+        lblAvtor.Text = pretstava.Avtori.Replace(";", ", ");
+        lblAkteri.Text=pretstava.Akteri.Replace(";", ", ");
+        ddlDatumi.DataSource = pretstava.Datumi;
+        ddlDatumi.DataBind();
+        Session["imenaP"] = null;
+        //string ime = (string)Session["imenaP"];
+        //lblIme.Text = ime;
+        //selektirajPretstava(ime);
+        //double grade = prosechnaOcena(ime);
+
         /*SqlConnection konekcija = new SqlConnection();
         konekcija.ConnectionString = ConfigurationManager.ConnectionStrings["Test"].ConnectionString;
         string sqlString = "SELECT * FROM Repertoar WHERE Ime=@ime";

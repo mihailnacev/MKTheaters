@@ -11,13 +11,15 @@ using System.Web;
 public class Play
 {
     public string Ime;
-    public List<string> Avtori;
+    public string Avtori;
     public string Reziser;
     public string Teatar;
     public string Grad;
-    public DateTime Datum;
-    public int Vremetraenje;
-    public List<string> Akteri;
+    //public DateTime Datum;
+    public List<string> Datumi;
+    public string Vremetraenje;
+    public string Akteri;
+    public double Ocena;
 
     public Play()
     {
@@ -26,31 +28,24 @@ public class Play
         Reziser = null;
         Teatar = null;
         Grad = null;
-        Datum = DateTime.MinValue;
-        Vremetraenje = 0;
+        Datumi = null;
+        Vremetraenje = null;
         Akteri = null;
+        Ocena = 0;
     }
 
-    public Play(string ime, string avtori, string reziser, string teatar, string grad, string datum, string vremetraenje, string akteri)
+    public Play(string ime, string avtori, string reziser, string teatar, string grad, List<string> datum, string vremetraenje, string akteri, double ocena)
     {
         Ime = ime;
-        Avtori = new List<string>();
-        string[] parts = avtori.Split(';');
-        foreach (string s in parts)
-        {
-            Avtori.Add(s);
-        }
+        Avtori = avtori;
         Reziser = reziser;
         Teatar = teatar;
         Grad = grad;
-        Datum = DateTime.ParseExact(datum, "dd.MM.yyyy HH:mm", CultureInfo.InvariantCulture);
-        Vremetraenje = Convert.ToInt32(vremetraenje);
-        Akteri = new List<string>();
-        parts = akteri.Split(';');
-        foreach (string s in parts)
-        {
-            Akteri.Add(s);
-        }
+        //Datum = DateTime.ParseExact(datum, "dd.MM.yyyy HH:mm", CultureInfo.InvariantCulture);
+        Datumi = datum;
+        Vremetraenje = vremetraenje;
+        Akteri = akteri;
+        Ocena = ocena;
     }
 
     public override string ToString()
@@ -83,7 +78,7 @@ public class Play
         }
         sb.Append(String.Format("Режисер: {0}&nbsp;&nbsp;&nbsp;&nbsp;Театар: {1}&nbsp;&nbsp;&nbsp;&nbsp;Град: {2}<br/>", Reziser, Teatar, Grad));
         sb.Append(String.Format("Датум: {0}&nbsp;&nbsp;&nbsp;&nbsp;Час: {1}", Datum.ToShortDateString(), Datum.ToShortTimeString()));*/
-        sb.Append(String.Format("{0} {1} {2}", Ime, Datum.ToShortDateString(), Datum.ToShortTimeString()));
+        //sb.Append(String.Format("{0} {1} {2}", Ime, Datum.ToShortDateString(), Datum.ToShortTimeString()));
         return sb.ToString();
     }
 }

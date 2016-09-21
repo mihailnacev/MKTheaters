@@ -5,6 +5,7 @@
     <link href="Styles/StyleSheetRepertoar.css" rel="stylesheet" />
     <link href="Styles/jquery-ui.css" type="text/css" rel="stylesheet" />
     <link rel="stylesheet" href="Styles/font-awesome-animation.min.css" />
+    <link rel="stylesheet" href="Styles/font-awesome-4.6.3/css/font-awesome.min.css" />
     <script src="Scripts/jquery.js"></script>
     <script src="Scripts/jquery-ui.js"></script>
     <script src="Scripts/ScriptRepertoar.js" type="text/javascript"></script>
@@ -278,7 +279,7 @@
             <asp:GridView ID="gvPretstavi" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#F0CB01" BorderStyle="Solid" BorderWidth="5px" CellPadding="4" Font-Bold="False" Width="95%" AllowPaging="True" OnPageIndexChanging="gvPretstavi_PageIndexChanging" OnRowDataBound="gvPretstavi_RowDataBound" OnRowCommand="gvPretstavi_RowCommand" DataKeyNames="Ime" OnSelectedIndexChanged="gvPretstavi_SelectedIndexChanged" ForeColor="Red" OnRowCreated="gvPretstavi_RowCreated">
 
                 <Columns>
-                    <asp:ButtonField CommandName="select" DataTextField="Ime" Text="Button" HeaderText="Претстава" />
+                    <asp:ButtonField CommandName="select" DataTextField="Ime" Text="Button" HeaderText="Претстава"/>
                     <asp:BoundField DataField="Avtor" HeaderText="Автор" />
                     <asp:BoundField DataField="Reziser" HeaderText="Режисер" />
                     <asp:BoundField DataField="Akteri" HeaderText="Актери" />

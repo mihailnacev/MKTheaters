@@ -10,6 +10,8 @@
     <script src="Scripts/Script1.js" type="text/javascript"></script>
     <link rel="stylesheet" href="CSS_Footer/demo.css" />
     <link rel="stylesheet" href="CSS_Footer/footer-distributed-with-address-and-phones.css" />
+    <link rel="stylesheet" href="Styles/font-awesome-animation.min.css" />
+    <link rel="stylesheet" href="Styles/font-awesome-4.6.3/css/font-awesome.min.css" />
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" />
     <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css" />
 
@@ -118,7 +120,7 @@
                     .footer-distributed .footer-center p a {
                         color: #BA252A;
                         text-decoration: none;
-                        ;
+                        
                     }
 
 
@@ -204,15 +206,15 @@
             <asp:Panel ID="header" runat="server">
                 <asp:Panel ID="status" runat="server">
                     <asp:Panel ID="loggedUser" runat="server">
-                        <asp:Label ID="Label1" runat="server" Text="Најавени сте како "></asp:Label>
+                        <asp:Label ID="Label1" runat="server" Text=""><i class="fa fa-user" aria-hidden="true"></i></asp:Label>
                         <asp:HyperLink ID="user" runat="server" NavigateUrl="~/MyProfile.aspx" ForeColor="#FF9933">[user]</asp:HyperLink>
                         <asp:Label ID="Label2" runat="server" Text="|"></asp:Label>
-                        <asp:LinkButton ID="logOut" runat="server" OnClick="logOut_Click" CausesValidation="False">Одјави се</asp:LinkButton>
+                        <asp:LinkButton ID="logOut" runat="server" OnClick="logOut_Click" CausesValidation="False"><i class="fa fa-sign-out" aria-hidden="true"></i> Одјави се</asp:LinkButton>
                     </asp:Panel>
                     <asp:Panel ID="noLoggedUser" runat="server">
-                        <asp:LinkButton ID="logIn" runat="server" OnClick="logIn_Click" CausesValidation="False">Најави се</asp:LinkButton>
+                        <asp:LinkButton ID="logIn" runat="server" OnClick="logIn_Click" CausesValidation="False"><i class="fa fa-sign-in" aria-hidden="true"></i> Најави се</asp:LinkButton>
                         <asp:Label ID="Label3" runat="server" Text="|"></asp:Label>
-                        <asp:LinkButton ID="register" runat="server" OnClick="register_Click" CausesValidation="False">Регистрирај се</asp:LinkButton>
+                        <asp:LinkButton ID="register" runat="server" OnClick="register_Click" CausesValidation="False"><i class="fa fa-user-plus" aria-hidden="true"></i> Регистрирај се</asp:LinkButton>
                     </asp:Panel>
                 </asp:Panel>
                 <asp:Panel ID="container" runat="server">

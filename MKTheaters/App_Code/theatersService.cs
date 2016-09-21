@@ -210,7 +210,7 @@ public class theatersService : System.Web.Services.WebService
     [WebMethod(Description = "Vraka DataSet od pretstavi koi se na repertoar vo teatarot koj e daden kako vlezen argument")]
     public DataSet findByTheater(string Theater)
     {
-        List<Play> pretstavi = new List<Play>();
+        // List<Play> pretstavi = new List<Play>();
         SqlConnection konekcija = new SqlConnection();
         konekcija.ConnectionString = ConfigurationManager.ConnectionStrings["Test"].ConnectionString;
         string sqlString = "SELECT * FROM Repertoar WHERE Teatar=@theater";
@@ -246,7 +246,7 @@ public class theatersService : System.Web.Services.WebService
     [WebMethod(Description = "Vraka DataSet od imeto na pretstavata koja e zadadena kako vlezen argument")]
     public DataSet findByName(string Ime)
     {
-        List<Play> pretstavi = new List<Play>();
+        //List<Play> pretstavi = new List<Play>();
         SqlConnection konekcija = new SqlConnection();
         konekcija.ConnectionString = ConfigurationManager.ConnectionStrings["Test"].ConnectionString;
         string sqlString = "SELECT * FROM Repertoar WHERE Ime=@ime";

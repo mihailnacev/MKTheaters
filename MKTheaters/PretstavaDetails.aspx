@@ -32,6 +32,9 @@
             </td>
         </tr>
         <tr>
+            <td colspan="2">&nbsp;</td>
+        </tr>
+        <tr>
             <td class="auto-style13">
                 <asp:Label ID="Label5" runat="server" Text="Автор:" CssClass="labeli"></asp:Label>
             </td>
@@ -80,6 +83,17 @@
                 <asp:DropDownList ID="ddlDatumi" runat="server">
                 </asp:DropDownList>
             </td>
+        </tr>
+        <tr>
+            <td class="auto-style13">
+                <asp:Label ID="Label11" runat="server" CssClass="labeli" Text="Просечна оценка:"></asp:Label>
+            </td>
+            <td class="auto-style12">
+                <asp:Label ID="lblProsechnaOcenka" CssClass="results faa-parent animated-hover" Text="" runat="server"></asp:Label>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">&nbsp;</td>
         </tr>
         <tr>
             <td class="auto-style13">&nbsp;</td>
