@@ -51,7 +51,11 @@ public partial class Najava : System.Web.UI.Page
             else
             {
                 Session["Najaven"] = tekoven;
-                if (tekoven.Admin == "False")
+                if (Request.QueryString["ReturnUrl"] != null && Request.QueryString["ReturnUrl"] != "UspesnaRegistracija")
+                {
+                    Response.Redirect("~/" + Request.QueryString["ReturnUrl"] + ".aspx");
+                }
+                else if (tekoven.Admin == "False")
                 {
                     Response.Redirect("~/MyProfile.aspx");
                 }

@@ -30,7 +30,9 @@ public partial class MasterPage : System.Web.UI.MasterPage
 
     protected void logIn_Click(object sender, EventArgs e)
     {
-        Response.Redirect("~/Najava.aspx");
+        string[]parts = Request.Url.ToString().Split('/');
+        string url = parts[parts.Length - 1].Split('.')[0];
+        Response.Redirect("~/Najava.aspx?ReturnUrl=" + url);
     }
 
     protected void register_Click(object sender, EventArgs e)
@@ -43,7 +45,9 @@ public partial class MasterPage : System.Web.UI.MasterPage
         Session["Najaven"] = null;
         loggedUser.Visible = false;
         noLoggedUser.Visible = true;
-        Response.Redirect("~/Najava.aspx");
+        string[] parts = Request.Url.ToString().Split('/');
+        string url = parts[parts.Length - 1];
+        Response.Redirect(url);
     }
 
     protected void Pocetna_Click(object sender, EventArgs e)
