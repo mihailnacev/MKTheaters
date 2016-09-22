@@ -42,7 +42,7 @@ public partial class PretstavaDetails : System.Web.UI.Page
         lblAkteri.Text=pretstava.Akteri.Replace(";", ", ");
         ddlDatumi.DataSource = pretstava.Datumi;
         ddlDatumi.DataBind();
-        Session["imenaP"] = null;
+        //Session["imenaP"] = null;
         //string ime = (string)Session["imenaP"];
         //lblIme.Text = ime;
         //selektirajPretstava(ime);
@@ -87,8 +87,12 @@ public partial class PretstavaDetails : System.Web.UI.Page
             SqlDataReader dataReader = command.ExecuteReader();
             while (dataReader.Read())
             {
-                oceni += Convert.ToInt32(dataReader[0]);
-                count++;
+                int o = Convert.ToInt32(dataReader[0]);
+                if (o != 0)
+                {
+                    oceni += Convert.ToInt32(dataReader[0]);
+                    count++;
+                }
             }
             dataReader.Close();
             if (oceni <= 0)
