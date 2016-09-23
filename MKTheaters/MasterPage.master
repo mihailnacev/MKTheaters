@@ -201,6 +201,7 @@
     </asp:ContentPlaceHolder>
 </head>
 <body>
+    <div class="se-pre-con"></div>
     <form id="form1" runat="server">
         <div>
             <asp:Panel ID="header" runat="server">

@@ -98,7 +98,7 @@
         <tr>
             <td class="auto-style13">&nbsp;</td>
             <td class="auto-style12">
-                <asp:Button ID="btnRezerviraj" runat="server" CssClass="auto-style14 faa-vertical animated-hover" Height="45px" OnClick="btnRezerviraj_Click" Text="Резервирај билет" Width="247px" />
+                <asp:Button ID="btnRezerviraj" runat="server" CssClass="auto-style14 faa-flash animated-hover faa-slow" Height="45px" OnClick="btnRezerviraj_Click" Text="Резервирај билет" Width="247px" />
             </td>
         </tr>
     </table>

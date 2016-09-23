@@ -19,9 +19,15 @@ public partial class Repertoar : System.Web.UI.Page
         }
         main.Visible = true;
         mvSearch.ActiveViewIndex = 0;
-
-
-
+        if (Request.QueryString["in"] != null)
+        {
+            int index = Convert.ToInt32(Request.QueryString["in"]);
+            GridViewPageEventArgs ev = new GridViewPageEventArgs(index);
+            gvPretstavi.PageIndex = ev.NewPageIndex;
+            DataSet ds = (DataSet)ViewState["dataset"];
+            gvPretstavi.DataSource = ds;
+            gvPretstavi.DataBind();
+        }
 
     }
 
@@ -102,7 +108,14 @@ public partial class Repertoar : System.Web.UI.Page
     {
         if (e.CommandName == "Popup" && e.CommandArgument != null)
         {
+            User najaven = (User)Session["Najaven"];
             int rowIndex = Convert.ToInt32(e.CommandArgument);
+            if (najaven == null)
+            {
+                string[] parts = Request.Url.ToString().Split('/');
+                string url = parts[parts.Length - 1].Split('.')[0];
+                Response.Redirect("~/Najava.aspx?ReturnUrl=" + url + "&in=" + gvPretstavi.PageIndex);
+            }
             ModalPopupExtender modalPopupExtender1 = (ModalPopupExtender)gvPretstavi.Rows[rowIndex].FindControl("ModalPopupExtender1");
             LinkButton lb = (LinkButton)gvPretstavi.Rows[rowIndex].Cells[0].Controls[0];
             DropDownList datumi = (DropDownList)gvPretstavi.Rows[rowIndex].Cells[7].Controls[1];

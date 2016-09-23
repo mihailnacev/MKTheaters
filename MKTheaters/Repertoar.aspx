@@ -298,7 +298,7 @@
                         <ItemTemplate>
                             <asp:Button ID="Button1" runat="server" Style="Display: none;" Text="Button" />
                             <ajaxToolKit:ModalPopupExtender ID="ModalPopupExtender1" PopupControlID="Panel1" TargetControlID="Button1" BackgroundCssClass="modalBackground" runat="server" />
-                            <asp:LinkButton ID="LinkButton1" CommandName="Popup" runat="server">Резервирај</asp:LinkButton>
+                            <asp:LinkButton ID="LinkButton1" CommandName="Popup" runat="server" CssClass="faa-flash animated-hover faa-slow">Резервирај</asp:LinkButton>
                         </ItemTemplate>
                         <ControlStyle ForeColor="White" />
                     </asp:TemplateField>
