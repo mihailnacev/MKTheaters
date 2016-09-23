@@ -133,8 +133,8 @@ public partial class Repertoar : System.Web.UI.Page
         User najaven = (User)Session["Najaven"];
         string selektirano = (string)Session["Ime"];
         string datum = (string)Session["Datum"];
-        if (najaven != null)
-        {
+        //if (najaven != null)
+        //{
             funkcija(najaven, selektirano, datum);
             string message = "Успешна резервација!";
             System.Text.StringBuilder sb = new System.Text.StringBuilder();
@@ -145,7 +145,7 @@ public partial class Repertoar : System.Web.UI.Page
             sb.Append("')};");
             sb.Append("</script>");
             ClientScript.RegisterClientScriptBlock(this.GetType(), "alert", sb.ToString());
-        }
+        /*}
         else
         {
             string message = "Најавете се прво!";
@@ -157,7 +157,7 @@ public partial class Repertoar : System.Web.UI.Page
             sb.Append("')};");
             sb.Append("</script>");
             ClientScript.RegisterClientScriptBlock(this.GetType(), "alert", sb.ToString());
-        }
+        }*/
 
     }
 

@@ -143,10 +143,10 @@ public partial class PretstavaDetails : System.Web.UI.Page
     protected void btnRezerviraj_Click(object sender, EventArgs e)
     {
         User najaven = (User)Session["Najaven"];
-        string ime = (string)Session["imenaP"];
+        //string ime = (string)Session["imenaP"];
         if (najaven != null)
         {
-            funkcija(najaven, ime,ddlDatumi.SelectedItem.Text);
+            funkcija(najaven, lblIme.Text,ddlDatumi.SelectedItem.Text);
             string message = "Успешна резервација!";
             System.Text.StringBuilder sb = new System.Text.StringBuilder();
             sb.Append("<script type = 'text/javascript'>");
@@ -159,7 +159,7 @@ public partial class PretstavaDetails : System.Web.UI.Page
         }
         else
         {
-            string message = "Најавете се прво!";
+            /*string message = "Најавете се прво!";
             System.Text.StringBuilder sb = new System.Text.StringBuilder();
             sb.Append("<script type = 'text/javascript'>");
             sb.Append("window.onload=function(){");
@@ -167,7 +167,10 @@ public partial class PretstavaDetails : System.Web.UI.Page
             sb.Append(message);
             sb.Append("')};");
             sb.Append("</script>");
-            ClientScript.RegisterClientScriptBlock(this.GetType(), "alert", sb.ToString());
+            ClientScript.RegisterClientScriptBlock(this.GetType(), "alert", sb.ToString());*/
+            string[] parts = Request.Url.ToString().Split('/');
+            string url = parts[parts.Length - 1].Split('.')[0];
+            Response.Redirect("~/Najava.aspx?ReturnUrl=" + url);
         }
     }
 
