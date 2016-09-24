@@ -3,6 +3,10 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
     <link href="Styles/StyleSheetPretstavaDetails.css" rel="stylesheet"/>
     <link rel="stylesheet" href="Styles/font-awesome-animation.min.css" />
+    <link href="Styles/jquery-ui.css" type="text/css" rel="stylesheet" />
+    <script src="Scripts/jquery.js"></script>
+    <script src="Scripts/jquery-ui.js"></script>
+    <script type="text/javascript" src="Scripts/ScriptPretstavaDetails.js"></script>
     <style type="text/css">
         .auto-style1 {
             width: 67%;
@@ -26,6 +30,12 @@
     <asp:Panel ID="main" runat="server">
         
     <table class="auto-style1" id="tabela">
+        <tr>
+            <td>&nbsp;</td>
+            <td>
+                <asp:Label ID="uspeshnaRez" runat="server" Visible="false">Ви благодариме за резервацијата. Претставата е успешно резервирана. Дојдете најмалку 15 минути пред почетокот на претставата за да ги подигнете билетите.</asp:Label>
+            </td>
+        </tr>
         <tr>
             <td colspan="2" style="text-align:center">
                 <asp:Label ID="lblIme" runat="server" Text="Label"></asp:Label>
@@ -98,10 +108,18 @@
         <tr>
             <td class="auto-style13">&nbsp;</td>
             <td class="auto-style12">
-                <asp:Button ID="btnRezerviraj" runat="server" CssClass="auto-style14 faa-flash animated-hover faa-slow" Height="45px" OnClick="btnRezerviraj_Click" Text="Резервирај билет" Width="247px" />
+                <asp:Button ID="btnShowModal" runat="server" CssClass="auto-style14 faa-flash animated-hover faa-slow" Height="45px" Width="247px" Text="Резервирај билет" OnClientClick="return false" />
+                <asp:Button ID="btnRezerviraj" runat="server" CssClass="auto-style14 faa-flash animated-hover faa-slow" Height="45px" OnClick="btnRezerviraj_Click" Text="Резервирај" Width="247px" />   
             </td>
         </tr>
     </table>
-        </asp:Panel>
+    </asp:Panel>
+    <asp:Panel ID="modal" title="Резервираj претстава" runat="server">
+        <asp:Label ID="ime" runat="server"></asp:Label>
+        <br />
+        <br />
+        <asp:Label ID="lbltermin" runat="server" Text="Термин: "></asp:Label>
+        <asp:TextBox ID="termin" runat="server" Enabled="false"></asp:TextBox>    
+    </asp:Panel>
 </asp:Content>
 

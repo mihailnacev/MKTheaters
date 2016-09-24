@@ -16,12 +16,14 @@ public partial class PretstavaDetails : System.Web.UI.Page
         }
         Play pretstava = (Play)Session["imenaP"];
         lblIme.Text = pretstava.Ime;
+        ime.Text = pretstava.Ime;
         lblVremetraenje.Text = pretstava.Vremetraenje + " минути";
         lblTeatarGrad.Text = pretstava.Teatar + " " + pretstava.Grad;
         lblReziser.Text = pretstava.Reziser;
         double ocena = prosechnaOcena(pretstava.Ime);
         int ocenaInt = (int)ocena;
         double ocenaDouble = ocena - ocenaInt;
+        lblProsechnaOcenka.Text = "";
         int i = 5;
         for (i = 5; i < ocenaInt; i++)
         {
@@ -146,8 +148,10 @@ public partial class PretstavaDetails : System.Web.UI.Page
         //string ime = (string)Session["imenaP"];
         if (najaven != null)
         {
+            uspeshnaRez.Visible = true;
+            btnShowModal.Visible = false;
             funkcija(najaven, lblIme.Text,ddlDatumi.SelectedItem.Text);
-            string message = "Успешна резервација!";
+            /*string message = "Успешна резервација!";
             System.Text.StringBuilder sb = new System.Text.StringBuilder();
             sb.Append("<script type = 'text/javascript'>");
             sb.Append("window.onload=function(){");
@@ -155,7 +159,7 @@ public partial class PretstavaDetails : System.Web.UI.Page
             sb.Append(message);
             sb.Append("')};");
             sb.Append("</script>");
-            ClientScript.RegisterClientScriptBlock(this.GetType(), "alert", sb.ToString());
+            ClientScript.RegisterClientScriptBlock(this.GetType(), "alert", sb.ToString());*/
         }
         else
         {

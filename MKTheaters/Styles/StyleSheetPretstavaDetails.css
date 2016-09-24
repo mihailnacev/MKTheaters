@@ -12,6 +12,31 @@
     border: 20px solid #F0CB01;
 }
 
+#uspeshnaRez {
+    color: darkred;
+    font-style: italic;
+    display: block;
+    background-color: lightyellow;
+    margin-bottom: 20px;
+    padding: 2%;
+    border-radius: 20px;
+}
+
+#modal {
+    text-align: center;
+}
+
+#ime {
+    font-size: 25px;
+}
+
+#termin {
+    background: transparent;
+    color: darkred;
+    border: none;
+    width: 140px;
+}
+
 option {
     background-color: #BA252A;
     color: #F0CB01;
