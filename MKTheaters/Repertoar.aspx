@@ -159,6 +159,7 @@
 
 
     <asp:Panel ID="pnlSearch" runat="server">
+        <asp:Label ID="uspeshnaRez" runat="server" Visible="false">Ви благодариме за резервацијата. Претставата е успешно резервирана. Дојдете најмалку 15 минути пред почетокот на претставата за да ги подигнете билетите.</asp:Label>
         <asp:MultiView ID="mvSearch" runat="server">
             <asp:View ID="View1" runat="server">
                 <asp:Panel runat="server" ID="Panel2">
@@ -279,7 +280,7 @@
             <asp:GridView ID="gvPretstavi" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#F0CB01" BorderStyle="Solid" BorderWidth="5px" CellPadding="4" Font-Bold="False" Width="95%" AllowPaging="True" OnPageIndexChanging="gvPretstavi_PageIndexChanging" OnRowDataBound="gvPretstavi_RowDataBound" OnRowCommand="gvPretstavi_RowCommand" DataKeyNames="Ime" OnSelectedIndexChanged="gvPretstavi_SelectedIndexChanged" ForeColor="Red" OnRowCreated="gvPretstavi_RowCreated">
 
                 <Columns>
-                    <asp:ButtonField CommandName="select" DataTextField="Ime" Text="Button" HeaderText="Претстава" ItemStyle-CssClass="faa-pulse animated-hover faa-slow"/>
+                    <asp:ButtonField CommandName="select" DataTextField="Ime" Text="Button" ControlStyle-CssClass="ime" HeaderText="Претстава" ItemStyle-CssClass="faa-pulse animated-hover faa-slow"/>
                     <asp:BoundField DataField="Avtor" HeaderText="Автор" />
                     <asp:BoundField DataField="Reziser" HeaderText="Режисер" />
                     <asp:BoundField DataField="Akteri" HeaderText="Актери" />
@@ -298,7 +299,7 @@
                         <ItemTemplate>
                             <asp:Button ID="Button1" runat="server" Style="Display: none;" Text="Button" />
                             <ajaxToolKit:ModalPopupExtender ID="ModalPopupExtender1" PopupControlID="Panel1" TargetControlID="Button1" BackgroundCssClass="modalBackground" runat="server" />
-                            <asp:LinkButton ID="LinkButton1" CommandName="Popup" runat="server" CssClass="faa-flash animated-hover faa-slow">Резервирај</asp:LinkButton>
+                            <asp:LinkButton ID="LinkButton1" CommandName="Popup" runat="server" OnClientClick="return false" CssClass="modalOpener faa-flash animated-hover faa-slow">Резервирај</asp:LinkButton>
                         </ItemTemplate>
                         <ControlStyle ForeColor="White" />
                     </asp:TemplateField>
@@ -335,5 +336,14 @@
         <br />
         &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     </asp:Panel>
-
+    <asp:Panel ID="modal" title="Резервираj претстава" runat="server">
+        <asp:Label ID="ime" runat="server" Enabled="false"></asp:Label>
+        <br />
+        <br />
+        <asp:Label ID="lbltermin" runat="server" Text="Термин: "></asp:Label>
+        <asp:TextBox ID="termin" runat="server" Enabled="false"></asp:TextBox>   
+    </asp:Panel>
+    <asp:TextBox ID="imeSkrieno" runat="server"></asp:TextBox> 
+    <asp:TextBox ID="terminSkrieno" runat="server"></asp:TextBox>
+    <asp:Button ID="btnRezerviraj" runat="server" CssClass="auto-style14 faa-flash animated-hover faa-slow" Height="45px" Text="Резервирај" Width="247px" OnClick="btnRezerviraj_Click" />   
 </asp:Content>

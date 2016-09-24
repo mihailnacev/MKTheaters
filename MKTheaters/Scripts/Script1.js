@@ -37,7 +37,7 @@
     });
 
     $(window).load(function () {
-        $(".se-pre-con").fadeOut("slow");;
+        $(".se-pre-con").delay(250).fadeOut("slow");;
     });
 
     $(window).resize(function () {

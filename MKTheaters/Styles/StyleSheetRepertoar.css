@@ -11,6 +11,33 @@
     margin-left: 5%;
 }
 
+#uspeshnaRez {
+    color: darkred;
+    font-style: italic;
+    display: block;
+    background-color: lightyellow;
+    margin-bottom: 20px;
+    padding: 2%;
+    border-radius: 20px;
+    width: 85%;
+    margin: auto;
+}
+
+#modal {
+    text-align: center;
+}
+
+#ime {
+    font-size: 25px;
+}
+
+#termin {
+    background: transparent;
+    color: darkred;
+    border: none;
+    width: 140px;
+}
+
 .Redica {
     font-size: 20px;
 }

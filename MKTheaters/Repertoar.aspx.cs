@@ -108,7 +108,7 @@ public partial class Repertoar : System.Web.UI.Page
     {
         if (e.CommandName == "Popup" && e.CommandArgument != null)
         {
-            User najaven = (User)Session["Najaven"];
+            /*User najaven = (User)Session["Najaven"];
             int rowIndex = Convert.ToInt32(e.CommandArgument);
             if (najaven == null)
             {
@@ -121,7 +121,7 @@ public partial class Repertoar : System.Web.UI.Page
             DropDownList datumi = (DropDownList)gvPretstavi.Rows[rowIndex].Cells[7].Controls[1];
             Session["Ime"] = lb.Text;
             Session["Datum"] = datumi.SelectedItem.Text;
-            modalPopupExtender1.Show();
+            modalPopupExtender1.Show();*/
 
             //Perform any specific processing.
             //Label1.Text = string.Format("Row # {0}", rowIndex);
@@ -224,7 +224,7 @@ public partial class Repertoar : System.Web.UI.Page
         mvSearch.ActiveViewIndex = 1;
         main.Visible = false;
         Panel1.Visible = false;
-
+        uspeshnaRez.Visible = false;
         imCalendar.Visible = false;
         calendarSearch.Visible = false;
     }
@@ -515,5 +515,23 @@ public partial class Repertoar : System.Web.UI.Page
         mvSearch.ActiveViewIndex = 1;
         main.Visible = false;
         tbKluc.Text = "";
+    }
+
+    protected void btnRezerviraj_Click(object sender, EventArgs e)
+    {
+        User najaven = (User)Session["Najaven"];
+        if (najaven != null)
+        {
+            uspeshnaRez.Visible = true;
+            string name = imeSkrieno.Text;
+            string date = terminSkrieno.Text;
+            funkcija(najaven, name, date);
+        }
+        else
+        {
+            string[] parts = Request.Url.ToString().Split('/');
+            string url = parts[parts.Length - 1].Split('.')[0];
+            Response.Redirect("~/Najava.aspx?ReturnUrl=" + url + "&in=" + gvPretstavi.PageIndex);
+        }
     }
 }
