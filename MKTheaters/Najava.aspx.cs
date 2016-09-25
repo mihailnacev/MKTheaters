@@ -51,7 +51,7 @@ public partial class Najava : System.Web.UI.Page
             else
             {
                 Session["Najaven"] = tekoven;
-                if (Request.QueryString["ReturnUrl"] != null && Request.QueryString["ReturnUrl"] != "UspesnaRegistracija")
+                if (Request.QueryString["ReturnUrl"] != null && Request.QueryString["ReturnUrl"] != "UspesnaRegistracija" && Request.QueryString["ReturnUrl"] != "Registracija")
                 {
                     if (Request.QueryString["in"] == null)
                     {
