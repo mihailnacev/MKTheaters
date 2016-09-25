@@ -57,7 +57,7 @@
 .pnlPR {
     width: 95%;
     background-color: transparent;
-    height: 450px;
+    /*height: 450px;*/
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
 }
