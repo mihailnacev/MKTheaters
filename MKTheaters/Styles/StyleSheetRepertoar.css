@@ -81,6 +81,8 @@
 
 #gvPretstavi td, #gvPretstavi th {
     padding: 5px;
+    border: none;
+    border-top: 1px solid #F0CB01;
 }
 
 option {
