@@ -242,6 +242,7 @@ public partial class Repertoar : System.Web.UI.Page
         ViewState["set4"] = null;
         ViewState["set5"] = null;
         ViewState["set6"] = null;
+        lbStat.Visible = false;
     }
 
     protected void btnPreb_Click(object sender, EventArgs e)
@@ -258,6 +259,7 @@ public partial class Repertoar : System.Web.UI.Page
             mvSearch.ActiveViewIndex = 2;
             main.Visible = false;
             Panel1.Visible = false;
+            if (result.Tables["Repertoar"].Rows.Count == 0) lbStat.Visible = true;
         }
 
         else if (ddlKriterium.SelectedItem.Text == "Режисер")
@@ -270,6 +272,7 @@ public partial class Repertoar : System.Web.UI.Page
             mvSearch.ActiveViewIndex = 2;
             main.Visible = false;
             Panel1.Visible = false;
+            if (result.Tables["Repertoar"].Rows.Count == 0) lbStat.Visible = true;
         }
 
         else if (ddlKriterium.SelectedItem.Text == "Автор")
@@ -282,6 +285,7 @@ public partial class Repertoar : System.Web.UI.Page
             mvSearch.ActiveViewIndex = 2;
             main.Visible = false;
             Panel1.Visible = false;
+            if (result.Tables["Repertoar"].Rows.Count == 0) lbStat.Visible = true;
         }
 
         else if (ddlKriterium.SelectedItem.Text == "Актер")
@@ -294,6 +298,7 @@ public partial class Repertoar : System.Web.UI.Page
             mvSearch.ActiveViewIndex = 2;
             main.Visible = false;
             Panel1.Visible = false;
+            if (result.Tables["Repertoar"].Rows.Count == 0) lbStat.Visible = true;
         }
 
         else if (ddlKriterium.SelectedItem.Text == "Датум")
@@ -308,6 +313,7 @@ public partial class Repertoar : System.Web.UI.Page
             mvSearch.ActiveViewIndex = 2;
             main.Visible = false;
             Panel1.Visible = false;
+            if (result.Tables["Repertoar"].Rows.Count == 0) lbStat.Visible = true;
         }
 
         else if (ddlKriterium.SelectedItem.Text == "Театар")
@@ -320,6 +326,7 @@ public partial class Repertoar : System.Web.UI.Page
             mvSearch.ActiveViewIndex = 2;
             main.Visible = false;
             Panel1.Visible = false;
+            if (result.Tables["Repertoar"].Rows.Count == 0) lbStat.Visible = true;
         }
         else if (ddlKriterium.SelectedItem.Text == "Име")
         {
@@ -331,6 +338,7 @@ public partial class Repertoar : System.Web.UI.Page
             mvSearch.ActiveViewIndex = 2;
             main.Visible = false;
             Panel1.Visible = false;
+            if (result.Tables["Repertoar"].Rows.Count == 0) lbStat.Visible = true;
         }
         else
         {
@@ -515,6 +523,7 @@ public partial class Repertoar : System.Web.UI.Page
         mvSearch.ActiveViewIndex = 1;
         main.Visible = false;
         tbKluc.Text = "";
+        lbStat.Visible = false;
     }
 
     protected void btnRezerviraj_Click(object sender, EventArgs e)

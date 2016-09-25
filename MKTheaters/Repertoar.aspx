@@ -93,13 +93,19 @@
         }
 
         #dvPretstavi {
-            background-color: white;
             padding: 30px;
             margin: auto;
             margin-top: 10px;
             width: 40%;
             border-radius: 20px;
             border: 20px solid #F0CB01;
+        }
+        
+        #lbStat
+        {
+            position: relative;
+   left: 40%;
+  /* bring your own prefixes */
         }
 
         .auto-style9 {
@@ -235,6 +241,7 @@
                 </asp:Panel>
             </asp:View>
             <asp:View ID="View3" runat="server">
+
                 <asp:DetailsView ID="dvPretstavi" runat="server" Height="50px" Width="40%"
                     AllowPaging="True" OnPageIndexChanging="dvPretstavi_PageIndexChanging"
                     BorderColor="#F0CB01" BorderStyle="Solid" BorderWidth="10px" CellPadding="100"
@@ -268,11 +275,15 @@
                         HorizontalAlign="Left" VerticalAlign="Middle" Font-Size="Larger"
                         BorderStyle="Solid" BorderWidth="3px" />
                 </asp:DetailsView>
-
-                <asp:Button ID="btnBackView3" runat="server" CssClass="back faa-vertical animated-hover" Text="&lt;&lt;&lt;" Width="268px" Height="50px" CausesValidation="False" OnClick="btnBackView3_Click" />
-
-
-            </asp:View>
+                <asp:Label ID="lbStat" runat="server" Text="Нема пронајдени претстави!" 
+                    Font-Bold="True" Font-Size="X-Large" ForeColor="#F0CB01" Visible="False"></asp:Label>
+                <br></br>
+                <asp:Button ID="btnBackView3" runat="server" CausesValidation="False" 
+                    CssClass="back faa-vertical animated-hover" Height="50px" 
+                    OnClick="btnBackView3_Click" Text="&lt;&lt;&lt;" Width="268px" />
+                <br>
+                </br>
+                </asp:View>
         </asp:MultiView>
     </asp:Panel>
     <asp:UpdatePanel ID="main" runat="server">
