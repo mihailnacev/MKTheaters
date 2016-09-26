@@ -492,17 +492,39 @@ public partial class Repertoar : System.Web.UI.Page
     {
         string help = calendarSearch.SelectedDate.ToShortDateString();
         string[] tokens = help.Split('.');
-        string month = tokens[1];
-        if (month.Length == 1)
+        string day = "";
+        string month = "";
+        string year = "";
+        if (tokens.Length > 1)
         {
-            month = "0" + month;
+            month = tokens[1];
+            if (month.Length == 1)
+            {
+                month = "0" + month;
+            }
+            day = tokens[0];
+            if (day.Length == 1)
+            {
+                day = "0" + day;
+            }
+            year = tokens[2];
+
         }
-        string day = tokens[0];
-        if (day.Length == 1)
-        {
-            day = "0" + day;
+        else {
+            tokens = help.Split('/');
+            month = tokens[0];
+            if (month.Length == 1)
+            {
+                month = "0" + month;
+            }
+            day = tokens[1];
+            if (day.Length == 1)
+            {
+                day = "0" + day;
+            }
+            year = tokens[2];
+        
         }
-        string year = tokens[2];
         string argument = day + "." + month + "." + year;
         tbKluc.Text = argument;
         calendarSearch.Visible = false;
