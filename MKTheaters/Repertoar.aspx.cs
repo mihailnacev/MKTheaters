@@ -29,6 +29,18 @@ public partial class Repertoar : System.Web.UI.Page
             gvPretstavi.DataBind();
         }
 
+
+       if (Session["button1Clicked"]!=null) {
+
+            mvSearch.ActiveViewIndex = 1;
+            gvPretstavi.Visible = false;
+            Panel1.Visible = false;
+            calendarSearch.Visible = false;
+            imCalendar.Visible = false;
+            Session["button1Clicked"] = null;
+
+        }
+
     }
 
     public void IspolniMaster()
@@ -234,6 +246,8 @@ public partial class Repertoar : System.Web.UI.Page
         main.Visible = true;
         Panel1.Visible = true;
         pnlSearch.Visible = true;
+        //
+        gvPretstavi.Visible = true;
         mvSearch.ActiveViewIndex = 0;
         ViewState["set"] = null;
         ViewState["set1"] = null;
@@ -483,7 +497,7 @@ public partial class Repertoar : System.Web.UI.Page
     protected void calendarSearch_SelectionChanged(object sender, EventArgs e)
     {
         string help = calendarSearch.SelectedDate.ToShortDateString();
-        string[] tokens = help.Split('.');
+        string[] tokens = help.Split('/');
         string month = tokens[1];
         if (month.Length == 1)
         {

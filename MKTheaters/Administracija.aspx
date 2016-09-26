@@ -104,14 +104,14 @@
                             <asp:CommandField CancelText="Откажи" EditText="Уреди" ShowEditButton="True" UpdateText="Измени" />
                             <asp:TemplateField ShowHeader="False">
                                 <ItemTemplate>
-                                    <asp:Button ID="LinkButton1" runat="server" CausesValidation="False" CommandName="Delete" Text="Delete"></asp:Button>
+                                    <asp:Button ID="LinkButton1" CssClass="deleteCss" runat="server" CausesValidation="False" CommandName="Delete" Text="Избриши" Font-Bold="True"></asp:Button>
                                 </ItemTemplate>
                             </asp:TemplateField>
                         </Columns>
                         <FooterStyle Font-Bold="True" />
                         <HeaderStyle BackColor="#BA252A" Font-Bold="True" ForeColor="#FFFFCC" HorizontalAlign="Center" VerticalAlign="Middle" />
-                        <PagerStyle BackColor="Orange" ForeColor="Maroon" HorizontalAlign="Center" VerticalAlign="Middle" />
-                        <RowStyle BackColor="#BA252A" ForeColor="#F0CB01" Font-Names="'malgun gothic'" HorizontalAlign="Center" VerticalAlign="Middle" Wrap="True" />
+                        <PagerStyle BackColor="Orange" ForeColor="Maroon" HorizontalAlign="Center" VerticalAlign="Middle" Font-Bold="True" />
+                        <RowStyle BackColor="#BA252A" ForeColor="#F0CB01" Font-Names="Franklin Gothic Medium" HorizontalAlign="Center" VerticalAlign="Middle" Wrap="True" Font-Size="Large" />
                         <SelectedRowStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="Navy" />
                         <SortedAscendingCellStyle BackColor="#FDF5AC" />
                         <SortedAscendingHeaderStyle BackColor="#4D0000" />
