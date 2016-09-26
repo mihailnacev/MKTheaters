@@ -173,7 +173,8 @@
                 </asp:Panel>
             </asp:View>
             <asp:View ID="View2" runat="server">
-                <asp:Panel ID="pnlView2" runat="server">
+                <asp:UpdatePanel ID="pnlView2" runat="server">
+                 <ContentTemplate>
                     <table id="tabela">
                         <tr>
                             <td colspan="2" class="auto-style15">
@@ -183,8 +184,7 @@
                         <tr>
                             <td class="style1">
                                 <asp:DropDownList ID="ddlKriterium" runat="server" Height="40px" Width="278px"
-                                    OnSelectedIndexChanged="ddlKriterium_SelectedIndexChanged"
-                                    AutoPostBack="True">
+                                    OnSelectedIndexChanged="ddlKriterium_SelectedIndexChanged">
                                     <asp:ListItem>- Default -</asp:ListItem>
                                     <asp:ListItem>Име</asp:ListItem>
                                     <asp:ListItem>Режисер</asp:ListItem>
@@ -238,7 +238,8 @@
                             </td>
                         </tr>
                     </table>
-                </asp:Panel>
+                     </ContentTemplate>
+                </asp:UpdatePanel>
             </asp:View>
             <asp:View ID="View3" runat="server">
 
