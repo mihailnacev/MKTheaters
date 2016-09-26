@@ -13,3 +13,7 @@
     color: darkred;
 }
 
+td, th {
+    width: 100%;
+}
+

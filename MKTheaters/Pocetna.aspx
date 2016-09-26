@@ -16,16 +16,17 @@
             margin-top: 4%;
             margin-bottom: 10px;
             width: 65%;
-            border-radius: 20px;
-            border: 20px solid #F0CB01;
+            border-radius: 15px;
+            border: 15px solid #F0CB01;
         }
 
         #Pan1 {
             font-family: 'Malgun Gothic';
             font-size: x-large;
             font-weight: bolder;
-            padding-left: 40%;
+            /*padding-left: 40%;*/
             color: #BA252A;
+            text-align: center;
         }
 
         #Pan2 {
@@ -33,6 +34,7 @@
             font-size: larger;
             font-weight: bold;
             margin: auto;
+            width: 100%;
             color: orangered;
             text-align: justify;
         }
@@ -43,8 +45,8 @@
             font-weight: bold;
             margin: auto;
             color: #BA252A;
-            text-align: justify;
-            padding-left: 75%;
+            text-align: right;
+            /*padding-left: 75%;*/
         }
 
         #Rep {
@@ -82,14 +84,14 @@
 
         .dolno {
             font-family: 'Malgun Gothic';
-            font-size: xx-large;
+            font-size: 18px;
             font-weight: bold;
             color: #BA252A;
         }
 
         .dolnoNamaleno {
             font-family: 'Malgun Gothic';
-            font-size: x-large;
+            font-size: 18px;
             font-weight: bolder;
             text-decoration: underline;
             color: #BA252A;
@@ -177,9 +179,9 @@
                                 <asp:DataPager ID="DataPager1" runat="server" PagedControlID="lvPlays" PageSize="1">
                                     <Fields>
                                         <asp:NextPreviousPagerField ButtonType="Link" ShowFirstPageButton="false" ShowPreviousPageButton="true"
-                                            ShowNextPageButton="false" ButtonCssClass="dolno" />
+                                            ShowNextPageButton="false" ButtonCssClass="dolno" NextPageText="Следна" PreviousPageText="Претходна" />
                                         <asp:NumericPagerField ButtonType="Link" CurrentPageLabelCssClass="dolno" NextPreviousButtonCssClass="dolnoNamaleno" NumericButtonCssClass="dolnoNamaleno" PreviousPageImageUrl="dolnoNamaleno" />
-                                        <asp:NextPreviousPagerField ButtonType="Link" ShowNextPageButton="true" ShowLastPageButton="false" ShowPreviousPageButton="false" ButtonCssClass="dolno" />
+                                        <asp:NextPreviousPagerField ButtonType="Link" ShowNextPageButton="true" ShowLastPageButton="false" ShowPreviousPageButton="false" ButtonCssClass="dolno" NextPageText="Следна" PreviousPageText="Претходна" />
                                     </Fields>
                                 </asp:DataPager>
                             </td>
