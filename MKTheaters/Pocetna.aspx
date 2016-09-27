@@ -56,12 +56,29 @@
         }
 
         #RepButton {
-            position: relative;
-            left: 60%;
+          
             color: rgb(245,222,95);
             font-weight: bold;
-            /*margin-left:20px;*/
-            font-size: xx-large;
+            border:none;
+            border-bottom:2px solid rgb(245,222,95);
+
+        }
+
+        #Button1 {
+        margin-left:43%;
+        color: rgb(245,222,95);
+        border:none;
+        border-bottom:2px solid rgb(245,222,95);
+        text-align:left;
+        
+       
+        }
+
+        #lblOddeli {
+        
+
+            margin-right:-28px;
+        
         }
 
 
@@ -192,7 +209,13 @@
         </ContentTemplate>
     </asp:UpdatePanel>
     <asp:Panel ID="Rep" runat="server">
-        <asp:Button ID="RepButton" runat="server" CssClass="faa-float animated-hover" BackColor="Transparent" BorderStyle="None" OnClick="RepButton_Click" Text="Погледнете го целосниот репертоар" />
+        <asp:Button ID="Button1" runat="server" CssClass="faa-float animated-hover" BackColor="Transparent"  OnClick="Button1_Click" Text="Пребарајте претстава" Font-Size="Larger" Font-Bold="True" Font-Italic="False" />
+       
+       
+        <asp:Label ID="lblOddeli" runat="server"  Font-Bold="True" Font-Size="X-Large" ForeColor="#FFFF66" Text="|"></asp:Label>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       
+        <asp:Button ID="RepButton" runat="server" CssClass="faa-float animated-hover" BackColor="Transparent"  OnClick="RepButton_Click" Text="Погледнете го целосниот репертоар" style="left: 1%; top: 4px; width: 319px;" Font-Italic="False" Font-Size="Larger" />
     </asp:Panel>
 
 </asp:Content>

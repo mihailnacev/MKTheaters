@@ -93,4 +93,13 @@ public partial class Pocetna : System.Web.UI.Page
     {
         Response.Redirect("~/Repertoar.aspx");
     }
+
+    protected void Button1_Click(object sender, EventArgs e)
+    {
+        
+        if(Session["button1Clicked"]==null)
+        Session["button1Clicked"] = 1;
+        Response.Redirect("~/Repertoar.aspx");
+
+    }
 }

@@ -183,7 +183,7 @@
                         <tr>
                             <td class="style1">
                                 <asp:DropDownList ID="ddlKriterium" runat="server" Height="40px" Width="278px"
-                                    OnSelectedIndexChanged="ddlKriterium_SelectedIndexChanged"
+                                    OnSelectedIndexChanged="ddlKriterium_SelectedIndexChanged" 
                                     AutoPostBack="True">
                                     <asp:ListItem>- Default -</asp:ListItem>
                                     <asp:ListItem>Име</asp:ListItem>
