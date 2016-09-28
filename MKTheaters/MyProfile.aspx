@@ -188,13 +188,6 @@
                                 <asp:Label ID="Label4" runat="server" CssClass="labeli" Text="Оценка"></asp:Label>
                             </td>
                             <td class="auto-style12">
-                                <!--<asp:RadioButtonList ID="rblOceni" runat="server" RepeatDirection="Horizontal">
-                        <asp:ListItem>1</asp:ListItem>
-                        <asp:ListItem>2</asp:ListItem>
-                        <asp:ListItem>3</asp:ListItem>
-                        <asp:ListItem>4</asp:ListItem>
-                        <asp:ListItem Selected="True">5</asp:ListItem>
-                    </asp:RadioButtonList>-->
                                 <asp:Panel ID="rating" runat="server" CssClass="rating">
                                     <asp:Label ID="star10" runat="server" CssClass="star faa-tada animated-hover">☆</asp:Label>
                                     <asp:Label ID="star9" runat="server" CssClass="star faa-tada animated-hover">☆</asp:Label>
@@ -268,7 +261,6 @@
                     <asp:Image ID="img4" runat="server" ImageUrl="~/Images/TeatarDecaMladinciSkopje.png" CssClass="images" ToolTip="Театар за деца и млади Скопје" />
                     <asp:Image ID="img5" runat="server" ImageUrl="~/Images/mntSkopje.png" CssClass="images" ToolTip="Македонски народен театар - Скопје" />
                     <asp:Image ID="img6" runat="server" ImageUrl="~/Images/DramskiSkopje.png" CssClass="images" ToolTip="Драмски театар - Скопје" />
-                    <
                 </asp:Panel>
             </asp:Panel>
         </asp:Panel>

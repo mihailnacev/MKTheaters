@@ -13,7 +13,6 @@
         }
 
         .auto-style2 {
-            /*width: 213px;*/
         }
 
         .auto-style3 {
@@ -40,7 +39,6 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
-
     <asp:Panel ID="Panel1" runat="server" DefaultButton="btnLogin">
         <table class="auto-style1" id="tabela">
             <tr>

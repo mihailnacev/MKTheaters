@@ -10,23 +10,6 @@
     <script src="Scripts/jquery-ui.js"></script>
     <script src="Scripts/ScriptRepertoar.js" type="text/javascript"></script>
     <style type="text/css">
-        .modalBackground {
-            background-color: black;
-            filter: alpha(opacity=90);
-            opacity: 0.5;
-        }
-
-        .modalPopUp {
-            background-color: #FFFFFF;
-            border-width: 3px;
-            border-style: solid;
-            border-bottom-color: black;
-            padding-top: 10px;
-            padding-left: 10px;
-            width: 300px;
-            height: 120px;
-        }
-
         .auto-style1 {
             margin-left: 0px;
         }
@@ -277,18 +260,19 @@
                 </asp:DetailsView>
                 <asp:Label ID="lbStat" runat="server" Text="Нема пронајдени претстави!" 
                     Font-Bold="True" Font-Size="X-Large" ForeColor="#F0CB01" Visible="False"></asp:Label>
-                <br></br>
+                <br/>
+                <br/>
                 <asp:Button ID="btnBackView3" runat="server" CausesValidation="False" 
                     CssClass="back faa-vertical animated-hover" Height="50px" 
                     OnClick="btnBackView3_Click" Text="&lt;&lt;&lt;" Width="268px" />
-                <br>
-                </br>
+                <br/>
+                <br/>
                 </asp:View>
         </asp:MultiView>
     </asp:Panel>
     <asp:UpdatePanel ID="main" runat="server">
         <ContentTemplate>
-            <asp:GridView ID="gvPretstavi" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#F0CB01" BorderStyle="Solid" BorderWidth="5px" CellPadding="4" Font-Bold="False" Width="95%" AllowPaging="True" OnPageIndexChanging="gvPretstavi_PageIndexChanging" OnRowDataBound="gvPretstavi_RowDataBound" OnRowCommand="gvPretstavi_RowCommand" DataKeyNames="Ime" OnSelectedIndexChanged="gvPretstavi_SelectedIndexChanged" ForeColor="Red" OnRowCreated="gvPretstavi_RowCreated">
+            <asp:GridView ID="gvPretstavi" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#F0CB01" BorderStyle="Solid" BorderWidth="5px" CellPadding="4" Font-Bold="False" Width="95%" AllowPaging="True" OnPageIndexChanging="gvPretstavi_PageIndexChanging" OnRowDataBound="gvPretstavi_RowDataBound"  DataKeyNames="Ime" OnSelectedIndexChanged="gvPretstavi_SelectedIndexChanged" ForeColor="Red">
 
                 <Columns>
                     <asp:ButtonField CommandName="select" DataTextField="Ime" Text="Button" ControlStyle-CssClass="ime" HeaderText="Претстава" ItemStyle-CssClass="faa-pulse animated-hover faa-slow"/>
@@ -309,7 +293,6 @@
                     <asp:TemplateField>
                         <ItemTemplate>
                             <asp:Button ID="Button1" runat="server" Style="Display: none;" Text="Button" />
-                            <ajaxToolKit:ModalPopupExtender ID="ModalPopupExtender1" PopupControlID="Panel1" TargetControlID="Button1" BackgroundCssClass="modalBackground" runat="server" />
                             <asp:LinkButton ID="LinkButton1" CommandName="Popup" runat="server" OnClientClick="return false" CssClass="modalOpener faa-flash animated-hover faa-slow">Резервирај</asp:LinkButton>
                         </ItemTemplate>
                         <ControlStyle ForeColor="White" />
@@ -332,21 +315,6 @@
             </asp:GridView>
         </ContentTemplate>
     </asp:UpdatePanel>
-
-    <asp:Panel ID="Panel1" runat="server" CssClass="auto-style2" Height="148px" Width="305px">
-
-        <asp:Label ID="Label4" runat="server" Text="Дали сакате да ја резервирате избраната претстава?"></asp:Label>
-        <br />
-        <br />
-        <br />
-        <br />
-        &nbsp;
-         <asp:Button ID="OK" runat="server" OnClick="OK_Click" Text="Да" Width="98px" />
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-         <asp:Button ID="Cancel" runat="server" CssClass="auto-style1" Text="Не" Width="98px" />
-        <br />
-        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    </asp:Panel>
     <asp:Panel ID="modal" title="Резервираj претстава" runat="server">
         <asp:Label ID="ime" runat="server" Enabled="false"></asp:Label>
         <br />

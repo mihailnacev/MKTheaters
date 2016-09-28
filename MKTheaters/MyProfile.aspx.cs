@@ -77,8 +77,6 @@ public partial class MyProfile : System.Web.UI.Page
             List<string> pretstavi2 = new List<string>();
             while (citac.Read())
             {
-                //ListItem li = new ListItem(citac[0].ToString() + " " + citac[2].ToString(), citac[0].ToString());
-                //lbRezervacii.Items.Add(li);
                 pretstavi1.Add(citac[0].ToString() + " - " + citac[2].ToString());
                 pretstavi2.Add(citac[0].ToString());
             }
@@ -103,7 +101,6 @@ public partial class MyProfile : System.Web.UI.Page
                 lblPretstava.Visible = false;
                 ddlPretstavi.Visible = false;
                 Label4.Visible = false;
-                rblOceni.Visible = false;
                 btnOcena.Visible = false;
                 rating.Visible = false;
             }
@@ -113,12 +110,10 @@ public partial class MyProfile : System.Web.UI.Page
                 lblPretstava.Visible = true;
                 ddlPretstavi.Visible = true;
                 Label4.Visible = true;
-                rblOceni.Visible = true;
                 btnOcena.Visible = true;
                 rating.Visible = true;
             }
         }
-        catch (Exception) { }
         finally
         {
             konekcija.Close();
@@ -140,16 +135,12 @@ public partial class MyProfile : System.Web.UI.Page
         // Checking selected item
         if (lbRezervacii.SelectedItem == null || lbRezervacii.SelectedIndex < 0)
             return; // No selected item - nothing to do
-
         // Calculate new index using move direction
         int newIndex = lbRezervacii.SelectedIndex + direction;
-
         // Checking bounds of the range
         if (newIndex < 0 || newIndex >= lbRezervacii.Items.Count)
             return; // Index out of range - nothing to do
-
         ListItem selected = lbRezervacii.SelectedItem;
-
         // Removing removable element
         lbRezervacii.Items.Remove(selected);
         // Insert it in new position
@@ -173,7 +164,7 @@ public partial class MyProfile : System.Web.UI.Page
         string prezime = txtLastNameText.Text;
         string email = txtEmailText.Text;
         string newPass = txtNovaLozinka.Text;
-        string pass = txtTekovnaLozinka.Text/*.GetHashCode().ToString()*/;
+        string pass = txtTekovnaLozinka.Text;
         User tekoven = (User)Session["Najaven"];
         if (pass.GetHashCode().ToString() != tekoven.Password)
         {
@@ -207,7 +198,6 @@ public partial class MyProfile : System.Web.UI.Page
         }
     }
 
-
     protected void btnRemove_Click(object sender, EventArgs e)
     {
         if (lbRezervacii.SelectedItem != null)
@@ -228,9 +218,7 @@ public partial class MyProfile : System.Web.UI.Page
             {
                 konekcija.Open();
                 komanda.ExecuteNonQuery();
-
             }
-            catch (Exception) { }
             finally
             {
                 konekcija.Close();
@@ -258,12 +246,12 @@ public partial class MyProfile : System.Web.UI.Page
             connection.Close();
         }
     }
+
     protected void btnOcena_Click(object sender, EventArgs e)
     {
         User najaven = (User)Session["Najaven"];
         string username = najaven.Username;
         string pretstava = ddlPretstavi.SelectedItem.Text;
-        //string ocena = rblOceni.SelectedItem.Text;
         string ocena = ocenaHidden.Text;
         updatePretstavaDetails(username, pretstava, ocena);
         lblStatus.Text = "Успешно ја оценивте претставата!";

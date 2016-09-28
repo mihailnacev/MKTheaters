@@ -1,8 +1,6 @@
 ﻿$(document).ready(function () {
     $("#SiteMap").hide();
-
     $("#skrienoKopche").hide();
-
     $("#skrienTextBox").hide();
 
     $(".carouselButton").click(function () {

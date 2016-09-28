@@ -1,5 +1,5 @@
 ﻿body {
-     font-family: 'Malgun Gothic';
+    font-family: 'Malgun Gothic';
 }
 
 #Panel2 {
@@ -15,7 +15,6 @@
     padding-bottom: 8px;
     border-bottom-right-radius: 10px;
     border-top-right-radius: 10px;
-    /*margin-left:80px;*/
     color: darkred;
     font-weight: bold;
     font-size: 18px;
@@ -50,7 +49,6 @@
 
 .pnlAR {
     width: 100%;
-    /*background-color:white;*/
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
 }
@@ -58,13 +56,11 @@
 .pnlPR {
     width: 95%;
     background-color: transparent;
-    /*height: 450px;*/
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
 }
 
 .info {
-    /*border-bottom:2px solid #BA252A;*/
     margin-left: 45%;
     font-weight: bolder;
     font-size: 25px;
@@ -107,7 +103,6 @@
 }
 
 .txtSearchUser {
-    /*margin-left:58%;*/
     height: 35px;
     width: 200px;
 }
@@ -121,10 +116,10 @@
 }
 
 .deleteCss {
-background-color:#BA252A;
-color:#F0CB01;
-border:none;
-text-decoration:underline;
-font-size:15px;
-font-weight:bold;
+    background-color: #BA252A;
+    color: #F0CB01;
+    border: none;
+    text-decoration: underline;
+    font-size: 15px;
+    font-weight: bold;
 }

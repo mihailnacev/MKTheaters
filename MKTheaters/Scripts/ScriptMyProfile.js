@@ -44,6 +44,7 @@
     $("#btnOtkazi").hide();
     $("#btnZachuvaj").hide();
     $("#btnPromeniLozinka").hide();
+
     $("#btnPromeni").click(function () {
         $(".TextBoxes").toggle();
         $(".Labels").toggle();

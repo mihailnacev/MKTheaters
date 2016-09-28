@@ -24,7 +24,6 @@
             font-family: 'Malgun Gothic';
             font-size: x-large;
             font-weight: bolder;
-            /*padding-left: 40%;*/
             color: #BA252A;
             text-align: center;
         }
@@ -46,7 +45,6 @@
             margin: auto;
             color: #BA252A;
             text-align: right;
-            /*padding-left: 75%;*/
         }
 
         #Rep {
@@ -57,31 +55,22 @@
         }
 
         #RepButton {
-          
             color: rgb(245,222,95);
             font-weight: bold;
-            border:none;
-            border-bottom:2px solid rgb(245,222,95);
-
+            border: none;
+            border-bottom: 2px solid rgb(245,222,95);
         }
 
         #Button1 {
-        /*margin-left:43%;*/
-        color: rgb(245,222,95);
-        border:none;
-        border-bottom:2px solid rgb(245,222,95);
-        text-align:left;
-        
-       
+            color: rgb(245,222,95);
+            border: none;
+            border-bottom: 2px solid rgb(245,222,95);
+            text-align: left;
         }
 
         #lblOddeli {
-        
-
-            margin-right:-28px;
-        
+            margin-right: -28px;
         }
-
 
         .dolno {
             font-family: 'Malgun Gothic';
@@ -120,39 +109,51 @@
             <div class="carousel-inner">
                 <div class="item active">
                     <img src="Images/1.png" alt="..." class="img-responsive" />
-                    <div class="carousel-caption">		
- -                        <button class="carouselButton" title="Брачна игра">Види детали</button>		
- -                  </div>
+                    <div class="carousel-caption">
+                        -                       
+                        <button class="carouselButton" title="Брачна игра">Види детали</button>
+                        -                 
+                    </div>
                 </div>
                 <div class="item">
                     <img src="Images/2.jpg" alt="..." class="img-responsive" />
-                    <div class="carousel-caption">		
- -                        <button class="carouselButton" title="Не се клади на Енглези">Види детали</button>		
- -                  </div>
+                    <div class="carousel-caption">
+                        -                       
+                        <button class="carouselButton" title="Не се клади на Енглези">Види детали</button>
+                        -                 
+                    </div>
                 </div>
                 <div class="item">
                     <img src="Images/3.jpg" alt="..." class="img-responsive" />
-                    <div class="carousel-caption">		
- -                        <button class="carouselButton" title="Лисистрата">Види детали</button>		
- -                  </div>
+                    <div class="carousel-caption">
+                        -                       
+                        <button class="carouselButton" title="Лисистрата">Види детали</button>
+                        -                 
+                    </div>
                 </div>
                 <div class="item">
                     <img src="Images/4.jpg" alt="..." class="img-responsive" />
-                    <div class="carousel-caption">		
- -                        <button class="carouselButton" title="Случајот Хармс">Види детали</button>		
- -                  </div>
+                    <div class="carousel-caption">
+                        -                       
+                        <button class="carouselButton" title="Случајот Хармс">Види детали</button>
+                        -                 
+                    </div>
                 </div>
                 <div class="item">
                     <img src="Images/5.jpg" alt="..." class="img-responsive" />
-                    <div class="carousel-caption">		
- -                        <button class="carouselButton" title="Господарот на кукавицата">Види детали</button>		
- -                  </div>
+                    <div class="carousel-caption">
+                        -                       
+                        <button class="carouselButton" title="Господарот на кукавицата">Види детали</button>
+                        -                 
+                    </div>
                 </div>
                 <div class="item">
                     <img src="Images/6.jpg" alt="..." class="img-responsive" />
-                    <div class="carousel-caption">		
- -                        <button class="carouselButton" title="Вардарски пастуви">Види детали</button>		
- -                  </div>
+                    <div class="carousel-caption">
+                        -                       
+                        <button class="carouselButton" title="Вардарски пастуви">Види детали</button>
+                        -                 
+                    </div>
                 </div>
             </div>
             <!-- Controls -->
@@ -172,17 +173,6 @@
             <asp:ListView ID="lvPlays" runat="server" GroupPlaceholderID="groupPlaceHolder1" ItemPlaceholderID="itemPlaceHolder1" OnPagePropertiesChanging="OnPagePropertiesChanging">
                 <LayoutTemplate>
                     <table id="lvP" cellpadding="0" cellspacing="0">
-                        <!--<tr>
-            <th>
-                Претстава &nbsp;
-            </th>
-            <th>
-                Автор &nbsp;
-            </th>
-            <th>
-                Режисер &nbsp;
-            </th>
-        </tr>-->
                         <asp:PlaceHolder runat="server" ID="groupPlaceHolder1"></asp:PlaceHolder>
                         <tr>
                             <td colspan="3">
@@ -207,7 +197,8 @@
                     <tr>
                         <td>
                             <asp:Panel runat="server" ID="Pan1">
-                                <asp:Button runat="server" ID="nasocuvac" CssClass="faa-pulse animated-hover faa-slow" OnClick="nasocuvac_Click" Text='<%# Eval("Pretstava") %>' /></asp:Button></asp:Panel>
+                                <asp:Button runat="server" ID="nasocuvac" CssClass="faa-pulse animated-hover faa-slow" OnClick="nasocuvac_Click" Text='<%# Eval("Pretstava") %>' /></asp:Button>
+                            </asp:Panel>
                             <br>
                         </td>
                     </tr>
@@ -224,20 +215,15 @@
                             <br>
                         </td>
                     </tr>
-
                 </ItemTemplate>
             </asp:ListView>
         </ContentTemplate>
     </asp:UpdatePanel>
     <asp:Panel ID="Rep" runat="server">
-        <asp:Button ID="Button1" runat="server" CssClass="faa-float animated-hover" BackColor="Transparent"  OnClick="Button1_Click" Text="Пребарајте претстава" Font-Size="Larger" Font-Bold="True" Font-Italic="False" />
-       
-       
-        <asp:Label ID="lblOddeli" runat="server"  Font-Bold="True" Font-Size="X-Large" ForeColor="#FFFF66" Text="|"></asp:Label>
+        <asp:Button ID="Button1" runat="server" CssClass="faa-float animated-hover" BackColor="Transparent" OnClick="Button1_Click" Text="Пребарајте претстава" Font-Size="Larger" Font-Bold="True" Font-Italic="False" />
+        <asp:Label ID="lblOddeli" runat="server" Font-Bold="True" Font-Size="X-Large" ForeColor="#FFFF66" Text="|"></asp:Label>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-       
-        <asp:Button ID="RepButton" runat="server" CssClass="faa-float animated-hover" BackColor="Transparent"  OnClick="RepButton_Click" Text="Погледнете го целосниот репертоар" style="left: 1%; top: 4px; width: 319px;" Font-Italic="False" Font-Size="Larger" />
+        <asp:Button ID="RepButton" runat="server" CssClass="faa-float animated-hover" BackColor="Transparent" OnClick="RepButton_Click" Text="Погледнете го целосниот репертоар" Style="left: 1%; top: 4px; width: 319px;" Font-Italic="False" Font-Size="Larger" />
     </asp:Panel>
-
 </asp:Content>
 

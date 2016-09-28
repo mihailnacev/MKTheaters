@@ -28,20 +28,14 @@ public partial class Repertoar : System.Web.UI.Page
             gvPretstavi.DataSource = ds;
             gvPretstavi.DataBind();
         }
-
-
         if (Request.QueryString["search"] == "true")
         {
-
             mvSearch.ActiveViewIndex = 1;
             gvPretstavi.Visible = false;
-            Panel1.Visible = false;
             calendarSearch.Visible = false;
             imCalendar.Visible = false;
             Session["button1Clicked"] = null;
-
         }
-
     }
 
     public void IspolniMaster()
@@ -60,7 +54,6 @@ public partial class Repertoar : System.Web.UI.Page
             gvPretstavi.DataBind();
             ViewState["dataset"] = ds;
         }
-        catch (Exception err) { }
         finally
         {
             konekcija.Close();
@@ -70,12 +63,12 @@ public partial class Repertoar : System.Web.UI.Page
     protected void gvPretstavi_PageIndexChanging(object sender, GridViewPageEventArgs e)
     {
         gvPretstavi.PageIndex = e.NewPageIndex;
+        uspeshnaRez.Visible = false;
         gvPretstavi.SelectedIndex = -1;
         DataSet ds = (DataSet)ViewState["dataset"];
         gvPretstavi.DataSource = ds;
         gvPretstavi.DataBind();
     }
-
 
     protected void gvPretstavi_RowDataBound(object sender, GridViewRowEventArgs e)
     {
@@ -104,74 +97,14 @@ public partial class Repertoar : System.Web.UI.Page
                         ListItem li = new ListItem(part);
                         ddlDatumi.Items.Add(li);
                     }
-                    citac.Close();
                 }
+                citac.Close();
             }
-            catch (Exception) { }
             finally
             {
                 konekcija.Close();
             }
         }
-
-
-    }
-
-    protected void gvPretstavi_RowCommand(object sender, GridViewCommandEventArgs e)
-    {
-        if (e.CommandName == "Popup" && e.CommandArgument != null)
-        {
-            /*User najaven = (User)Session["Najaven"];
-            int rowIndex = Convert.ToInt32(e.CommandArgument);
-            if (najaven == null)
-            {
-                string[] parts = Request.Url.ToString().Split('/');
-                string url = parts[parts.Length - 1].Split('.')[0];
-                Response.Redirect("~/Najava.aspx?ReturnUrl=" + url + "&in=" + gvPretstavi.PageIndex);
-            }
-            ModalPopupExtender modalPopupExtender1 = (ModalPopupExtender)gvPretstavi.Rows[rowIndex].FindControl("ModalPopupExtender1");
-            LinkButton lb = (LinkButton)gvPretstavi.Rows[rowIndex].Cells[0].Controls[0];
-            DropDownList datumi = (DropDownList)gvPretstavi.Rows[rowIndex].Cells[7].Controls[1];
-            Session["Ime"] = lb.Text;
-            Session["Datum"] = datumi.SelectedItem.Text;
-            modalPopupExtender1.Show();*/
-
-            //Perform any specific processing.
-            //Label1.Text = string.Format("Row # {0}", rowIndex);
-        }
-    }
-
-    protected void OK_Click(object sender, EventArgs e)
-    {
-        User najaven = (User)Session["Najaven"];
-        string selektirano = (string)Session["Ime"];
-        string datum = (string)Session["Datum"];
-        //if (najaven != null)
-        //{
-            funkcija(najaven, selektirano, datum);
-            string message = "Успешна резервација!";
-            System.Text.StringBuilder sb = new System.Text.StringBuilder();
-            sb.Append("<script type = 'text/javascript'>");
-            sb.Append("window.onload=function(){");
-            sb.Append("alert('");
-            sb.Append(message);
-            sb.Append("')};");
-            sb.Append("</script>");
-            ClientScript.RegisterClientScriptBlock(this.GetType(), "alert", sb.ToString());
-        /*}
-        else
-        {
-            string message = "Најавете се прво!";
-            System.Text.StringBuilder sb = new System.Text.StringBuilder();
-            sb.Append("<script type = 'text/javascript'>");
-            sb.Append("window.onload=function(){");
-            sb.Append("alert('");
-            sb.Append(message);
-            sb.Append("')};");
-            sb.Append("</script>");
-            ClientScript.RegisterClientScriptBlock(this.GetType(), "alert", sb.ToString());
-        }*/
-
     }
 
     public void funkcija(User user, string ime, string datum)
@@ -192,10 +125,6 @@ public partial class Repertoar : System.Web.UI.Page
                 commandInsert.Parameters.AddWithValue("@ocena", "0");
                 commandInsert.ExecuteNonQuery();
                 commandInsert.Parameters.Clear();
-            }
-            catch (Exception)
-            {
-
             }
             finally
             {
@@ -221,22 +150,13 @@ public partial class Repertoar : System.Web.UI.Page
         }
         Play pretstava = new Play(ime, avtori, reziser, teatar, grad, datumi, vremetraenje, akteri);
         Session["imenaP"] = pretstava;
-        //Session["imenaP"] = gvPretstavi.DataKeys[gvPretstavi.SelectedIndex].Value.ToString();
         Response.Redirect("~/PretstavaDetails.aspx");
-        
     }
-
-    protected void gvPretstavi_RowCreated(object sender, GridViewRowEventArgs e)
-    {
-
-    }
-
 
     protected void btnPrebarajPretstava_Click(object sender, EventArgs e)
     {
         mvSearch.ActiveViewIndex = 1;
         main.Visible = false;
-        Panel1.Visible = false;
         uspeshnaRez.Visible = false;
         imCalendar.Visible = false;
         calendarSearch.Visible = false;
@@ -245,9 +165,7 @@ public partial class Repertoar : System.Web.UI.Page
     protected void btnNazad_Click(object sender, EventArgs e)
     {
         main.Visible = true;
-        Panel1.Visible = true;
         pnlSearch.Visible = true;
-        //
         gvPretstavi.Visible = true;
         mvSearch.ActiveViewIndex = 0;
         ViewState["set"] = null;
@@ -262,8 +180,6 @@ public partial class Repertoar : System.Web.UI.Page
 
     protected void btnPreb_Click(object sender, EventArgs e)
     {
-
-
         if (ddlKriterium.SelectedItem.Text == "Град")
         {
             theatersService servis = new theatersService();
@@ -273,10 +189,8 @@ public partial class Repertoar : System.Web.UI.Page
             ViewState["set"] = result;
             mvSearch.ActiveViewIndex = 2;
             main.Visible = false;
-            Panel1.Visible = false;
             if (result.Tables["Repertoar"].Rows.Count == 0) lbStat.Visible = true;
         }
-
         else if (ddlKriterium.SelectedItem.Text == "Режисер")
         {
             theatersService servis = new theatersService();
@@ -286,10 +200,8 @@ public partial class Repertoar : System.Web.UI.Page
             ViewState["set1"] = result;
             mvSearch.ActiveViewIndex = 2;
             main.Visible = false;
-            Panel1.Visible = false;
             if (result.Tables["Repertoar"].Rows.Count == 0) lbStat.Visible = true;
         }
-
         else if (ddlKriterium.SelectedItem.Text == "Автор")
         {
             theatersService servis = new theatersService();
@@ -299,10 +211,8 @@ public partial class Repertoar : System.Web.UI.Page
             ViewState["set2"] = result;
             mvSearch.ActiveViewIndex = 2;
             main.Visible = false;
-            Panel1.Visible = false;
             if (result.Tables["Repertoar"].Rows.Count == 0) lbStat.Visible = true;
         }
-
         else if (ddlKriterium.SelectedItem.Text == "Актер")
         {
             theatersService servis = new theatersService();
@@ -312,14 +222,10 @@ public partial class Repertoar : System.Web.UI.Page
             ViewState["set3"] = result;
             mvSearch.ActiveViewIndex = 2;
             main.Visible = false;
-            Panel1.Visible = false;
             if (result.Tables["Repertoar"].Rows.Count == 0) lbStat.Visible = true;
         }
-
         else if (ddlKriterium.SelectedItem.Text == "Датум")
         {
-
-
             theatersService servis = new theatersService();
             DataSet result = servis.findByDate(tbKluc.Text);
             dvPretstavi.DataSource = result;
@@ -327,10 +233,8 @@ public partial class Repertoar : System.Web.UI.Page
             ViewState["set4"] = result;
             mvSearch.ActiveViewIndex = 2;
             main.Visible = false;
-            Panel1.Visible = false;
             if (result.Tables["Repertoar"].Rows.Count == 0) lbStat.Visible = true;
         }
-
         else if (ddlKriterium.SelectedItem.Text == "Театар")
         {
             theatersService servis = new theatersService();
@@ -340,7 +244,6 @@ public partial class Repertoar : System.Web.UI.Page
             ViewState["set5"] = result;
             mvSearch.ActiveViewIndex = 2;
             main.Visible = false;
-            Panel1.Visible = false;
             if (result.Tables["Repertoar"].Rows.Count == 0) lbStat.Visible = true;
         }
         else if (ddlKriterium.SelectedItem.Text == "Име")
@@ -352,14 +255,12 @@ public partial class Repertoar : System.Web.UI.Page
             ViewState["set6"] = result;
             mvSearch.ActiveViewIndex = 2;
             main.Visible = false;
-            Panel1.Visible = false;
             if (result.Tables["Repertoar"].Rows.Count == 0) lbStat.Visible = true;
         }
         else
         {
             mvSearch.ActiveViewIndex = 0;
             main.Visible = true;
-            Panel1.Visible = true;
         }
     }
 
@@ -373,9 +274,7 @@ public partial class Repertoar : System.Web.UI.Page
             dvPretstavi.DataBind();
             mvSearch.ActiveViewIndex = 2;
             main.Visible = false;
-            Panel1.Visible = false;
         }
-
         if (ddlKriterium.SelectedItem.Text == "Режисер")
         {
             DataSet ds = (DataSet)ViewState["set1"];
@@ -383,9 +282,7 @@ public partial class Repertoar : System.Web.UI.Page
             dvPretstavi.DataBind();
             mvSearch.ActiveViewIndex = 2;
             main.Visible = false;
-            Panel1.Visible = false;
         }
-
         if (ddlKriterium.SelectedItem.Text == "Автор")
         {
             DataSet ds = (DataSet)ViewState["set2"];
@@ -393,9 +290,7 @@ public partial class Repertoar : System.Web.UI.Page
             dvPretstavi.DataBind();
             mvSearch.ActiveViewIndex = 2;
             main.Visible = false;
-            Panel1.Visible = false;
         }
-
         if (ddlKriterium.SelectedItem.Text == "Актер")
         {
             DataSet ds = (DataSet)ViewState["set3"];
@@ -403,9 +298,7 @@ public partial class Repertoar : System.Web.UI.Page
             dvPretstavi.DataBind();
             mvSearch.ActiveViewIndex = 2;
             main.Visible = false;
-            Panel1.Visible = false;
         }
-
         if (ddlKriterium.SelectedItem.Text == "Датум")
         {
             DataSet ds = (DataSet)ViewState["set4"];
@@ -413,9 +306,7 @@ public partial class Repertoar : System.Web.UI.Page
             dvPretstavi.DataBind();
             mvSearch.ActiveViewIndex = 2;
             main.Visible = false;
-            Panel1.Visible = false;
         }
-
         if (ddlKriterium.SelectedItem.Text == "Театар")
         {
             DataSet ds = (DataSet)ViewState["set5"];
@@ -423,9 +314,7 @@ public partial class Repertoar : System.Web.UI.Page
             dvPretstavi.DataBind();
             mvSearch.ActiveViewIndex = 2;
             main.Visible = false;
-            Panel1.Visible = false;
         }
-
         if (ddlKriterium.SelectedItem.Text == "Име")
         {
             DataSet ds = (DataSet)ViewState["set6"];
@@ -433,11 +322,8 @@ public partial class Repertoar : System.Web.UI.Page
             dvPretstavi.DataBind();
             mvSearch.ActiveViewIndex = 2;
             main.Visible = false;
-            Panel1.Visible = false;
         }
     }
-
-
 
     protected void dvPretstavi_ItemCommand(object sender, DetailsViewCommandEventArgs e)
     {
@@ -451,7 +337,6 @@ public partial class Repertoar : System.Web.UI.Page
             for (int i = 0; i < gvPretstavi.Rows.Count; i++)
             {
                 string x = gvPretstavi.DataKeys[i].Value.ToString();
-                //string x = gvPretstavi.Rows[i].Cells[0].Text;
                 if (x == ime)
                 {
                     rowIndex = i;
@@ -461,10 +346,7 @@ public partial class Repertoar : System.Web.UI.Page
             gvPretstavi.SelectedIndex = rowIndex;
             gvPretstavi_SelectedIndexChanged(sender, e);
         }
-
     }
-
-
 
     protected void ddlKriterium_SelectedIndexChanged(object sender, EventArgs e)
     {
@@ -476,15 +358,12 @@ public partial class Repertoar : System.Web.UI.Page
 
         if (ddlKriterium.SelectedItem.Text == "Датум")
         {
-
             imCalendar.Visible = true;
             mvSearch.ActiveViewIndex = 1;
             main.Visible = false;
-
         }
         else
         {
-
             imCalendar.Visible = false;
             calendarSearch.Visible = false;
             mvSearch.ActiveViewIndex = 1;
@@ -492,27 +371,21 @@ public partial class Repertoar : System.Web.UI.Page
         }
     }
 
-
-
     protected void imCalendar_Click(object sender, ImageClickEventArgs e)
     {
-
         mvSearch.ActiveViewIndex = 1;
         main.Visible = false;
         calendarSearch.Visible = !calendarSearch.Visible;
-
     }
 
     protected void calendarSearch_SelectionChanged(object sender, EventArgs e)
     {
         string help = calendarSearch.SelectedDate.ToShortDateString();
-
         string[] tokens = help.Split('.');
         string day = "";
         string month = "";
         string year = "";
         if (tokens.Length > 1)
-
         {
             month = tokens[1];
             if (month.Length == 1)
@@ -525,9 +398,9 @@ public partial class Repertoar : System.Web.UI.Page
                 day = "0" + day;
             }
             year = tokens[2];
-
         }
-        else {
+        else
+        {
             tokens = help.Split('/');
             month = tokens[0];
             if (month.Length == 1)
@@ -540,14 +413,13 @@ public partial class Repertoar : System.Web.UI.Page
                 day = "0" + day;
             }
             year = tokens[2];
-        
+
         }
         string argument = day + "." + month + "." + year;
         tbKluc.Text = argument;
         calendarSearch.Visible = false;
         mvSearch.ActiveViewIndex = 1;
         main.Visible = false;
-
     }
 
     protected void calendarSearch_VisibleMonthChanged(object sender, MonthChangedEventArgs e)

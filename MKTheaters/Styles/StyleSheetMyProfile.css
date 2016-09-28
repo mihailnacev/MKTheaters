@@ -1,7 +1,4 @@
-﻿body {
-}
-
-.rating {
+﻿.rating {
     unicode-bidi: bidi-override;
     direction: rtl;
     text-align: left;
@@ -29,7 +26,6 @@
     padding-bottom: 8px;
     border-bottom-right-radius: 10px;
     border-top-right-radius: 10px;
-    /*margin-left:80px;*/
     color: darkred;
     font-weight: bold;
     font-size: 18px;
@@ -52,8 +48,6 @@
     width: 70%;
     height: 100%;
     background-color: white;
-    /*margin-top:-200px;
-    margin-left:500px;*/
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
     display: inline-block;
@@ -67,17 +61,13 @@
     border-radius: 30px;
     display: inline-block;
     float: right;
-    /* padding: 5%; */
     text-align: center;
 }
-
 
 .pnlReservations {
     width: 70%;
     height: 100%;
     background-color: white;
-    /*margin-top:-200px;
-    margin-left:500px;*/
     border-radius: 30px;
     display: inline-block;
     float: right;
@@ -87,10 +77,6 @@
     width: 30%;
     height: 150px;
     padding: 1%;
-    /* margin-top: 12px; */
-    /* background-color: blue; */
-    /* margin-left: 10px; */
-    /* margin: auto; */
 }
 
 .labeli {
@@ -112,7 +98,6 @@
     width: 32%;
     font-weight: bold;
     height: 30px;
-    /*margin-left:20px;*/
     font-size: 12px;
 }
 
@@ -124,8 +109,6 @@
 #tabela {
     background-color: white;
     padding: 3%;
-    /* padding-right: 25px; */
-    /* margin-top: 10px; */
     border: 10px solid #F0CB01;
     width: 100%;
     height: 100%;
@@ -135,10 +118,6 @@
 #tabela2 {
     background-color: white;
     padding: 3%;
-    /* padding-right: 5px; */
-    /* padding-top: 10px; */
-    /* margin-top: -298px; */
-    /* margin-left: 49%; */
     border: 10px solid #F0CB01;
     width: 100%;
     height: 100%;
@@ -153,7 +132,6 @@
     font-size: 18px;
     border: 10px solid #F0CB01;
     font-family: 'Malgun Gothic';
-    /*margin-left:150px;*/
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
 }
@@ -184,7 +162,6 @@
 
 .infoList {
     border-bottom: 2px solid #BA252A;
-    /*margin-left:200px;*/
     font-weight: bolder;
     font-size: 25px;
     color: #BA252A;
@@ -217,7 +194,6 @@
 
 .lblSuggest {
     border-bottom: 2px solid #BA252A;
-    /* margin-left: 20px; */
     font-weight: bolder;
     font-size: 25px;
     color: #BA252A;
@@ -262,7 +238,6 @@
 }
 
 #imagesPanel1, #imagesPanel2, #imagesPanel3 {
-    /*margin-top: 2%;*/
     text-align: center;
     height: 40%;
 }

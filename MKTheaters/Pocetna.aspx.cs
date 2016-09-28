@@ -85,7 +85,6 @@ public partial class Pocetna : System.Web.UI.Page
     protected void nasocuvac_Click(object sender, EventArgs e)
     {
         Button clickedButton = (Button)sender;
-        //Session["imenaP"] = clickedButton.Text;
         getInformations(clickedButton.Text);
         Response.Redirect("~/PretstavaDetails.aspx");
     }
@@ -95,9 +94,7 @@ public partial class Pocetna : System.Web.UI.Page
     }
 
     protected void Button1_Click(object sender, EventArgs e)
-    {        
-        //if(Session["button1Clicked"]==null)
-        //Session["button1Clicked"] = 1;
+    {
         Response.Redirect("~/Repertoar.aspx?search=true");
     }
     protected void skrienoKopche_Click(object sender, EventArgs e)

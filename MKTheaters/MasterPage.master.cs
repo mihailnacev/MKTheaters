@@ -16,7 +16,6 @@ public partial class MasterPage : System.Web.UI.MasterPage
             noLoggedUser.Visible = false;
             if (u.Admin == "True")
             {
-                //user.NavigateUrl = "~/Administracija.aspx";
                 MojProfil.Text = "АДМИНИСТРАЦИЈА";
                 MojProfil.Font.Name = "Malgun Gothic";
             }
@@ -30,7 +29,7 @@ public partial class MasterPage : System.Web.UI.MasterPage
 
     protected void logIn_Click(object sender, EventArgs e)
     {
-        string[]parts = Request.Url.ToString().Split('/');
+        string[] parts = Request.Url.ToString().Split('/');
         string url = parts[parts.Length - 1].Split('.')[0];
         Response.Redirect("~/Najava.aspx?ReturnUrl=" + url);
     }

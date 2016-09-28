@@ -121,7 +121,6 @@
                     .footer-distributed .footer-center p a {
                         color: #BA252A;
                         text-decoration: none;
-                        
                     }
 
 
@@ -239,74 +238,46 @@
             </asp:Panel>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server" ClientIDMode="Static">
             </asp:ContentPlaceHolder>
-            <!--<asp:Panel ID="footer" runat="server">
-            <asp:Panel ID="footerContainer" runat="server">
-                <asp:Panel ID="copyright" runat="server">
-                    <asp:Label id="Label4" runat="server">© 2016 Македонски Театри. Сите права се задржани.</asp:Label>
-                </asp:Panel>
-            </asp:Panel>
-        </asp:Panel>-->
-
             <footer class="footer-distributed">
-
                 <div class="footer-left">
-
                     <h3>Македонски <span>Tеатри</span></h3>
-
                     <p class="footer-links">
                         <a href="Pocetna.aspx">ПОЧЕТНА</a>
-
                         <a href="Repertoar.aspx">РЕПЕРТОАР</a>
-
                         <a href="Najava.aspx">НАЈАВА</a>
-
                         <a href="Registracija.aspx">РЕГИСТРАЦИЈА</a>
-
                         <a href="About.aspx">ЗА НАС</a>
                     </p>
-
                     <p class="footer-company-name">&copy; 2016 Македонски Театри. Сите права се задржани.</p>
                 </div>
-
                 <div class="footer-center">
-
                     <div>
                         <i class="fa fa-map-marker"></i>
                         <p><span>Руѓер Бошковиќ, 16</span> Skopje, Macedonia</p>
                     </div>
-
                     <div>
                         <i class="fa fa-phone"></i>
                         <p>+389 02 3070-377</p>
                     </div>
-
                     <div>
                         <i class="fa fa-envelope"></i>
                         <p><a href="mailto:contact@finki.ukim.mk">contact@finki.ukim.mk</a></p>
                     </div>
-
                 </div>
-
                 <div class="footer-right">
-
                     <p class="footer-company-about">
                         <span>Апликација за управување на репертоарите на театрите во Македонија</span>
                         Системот нуди преглед на понудата за претстави во сите театри во Македонија. Корисниците може да пребаруваат престави според датум, наслов, глумци или режисери.....
                     </p>
-
                     <div class="footer-icons">
-
                         <a href="#"><i class="fa fa-facebook"></i></a>
                         <a href="#"><i class="fa fa-twitter"></i></a>
                         <a href="#"><i class="fa fa-linkedin"></i></a>
                         <a href="#"><i class="fa fa-github"></i></a>
-
                     </div>
-
                 </div>
             </footer>
         </div>
-
     </form>
 </body>
 </html>

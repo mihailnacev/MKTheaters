@@ -99,10 +99,6 @@ public static class Connectivity
                 commandInsert.ExecuteNonQuery();
                 commandInsert.Parameters.Clear();
             }
-            catch (Exception)
-            {
-
-            }
             finally
             {
                 connection.Close();
@@ -132,7 +128,6 @@ public static class Connectivity
                     user = new User(dataReader[0].ToString(), dataReader[1].ToString(), dataReader[2].ToString(), dataReader[3].ToString(), dataReader[4].ToString(), dataReader[5].ToString());
                 }
                 return user;
-
             }
             catch (Exception)
             {
@@ -161,5 +156,4 @@ public static class Connectivity
             connection.Close();
         }
     }
-
 }

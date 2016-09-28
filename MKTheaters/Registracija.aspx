@@ -13,7 +13,6 @@
         }
 
         .auto-style2 {
-            /*width: 216px;*/
             height: 25px;
             text-align: right;
         }
