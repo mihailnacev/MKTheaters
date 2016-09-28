@@ -77,7 +77,7 @@ public partial class MyProfile : System.Web.UI.Page
             List<string> pretstavi2 = new List<string>();
             while (citac.Read())
             {
-                pretstavi1.Add(citac[0].ToString() + " - " + citac[2].ToString());
+                pretstavi1.Add(citac[0].ToString() + "-" + citac[2].ToString());
                 pretstavi2.Add(citac[0].ToString());
             }
             lbRezervacii.DataSource = pretstavi1;
@@ -204,7 +204,7 @@ public partial class MyProfile : System.Web.UI.Page
         {
             User tekoven = (User)Session["Najaven"];
             string selected = lbRezervacii.SelectedItem.Text;
-            char[] whitespace = new char[] { ';' };
+            char[] whitespace = new char[] { '-' };
             string[] parts = selected.Split(whitespace);
             string pretstava = parts[0];
             string datum = parts[1];
