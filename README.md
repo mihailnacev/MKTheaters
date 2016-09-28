@@ -1,5 +1,10 @@
-# MKTheaters
-IT_Project
+# Македонски Театри
+-------------
+Апликација за управување на репертоарите на театрите во Македонија
 
+Проект за предметот Интернет Технологии изработен од:
 
-Pozz od Ivana :) 
+- [***Михаил Нацев***](https://github.com/mihailnacev)
+- [***Мартина Тошевска***](https://github.com/mtoshevska)
+- [***Магдалена Цоневска***](https://github.com/MagdalenaConevska)
+- [***Ивана Стојковска***](https://github.com/iStojkovska)
