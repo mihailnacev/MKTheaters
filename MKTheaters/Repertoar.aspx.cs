@@ -45,24 +45,6 @@ public partial class Repertoar : System.Web.UI.Page
         gvPretstavi.DataSource = ds;
         gvPretstavi.DataBind();
         ViewState["dataset"] = ds;
-        /*SqlConnection konekcija = new SqlConnection();
-        konekcija.ConnectionString = ConfigurationManager.ConnectionStrings["Test"].ConnectionString;
-        string sqlString = "SELECT * FROM Repertoar";
-        SqlCommand komanda = new SqlCommand(sqlString, konekcija);
-        SqlDataAdapter adapter = new SqlDataAdapter(komanda);
-        DataSet ds = new DataSet();
-        try
-        {
-            konekcija.Open();
-            adapter.Fill(ds, "Repertoar");
-            gvPretstavi.DataSource = ds;
-            gvPretstavi.DataBind();
-            ViewState["dataset"] = ds;
-        }
-        finally
-        {
-            konekcija.Close();
-        }*/
     }
 
     protected void gvPretstavi_PageIndexChanging(object sender, GridViewPageEventArgs e)
@@ -82,34 +64,15 @@ public partial class Repertoar : System.Web.UI.Page
             LinkButton LinkButton1 = (LinkButton)e.Row.FindControl("LinkButton1");
             LinkButton1.CommandArgument = e.Row.RowIndex.ToString();
             DropDownList ddlDatumi = (DropDownList)e.Row.FindControl("ddlDatumi");
-            //SqlConnection konekcija = new SqlConnection();
-            //konekcija.ConnectionString = ConfigurationManager.ConnectionStrings["Test"].ConnectionString;
             LinkButton lb = (LinkButton)e.Row.Cells[0].Controls[0];
             string ime = lb.Text;
             theatersService servis = new theatersService();
-            //string sqlString = "SELECT Datum FROM Repertoar WHERE Ime=@ime";
-            //SqlCommand komanda = new SqlCommand(sqlString, konekcija);
-            //komanda.Parameters.AddWithValue("@ime", ime);
-            //try
-            //{
-                //konekcija.Open();
-                //SqlDataReader citac = komanda.ExecuteReader();
-                //while (citac.Read())
-                //{
-                    //string datumi = citac["Datum"].ToString();
             string[] parts = servis.findDates(ime);
-                    foreach (string part in parts)
-                    {
-                        ListItem li = new ListItem(part);
-                        ddlDatumi.Items.Add(li);
-                    }
-                //}
-                //citac.Close();
-            //}
-            //finally
-            //{
-              //  konekcija.Close();
-            //}
+            foreach (string part in parts)
+            {
+                ListItem li = new ListItem(part);
+                ddlDatumi.Items.Add(li);
+            }
         }
     }
 
@@ -186,9 +149,9 @@ public partial class Repertoar : System.Web.UI.Page
 
     protected void btnPreb_Click(object sender, EventArgs e)
     {
+        theatersService servis = new theatersService();
         if (ddlKriterium.SelectedItem.Text == "Град")
         {
-            theatersService servis = new theatersService();
             DataSet result = servis.findByCity(tbKluc.Text);
             dvPretstavi.DataSource = result;
             dvPretstavi.DataBind();
@@ -199,7 +162,6 @@ public partial class Repertoar : System.Web.UI.Page
         }
         else if (ddlKriterium.SelectedItem.Text == "Режисер")
         {
-            theatersService servis = new theatersService();
             DataSet result = servis.findByDirector(tbKluc.Text);
             dvPretstavi.DataSource = result;
             dvPretstavi.DataBind();
@@ -210,7 +172,6 @@ public partial class Repertoar : System.Web.UI.Page
         }
         else if (ddlKriterium.SelectedItem.Text == "Автор")
         {
-            theatersService servis = new theatersService();
             DataSet result = servis.findByAuthor(tbKluc.Text);
             dvPretstavi.DataSource = result;
             dvPretstavi.DataBind();
@@ -221,7 +182,6 @@ public partial class Repertoar : System.Web.UI.Page
         }
         else if (ddlKriterium.SelectedItem.Text == "Актер")
         {
-            theatersService servis = new theatersService();
             DataSet result = servis.findByActor(tbKluc.Text);
             dvPretstavi.DataSource = result;
             dvPretstavi.DataBind();
@@ -232,7 +192,6 @@ public partial class Repertoar : System.Web.UI.Page
         }
         else if (ddlKriterium.SelectedItem.Text == "Датум")
         {
-            theatersService servis = new theatersService();
             DataSet result = servis.findByDate(tbKluc.Text);
             dvPretstavi.DataSource = result;
             dvPretstavi.DataBind();
@@ -243,7 +202,6 @@ public partial class Repertoar : System.Web.UI.Page
         }
         else if (ddlKriterium.SelectedItem.Text == "Театар")
         {
-            theatersService servis = new theatersService();
             DataSet result = servis.findByTheater(tbKluc.Text);
             dvPretstavi.DataSource = result;
             dvPretstavi.DataBind();
@@ -254,7 +212,6 @@ public partial class Repertoar : System.Web.UI.Page
         }
         else if (ddlKriterium.SelectedItem.Text == "Име")
         {
-            theatersService servis = new theatersService();
             DataSet result = servis.findByName(tbKluc.Text);
             dvPretstavi.DataSource = result;
             dvPretstavi.DataBind();
@@ -273,62 +230,39 @@ public partial class Repertoar : System.Web.UI.Page
     protected void dvPretstavi_PageIndexChanging(object sender, DetailsViewPageEventArgs e)
     {
         dvPretstavi.PageIndex = e.NewPageIndex;
+        DataSet ds;
         if (ddlKriterium.SelectedItem.Text == "Град")
         {
-            DataSet ds = (DataSet)ViewState["set"];
-            dvPretstavi.DataSource = ds;
-            dvPretstavi.DataBind();
-            mvSearch.ActiveViewIndex = 2;
-            main.Visible = false;
+            ds = (DataSet)ViewState["set"];
         }
-        if (ddlKriterium.SelectedItem.Text == "Режисер")
+        else if (ddlKriterium.SelectedItem.Text == "Режисер")
         {
-            DataSet ds = (DataSet)ViewState["set1"];
-            dvPretstavi.DataSource = ds;
-            dvPretstavi.DataBind();
-            mvSearch.ActiveViewIndex = 2;
-            main.Visible = false;
+            ds = (DataSet)ViewState["set1"];
         }
-        if (ddlKriterium.SelectedItem.Text == "Автор")
+        else if (ddlKriterium.SelectedItem.Text == "Автор")
         {
-            DataSet ds = (DataSet)ViewState["set2"];
-            dvPretstavi.DataSource = ds;
-            dvPretstavi.DataBind();
-            mvSearch.ActiveViewIndex = 2;
-            main.Visible = false;
+            ds = (DataSet)ViewState["set2"];
         }
-        if (ddlKriterium.SelectedItem.Text == "Актер")
+        else if (ddlKriterium.SelectedItem.Text == "Актер")
         {
-            DataSet ds = (DataSet)ViewState["set3"];
-            dvPretstavi.DataSource = ds;
-            dvPretstavi.DataBind();
-            mvSearch.ActiveViewIndex = 2;
-            main.Visible = false;
+            ds = (DataSet)ViewState["set3"];
         }
-        if (ddlKriterium.SelectedItem.Text == "Датум")
+        else if (ddlKriterium.SelectedItem.Text == "Датум")
         {
-            DataSet ds = (DataSet)ViewState["set4"];
-            dvPretstavi.DataSource = ds;
-            dvPretstavi.DataBind();
-            mvSearch.ActiveViewIndex = 2;
-            main.Visible = false;
+            ds = (DataSet)ViewState["set4"];
         }
-        if (ddlKriterium.SelectedItem.Text == "Театар")
+        else if (ddlKriterium.SelectedItem.Text == "Театар")
         {
-            DataSet ds = (DataSet)ViewState["set5"];
-            dvPretstavi.DataSource = ds;
-            dvPretstavi.DataBind();
-            mvSearch.ActiveViewIndex = 2;
-            main.Visible = false;
+            ds = (DataSet)ViewState["set5"];
         }
-        if (ddlKriterium.SelectedItem.Text == "Име")
+        else
         {
-            DataSet ds = (DataSet)ViewState["set6"];
-            dvPretstavi.DataSource = ds;
-            dvPretstavi.DataBind();
-            mvSearch.ActiveViewIndex = 2;
-            main.Visible = false;
+            ds = (DataSet)ViewState["set6"];
         }
+        dvPretstavi.DataSource = ds;
+        dvPretstavi.DataBind();
+        mvSearch.ActiveViewIndex = 2;
+        main.Visible = false;
     }
 
     protected void dvPretstavi_ItemCommand(object sender, DetailsViewCommandEventArgs e)
@@ -361,7 +295,6 @@ public partial class Repertoar : System.Web.UI.Page
         {
             tbKluc.Enabled = true;
         }
-
         if (ddlKriterium.SelectedItem.Text == "Датум")
         {
             imCalendar.Visible = true;

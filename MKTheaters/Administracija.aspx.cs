@@ -39,24 +39,6 @@ public partial class Administracija : System.Web.UI.Page
         gvAllPlays.DataSource = ds;
         gvAllPlays.DataBind();
         ViewState["datasetVS"] = ds;
-        /*SqlConnection konekcija = new SqlConnection();
-        konekcija.ConnectionString = ConfigurationManager.ConnectionStrings["Test"].ConnectionString;
-        string sqlString = "SELECT * FROM Repertoar";
-        SqlCommand komanda = new SqlCommand(sqlString, konekcija);
-        SqlDataAdapter adapter = new SqlDataAdapter(komanda);
-        DataSet ds = new DataSet();
-        try
-        {
-            konekcija.Open();
-            adapter.Fill(ds, "Repertoar");
-            gvAllPlays.DataSource = ds;
-            gvAllPlays.DataBind();
-            ViewState["datasetVS"] = ds;
-        }
-        finally
-        {
-            konekcija.Close();
-        }*/
     }
 
     protected void btnAR_Click(object sender, EventArgs e)

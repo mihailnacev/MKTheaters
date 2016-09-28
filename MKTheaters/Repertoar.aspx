@@ -156,7 +156,7 @@
                 </asp:Panel>
             </asp:View>
             <asp:View ID="View2" runat="server">
-                <asp:Panel ID="pnlView2" runat="server">
+                <asp:Panel ID="pnlView2" runat="server" DefaultButton="btnPreb">
                     <table id="tabela">
                         <tr>
                             <td colspan="2" class="auto-style15">
