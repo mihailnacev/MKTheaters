@@ -82,33 +82,34 @@ public partial class Repertoar : System.Web.UI.Page
             LinkButton LinkButton1 = (LinkButton)e.Row.FindControl("LinkButton1");
             LinkButton1.CommandArgument = e.Row.RowIndex.ToString();
             DropDownList ddlDatumi = (DropDownList)e.Row.FindControl("ddlDatumi");
-            SqlConnection konekcija = new SqlConnection();
-            konekcija.ConnectionString = ConfigurationManager.ConnectionStrings["Test"].ConnectionString;
+            //SqlConnection konekcija = new SqlConnection();
+            //konekcija.ConnectionString = ConfigurationManager.ConnectionStrings["Test"].ConnectionString;
             LinkButton lb = (LinkButton)e.Row.Cells[0].Controls[0];
             string ime = lb.Text;
-            string sqlString = "SELECT Datum FROM Repertoar WHERE Ime=@ime";
-            SqlCommand komanda = new SqlCommand(sqlString, konekcija);
-            komanda.Parameters.AddWithValue("@ime", ime);
-            try
-            {
-                konekcija.Open();
-                SqlDataReader citac = komanda.ExecuteReader();
-                while (citac.Read())
-                {
-                    string datumi = citac["Datum"].ToString();
-                    string[] parts = datumi.Split(';');
+            theatersService servis = new theatersService();
+            //string sqlString = "SELECT Datum FROM Repertoar WHERE Ime=@ime";
+            //SqlCommand komanda = new SqlCommand(sqlString, konekcija);
+            //komanda.Parameters.AddWithValue("@ime", ime);
+            //try
+            //{
+                //konekcija.Open();
+                //SqlDataReader citac = komanda.ExecuteReader();
+                //while (citac.Read())
+                //{
+                    //string datumi = citac["Datum"].ToString();
+            string[] parts = servis.findDates(ime);
                     foreach (string part in parts)
                     {
                         ListItem li = new ListItem(part);
                         ddlDatumi.Items.Add(li);
                     }
-                }
-                citac.Close();
-            }
-            finally
-            {
-                konekcija.Close();
-            }
+                //}
+                //citac.Close();
+            //}
+            //finally
+            //{
+              //  konekcija.Close();
+            //}
         }
     }
 

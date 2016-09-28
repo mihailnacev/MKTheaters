@@ -21,7 +21,33 @@ public class theatersService : System.Web.Services.WebService
         //InitializeComponent(); 
     }
 
-    [WebMethod(Description = "Vrak DataSet od site pretstavi koi se na repertoarot")]
+    [WebMethod(Description = "Vraka lista od datumi za odredena pretstava")]
+    public string[] findDates(string name)
+    {
+        SqlConnection konekcija = new SqlConnection();
+        konekcija.ConnectionString = ConfigurationManager.ConnectionStrings["Test"].ConnectionString;
+        string sqlString = "SELECT Datum FROM Repertoar WHERE Ime=@ime";
+        SqlCommand komanda = new SqlCommand(sqlString, konekcija);
+        komanda.Parameters.AddWithValue("@ime", name);
+        string datumi = null;
+        try
+        {
+            konekcija.Open();
+            SqlDataReader citac = komanda.ExecuteReader();
+            while (citac.Read())
+            {
+                datumi = citac["Datum"].ToString();
+            }
+            citac.Close();
+        }
+        finally
+        {
+            konekcija.Close();
+        }
+        return datumi.Split(';');
+    }
+
+    [WebMethod(Description = "Vraka DataSet od site pretstavi koi se na repertoarot")]
     public DataSet findAll()
     {
         SqlConnection konekcija = new SqlConnection();
