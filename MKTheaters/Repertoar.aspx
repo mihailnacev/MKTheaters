@@ -252,7 +252,7 @@
                     <EditRowStyle BorderStyle="Solid" BorderWidth="3px" Font-Size="Larger" />
                     <EmptyDataRowStyle BackColor="Red" BorderColor="#FFCC00" BorderWidth="5px"
                         Font-Size="Larger" />
-                    <FieldHeaderStyle Font-Size="Larger" />
+                    <FieldHeaderStyle  />
                     <Fields>
                         <asp:ButtonField CommandName="select" DataTextField="Ime" HeaderText="Претстава" Text="Button" ItemStyle-CssClass="faa-pulse animated-hover faa-slow">
                             <ControlStyle Font-Size="Larger" />

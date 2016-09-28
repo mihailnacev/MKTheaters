@@ -79,6 +79,11 @@
     background-color: #DA621E;
 }
 
+#dvPretstavi td {
+    padding: 1%;
+    border: none;
+}
+
 #gvPretstavi td, #gvPretstavi th {
     padding: 5px;
     border: none;

@@ -17,3 +17,9 @@ td, th {
     width: 100%;
 }
 
+.carouselButton {
+    border: none;
+    background: transparent;
+    font-size: 20px;
+    color: #F0CB01;
+}

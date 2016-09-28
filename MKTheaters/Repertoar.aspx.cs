@@ -30,7 +30,8 @@ public partial class Repertoar : System.Web.UI.Page
         }
 
 
-       if (Session["button1Clicked"]!=null) {
+        if (Request.QueryString["search"] == "true")
+        {
 
             mvSearch.ActiveViewIndex = 1;
             gvPretstavi.Visible = false;

@@ -35,7 +35,7 @@
             font-weight: bold;
             margin: auto;
             width: 100%;
-            color: orangered;
+            color: #DA621E;
             text-align: justify;
         }
 
@@ -53,6 +53,7 @@
             margin: auto;
             margin-top: 3%;
             width: 65%;
+            text-align: right;
         }
 
         #RepButton {
@@ -65,7 +66,7 @@
         }
 
         #Button1 {
-        margin-left:43%;
+        /*margin-left:43%;*/
         color: rgb(245,222,95);
         border:none;
         border-bottom:2px solid rgb(245,222,95);
@@ -119,21 +120,39 @@
             <div class="carousel-inner">
                 <div class="item active">
                     <img src="Images/1.png" alt="..." class="img-responsive" />
+                    <div class="carousel-caption">		
+ -                        <button class="carouselButton" title="Брачна игра">Види детали</button>		
+ -                  </div>
                 </div>
                 <div class="item">
                     <img src="Images/2.jpg" alt="..." class="img-responsive" />
+                    <div class="carousel-caption">		
+ -                        <button class="carouselButton" title="Не се клади на Енглези">Види детали</button>		
+ -                  </div>
                 </div>
                 <div class="item">
                     <img src="Images/3.jpg" alt="..." class="img-responsive" />
+                    <div class="carousel-caption">		
+ -                        <button class="carouselButton" title="Лисистрата">Види детали</button>		
+ -                  </div>
                 </div>
                 <div class="item">
                     <img src="Images/4.jpg" alt="..." class="img-responsive" />
+                    <div class="carousel-caption">		
+ -                        <button class="carouselButton" title="Случајот Хармс">Види детали</button>		
+ -                  </div>
                 </div>
                 <div class="item">
                     <img src="Images/5.jpg" alt="..." class="img-responsive" />
+                    <div class="carousel-caption">		
+ -                        <button class="carouselButton" title="Господарот на кукавицата">Види детали</button>		
+ -                  </div>
                 </div>
                 <div class="item">
                     <img src="Images/6.jpg" alt="..." class="img-responsive" />
+                    <div class="carousel-caption">		
+ -                        <button class="carouselButton" title="Вардарски пастуви">Види детали</button>		
+ -                  </div>
                 </div>
             </div>
             <!-- Controls -->
@@ -144,6 +163,8 @@
                 <span class="glyphicon glyphicon-chevron-right arrows">></span>
             </a>
         </div>
+        <asp:Button ID="skrienoKopche" runat="server" OnClick="skrienoKopche_Click" Text="Redirect" />
+        <asp:TextBox ID="skrienTextBox" runat="server"></asp:TextBox>
     </asp:Panel>
     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
     <asp:UpdatePanel ID="BOX" runat="server">

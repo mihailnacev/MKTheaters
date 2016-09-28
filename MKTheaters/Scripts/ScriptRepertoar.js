@@ -52,7 +52,19 @@ $(document).ready(function () {
         $(this).text(val2);
     })
 
+    $("#gvPretstavi>tbody>tr>td:nth-child(3)").each(function () {
+        var val = $(this).text();
+        var val2 = val.replace(/;/g, ", ");
+        $(this).text(val2);
+    })
+
     $("#gvPretstavi>tbody>tr>td:nth-child(4)").each(function () {
+        var val = $(this).text();
+        var val2 = val.replace(/;/g, ", ");
+        $(this).text(val2);
+    })
+
+    $("#dvPretstavi>tbody>tr>td:nth-child(2)").each(function () {
         var val = $(this).text();
         var val2 = val.replace(/;/g, ", ");
         $(this).text(val2);
@@ -95,7 +107,19 @@ function pageLoad() {
         $(this).text(val2);
     })
 
+    $("#gvPretstavi>tbody>tr>td:nth-child(3)").each(function () {
+        var val = $(this).text();
+        var val2 = val.replace(/;/g, ", ");
+        $(this).text(val2);
+    })
+
     $("#gvPretstavi>tbody>tr>td:nth-child(4)").each(function () {
+        var val = $(this).text();
+        var val2 = val.replace(/;/g, ", ");
+        $(this).text(val2);
+    })
+
+    $("#dvPretstavi>tbody>tr>td:nth-child(2)").each(function () {
         var val = $(this).text();
         var val2 = val.replace(/;/g, ", ");
         $(this).text(val2);
