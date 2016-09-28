@@ -20,7 +20,28 @@ public class theatersService : System.Web.Services.WebService
         //Uncomment the following line if using designed components 
         //InitializeComponent(); 
     }
-    
+
+    [WebMethod(Description = "Vrak DataSet od site pretstavi koi se na repertoarot")]
+    public DataSet findAll()
+    {
+        SqlConnection konekcija = new SqlConnection();
+        konekcija.ConnectionString = ConfigurationManager.ConnectionStrings["Test"].ConnectionString;
+        string sqlString = "SELECT * FROM Repertoar";
+        SqlCommand komanda = new SqlCommand(sqlString, konekcija);
+        SqlDataAdapter adapter = new SqlDataAdapter(komanda);
+        DataSet ds = new DataSet();
+        try
+        {
+            konekcija.Open();
+            adapter.Fill(ds, "Repertoar");
+        }
+        finally
+        {
+            konekcija.Close();
+        }
+        return ds;
+    }
+
     [WebMethod(Description = "Vraka DataSet od pretstavi koi se na repertoar vo gradot koj e vlezen argument")]
     public DataSet findByCity(string City)
     {

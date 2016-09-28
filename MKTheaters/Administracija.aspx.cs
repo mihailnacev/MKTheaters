@@ -34,7 +34,12 @@ public partial class Administracija : System.Web.UI.Page
 
     public void IspolniMaster()
     {
-        SqlConnection konekcija = new SqlConnection();
+        theatersService servis = new theatersService();
+        DataSet ds = servis.findAll();
+        gvAllPlays.DataSource = ds;
+        gvAllPlays.DataBind();
+        ViewState["datasetVS"] = ds;
+        /*SqlConnection konekcija = new SqlConnection();
         konekcija.ConnectionString = ConfigurationManager.ConnectionStrings["Test"].ConnectionString;
         string sqlString = "SELECT * FROM Repertoar";
         SqlCommand komanda = new SqlCommand(sqlString, konekcija);
@@ -51,7 +56,7 @@ public partial class Administracija : System.Web.UI.Page
         finally
         {
             konekcija.Close();
-        }
+        }*/
     }
 
     protected void btnAR_Click(object sender, EventArgs e)

@@ -40,7 +40,12 @@ public partial class Repertoar : System.Web.UI.Page
 
     public void IspolniMaster()
     {
-        SqlConnection konekcija = new SqlConnection();
+        theatersService servis = new theatersService();
+        DataSet ds = servis.findAll();
+        gvPretstavi.DataSource = ds;
+        gvPretstavi.DataBind();
+        ViewState["dataset"] = ds;
+        /*SqlConnection konekcija = new SqlConnection();
         konekcija.ConnectionString = ConfigurationManager.ConnectionStrings["Test"].ConnectionString;
         string sqlString = "SELECT * FROM Repertoar";
         SqlCommand komanda = new SqlCommand(sqlString, konekcija);
@@ -57,7 +62,7 @@ public partial class Repertoar : System.Web.UI.Page
         finally
         {
             konekcija.Close();
-        }
+        }*/
     }
 
     protected void gvPretstavi_PageIndexChanging(object sender, GridViewPageEventArgs e)
