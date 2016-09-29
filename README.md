@@ -1,18 +1,5 @@
-# Македонски Театри
-------------
-**Македонски** / [English](#macedonian-theaters)
-Апликација за управување на репертоарите на театрите во Македонија
-
-Проект за предметот Интернет Технологии изработен од:
-
-- [***Михаил Нацев***](https://github.com/mihailnacev)
-- [***Мартина Тошевска***](https://github.com/mtoshevska)
-- [***Магдалена Цоневска***](https://github.com/MagdalenaConevska)
-- [***Ивана Стојковска***](https://github.com/iStojkovska)
-
 # Macedonian Theaters
 ------------
-[Македонски](#македонски-театри) / **English**
 Application for management of the repertoires of the theaters in Macedonia
 
 Project for the subject Internet Technologies made by:
