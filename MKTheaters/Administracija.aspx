@@ -2,6 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <link href="Styles/StyleSheetAdministracija.css" rel="stylesheet" />
+    <link href="Styles/jquery-ui.css" type="text/css" rel="stylesheet" />
     <style>
         .buttons1 {
             color: rgb(245,222,95);
@@ -62,7 +63,8 @@
         }
     </style>
     <script src="Scripts/jquery.js"></script>
-    <script src="Scripts/ScriptMyProfile.js" type="text/javascript"></script>
+    <script src="Scripts/jquery-ui.js"></script>
+    <script src="Scripts/ScriptAdministracija.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <asp:Panel ID="Panel2" runat="server">
@@ -113,26 +115,26 @@
                         </tr>
                         <tr>
                             <td>
-                                <asp:Label ID="lblAvtor" runat="server" CssClass="labeli" Text="Автор"></asp:Label>
+                                <asp:Label ID="lblAvtor" runat="server" CssClass="labeli" Text="Автор" ToolTip="Авторите се внесуваат во следниот облик: Автор1;Автор2;...;АвторN"></asp:Label>
                             </td>
                             <td>
-                                <asp:TextBox ID="txtAvtor" runat="server"></asp:TextBox>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <asp:Label ID="lblReziser" runat="server" CssClass="labeli" Text="Режисер"></asp:Label>
-                            </td>
-                            <td>
-                                <asp:TextBox ID="txtReziser" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtAvtor" runat="server" ToolTip="Авторите се внесуваат во следниот облик: Автор1;Автор2;...;АвторN"></asp:TextBox>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <asp:Label ID="lblAkteri" runat="server" CssClass="labeli" Text="Актери"></asp:Label>
+                                <asp:Label ID="lblReziser" runat="server" CssClass="labeli" Text="Режисер" ToolTip="Режисерите се внесуваат во следниот облик: Режисер1;Режисер2;...;РежисерN"></asp:Label>
                             </td>
                             <td>
-                                <asp:TextBox ID="txtAkteri" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtReziser" runat="server" ToolTip="Режисерите се внесуваат во следниот облик: Режисер1;Режисер2;...;РежисерN"></asp:TextBox>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <asp:Label ID="lblAkteri" runat="server" CssClass="labeli" Text="Актери" ToolTip="Актерите се внесуваат во следниот облик: Актер1;Актер2;...;АктерN"></asp:Label>
+                            </td>
+                            <td>
+                                <asp:TextBox ID="txtAkteri" runat="server" ToolTip="Актерите се внесуваат во следниот облик: Актер1;Актер2;...;АктерN"></asp:TextBox>
                             </td>
                         </tr>
                         <tr>
@@ -153,10 +155,10 @@
                         </tr>
                         <tr>
                             <td>
-                                <asp:Label ID="lblDatum" runat="server" CssClass="labeli" Text="Датум"></asp:Label>
+                                <asp:Label ID="lblDatum" runat="server" CssClass="labeli" Text="Датум" ToolTip="Датумите се внесуваат во следниот облик: dd.MM.yyyy HH:mm;dd.MM.yyyy HH:mm;...dd.MM.yyyy HH:mm"></asp:Label>
                             </td>
                             <td>
-                                <asp:TextBox ID="txtDatum" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtDatum" runat="server" ToolTip="Датумите се внесуваат во следниот облик: dd.MM.yyyy HH:mm;dd.MM.yyyy HH:mm;...dd.MM.yyyy HH:mm"></asp:TextBox>
                             </td>
                         </tr>
                         <tr>
